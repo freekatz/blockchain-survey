@@ -1,12 +1,8 @@
 # self
 
-*.xlsx
-*.txt
-*.xls
-*.json
-*.csv
 tmp/
 .idea/
+__pycache__/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
