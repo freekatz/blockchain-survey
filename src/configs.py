@@ -1,8 +1,8 @@
 """ arxiv config
 """
 
-base_url = "https://arxiv.org/search/advanced"
-payload = {
+arxiv_base_url = "https://arxiv.org/search/advanced"
+arxiv_payload = {
     "advanced": "1",
     "terms-0-term": "blockchain",
     "terms-0-operator": "AND",
@@ -36,9 +36,19 @@ payload = {
     "date-to_date": "2020",
     "date-date_type": "announced_date_first",
     "abstracts": "show",
-    "size": "200",
+    "size": "10",
     "order": ""
 }
 
 """ Springer config
 """
+springer_base_url = "https://link.springer.com/search/page/%s"
+springer_detail_base_url = "https://link.springer.com"
+springer_payload = {
+    "date-facet-mode": "between",
+    "dc.title": "blockchain",
+    "facet-start-year": "2009",
+    "facet-end-year": "2020",
+    "showAll": "true",
+    "query": "(survey OR review OR overview OR tutorial)"
+}

@@ -5,5 +5,13 @@ proxies = {
 }
 
 out_data = {
-
+    "date": "",
+    "title": "",
+    "topics": "topic or keyword",
+    "publisher": "",
+    "cite": "",
+    "factor": "",
+    "authors": "",
+    "url": "",
+    "abstract": "",
 }
