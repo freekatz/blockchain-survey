@@ -1,7 +1,9 @@
 from bs4 import BeautifulSoup
+# from selenium import webdriver
 import pandas as pd
 import requests
 import json
+# import time
 import copy
 import re
 
@@ -13,9 +15,10 @@ class Crawler:
     def __init__(self):
         pass
     
-    def open(self, url, payload=None, method="GET"):
+    def open(self, url, payload=None, headers=None, method="GET"):
         """
         open the url and set the params
+        :param headers: request headers
         :param url: site search url
         :param payload: url payload, get or post
         :param method: http method, get or post
@@ -24,13 +27,14 @@ class Crawler:
         if payload is None:
             payload = {}
         if method == "GET":
-            resp = requests.get(url, params=payload, proxies=proxies)
+            resp = requests.get(url, params=payload, headers=headers, proxies=proxies)
+            return BeautifulSoup(resp.text, "lxml")
         elif method == "POST":
-            resp = requests.post(url, data=payload, proxies=proxies)
+            resp = requests.post(url, data=payload, headers=headers, proxies=proxies)
+            return resp.text
         else:
             raise Exception("Un-support protocol type")
         # print(resp.url)
-        return BeautifulSoup(resp.text, "lxml")
     
     def save(self, output, target):
         """
@@ -83,7 +87,7 @@ class ArxivCrawler(Crawler):
 
         :return: NULL
         """
-        soup = super().open(arxiv_base_url, arxiv_payload, "GET")
+        soup = super().open(arxiv_base_url, arxiv_payload)
         url_items = soup.select("p.list-title")
         output = []
         for url_item in url_items:
@@ -91,7 +95,7 @@ class ArxivCrawler(Crawler):
             out["url"] = url_item.a["href"]
             self.detail(out)
             output.append(out)
-        super().save(output, "./out/arxiv.xlsx")
+        super().save(output, arxiv_target_path)
 
 
 class SpringerCrawler(Crawler):
@@ -149,8 +153,8 @@ class SpringerCrawler(Crawler):
         :return: output list of dict
         """
         output = []
-        for index in range(springer_index_range_begin, springer_index_range_end+1):
-            soup = super().open(springer_base_url % index, springer_payload, "GET")
+        for index in range(springer_index_range_begin, springer_index_range_end + 1):
+            soup = super().open(springer_base_url % index, springer_payload)
             url_items = soup.select("a.title")
             for url_item in url_items:
                 out = copy.deepcopy(out_data)
@@ -158,22 +162,8 @@ class SpringerCrawler(Crawler):
                 out["title"] = url_item.text
                 self.detail(out)
                 output.append(out)
-            super().save(output, "./out/springer.xlsx")
+            super().save(output, springer_target_path)
             print(index)
-    
-    def science_direct(self):
-        """
-
-        :return: output list of dict
-        """
-        pass
-    
-    def ieee(self):
-        """
-
-        :return: output list of dict
-        """
-        pass
 
 
 class AcmCrawler(Crawler):
@@ -225,15 +215,189 @@ class AcmCrawler(Crawler):
             self.detail(out)
             output.append(out)
         
-        super().save(output, "./out/acm.xlsx")
+        super().save(output, acm_target_path)
+
+
+class ScienceDirectCrawler(Crawler):
+    def __init__(self):
+        super(ScienceDirectCrawler, self).__init__()
+    
+    def detail(self, out):
+        print(out["url"])
+        soup = super().open(out["url"], headers=science_direct_headers)
+        out["title"] = soup.select_one("span.title-text").text
+        topics = ""
+        try:
+            topic_item = soup.select_one("div.Keywords").text.strip().replace("Keywords", "")
+            topic = ""
+        except:
+            topic_item = ""
+            topic = ","
+        for ch in topic_item:
+            if 'A' <= ch <= 'Z':
+                topics += topic + ","
+                topic = ""
+            topic += ch
+        topics += topic
+        out["topics"] = topics[1:]
+        out["publisher"] = soup.select_one("a.publication-title-link").text
+        out["cite"] = ""
+        out["factor"] = ""
+        authors = ""
+        author_items = soup.select("a.author")
+        for author_item in author_items:
+            authors += author_item.text + ","
+        out["authors"] = authors[:-1]
+        date = re.split(", ", soup.select_one("div.text-xs").text.strip())
+        try:
+            out["date"] = date[1]
+        except:
+            out["date"] = date[0].replace("Available online ", "")
+        
+        try:
+            out["abstract"] = soup.select_one("div.Abstracts").text
+        except:
+            out["abstract"] = ""
+        # print(out)
+    
+    def run(self):
+        """
+
+        :return: output list of dict
+        """
+        soup = super().open(science_direct_base_url, science_direct_payload, science_direct_headers)
+        url_items = soup.select("div.result-item-content")
+        output = []
+        i = 1
+        for url_item in url_items:
+            out = copy.deepcopy(out_data)
+            out["url"] = science_direct_detail_base_url + \
+                         re.split(r"pii", science_direct_base_url + url_item.h2.span.a["href"])[1]
+            self.detail(out)
+            output.append(out)
+            
+            super().save(output, science_direct_target_path)
+            i += 1
+
+
+class IeeeCrawler(Crawler):
+    def __init__(self):
+        super(IeeeCrawler, self).__init__()
+    
+    def detail(self, out):
+        print(out["url"])
+        html = super().open(out["url"]).text
+        
+        js_str = "{" + re.search(r"global.document.metadata={(.*)};", html).groups()[0] + "}"
+        js = json.loads(js_str)
+        print(js)
+        out["title"] = js["title"]
+        topics = ""
+        try:
+            for topic_item in js["topics"]:
+                topics += topic_item + ","
+        except:
+            for topic_item in js["pubTopics"]:
+                topics += topic_item["name"] + ","
+        out["topics"] = topics[:-1]
+        out["publisher"] = js["displayPublicationTitle"]
+        out["cite"] = js["metrics"]["citationCountPaper"]
+        out["factor"] = ""
+        try:
+            authors = ""
+            for author_item in js["authors"]:
+                authors += author_item["name"] + ","
+            out["authors"] = authors[:-1]
+        except:
+            pass
+        out["date"] = js["publicationDate"]
+        out["abstract"] = js["abstract"]
+        
+        print(out)
+    
+    def run(self):
+        """
+
+        :return: output list of dict
+        """
+        df = pd.read_excel("./out/ieee_u.xlsx")
+        url_items = list(df["url"])
+        output = []
+        for index in range(220, len(url_items)):
+            url_item = url_items[index]
+            out = copy.deepcopy(out_data)
+            out["url"] = url_item
+            self.detail(out)
+            output.append(out)
+            super().save(output, ieee_target_path)
+            print(index + 1)
+        
+        # driver = webdriver.Firefox()
+        # output = []
+        # for i in range(1, 4):
+        #     ieee_payload["pageNumber"] = str(i)
+        #     t_resp = requests.get(ieee_base_url, ieee_payload)
+        #     ieee_headers["Referer"] = t_resp.url
+        #     # self.send_request(driver, ieee_base_url_post, ieee_payload)
+        #     driver.get(t_resp.url)
+        #     time.sleep(10)
+        #     html = driver.page_source
+        #     soup = BeautifulSoup(html, "lxml")
+        #     url_items = soup.select("div.List-results-items")
+        #     for url_item in url_items:
+        #         out = copy.deepcopy(out_data)
+        #         out["url"] = ieee_detail_base_url + url_item.select_one("a")["href"]
+        #         self.detail(out)
+        #         output.append(out)
+        #         super().save(output, ieee_target_path)
+        #     print(i)
+    
+    
+    # def send_request(self, driver, url, params, method='POST'):
+    #     if method == 'GET':
+    #         parm_str = ''
+    #         for key, value in params.items():
+    #             parm_str = parm_str + key + '=' + str(value) + '&'
+    #         if parm_str.endswith('&'):
+    #             parm_str = '?' + parm_str[:-1]
+    #         driver.get(url + parm_str)
+    #     else:
+    #         jquery = open("./res/js/jquery.min.js", "r").read()
+    #         driver.execute_script(jquery)
+    #         ajax_query = '''
+    #                         $.ajax({
+    #                             url: "%s",
+    #                             data: "%s",
+    #                             type: "%s",
+    #                             dataType: "json",
+    #                             contentType: "application/json;charset=utf-8",
+    #                             success: function(returnData){
+    #                                 console.log(returnData);
+    #                             },
+    #                             error: function(xhr, ajaxOptions, thrownError){
+    #                                 console.log(xhr.status);
+    #                                 console.log(thrownError);
+    #                             }
+    #                         });
+    #                     ''' % (url, params.__str__(), method)
+    #         print(ajax_query)
+    #         ajax_query = ajax_query.replace(" ", "").replace("\n", "")
+    #         resp = driver.execute_script("return " + ajax_query)
+    #         print(resp)
 
 
 if __name__ == '__main__':
     # arxiv = ArxivCrawler()
     # arxiv.run()
     
-    springer = SpringerCrawler()
-    springer.run()
+    # springer = SpringerCrawler()
+    # springer.run()
     
     # acm = AcmCrawler()
     # acm.run()
+    
+    # science_direct = ScienceDirectCrawler()
+    # science_direct.run()
+    
+    ieee = IeeeCrawler()
+    ieee.run()

@@ -39,6 +39,7 @@ arxiv_payload = {
     "size": "200",
     "order": ""
 }
+arxiv_target_path = "./out/arxiv.xlsx"
 
 """ Springer config
 """
@@ -54,6 +55,7 @@ springer_payload = {
     "showAll": "true",
     "query": "(survey OR review OR overview OR tutorial)"
 }
+springer_target_path = "./out/springer.xlsx"
 
 """ acm config
 """
@@ -68,3 +70,51 @@ acm_payload = {
     "pageSize": "50"
 }
 
+acm_target_path = "./out/acm.xlsx"
+
+""" science direct config
+"""
+science_direct_base_url = "https://www.sciencedirect.com/search"
+science_direct_detail_base_url = "https://www.sciencedirect.com/science/article/abs/pii"
+
+science_direct_payload = {
+    "date": "2009-2020",
+    "tak": "blockchain",
+    "title": "survey OR review OR tutuorial OR overview",
+    "show": "100",
+    "offset": "0"
+}
+science_direct_target_path = "./out/science_direct.xlsx"
+
+science_direct_headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:79.0) Gecko/20100101 Firefox/79.0"
+}
+
+""" ieee config
+"""
+ieee_base_url = "https://ieeexplore.ieee.org/search/searchresult.jsp"
+# ieee_base_url_post = "https://ieeexplore.ieee.org/rest/search"
+ieee_detail_base_url = "https://ieeexplore.ieee.org"
+ieee_payload = {
+    "newsearch": "true",
+    "queryText": "(\"All Metadata\":blockchain) AND ((\"Document Title\":survey) OR (\"Document Title\":review) OR (\"Document Title\":tutorial) OR (\"Document Title\":overview))",
+    "highlight": "true",
+    "returnFacets": ["ALL"],
+    "returnType": "SEARCH",
+    "matchPubs": "true",
+    "refinements":["ContentType:Conferences","ContentType:Journals"],
+    "rowsPerPage":"100",
+    "pageNumber":"1"
+}
+ieee_headers = {
+    "Host": "ieeexplore.ieee.org",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:79.0) Gecko/20100101 Firefox/79.0",
+    "Accept": "application/json, text/plain, */*",
+    "Accept-Language": "en-US,en;q=0.5",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Content-Type": "application/json",
+    "Content-Length": "357",
+    "Referer": ""
+}
+
+ieee_target_path = "./out/ieee.xlsx"
