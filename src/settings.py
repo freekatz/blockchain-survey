@@ -6,11 +6,11 @@ proxies = {
 
 out_data = {
     "date": "",
+    "origin": "",
     "title": "none",
     "topics": "topic or keyword",
     "publisher": "",
     "cite": "",
-    "factor": "",
     "authors": "",
     "url": "",
     "abstract": "",

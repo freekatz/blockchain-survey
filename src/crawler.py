@@ -1,9 +1,9 @@
 from bs4 import BeautifulSoup
-# from selenium import webdriver
+from selenium import webdriver
 import pandas as pd
 import requests
 import json
-# import time
+import time
 import copy
 import re
 
@@ -34,7 +34,7 @@ class Crawler:
             return resp.text
         else:
             raise Exception("Un-support protocol type")
-        # print(resp.url)
+        print(resp.url)
     
     def save(self, output, target):
         """
@@ -66,7 +66,7 @@ class ArxivCrawler(Crawler):
     
     def detail(self, out):
         soup = self.open(out["url"])
-        out["title"] = soup.select_one("h1.title").text
+        out["title"] = soup.select_one("h1.title").text.replace("Title:", "")
         out["topics"] = ""
         out["publisher"] = "arxiv"
         out["cite"] = ""
@@ -78,7 +78,8 @@ class ArxivCrawler(Crawler):
             authors += a.text + ","
         out["authors"] = authors[:-1]
         dy = re.split(r"\.", re.split(r"/", out["url"])[-1])[0]
-        out["date"] = "20" + str(dy[0:2]) + "-" + str(dy[2:])
+        # out["date"] = "20" + str(dy[0:2]) + "-" + str(dy[2:])
+        out["date"] = "20" + str(dy[0:2])
         out["abstract"] = soup.select_one("blockquote.abstract").text
         print(out)
     
@@ -87,15 +88,20 @@ class ArxivCrawler(Crawler):
 
         :return: NULL
         """
-        soup = super().open(arxiv_base_url, arxiv_payload)
+        soup = super().open(arxiv_base_url_adv, arxiv_payload_adv)
+        print(soup)
         url_items = soup.select("p.list-title")
         output = []
+        i = 1
         for url_item in url_items:
             out = copy.deepcopy(out_data)
             out["url"] = url_item.a["href"]
+            out["origin"] = "arxiv"
             self.detail(out)
             output.append(out)
-        super().save(output, arxiv_target_path)
+            super().save(output, arxiv_target_path)
+            i += 1
+            print(i)
 
 
 class SpringerCrawler(Crawler):
@@ -153,17 +159,18 @@ class SpringerCrawler(Crawler):
         :return: output list of dict
         """
         output = []
-        for index in range(springer_index_range_begin, springer_index_range_end + 1):
-            soup = super().open(springer_base_url % index, springer_payload)
+        for i in range(springer_index_range_begin, springer_index_range_end + 1):
+            soup = super().open(springer_base_url % i, springer_payload)
             url_items = soup.select("a.title")
             for url_item in url_items:
                 out = copy.deepcopy(out_data)
                 out["url"] = springer_detail_base_url + url_item["href"]
+                out["origin"] = "springer"
                 out["title"] = url_item.text
                 self.detail(out)
                 output.append(out)
             super().save(output, springer_target_path)
-            print(index)
+            print(i + 1)
 
 
 class AcmCrawler(Crawler):
@@ -209,13 +216,16 @@ class AcmCrawler(Crawler):
         soup = super().open(acm_base_url, acm_payload)
         url_items = soup.select("span.hlFld-Title")
         output = []
+        i = 1
         for url_item in url_items:
             out = copy.deepcopy(out_data)
             out["url"] = acm_detail_base_url + url_item.a["href"]
+            out["origin"] = "acm"
             self.detail(out)
             output.append(out)
-        
-        super().save(output, acm_target_path)
+            super().save(output, acm_target_path)
+            i += 1
+            print(i)
 
 
 class ScienceDirectCrawler(Crawler):
@@ -240,7 +250,10 @@ class ScienceDirectCrawler(Crawler):
             topic += ch
         topics += topic
         out["topics"] = topics[1:]
-        out["publisher"] = soup.select_one("a.publication-title-link").text
+        try:
+            out["publisher"] = soup.select_one("a.publication-title-link").text
+        except:
+            out["publisher"] = ""
         out["cite"] = ""
         out["factor"] = ""
         authors = ""
@@ -273,11 +286,13 @@ class ScienceDirectCrawler(Crawler):
             out = copy.deepcopy(out_data)
             out["url"] = science_direct_detail_base_url + \
                          re.split(r"pii", science_direct_base_url + url_item.h2.span.a["href"])[1]
+            out["origin"] = "science_direct"
             self.detail(out)
             output.append(out)
             
             super().save(output, science_direct_target_path)
             i += 1
+            print(i)
 
 
 class IeeeCrawler(Crawler):
@@ -287,8 +302,10 @@ class IeeeCrawler(Crawler):
     def detail(self, out):
         print(out["url"])
         html = super().open(out["url"]).text
-        
-        js_str = "{" + re.search(r"global.document.metadata={(.*)};", html).groups()[0] + "}"
+        try:
+            js_str = "{" + re.search(r"global.document.metadata={(.*)};", html).groups()[0] + "}"
+        except:
+            return
         js = json.loads(js_str)
         print(js)
         out["title"] = js["title"]
@@ -320,38 +337,41 @@ class IeeeCrawler(Crawler):
 
         :return: output list of dict
         """
-        df = pd.read_excel("./out/ieee_u.xlsx")
+        # self.url_get()
+        df = pd.read_excel(ieee_target_u_path)
         url_items = list(df["url"])
         output = []
-        for index in range(220, len(url_items)):
-            url_item = url_items[index]
+        for i in range(0, len(url_items)):
+            url_item = url_items[i]
             out = copy.deepcopy(out_data)
             out["url"] = url_item
+            out["origin"] = "ieee"
             self.detail(out)
             output.append(out)
             super().save(output, ieee_target_path)
-            print(index + 1)
-        
-        # driver = webdriver.Firefox()
-        # output = []
-        # for i in range(1, 4):
-        #     ieee_payload["pageNumber"] = str(i)
-        #     t_resp = requests.get(ieee_base_url, ieee_payload)
-        #     ieee_headers["Referer"] = t_resp.url
-        #     # self.send_request(driver, ieee_base_url_post, ieee_payload)
-        #     driver.get(t_resp.url)
-        #     time.sleep(10)
-        #     html = driver.page_source
-        #     soup = BeautifulSoup(html, "lxml")
-        #     url_items = soup.select("div.List-results-items")
-        #     for url_item in url_items:
-        #         out = copy.deepcopy(out_data)
-        #         out["url"] = ieee_detail_base_url + url_item.select_one("a")["href"]
-        #         self.detail(out)
-        #         output.append(out)
-        #         super().save(output, ieee_target_path)
-        #     print(i)
-    
+            print(i + 1)
+
+    def url_get(self):
+        driver = webdriver.Firefox()
+        output = []
+        for i in range(1, 10):
+            ieee_payload["pageNumber"] = str(i)
+            t_resp = requests.get(ieee_base_url, ieee_payload)
+            ieee_headers["Referer"] = t_resp.url
+            # self.send_request(driver, ieee_base_url_post, ieee_payload)
+            driver.get(t_resp.url)
+            time.sleep(10)
+            html = driver.page_source
+            soup = BeautifulSoup(html, "lxml")
+            url_items = soup.select("div.List-results-items")
+            for url_item in url_items:
+                out = copy.deepcopy(out_data)
+                out["url"] = ieee_detail_base_url + url_item.select_one("a")["href"]
+                out["origin"] = "ieee"
+                # self.detail(out)
+                output.append(out)
+                super().save(output, ieee_target_u_path)
+            print(i)
     
     # def send_request(self, driver, url, params, method='POST'):
     #     if method == 'GET':
@@ -389,7 +409,7 @@ class IeeeCrawler(Crawler):
 if __name__ == '__main__':
     # arxiv = ArxivCrawler()
     # arxiv.run()
-    
+
     # springer = SpringerCrawler()
     # springer.run()
     

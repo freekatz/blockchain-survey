@@ -23,14 +23,31 @@ publisher，cite，factor 忽略
 3.
 topics 处理 **
 """
+# format
+# df = pd.read_excel("./out/new/springer.xlsx")
+# date = df["date"]
+# dd = []
+# for d in date:
+#     if d != None:
+#         dd.append(re.split("-", str(d))[0])
+#     else:
+#         dd.append("")
+# df["date"] = dd
+#
+# df.to_excel("./out/new/springer-tf.xlsx", index=False)
 
-# df = pd.read_excel("./out/all.xlsx")
-# print(df.isnull().any())
-# d = df.dropna(axis=0, subset=['topics'])
-# print(d.isnull().any())
-# d.to_excel("./out/all-no_blank_topics.xlsx", index=False)
+# merge
+# utils
 
-df = pd.read_excel("./out/all-no_blank_topics.xlsx")
+# remove blank
+df = pd.read_excel("./out/all.xlsx")
+print(df.isnull().any())
+d = df.dropna(axis=0, subset=['topics'])
+print(d.isnull().any())
+d.to_excel("./out/all-topics.xlsx", index=False)
+
+# rank
+df = pd.read_excel("./out/all-topics.xlsx")
 topic_items = df["topics"]
 topics = []
 for t_item in topic_items:
