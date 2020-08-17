@@ -42,7 +42,7 @@ topics 处理 **
 # remove blank
 df = pd.read_excel("./out/all.xlsx")
 print(df.isnull().any())
-d = df.dropna(axis=0, subset=['topics'])
+d = df.dropna(axis=0, subset=["topics", "date", "title"])
 print(d.isnull().any())
 d.to_excel("./out/all-topics.xlsx", index=False)
 

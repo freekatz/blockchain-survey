@@ -33,7 +33,7 @@ def merga():
             dfs.append(df)
     
     # 将多个DataFrame合并为一个
-    df = pd.concat(dfs)
+    df = pd.concat(dfs, sort=False)
     
     # 写入excel文件，不包含索引数据
     df.to_excel('./out/all.xlsx', index=False)
