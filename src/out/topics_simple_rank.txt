@@ -1,3083 +1,1931 @@
-(1) Blockchain: 953 
-(2) Communication: 186 
-(3)  Networking and Broadcast Technologies: 186 
-(4) Computing and Processing: 185 
-(5) Cryptocurrency: 149 
-(6) Signal Processing and Analysis: 149 
-(7) Smart contract: 132 
-(8) Robotics and Control Systems: 129 
-(9) Security: 117 
-(10) Components: 114 
-(11)  Circuits: 114 
-(12)  Devices and Systems: 114 
-(13) Power: 112 
-(14)  Energy and Industry Applications: 112 
-(15) Smart contracts: 105 
-(16) Bitcoin: 87 
-(17) General Topics for Engineers: 86 
-(18) Fields: 85 
-(19)  Waves and Electromagnetics: 85 
-(20) Transportation: 81 
-(21) Bioengineering: 80 
-(22) Blockchain technology: 74 
-(23) Photonics and Electrooptics: 73 
-(24) Ethereum: 72 
-(25) Engineering Profession: 71 
-(26) Privacy: 69 
-(27) Engineered Materials: 64 
-(28)  Dielectrics and Plasmas: 64 
-(29) Aerospace: 62 
-(30) Geoscience: 55 
-(31) Nuclear Engineering: 51 
-(32) Security and privacy: 43 
-(33) Internet of Things: 43 
-(34) Distributed ledger: 40 
-(35) IoT: 40 
-(36) Cryptocurrencies: 40 
-(37) Trust: 34 
-(38) Cryptography: 34 
-(39) Decentralization: 32 
-(40) Software and its engineering: 28 
-(41) Distributed ledger technology: 26 
-(42) Io: 26 
-(43) Access control: 24 
-(44) Supply chain: 24 
-(45) Healthcare: 24 
-(46) Software creation and management: 20 
-(47) Applications: 20 
-(48) Transparency: 19 
-(49) Internet of things: 18 
-(50) Traceability: 18 
-(51) Machine learning: 18 
-(52) Hyperledger: 18 
-(53) T: 18 
-(54) Consensus: 16 
-(55) Information systems: 16 
-(56) Authentication: 16 
-(57) Cloud computing: 16 
-(58) Computer systems organization: 15 
-(59) blockchain: 15 
-(60) I: 15 
-(61) Networks: 14 
-(62) Block chain: 14 
-(63) Industry 4.0: 14 
-(64) Blockchains: 14 
-(65) IPFS: 13 
-(66) Artificial intelligence: 13 
-(67) P: 13 
-(68) E: 13 
-(69) Security services: 12 
-(70) Anonymity: 12 
-(71) Blockchain applications: 12 
-(72) Software organization and properties: 12 
-(73) Verification: 12 
-(74) Supply chain management: 12 
-(75) Big data: 12 
-(76) Mining: 12 
-(77) T): 12 
-(78) Digital currency: 11 
-(79) Literature review: 11 
-(80) Architectures: 11 
-(81) Distributed architectures: 11 
-(82) Peer-to-peer architectures: 11 
-(83) Cybersecurity: 11 
-(84) Shari’ah: 11 
-(85) Law: 11 
-(86) A: 11 
-(87) World : 10 
-(88) Wide : 10 
-(89) Web: 10 
-(90) Smart Contracts: 10 
-(91) General and reference: 10 
-(92) Software verification and validation: 10 
-(93) Applied computing: 10 
-(94) Decentralized: 10 
-(95) Technology: 10 
-(96) ICO: 10 
-(97) Transaction: 10 
-(98) C: 10 
-(99) Deep learning: 10 
-(100) Data integrity: 9 
-(101) Data sharing: 9 
-(102) Theory of computation: 9 
-(103) Systems security: 9 
-(104) Internet of : 9 
-(105) Blockchain Technology: 9 
-(106) Microgrid: 9 
-(107) Edge computing: 9 
-(108) Cloud storage: 9 
-(109) Systematic review: 9 
-(110) Review: 9 
-(111) D: 9 
-(112) Regulation: 8 
-(113) Security Class: 8 
-(114) Storage File: 8 
-(115) Virtual Currency: 8 
-(116) Virtual Machine Image: 8 
-(117) Typical Mistake: 8 
-(118) Web applications: 8 
-(119) Governance: 8 
-(120) Consensus mechanism: 8 
-(121) Software functional properties: 8 
-(122) Formal methods: 8 
-(123) Document types: 8 
-(124) Designing software: 8 
-(125) Software and application security: 8 
-(126) Peer-to-peer: 8 
-(127) Cloud: 8 
-(128) Consensus algorithm: 8 
-(129) Distributed systems: 8 
-(130) Systematic literature review: 8 
-(131) Smart cities: 8 
-(132) Human and societal aspects of security and privacy: 8 
-(133) Energy: 8 
-(134) R: 8 
-(135) S: 8 
-(136) Halal: 8 
-(137) Sustainability: 8 
-(138) Survey: 8 
-(139) L26: 8 
-(140) G12: 8 
-(141) Data security: 7 
-(142) Distributed systems security: 7 
-(143) Distributed storage: 7 
-(144) smart contract: 7 
-(145) Network security: 7 
-(146) Vulnerability: 7 
-(147) Smart grid: 7 
-(148) DApps: 7 
-(149) Distributed: 7 
-(150) Hyperledger Fabric: 7 
-(151) Innovation: 7 
-(152) Social network analysis: 7 
-(153) Digital economy: 7 
-(154) Education: 7 
-(155) Enterprise computing: 7 
-(156) Scalability: 6 
-(157) Design science: 6 
-(158) Crowdsourcing: 6 
-(159) Business model: 6 
-(160) Disintermediation: 6 
-(161) Trustworthiness: 6 
-(162) Information asymmetry: 6 
-(163) Tourism: 6 
-(164) E-voting: 6 
-(165) Interoperability: 6 
-(166) Software defect analysis: 6 
-(167) Software testing and debugging: 6 
-(168) Cyber security: 6 
-(169) Legal framework: 6 
-(170) Ethics: 6 
-(171) FinTech: 6 
-(172) LSTM: 6 
-(173) Distributed Ledger Technology: 6 
-(174) Surveys and overviews: 6 
-(175) Internet of things (: 6 
-(176) B: 6 
-(177) Software engineering: 6 
-(178) Data management: 6 
-(179) Hyperledger fabric: 6 
-(180) Data privacy: 6 
-(181) Taxonomy: 6 
-(182) Decentralized applications: 6 
-(183) Bibliometric analysis: 6 
-(184) Bitcoins: 5 
-(185) Finance: 5 
-(186) BlockChain: 5 
-(187) Reputation systems: 5 
-(188) Digital rights management: 5 
-(189) Identity: 5 
-(190) PKI: 5 
-(191) Integrity: 5 
-(192) Software design engineering: 5 
-(193) Multi-agent systems: 5 
-(194) Fault tolerance: 5 
-(195) Collaboration: 5 
-(196) Compliance: 5 
-(197) Data protection: 5 
-(198) Smart city: 5 
-(199) Consensus protocol: 5 
-(200) Game theory: 5 
-(201) Contract: 5 
-(202) GDPR: 5 
-(203) Technology adoption: 5 
-(204) Consortium blockchain: 5 
-(205) Smart-contracts: 5 
-(206) Bibliometrics: 5 
-(207) IoT security: 5 
-(208) Token: 5 
-(209) Internet of Things (IoT): 5 
-(210) Smart : 5 
-(211) Fintech: 5 
-(212) Management: 5 
-(213) M: 5 
-(214) Digital signature: 5 
-(215) G32: 5 
-(216) Recommender system: 5 
-(217) Public key infrastructure: 5 
-(218) U: 5 
-(219) G: 5 
-(220) N: 5 
-(221) Neural network: 5 
-(222) Risk management: 5 
-(223) O3: 5 
-(224) L86: 5 
-(225) Correctness: 5 
-(226) Consensus method: 5 
-(227) I-enabled blockchain: 5 
-(228) Informetric analysis: 5 
-(229) Tools: 5 
-(230) Usability: 5 
-(231) Human computer interaction: 5 
-(232) Cognitive walk-through: 5 
-(233) User-interface: 5 
-(234) User-experience: 5 
-(235) Certified programming: 5 
-(236) Certified compilation: 5 
-(237) Programming languages: 5 
-(238) Linear types: 5 
-(239) Credibility: 4 
-(240) Information systems in finance: 4 
-(241) Program evaluation: 4 
-(242) Prevention: 4 
-(243) Swedish: 4 
-(244) Adolescent substance use: 4 
-(245) Intellectual property: 4 
-(246) Computing methodologies: 4 
-(247) E-governance: 4 
-(248) Network properties: 4 
-(249) Network types: 4 
-(250) Overlay and other logical network structures: 4 
-(251) Peer-to-peer networks: 4 
-(252) Business models: 4 
-(253) Healthcare data: 4 
-(254) Sensors: 4 
-(255) Fairness: 4 
-(256) Crowdfunding: 4 
-(257) Digitalization: 4 
-(258) Dynamic analysis: 4 
-(259) Software verification: 4 
-(260) Logic: 4 
-(261) Logic and verification: 4 
-(262) Public key (asymmetric) techniques: 4 
-(263) Software system structures: 4 
-(264) Theory and algorithms for application domains: 4 
-(265) Algorithmic game theory and mechanism design: 4 
-(266) Computational pricing and auctions: 4 
-(267) Cybercrime: 4 
-(268) Things: 4 
-(269) Software defined networking: 4 
-(270) Intrinsic value: 4 
-(271) Alternative investments: 4 
-(272) Portfolio management: 4 
-(273) Distributed ledger technologies: 4 
-(274) G11: 4 
-(275) G17: 4 
-(276) Blockchain coding: 4 
-(277) Smart contract platforms: 4 
-(278) Smart contract programming: 4 
-(279) Decentralized computing and development: 4 
-(280) Human-centered computing: 4 
-(281) E-government: 4 
-(282) Sharing economy: 4 
-(283) Financial services: 4 
-(284) Platform: 4 
-(285) Reputation: 4 
-(286) Social media: 4 
-(287) Insurance: 4 
-(288) Smart Contract: 4 
-(289) Electric vehicle: 4 
-(290) Decentralized network: 4 
-(291) Blind signature: 4 
-(292) Logistics: 4 
-(293) Domain-specific security and privacy architectures: 4 
-(294) Financial technologies: 4 
-(295) Supply : 4 
-(296) Scoping review: 4 
-(297) Sentiment Analysis: 4 
-(298) Forecasting: 4 
-(299) CSAI: 4 
-(300) Economic infrastructure: 4 
-(301) Activity-based micro-pricing: 4 
-(302) Shari’ah code: 4 
-(303) Guidelines: 4 
-(304) Exchange: 4 
-(305) Oracle: 4 
-(306) Big Data: 4 
-(307) Token economics: 4 
-(308) Ontological completeness: 4 
-(309) eSML: 4 
-(310) Socio-technical: 4 
-(311) Legal relevance: 4 
-(312) ANTLR: 4 
-(313) Block-chain: 4 
-(314) Review of academic papers: 4 
-(315) Academic communication: 4 
-(316) Legal practice: 4 
-(317) RBAC: 4 
-(318) Privacy-preserving smart contracts: 4 
-(319) zk-SNARKs: 4 
-(320) UC-security: 4 
-(321) CRS model: 4 
-(322) Digital banking: 4 
-(323) Legislation: 4 
-(324) L: 4 
-(325) P2P: 4 
-(326) Encryption: 4 
-(327) Blockchain research: 4 
-(328) Digital transformation: 4 
-(329) DLT: 4 
-(330) Consensus algorithms: 4 
-(331) Decentralized ledger: 4 
-(332) Bitcoin network: 4 
-(333) Digital currencies: 4 
-(334) Financial technology (Fintech): 4 
-(335) Bitcoin nodes: 4 
-(336) Bitcoin merchants: 4 
-(337) P40: 4 
-(338) O57: 4 
-(339) L17: 4 
-(340) D84: 4 
-(341) cryptocurrency: 4 
-(342) literature review: 4 
-(343) network analysis: 4 
-(344) Long short-term memory: 4 
-(345) Sentiment analysis: 4 
-(346) Social engineering: 4 
-(347) Technology Acceptance Model (TAM): 4 
-(348) Development process model: 4 
-(349) Trustless append-only decentralized digital ledgers (TADDL): 4 
-(350) Modeling: 4 
-(351) Petri Nets: 4 
-(352) Disruptive technology: 4 
-(353) Crypto-currency: 3 
-(354) Security in hardware: 3 
-(355) Privacy-preserving protocols: 3 
-(356) Random Oracle: 3 
-(357) Distributed databases: 3 
-(358) Public ledger: 3 
-(359) Business process: 3 
-(360) Byzantine fault tolerance: 3 
-(361) State machine replication: 3 
-(362) Electronic commerce: 3 
-(363) Network protocols: 3 
-(364) Taxation: 3 
-(365) Pseudonymity: 3 
-(366) Metadata: 3 
-(367) Provenance: 3 
-(368) Bitcoin blockchain: 3 
-(369) O33: 3 
-(370) Non-repudiation: 3 
-(371) Information storage systems: 3 
-(372) Storage architectures: 3 
-(373) Reusability: 3 
-(374) Malware: 3 
-(375) Fraud: 3 
-(376) Anomaly detection: 3 
-(377) Miner: 3 
-(378) Crypto currency: 3 
-(379) Ride-hailing service: 3 
-(380) Secure billing: 3 
-(381) privacy: 3 
-(382) trusted execution environment: 3 
-(383) hardware-enclave: 3 
-(384) Sealed-bid auction: 3 
-(385) DEMO: 3 
-(386) Distributed ledgers: 3 
-(387) Miners: 3 
-(388) Immutability: 3 
-(389) Logging: 3 
-(390) Authenticity: 3 
-(391) Food supply chain: 3 
-(392) Case study: 3 
-(393) Sovereignty: 3 
-(394) Electronic voting: 3 
-(395) Proof-of-Work: 3 
-(396) Proof of work: 3 
-(397) Initial Coin Offerings (ICO): 3 
-(398) Storage: 3 
-(399) 5G: 3 
-(400) EHR: 3 
-(401) Emerging technology: 3 
-(402) Multi-Agent Systems: 3 
-(403) Service and application: 3 
-(404) Clinical trials: 3 
-(405) smart contracts: 3 
-(406) Merkle tree: 3 
-(407) SDN: 3 
-(408) e-Health: 3 
-(409) Smart-contract: 3 
-(410) Privacy preserving: 3 
-(411) Efficiency: 3 
-(412) E-commerce: 3 
-(413) Ledger: 3 
-(414) Challenges: 3 
-(415) Construction industry: 3 
-(416) Developing countries: 3 
-(417) Medical data: 3 
-(418) Cross-computing tools and techniques: 3 
-(419) Key management: 3 
-(420) Formal methods and theory of security: 3 
-(421) Payment technologies: 3 
-(422) Loans: 3 
-(423) Consumption: 3 
-(424) Agriculture : 3 
-(425) Sector: 3 
-(426) Educational : 3 
-(427) Background: 3 
-(428) Chain : 3 
-(429) lockchain: 3 
-(430) Tsecuritysmart hometransactionbitcoin: 3 
-(431) Biomedical domain: 3 
-(432) A-: 3 
-(433) Sc: 3 
-(434) Fusion: 3 
-(435) Financial stability: 3 
-(436) Kurtosis: 3 
-(437) Asset management: 3 
-(438) Proof-of-Authority: 3 
-(439) Risk warning: 3 
-(440) Symbiotic: 3 
-(441) Colombia: 3 
-(442) Social and professional topics: 3 
-(443) Privacy protections: 3 
-(444) H: 3 
-(445) F: 3 
-(446) Po: 3 
-(447) Proof of : 3 
-(448) W: 3 
-(449) V: 3 
-(450) Renewable energy: 3 
-(451) Blockchain technologies: 3 
-(452) Use cases: 3 
-(453) Permissioned blockchain: 3 
-(454) Attacks: 3 
-(455) Privacy-preserving: 3 
-(456) Counterfeit: 3 
-(457) Hash: 3 
-(458) Supply chains: 3 
-(459) Confidentiality: 3 
-(460) Fog computing: 3 
-(461) Workflow: 3 
-(462) Solidity: 3 
-(463) VANET: 3 
-(464) Selfish mining: 3 
-(465) Volatility: 3 
-(466) Pharmaceutical supply chain: 3 
-(467) IoT devices: 3 
-(468) Data mining: 3 
-(469) Threats: 3 
-(470) PoW: 3 
-(471) PoS: 3 
-(472) PBFT: 3 
-(473) Network monitoring: 3 
-(474) Hospitality: 3 
-(475) Health care: 3 
-(476) AI: 3 
-(477) Marketing: 3 
-(478) Decentralised: 3 
-(479) Biometric: 3 
-(480) Public administration: 3 
-(481) Initial coin offering: 3 
-(482) Evaluation: 3 
-(483) Hashing: 3 
-(484) Performance evaluation criteria: 3 
-(485) Security vulnerability: 3 
-(486) Trust and permission models: 3 
-(487) Sidechains: 3 
-(488) Digital assets: 3 
-(489) Distributed : 3 
-(490) Merkle : 3 
-(491) Treecryptography: 3 
-(492) Security assurance: 3 
-(493) CNN: 3 
-(494) Decentralized app (DApp): 3 
-(495) Lattice-based key exchange: 3 
-(496) MITM attacks: 3 
-(497) R3: 3 
-(498) Corda: 3 
-(499) Risk Weighted Assets (RWA): 3 
-(500) Effective expected positive exposure(EEPE): 3 
-(501) Dynamic initial margin: 3 
-(502) Variation margin: 3 
-(503) Interest rate swap: 3 
-(504) Basel III: 3 
-(505) Peer-to-peer network: 3 
-(506) Industrial internet of things: 3 
-(507) Data analytics: 3 
-(508) Public auditing: 3 
-(509) Privacy protection: 3 
-(510) Corruption: 3 
-(511) Artificial financial market: 2 
-(512) Heterogeneous agents: 2 
-(513) Market simulation: 2 
-(514) Bitcoin mining: 2 
-(515) Namecoin: 2 
-(516) Money: 2 
-(517) Disruption: 2 
-(518) Hardware security implementation: 2 
-(519) Hardware-based security protocols: 2 
-(520) Hash Function: 2 
-(521) Random Oracle Model: 2 
-(522) Human Work: 2 
-(523) Sybil Attack: 2 
-(524) Embedded device: 2 
-(525) Business innovation: 2 
-(526) Computational trust: 2 
-(527) e-Government: 2 
-(528) Information infrastructure: 2 
-(529) Copyright: 2 
-(530) Choreography: 2 
-(531) Proof-of-work: 2 
-(532) Lightning network: 2 
-(533) Decentralized autonomous organization: 2 
-(534) Lifecycle management: 2 
-(535) Double spending: 2 
-(536) Reproducibility: 2 
-(537) Contract signing: 2 
-(538) Formal verification: 2 
-(539) Self-regulation: 2 
-(540) Design science research: 2 
-(541) Market for lemons: 2 
-(542) Risk: 2 
-(543) Blockchain scalability: 2 
-(544) Biometrics: 2 
-(545) Twitter: 2 
-(546) XACML: 2 
-(547) Automated static analysis: 2 
-(548) Model checking: 2 
-(549) Database and storage security: 2 
-(550) Data anonymization and sanitization: 2 
-(551) Secure online transactions: 2 
-(552) General conference proceedings: 2 
-(553) Software notations and tools: 2 
-(554) Context specific languages: 2 
-(555) Domain specific languages: 2 
-(556) General programming languages: 2 
-(557) Language types: 2 
-(558) Object oriented languages: 2 
-(559) Abstraction: 2 
-(560)  modeling and modularity: 2 
-(561) Software security engineering: 2 
-(562) Dependable and fault-tolerant systems and networks: 2 
-(563) Redundancy: 2 
-(564) Software development techniques: 2 
-(565) Darknet: 2 
-(566) Deep reinforcement learning: 2 
-(567) Q-network: 2 
-(568) Deep Boltzmann Machine: 2 
-(569) Pump-and-dump: 2 
-(570) Pricing strategy: 2 
-(571) Granger causal: 2 
-(572) Distributed lag model: 2 
-(573) Anticipatory governance: 2 
-(574) Mining pool: 2 
-(575) Invalid share: 2 
-(576) DoS attack: 2 
-(577) Stratum protocol: 2 
-(578) GARCH: 2 
-(579) Differential evolution: 2 
-(580) 
-t-copula: 2 
-(581) CVaR: 2 
-(582) Portfolio optimization: 2 
-(583) C02: 2 
-(584) Language-independent Approach: 2 
-(585) keV M1: 2 
-(586) Ethereum Virtual Machine (EVM): 2 
-(587) zk-SNARK: 2 
-(588) Collaborative and social computing: 2 
-(589) Data management systems: 2 
-(590) Database management system engines: 2 
-(591) Distributed database transactions: 2 
-(592) Network reliability: 2 
-(593) Trust-free system: 2 
-(594) Process: 2 
-(595) Enterprise Engineering: 2 
-(596) DEMO methodology: 2 
-(597) Instructional design: 2 
-(598) Confidence: 2 
-(599) Institutions: 2 
-(600) Ring signature: 2 
-(601) Distributed computing: 2 
-(602) Blockchain Network: 2 
-(603) Mobility: 2 
-(604) E4: 2 
-(605) E5: 2 
-(606) Control: 2 
-(607) Property: 2 
-(608) E-voting system: 2 
-(609) Decentralisation: 2 
-(610) DAO: 2 
-(611) E-Health: 2 
-(612) Tax Technology: 2 
-(613) Energy market: 2 
-(614) System design: 2 
-(615) Neural networks: 2 
-(616) Intrusion detection: 2 
-(617) Multichain: 2 
-(618) Deduplication: 2 
-(619) Access Control: 2 
-(620) Supply chain finance: 2 
-(621) project management: 2 
-(622) Regulatory sandbox: 2 
-(623) Internet of things (IoT): 2 
-(624) Digital investigation: 2 
-(625) Homomorphic encryption: 2 
-(626) Artifact-driven monitoring: 2 
-(627) Trusted process monitoring: 2 
-(628) Cyber-physical systems: 2 
-(629) Architecture: 2 
-(630) G21: 2 
-(631) Software architecture: 2 
-(632) Textile: 2 
-(633) Sale Items: 2 
-(634) Data Marketplace: 2 
-(635) Solving Complex Mathematical Problems: 2 
-(636) Spectrum sharing: 2 
-(637) Personal data: 2 
-(638) Electronic health records (EHRs): 2 
-(639) Static analysis: 2 
-(640) Cardano: 2 
-(641) Security requirements: 2 
-(642) Differential game: 2 
-(643) Blockchain governance: 2 
-(644) Cyberattack: 2 
-(645) Blockchain benefits: 2 
-(646) Blockchain use cases: 2 
-(647) Informed consent: 2 
-(648) Agriculture: 2 
-(649) M2M: 2 
-(650) security: 2 
-(651) data sharing: 2 
-(652) Patient: 2 
-(653) Interacting processes: 2 
-(654) Privacy preservation: 2 
-(655) IoV: 2 
-(656) Trust management: 2 
-(657) Applied cryptography: 2 
-(658) Peer-to-Peer: 2 
-(659) Relations: 2 
-(660) privacy-preserving: 2 
-(661) Reliability: 2 
-(662) Secret sharing: 2 
-(663) Adoption: 2 
-(664) Fake news: 2 
-(665) Built environment: 2 
-(666) Socio-technical systems: 2 
-(667) Decision-making: 2 
-(668) Incentive: 2 
-(669) Swarm robotics: 2 
-(670) Information sharing: 2 
-(671) Decentralized systems: 2 
-(672) Open data: 2 
-(673) Software development: 2 
-(674) Software design tradeoffs: 2 
-(675) Software development process management: 2 
-(676) Software development methods: 2 
-(677) Rapid application development: 2 
-(678) Information systems applications: 2 
-(679) Computing platforms: 2 
-(680) Incentive schemes: 2 
-(681)  anonymity and untraceability: 2 
-(682) Public key encryption: 2 
-(683) Trust frameworks: 2 
-(684) Social network security and privacy: 2 
-(685) Computer forensics: 2 
-(686) Evidence collection: 2 
-(687)  storage and analysis: 2 
-(688) Regulatory frameworks: 2 
-(689) Global: 2 
-(690) Cryptobot: 2 
-(691) Methods of cryptocurrency analysis: 2 
-(692) Cryptocurrency volatility: 2 
-(693) Cryptocurrency arbitrage: 2 
-(694) Mathematical statistics: 2 
-(695) Regulations: 2 
-(696) SWOT: 2 
-(697) Maqasid al-Shari’ah: 2 
-(698) Hedonic pricing: 2 
-(699) Moore–Penrose inverse: 2 
-(700) D46: 2 
-(701) C60: 2 
-(702) Market microstructure: 2 
-(703) Electronic trading: 2 
-(704) Market impact: 2 
-(705) Order flow: 2 
-(706) Payment gateways: 2 
-(707) Cryptographic primitives: 2 
-(708) Price prediction: 2 
-(709) Hidden Markov Models: 2 
-(710) Hidden Semi-Markov Models: 2 
-(711) Filtering: 2 
-(712) Nowcasting: 2 
-(713) Brute-force attack: 2 
-(714) Financial markets: 2 
-(715) Spillover effects: 2 
-(716) GARCH-in-mean model: 2 
-(717) Asymmetric BEKK model: 2 
-(718) Volatility transmission: 2 
-(719) C32: 2 
-(720) G15: 2 
-(721) Open Source Software: 2 
-(722) Mining software repositories: 2 
-(723) Digital technology: 2 
-(724) Global currency: 2 
-(725) Global coin: 2 
-(726) Monetary circulation: 2 
-(727) National cryptocurrency: 2 
-(728) 
-\(T{-}X\) family: 2 
-(729) Quantile: 2 
-(730) Distribution: 2 
-(731) Webometrics: 2 
-(732) Electronic document: 2 
-(733) Computability: 2 
-(734) Turing complete language: 2 
-(735) Online haggle: 2 
-(736) Purchases product: 2 
-(737) Islamic trade finance: 2 
-(738) Islamic finance: 2 
-(739) Design pattern: 2 
-(740) Pattern language: 2 
-(741) Automatic fulfillment of obligation: 2 
-(742) Automated legal relations: 2 
-(743) Contract law: 2 
-(744) Cryptoassets: 2 
-(745) K120: 2 
-(746) Embedded and cyber-physical systems: 2 
-(747) Embedded systems: 2 
-(748) Advanced Software and Data Engineering for Secure Societies: 2 
-(749) Green Internet of Things: 2 
-(750) Classification: 2 
-(751) Abbreviations: 2 
-(752) Demand response: 2 
-(753) P2: 2 
-(754)  : 2 
-(755) Work: 2 
-(756) Things (: 2 
-(757) Prosumer: 2 
-(758) Precision agriculture: 2 
-(759) Data science: 2 
-(760) Business process management: 2 
-(761) Security risks: 2 
-(762) Traceable: 2 
-(763) QoS: 2 
-(764) ProVerif: 2 
-(765) UAV: 2 
-(766) Electronic medical record: 2 
-(767) Fabric: 2 
-(768) Genomics: 2 
-(769) Network Functions Virtualization: 2 
-(770) Serialization: 2 
-(771) Data distribution: 2 
-(772) Blockchain architecture: 2 
-(773) Forensics: 2 
-(774) Autonomous vehicles: 2 
-(775) Decentralized storage: 2 
-(776) Energy consumption: 2 
-(777) Verifiability: 2 
-(778) e-Voting: 2 
-(779) Certificates: 2 
-(780) User-access control: 2 
-(781) BPM: 2 
-(782) Electronic medical records: 2 
-(783) Robotics: 2 
-(784) Security issues: 2 
-(785) Critical technical practice: 2 
-(786) Access credentials: 2 
-(787) E42: 2 
-(788) Data markets: 2 
-(789) IIoT: 2 
-(790) Trustless: 2 
-(791) Trust model: 2 
-(792) RSA: 2 
-(793) BPMN: 2 
-(794) Recruitment: 2 
-(795) eHealth: 2 
-(796) Digital evidence: 2 
-(797) Coordination: 2 
-(798) Availability: 2 
-(799) BIM: 2 
-(800) Distributed system: 2 
-(801) Robustness: 2 
-(802) Intelligent vehicles: 2 
-(803) Voting: 2 
-(804) Location privacy: 2 
-(805) Electricity market: 2 
-(806) Throughput: 2 
-(807) Mobile edge computing: 2 
-(808) Scientometrics: 2 
-(809) Decentralised applications: 2 
-(810) Incentive mechanism: 2 
-(811) DPoS: 2 
-(812) Competencies: 2 
-(813) CiteSpace: 2 
-(814) Bibliometric study: 2 
-(815) BIoT: 2 
-(816) Initial coin offerings: 2 
-(817) Sidechain: 2 
-(818) Blockchain technology (BT): 2 
-(819) Financial industry: 2 
-(820) PoA: 2 
-(821) Medication: 2 
-(822) Distributed Ledger Technology (DLT): 2 
-(823) Distributed consensus: 2 
-(824) Ganache: 2 
-(825) Policy: 2 
-(826) Risks: 2 
-(827) Process mining: 2 
-(828) Distributed network: 2 
-(829) Collaborative: 2 
-(830) Gamification: 2 
-(831) IOT: 2 
-(832) Auditing: 2 
-(833) Private blockchain: 2 
-(834) DNS: 2 
-(835) Secure logging: 2 
-(836) Algorithms: 2 
-(837) Smart healthcare: 2 
-(838) Africa: 2 
-(839) Data governance: 2 
-(840) Motivation: 2 
-(841) Blockchain-based applications: 2 
-(842) Usability in security and privacy: 2 
-(843) Network services: 2 
-(844) Enterprise information systems: 2 
-(845) Software architectures: 2 
-(846) Formal software verification: 2 
-(847) Type theory: 2 
-(848) Semantics and reasoning: 2 
-(849) Program reasoning: 2 
-(850) Program verification: 2 
-(851) Program semantics: 2 
-(852) Accessibility: 2 
-(853) Accessibility design and evaluation methods: 2 
-(854) Business rules: 2 
-(855)  social and behavioral sciences: 2 
-(856) Economics: 2 
-(857) Operations research: 2 
-(858) Industry and manufacturing: 2 
-(859) Web services: 2 
-(860) Professional topics: 2 
-(861) Management of computing and information systems: 2 
-(862) Project and people management: 2 
-(863) Project management techniques: 2 
-(864) Software implementation planning: 2 
-(865) Software design techniques: 2 
-(866) Pricing bubbles: 2 
-(867) Digital payment: 2 
-(868) Mobile payment: 2 
-(869) Mobile banking: 2 
-(870) SPV: 2 
-(871) Crytocurrency: 2 
-(872) Hash tree: 2 
-(873) Cryptocurrency usage: 2 
-(874) Cryptocurrency benefits: 2 
-(875) Cryptocurrency behaviour: 2 
-(876) Prediction: 2 
-(877) Investor attention: 2 
-(878) Cryptocurrency market: 2 
-(879) Linear and nonlinear causality: 2 
-(880) Google Trends: 2 
-(881) Hash algorithm: 2 
-(882) Quantile regression: 2 
-(883) G14: 2 
-(884) Proof of ownership: 2 
-(885) Proof of provenance: 2 
-(886) Ether: 2 
-(887) ETH: 2 
-(888) Hurst exponent: 2 
-(889) Triangular arbitrage: 2 
-(890) Ether exchange rates: 2 
-(891) Time series prediction: 2 
-(892) Momentum: 2 
-(893) Asset pricing: 2 
-(894) Portfolio performance: 2 
-(895) JEL classification: G11: 2 
-(896) Cryptocurrency Users’ Knowledge: 2 
-(897) Cryptocurrency Risks: 2 
-(898) Cryptocurrency Benefits: 2 
-(899) Anomalies: 2 
-(900) Momentum effect: 2 
-(901) Abnormal returns: 2 
-(902) Patterns: 2 
-(903) C63: 2 
-(904) BiLSTM: 2 
-(905) Cryptocurrency price prediction: 2 
-(906) Time series: 2 
-(907) Price variation prediction: 2 
-(908) Coin features: 2 
-(909) Feature importance: 2 
-(910) Open source software development: 2 
-(911) Social media activity: 2 
-(912) Stochastic differential equations: 2 
-(913) Maximum likelihood estimation: 2 
-(914) Predictive modeling: 2 
-(915) Criteria: 2 
-(916) Slice matrix: 2 
-(917) Multi-label classification: 2 
-(918) Code clone: 2 
-(919) Opportunism: 2 
-(920) Incomplete contracts: 2 
-(921) G23: 2 
-(922) L14: 2 
-(923) Deep Learning Algorithms for Internet of Medical Things: 2 
-(924) Blockchain adoption: 2 
-(925) Benefits: 2 
-(926) Industrial : 2 
-(927) Smart home: 2 
-(928) Automation: 2 
-(929) Traceability system: 2 
-(930) Issues: 2 
-(931) Smart farming: 2 
-(932) Blockchain security: 2 
-(933) DApp: 2 
-(934) Disruptive innovation: 2 
-(935) K15: 2 
-(936) Wireless sensor network: 2 
-(937) Initial Coin Offerings: 2 
-(938) Money laundering: 2 
-(939) Terrorism financing: 2 
-(940) Information security: 2 
-(941) Multimedia: 2 
-(942) Authorization: 2 
-(943) Nakamoto blockchain: 1 
-(944) Poisson process: 1 
-(945) Community: 1 
-(946) Trust Relationship: 1 
-(947) Trusted Third Party: 1 
-(948) Trust Establishment: 1 
-(949) Direct Trust: 1 
-(950) Cloud Storage Server: 1 
-(951) Technical image: 1 
-(952) High-frequency trading: 1 
-(953) Reputation management: 1 
-(954) Self-determined learning: 1 
-(955) e-portfolios: 1 
-(956) Records of achievement: 1 
-(957) Medical record: 1 
-(958) Big data analytic: 1 
-(959) Tokenization: 1 
-(960) Firmware verification and update: 1 
-(961) Healthcare data system: 1 
-(962) Indicator-centric schema: 1 
-(963) Healthcare data sharing: 1 
-(964) Privacy risk: 1 
-(965) Uniform Commercial Code: 1 
-(966) Secured transactions: 1 
-(967) UCC Filing: 1 
-(968) Government records: 1 
-(969) Fraud detection: 1 
-(970) Rating fraud: 1 
-(971) Banking ledgers: 1 
-(972) Exchange clearing: 1 
-(973) Banking industry transformation: 1 
-(974) Blind signatures: 1 
-(975) Digital art: 1 
-(976) Financialisation: 1 
-(977) Art market: 1 
-(978) Monegraph: 1 
-(979) Orchestration: 1 
-(980) Equity crowdfunding: 1 
-(981) Equity registration and transaction: 1 
-(982) Voting of Shareholders: 1 
-(983) Regulation of equity crowdfunding: 1 
-(984) Off-chain transactions: 1 
-(985) Duplex micropayment channels: 1 
-(986) Synopsis: 1 
-(987) P2P platforms evolution: 1 
-(988) Social technology: 1 
-(989) New economy: 1 
-(990) Self-organizing communities: 1 
-(991) Adhocracies: 1 
-(992) Catallaxies: 1 
-(993) Digital cash: 1 
-(994) Network privacy and anonymity: 1 
-(995) Network structure: 1 
-(996) Topology analysis and generation: 1 
-(997) Application layer protocols: 1 
-(998) Peer-to-peer protocols: 1 
-(999) Public services sector: 1 
-(1000) Double taxation treaties: 1 
-(1001) Chain Growth: 1 
-(1002) Security Parameter: 1 
-(1003) Network Delay: 1 
-(1004) Attack Strategy: 1 
-(1005) Local energy markets: 1 
-(1006) Market design: 1 
-(1007) Disintegration: 1 
-(1008) Blockchain-based Applications: 1 
-(1009) Consensus Network: 1 
-(1010) InterPlanetary File System (IPFS): 1 
-(1011) Distributed Denial-of-Service (DDoS): 1 
-(1012) Software-defined Networks (SDN): 1 
-(1013) Network management: 1 
-(1014) Reshoring: 1 
-(1015) Made in Italy: 1 
-(1016) Behavior pattern clustering: 1 
-(1017) Clustering: 1 
-(1018) Sequences: 1 
-(1019) BlockchainDB: 1 
-(1020) Verifiable encrypted signature: 1 
-(1021) Penalty: 1 
-(1022) Authcoin: 1 
-(1023) Colored Petri Net: 1 
-(1024) Identity proofs: 1 
-(1025) Discrete Logarithm REPresentation (DLREP): 1 
-(1026) Personal Identity Management Systems (PIMS): 1 
-(1027) Practice: 1 
-(1028) Trust-free commercial system: 1 
-(1029) Asymmetric information: 1 
-(1030) Limited Group: 1 
-(1031) Technical Failure: 1 
-(1032) Wrong Result: 1 
-(1033) Transaction Data: 1 
-(1034) High Processing Speed: 1 
-(1035) Modelling: 1 
-(1036) Petri Net: 1 
-(1037) Quick query: 1 
-(1038) Binary division: 1 
-(1039) Initial Public Offering: 1 
-(1040) Real Money: 1 
-(1041) Open Source Software Project: 1 
-(1042) Financial Contract: 1 
-(1043) Asymmetric Cryptography: 1 
-(1044) ICT platform: 1 
-(1045) Research framework: 1 
-(1046) Service system: 1 
-(1047) Technology impact: 1 
-(1048) Decentralized Autonomous Organizations: 1 
-(1049) 5: 1 
-(1050) Government blockchain: 1 
-(1051) Proxy Signing Key: 1 
-(1052) Slot Leader: 1 
-(1053) Publicly Verifiable Secret Sharing (PVSS): 1 
-(1054) Stakeholder Distribution: 1 
-(1055) Range Query: 1 
-(1056) Block Data: 1 
-(1057) Query Interface: 1 
-(1058) Hash Code: 1 
-(1059) Analytical Query: 1 
-(1060) Enterprise ontology: 1 
-(1061) Business model ontology: 1 
-(1062) REA: 1 
-(1063) Fuzzy signature: 1 
-(1064) PBI: 1 
-(1065) Credit Card: 1 
-(1066) Financial Service: 1 
-(1067) Payment System: 1 
-(1068) Financial Intermediary: 1 
-(1069) Financial Inclusion: 1 
-(1070) E-democracy: 1 
-(1071) Record Management: 1 
-(1072) World Economic Forum: 1 
-(1073) Digital Item: 1 
-(1074) Notary Service: 1 
-(1075) Digital Identity: 1 
-(1076) Value-Added Tax: 1 
-(1077) Tax credits: 1 
-(1078) Biomedical repositories: 1 
-(1079) Cryptographic techniques: 1 
-(1080) Firmware verification: 1 
-(1081) Empirical studies in collaborative and social computing: 1 
-(1082) Computers in other domains: 1 
-(1083) Computing in government: 1 
-(1084) Distributed computing methodologies: 1 
-(1085) Research Challenges and Opportunities in Security and Privacy of Blockchain Technologies: 1 
-(1086) Internet-of-Things (IoT) Big Data Trust Management: 1 
-(1087) T security: 1 
-(1088) T protocols: 1 
-(1089) Smart Cities: 1 
-(1090) Blockchain 2.0: 1 
-(1091) Intellectual Battleground: 1 
-(1092) Digital Currency: 1 
-(1093) Austrian School: 1 
-(1094) Coalition formation: 1 
-(1095) Educational evaluation: 1 
-(1096) Learning is earning: 1 
-(1097) Bank account: 1 
-(1098) Bottom-of-the-pyramid: 1 
-(1099) Context: 1 
-(1100) Digital: 1 
-(1101) Edelman trust barometer: 1 
-(1102) Enforcement: 1 
-(1103) Entrepreneurship: 1 
-(1104) Everex: 1 
-(1105) Expectations: 1 
-(1106) Financial inclusion: 1 
-(1107) Financial services research forum: 1 
-(1108) Formal: 1 
-(1109) G-cash: 1 
-(1110) Government: 1 
-(1111) ICT: 1 
-(1112) Infomediaries: 1 
-(1113) Informal: 1 
-(1114) Informal practices: 1 
-(1115) Informality: 1 
-(1116) Information asymmetries: 1 
-(1117) Lending: 1 
-(1118) Low income: 1 
-(1119) Microfinance: 1 
-(1120) Mobile: 1 
-(1121) Motivations: 1 
-(1122) M-Pesa: 1 
-(1123) Non-monetary barriers: 1 
-(1124) Pareto: 1 
-(1125) Practices: 1 
-(1126) Qualitative: 1 
-(1127) Remittances: 1 
-(1128) Social entrepreneurs: 1 
-(1129) Sociotechnical approach: 1 
-(1130) Transactional costs: 1 
-(1131) Trust asymmetry: 1 
-(1132) Unbanked: 1 
-(1133) Wetrust: 1 
-(1134) World Bank: 1 
-(1135) Blockchain Data: 1 
-(1136) Bitcoin Address: 1 
-(1137) Block Subsidy: 1 
-(1138) Task allocation: 1 
-(1139) Multi-robot systems: 1 
-(1140) NIZK: 1 
-(1141) Argument of knowledge: 1 
-(1142) Cyber-physical system-of-systems: 1 
-(1143) Industrial Internet of Things: 1 
-(1144) Interoperability of information: 1 
-(1145) Self-organisation: 1 
-(1146) Genesis Block: 1 
-(1147) Backbone Protocol: 1 
-(1148) Round Complexity: 1 
-(1149) Transaction Ledger: 1 
-(1150) Serverless Architecture: 1 
-(1151) Consortium Blockchain: 1 
-(1152) Abstraction Method: 1 
-(1153) Microservice Architecture: 1 
-(1154) Flexible scientific choreographies: 1 
-(1155) Adaptive smart contracts: 1 
-(1156) Autonomous: 1 
-(1157) Vehicle: 1 
-(1158) Services: 1 
-(1159) Financial transaction: 1 
-(1160) Cryptocurrency-economy: 1 
-(1161) New materialisms: 1 
-(1162) Temporary employment: 1 
-(1163) Discrete event model: 1 
-(1164) Data storage and transmission: 1 
-(1165) P2P insurance: 1 
-(1166) Electronic Voting System: 1 
-(1167) Cross chain: 1 
-(1168) Observer chain: 1 
-(1169) Cyberecurity: 1 
-(1170) Video evidence: 1 
-(1171) Criminal records: 1 
-(1172) Cloud network: 1 
-(1173) Law enforcement: 1 
-(1174) Private User Data: 1 
-(1175) Trusted Execution Environment (TEE): 1 
-(1176) Remote Attestation: 1 
-(1177) Smart tourism: 1 
-(1178) Product traceability: 1 
-(1179) Proof of delivery: 1 
-(1180) Umsatzsteuer: 1 
-(1181) Value-added Tax: 1 
-(1182) Ownership authenticity: 1 
-(1183) Originality: 1 
-(1184) Online publishing: 1 
-(1185) New retail: 1 
-(1186) POS system: 1 
-(1187) Data hiding: 1 
-(1188) Log certification: 1 
-(1189) Multi-party transactions: 1 
-(1190) Network protocol-transport layer: 1 
-(1191) UINP application-layer protocol: 1 
-(1192) UINP transport-layer protocol: 1 
-(1193) Dual-key stealth address: 1 
-(1194) Reengineering: 1 
-(1195) Mutual funds: 1 
-(1196) Performance evaluation: 1 
-(1197) Holistic approach: 1 
-(1198) Democracy: 1 
-(1199) Global capitalism: 1 
-(1200) Social movements: 1 
-(1201) Streams: 1 
-(1202) Hash value: 1 
-(1203) Digilocker: 1 
-(1204) Counterfeit detection: 1 
-(1205) NFC: 1 
-(1206) Product history tracking: 1 
-(1207) Identity and Access Management: 1 
-(1208) Legal contracts: 1 
-(1209) Tobacco supply chain: 1 
-(1210) scientific communications: 1 
-(1211) virtual scientific communications: 1 
-(1212) scientific and information service: 1 
-(1213) scientific and information support: 1 
-(1214) hash function: 1 
-(1215) voting: 1 
-(1216) P2P sharing: 1 
-(1217) Coupon: 1 
-(1218) Bonus feedback: 1 
-(1219) Vehicle data sharing: 1 
-(1220) Automotive security and privacy: 1 
-(1221) Open Vehicle Data Platform: 1 
-(1222) Privacy settings: 1 
-(1223) Quantified vehicles: 1 
-(1224) Initial coin offerings (ICOs): 1 
-(1225) Technology neutrality: 1 
-(1226) Insolvency law: 1 
-(1227) Incentive design: 1 
-(1228) Critique: 1 
-(1229) Music industry: 1 
-(1230) Proof of existence: 1 
-(1231) Business process management (BPM): 1 
-(1232) Block-chain technology (BCT): 1 
-(1233) Service selection and composition: 1 
-(1234) Quality of Services (QoS): 1 
-(1235) VM migration: 1 
-(1236) Audit system: 1 
-(1237) Privacy policy: 1 
-(1238) Quantum computation: 1 
-(1239) Proxy re-encryption: 1 
-(1240) Threshold secret sharing: 1 
-(1241) Complex systems: 1 
-(1242) Social physics: 1 
-(1243) Network analysis: 1 
-(1244) ERC20 tokens: 1 
-(1245) Multi-energy system: 1 
-(1246) Dynamic pricing: 1 
-(1247) Internet-Of-Things: 1 
-(1248) Konsensalgorithmus: 1 
-(1249) Asymmetrische Verschlüsselung: 1 
-(1250) Verteilte Buchführung: 1 
-(1251) Kryptowährung: 1 
-(1252) Asymmetric encryption: 1 
-(1253) Distibuted ledger: 1 
-(1254) Privacy Preserving Biometric Identification (PPBI): 1 
-(1255) Zerocoin: 1 
-(1256) Hill climbing attacks: 1 
-(1257) Secure provenance: 1 
-(1258) Transaction network: 1 
-(1259) Bitcoin adoption: 1 
-(1260) Evoting: 1 
-(1261) Spatio-temporal queries: 1 
-(1262) Block-DAG: 1 
-(1263) Centralized Cloud Storage: 1 
-(1264) Open-data Environment: 1 
-(1265) Insurance industry: 1 
-(1266) Political economy: 1 
-(1267) Financial intermediation: 1 
-(1268) Discrimination: 1 
-(1269) Distributed capitalism: 1 
-(1270) Maritime industry: 1 
-(1271) Green supply chain: 1 
-(1272) Green IT: 1 
-(1273) Charging station: 1 
-(1274) Hash-based Signature Scheme: 1 
-(1275) Authenticated Data Structures: 1 
-(1276) Root Hash: 1 
-(1277) Hash Chain: 1 
-(1278) Procedural justice: 1 
-(1279) Autonomous identity: 1 
-(1280) Reciprocity: 1 
-(1281) Active citizen: 1 
-(1282) Information protection: 1 
-(1283) Certification: 1 
-(1284) Quantum Mechanics: 1 
-(1285) Heisenberg Uncertainty Principle: 1 
-(1286) Neuroscience: 1 
-(1287) Energy sector: 1 
-(1288) Electric utility: 1 
-(1289) Business process innovation: 1 
-(1290) Energy transformation: 1 
-(1291) Credit rationing: 1 
-(1292) SMEs financing: 1 
-(1293) G30: 1 
-(1294) Relational database: 1 
-(1295) Performance testing: 1 
-(1296) MySQL: 1 
-(1297) Architecture styles: 1 
-(1298) Content capsule: 1 
-(1299) E-book: 1 
-(1300) Learning economy: 1 
-(1301) Online education: 1 
-(1302) Decentralized features: 1 
-(1303) Garment chain: 1 
-(1304) Behavior auditing: 1 
-(1305) Customizable log: 1 
-(1306) Blockchain as a Service: 1 
-(1307) Service paradigm: 1 
-(1308) Performance: 1 
-(1309) Citizens Broadband Radio Service: 1 
-(1310) Cognitive radio: 1 
-(1311) Mobile broadband: 1 
-(1312) Peer-to-peer networking: 1 
-(1313) Cloud environment: 1 
-(1314) IT selection process: 1 
-(1315) Decision models: 1 
-(1316) Distributed-Ledger-Technology: 1 
-(1317) Auswahlprozess: 1 
-(1318) Fallstudie: 1 
-(1319) Entscheidungsmodelle: 1 
-(1320) Digitales Publizieren: 1 
-(1321) Geschäftsmodelle für die Blockchain: 1 
-(1322) Anwendungen der Blockchain-Technologie: 1 
-(1323) Digital publishing: 1 
-(1324) Business models for the blockchain: 1 
-(1325) Applications of blockchain technology: 1 
-(1326) Blockchain publishing: 1 
-(1327) Supplier switching: 1 
-(1328) Market communication: 1 
-(1329) Roaming: 1 
-(1330) Blockchain Applications: 1 
-(1331) Excellent Potential Applications: 1 
-(1332) Root exploit: 1 
-(1333) Android: 1 
-(1334) Domain-specific Language (DSL): 1 
-(1335) Current Block Number: 1 
-(1336) Bitcoin Scripting: 1 
-(1337) Attribute-based cryptosystem: 1 
-(1338) Node failure: 1 
-(1339) Communication tree: 1 
-(1340) Communication time: 1 
-(1341) Non-functional requirements: 1 
-(1342) Comparative analysis: 1 
-(1343) SLA: 1 
-(1344) Cloud service federation: 1 
-(1345) Kelsen: 1 
-(1346) Schmitt: 1 
-(1347) State of exception: 1 
-(1348) Technology usage: 1 
-(1349) Smart places: 1 
-(1350) Cryptocurrency exchange: 1 
-(1351) Organisational adoption: 1 
-(1352) Innovation theory: 1 
-(1353) TOE considerations: 1 
-(1354) Surveys: 1 
-(1355) Manuscript review system: 1 
-(1356) Browser resource integrity: 1 
-(1357) Code poisoning: 1 
-(1358) Software delivery: 1 
-(1359) Code review: 1 
-(1360) Smart Home: 1 
-(1361) Food Supply Chain: 1 
-(1362) Traditional Blockchain: 1 
-(1363) Hazard Analysis And Critical Control Points (HACCP): 1 
-(1364) Business: 1 
-(1365) Decentralized databases: 1 
-(1366) Organizations: 1 
-(1367) Geospatial blockchain: 1 
-(1368) Crypto-spatial coordinate system: 1 
-(1369) Pharmaceuticals: 1 
-(1370) Agent-based modeling: 1 
-(1371) AI-powered network: 1 
-(1372) permissioned blockchain: 1 
-(1373) fine-grained access control: 1 
-(1374) Networked hospitality services: 1 
-(1375) Anonymity and accountability: 1 
-(1376) Voter-verified Paper Audit Trail (VVPATs): 1 
-(1377) Internet Voting: 1 
-(1378) Electronic Voting: 1 
-(1379) Voting Machines: 1 
-(1380) Purchasing: 1 
-(1381) Container-based cloud platform: 1 
-(1382) Hash encryption: 1 
-(1383) Node protection: 1 
-(1384) Secure food transaction: 1 
-(1385) Consensus process: 1 
-(1386) Online double auction: 1 
-(1387) Combination strategy: 1 
-(1388) Offshore wind energy supply chain: 1 
-(1389) Visibility: 1 
-(1390) Decentralized power supply: 1 
-(1391) Cellular concept: 1 
-(1392) Renewable energies: 1 
-(1393) Internet of Vehicles: 1 
-(1394) SD-IoV: 1 
-(1395) Audit: 1 
-(1396) Dynamic publications: 1 
-(1397) Open decentralised publishing: 1 
-(1398) Collaborative processes: 1 
-(1399) DMN: 1 
-(1400) Personal Health Information (PHI): 1 
-(1401) Academic social network: 1 
-(1402) Reputation building: 1 
-(1403) Proof of reputation: 1 
-(1404) Data monetization: 1 
-(1405) MultiChain: 1 
-(1406) Cooperative evaluation: 1 
-(1407) ERP system: 1 
-(1408) Medical data sharing: 1 
-(1409) Openness: 1 
-(1410) Digital contents of cultural heritage: 1 
-(1411) Verification system: 1 
-(1412) Data transfer integrity: 1 
-(1413) Decentralized application (Dapp): 1 
-(1414) Uberisation: 1 
-(1415) People-to-People Economy (P2PE): 1 
-(1416) Tourism industry: 1 
-(1417) World economic forum: 1 
-(1418) Digital tourism: 1 
-(1419) Travel industry: 1 
-(1420) Tourism organizations: 1 
-(1421) Destination management organization (DMO): 1 
-(1422) Interviews: 1 
-(1423) Semi-structured interviews: 1 
-(1424) Agency theory (AT): 1 
-(1425) Transaction cost theory (TCT): 1 
-(1426) Resource-based view of the firm (RBV): 1 
-(1427) Actor network theory (ANT): 1 
-(1428) Agent: 1 
-(1429) Intermediation: 1 
-(1430) Market structures: 1 
-(1431) Communication structures: 1 
-(1432) Queueing theory: 1 
-(1433) Matrix-geometric solutions: 1 
-(1434) Mining process: 1 
-(1435) Block-generation process: 1 
-(1436) Blockchain-building process: 1 
-(1437) cloud computing: 1 
-(1438) Paillier cryptosystem: 1 
-(1439) Bitcoin (BTC): 1 
-(1440) Consensus Algorithm: 1 
-(1441) Elliptic Curve Digital Signature Algorithm (ECDSA): 1 
-(1442) Dependability: 1 
-(1443) Process management: 1 
-(1444) Model transformation: 1 
-(1445) Cyber supply chain: 1 
-(1446) Accountability: 1 
-(1447) Energy delivery system: 1 
-(1448) Medical insurance: 1 
-(1449) Multi-parties computing: 1 
-(1450) Digital identity: 1 
-(1451) IBE: 1 
-(1452) Payments industry: 1 
-(1453) Financial services sector: 1 
-(1454) Delphi study: 1 
-(1455) Experts: 1 
-(1456) Discussion agenda: 1 
-(1457) Impact: 1 
-(1458) Dissemination: 1 
-(1459) Pain points: 1 
-(1460) Agreement: 1 
-(1461) Unison: 1 
-(1462) Ranking: 1 
-(1463) Blockchain testing: 1 
-(1464) P2P testing: 1 
-(1465) Containers: 1 
-(1466) Syllabus: 1 
-(1467) Understanding blockchain: 1 
-(1468) Usage factor: 1 
-(1469) Multi-agent system: 1 
-(1470) Lightweight hash functions: 1 
-(1471) Random neural network: 1 
-(1472) Digital documentation: 1 
-(1473) Distributed Robotics: 1 
-(1474) Decentralised systems: 1 
-(1475) Swarm Intelligence: 1 
-(1476) Collective Behavior: 1 
-(1477) New business models: 1 
-(1478) Bullwhip effect: 1 
-(1479) Proof of Work (PoW): 1 
-(1480) Discrete-event simulation: 1 
-(1481) Performance metric: 1 
-(1482) Quality of Blockchain (QoB): 1 
-(1483) Distributed Ledger Technologies: 1 
-(1484) Payments: 1 
-(1485) E-government systems: 1 
-(1486) Adoption constraints: 1 
-(1487) Data preservation: 1 
-(1488) Sensitive data: 1 
-(1489) OpenLitterMap: 1 
-(1490) Littercoin: 1 
-(1491) Plastic pollution: 1 
-(1492) Startup: 1 
-(1493) Service quality: 1 
-(1494) Social aspects of security and privacy: 1 
-(1495) Proof-of-Work (PoW): 1 
-(1496) Computing / technology policy: 1 
-(1497) Computer crime: 1 
-(1498) Embedded systems security: 1 
-(1499) Tamper-proof and tamper-resistant designs: 1 
-(1500) Multi-factor authentication: 1 
-(1501) Neural Engineering Informatics: 1 
-(1502) Distributed Computing Infrastructure for Cyber-Physical Systems: 1 
-(1503) Mobile Edge Computing and Mobile Cloud Computing: Addressing Heterogeneity and Energy Issues of Compute and Network Resources: 1 
-(1504) Mobile Service Computing with Internet of Things: 1 
-(1505) Key : 1 
-(1506) Words: 1 
-(1507) Radiology: 1 
-(1508) S2: 1 
-(1509) Data structure: 1 
-(1510) Alternative current: 1 
-(1511) B2: 1 
-(1512) Back-to-back: 1 
-(1513) Central processing unit: 1 
-(1514) Combined heat and power: 1 
-(1515) Direct current: 1 
-(1516) European : 1 
-(1517) Union: 1 
-(1518) Feed-in-tariff: 1 
-(1519) Greenhouse gas emission: 1 
-(1520) Information and communication technologies: 1 
-(1521) O&: 1 
-(1522) Operations and maintenance: 1 
-(1523) Stake: 1 
-(1524) United : 1 
-(1525) Nations : 1 
-(1526) Framework : 1 
-(1527) Convention on : 1 
-(1528) Climate : 1 
-(1529) Change: 1 
-(1530) Virtual power plant: 1 
-(1531) Protocols: 1 
-(1532) Energy decentralisation: 1 
-(1533) Peer-to-peer energy trading: 1 
-(1534) Distributed ledger technology (: 1 
-(1535) Project : 1 
-(1536) Bank : 1 
-(1537) Accounts (: 1 
-(1538) As): 1 
-(1539) Regulations and compliance: 1 
-(1540) Unstructured data: 1 
-(1541) Land administration: 1 
-(1542) Land : 1 
-(1543) Registration: 1 
-(1544) Cadastre: 1 
-(1545) E 802.15.6: 1 
-(1546) M2: 1 
-(1547) Reference architecture: 1 
-(1548) Agroindustry: 1 
-(1549) Food transparency: 1 
-(1550) Seafood: 1 
-(1551) Aquaculture: 1 
-(1552) Fingerprinting: 1 
-(1553) Fault detection: 1 
-(1554) Fault diagnosis: 1 
-(1555) Nbiomassheating valueelemental compositiontransfer functionsprediction models: 1 
-(1556) Robotic farming: 1 
-(1557) Digital social science: 1 
-(1558) Responsible research and innovation: 1 
-(1559) Agricultural knowledge and innovation systems: 1 
-(1560) Data tampering security risk: 1 
-(1561) Security risk management: 1 
-(1562) Security modelling: 1 
-(1563) Entitlement management: 1 
-(1564) ODRL: 1 
-(1565) Anonymous: 1 
-(1566) Real estate industry: 1 
-(1567) Transactions: 1 
-(1568) Blockchain-aware business processes: 1 
-(1569) Open source: 1 
-(1570) Social coding: 1 
-(1571) Intellectual property protection: 1 
-(1572) Material incentives: 1 
-(1573) Smart wallets: 1 
-(1574) Costs: 1 
-(1575) Credible: 1 
-(1576) Decentralized system: 1 
-(1577) Proof-of-credibility: 1 
-(1578) Permissioned Blockchain: 1 
-(1579) Applied Pi-Calculus: 1 
-(1580) Shamir secret sharing: 1 
-(1581) Multi-party computation: 1 
-(1582) MAS: 1 
-(1583) Goal-based XAI: 1 
-(1584) Explainability: 1 
-(1585) Off-chain payment: 1 
-(1586) Flexibility: 1 
-(1587) Double-spending: 1 
-(1588) Firmware update: 1 
-(1589) ECDH: 1 
-(1590) Medical dispute: 1 
-(1591) Healthcare technology: 1 
-(1592) Health informatics: 1 
-(1593) Medical licensure: 1 
-(1594) Electronic health records: 1 
-(1595) Data Mining: 1 
-(1596) Big Data analytics: 1 
-(1597) Identity-based public auditing: 1 
-(1598) Collusion attack: 1 
-(1599) Fake products: 1 
-(1600) Information system: 1 
-(1601) Research project: 1 
-(1602) Dataflow: 1 
-(1603) Food traceability: 1 
-(1604) Database entity and attributes: 1 
-(1605) Cryptographic algorithm: 1 
-(1606) Remote patient monitoring: 1 
-(1607) SSL: 1 
-(1608) TLS: 1 
-(1609) Repository: 1 
-(1610) Senarai: 1 
-(1611) Tron: 1 
-(1612) Agents group: 1 
-(1613) Reputation capital: 1 
-(1614) Vision control systems: 1 
-(1615) Mobile money: 1 
-(1616) ICT4D: 1 
-(1617) Internet-underserved areas: 1 
-(1618) Auditing of controller: 1 
-(1619) Distributed key generation: 1 
-(1620) Offline channels: 1 
-(1621) Bitcoin lightning network: 1 
-(1622) Flocking: 1 
-(1623) Tactical Data Link: 1 
-(1624) Data transmission control: 1 
-(1625) Demand side management: 1 
-(1626) Energy trading and privacy preserving: 1 
-(1627) P2P Network: 1 
-(1628) Filecoin: 1 
-(1629) Interplanetary file system: 1 
-(1630) Referential integrity: 1 
-(1631) Data access: 1 
-(1632) Data stores: 1 
-(1633) Data storage and access: 1 
-(1634) Marketing data: 1 
-(1635) Contour curve: 1 
-(1636) Skewness: 1 
-(1637) Trusted timestamping: 1 
-(1638) Ethereum blockchain: 1 
-(1639) Digital preservation: 1 
-(1640) Copyright protection: 1 
-(1641) Peer-to-Peer networks: 1 
-(1642) Development process: 1 
-(1643) P2P energy trade: 1 
-(1644) Proximity storage: 1 
-(1645) Licensing: 1 
-(1646) Medicines network: 1 
-(1647) Attendance management system: 1 
-(1648) Unforgeable: 1 
-(1649) Trustable framework: 1 
-(1650) IoT data: 1 
-(1651) Safety: 1 
-(1652) Content cache: 1 
-(1653) VEC: 1 
-(1654) Private data sharing: 1 
-(1655) Shared model training: 1 
-(1656) Blockchain access control: 1 
-(1657) Consortium data exchange: 1 
-(1658) Deep learning training: 1 
-(1659) Pipelined code: 1 
-(1660) Diploma: 1 
-(1661) Blockchain-based coordination: 1 
-(1662) Linda on Ethereum: 1 
-(1663) Linda on Fabric: 1 
-(1664) Linda on Corda: 1 
-(1665) Port of Hamburg: 1 
-(1666) Seafreight: 1 
-(1667) Pig supply chain: 1 
-(1668) Trustworthy traceability: 1 
-(1669) Electronic records management: 1 
-(1670) Credibility and authenticity: 1 
-(1671) Key business process: 1 
-(1672) Evidence chain model: 1 
-(1673) Startup assessment: 1 
-(1674) Social programs: 1 
-(1675) Scholar feeding program: 1 
-(1676) Software production: 1 
-(1677) Software development integrity: 1 
-(1678) Test-driven software development: 1 
-(1679) Access rights: 1 
-(1680) Delegation: 1 
-(1681) Medical records: 1 
-(1682) Council of Europe: 1 
-(1683) Consents management: 1 
-(1684) Policy-based access control: 1 
-(1685) Data privacy ontology: 1 
-(1686) STIX™: 1 
-(1687) SWRL: 1 
-(1688) OWL: 1 
-(1689) Dynamic Risk Management (DRM): 1 
-(1690) Cyber threat intelligence (CTI): 1 
-(1691) Ethereum Blockchain Smart contract: 1 
-(1692) The protection of digital copyright: 1 
-(1693) Time stamp: 1 
-(1694) Data share: 1 
-(1695) Auditable: 1 
-(1696) DHT: 1 
-(1697) COMT supply chain: 1 
-(1698) Decentralized consensus: 1 
-(1699) EMR: 1 
-(1700) Pharma: 1 
-(1701) Health information exchange: 1 
-(1702) Pharmacogenomics: 1 
-(1703) Precision medicine: 1 
-(1704) Agile: 1 
-(1705) Scrum: 1 
-(1706) Space information network: 1 
-(1707) authentication: 1 
-(1708) decentralized infrastructure: 1 
-(1709) certification authorities: 1 
-(1710) Blockstack infrastructure: 1 
-(1711) Role-playing game: 1 
-(1712) Flipped learning: 1 
-(1713) 3d animation teaching material: 1 
-(1714) Transaction management: 1 
-(1715) Log: 1 
-(1716) Zk-SNARKs: 1 
-(1717) Economy: 1 
-(1718) Future: 1 
-(1719) Mining attacks and distributed techniques: 1 
-(1720) Anti-fraud: 1 
-(1721) Supervised: 1 
-(1722) Xgboost: 1 
-(1723) Random forests: 1 
-(1724) SVM: 1 
-(1725) Critical national infrastructure (CNI): 1 
-(1726) SCADA: 1 
-(1727) Threat factors: 1 
-(1728) Red teaming: 1 
-(1729) Cyberwarfare: 1 
-(1730) Data breaches: 1 
-(1731) Cyber operations: 1 
-(1732) Hyperledger and Blind signature: 1 
-(1733) Data retention: 1 
-(1734) e-ID: 1 
-(1735) eGovernment: 1 
-(1736) Tracking: 1 
-(1737) Evolution of money: 1 
-(1738) Crypto currencies: 1 
-(1739) Darwinian evolution for crypto currencies: 1 
-(1740) Manufacturing value chain: 1 
-(1741) Inter-organizational processes: 1 
-(1742) Aesthetics: 1 
-(1743) Interactional aesthetics: 1 
-(1744) Internet of services: 1 
-(1745) Cyber physical sytems: 1 
-(1746) Space networking: 1 
-(1747) Incentive protocol of routing: 1 
-(1748) Space and ground network integration: 1 
-(1749) Blockchain Process Reengineering: 1 
-(1750) Parking industry: 1 
-(1751) Microlending: 1 
-(1752) Naive bayes classifier: 1 
-(1753) Neural Network: 1 
-(1754) User Management: 1 
-(1755) Crowd Sensing Network: 1 
-(1756) Service consumer: 1 
-(1757) Gas consumption: 1 
-(1758) Automata: 1 
-(1759) DFA: 1 
-(1760) Computation: 1 
-(1761) Economy of Austria: 1 
-(1762) Regression theorem: 1 
-(1763) Monetary system: 1 
-(1764) E-money: 1 
-(1765) E59: 1 
-(1766) Service provisioning: 1 
-(1767) Practice-based research: 1 
-(1768) Learning content creation: 1 
-(1769) AD token: 1 
-(1770) AD media promotion system: 1 
-(1771) Internet-of-Things (IoT): 1 
-(1772) Distributed pattern recognition: 1 
-(1773) Event processing: 1 
-(1774) Trade supply chain: 1 
-(1775) Intelligent buildings: 1 
-(1776) Smart infrastructure: 1 
-(1777) Patient-centric: 1 
-(1778) Certificateless proxy re-encryption: 1 
-(1779) Private data: 1 
-(1780) Distributed mobility service: 1 
-(1781) Ridesharing: 1 
-(1782) Distributed generation: 1 
-(1783) Photovoltaic: 1 
-(1784) Electric vehicles: 1 
-(1785) Solar energy: 1 
-(1786) Electric grid: 1 
-(1787) Solid: 1 
-(1788) Certificateless cryptography: 1 
-(1789) Performance modeling: 1 
-(1790) Fork-join queueing network: 1 
-(1791) Mean-value analysis: 1 
-(1792) I4.0: 1 
-(1793) Temporal epistemic logic with probabilities: 1 
-(1794) Formal model: 1 
-(1795) Specification/verification: 1 
-(1796) New Zealand real estate: 1 
-(1797) Information value chain: 1 
-(1798) Iterative double auction: 1 
-(1799) State channel: 1 
-(1800) Certificate: 1 
-(1801) signature: 1 
-(1802) consortium: 1 
-(1803) interactive proof: 1 
-(1804) Encryption algorithms: 1 
-(1805) ECC: 1 
-(1806) GHOST: 1 
-(1807) Provable security: 1 
-(1808) Blockchain protocols: 1 
-(1809) Electronic Health Record: 1 
-(1810) Replicated systems: 1 
-(1811) Byzantine failures: 1 
-(1812) Artificial Intelligence: 1 
-(1813) Job matching: 1 
-(1814) Forensic readiness: 1 
-(1815) Incident response: 1 
-(1816) Digital witness: 1 
-(1817) Decentralised computing: 1 
-(1818) Liability attribution: 1 
-(1819) Asset tokenization: 1 
-(1820) Incentive analysis: 1 
-(1821) Blockchain application: 1 
-(1822) Emergent organization: 1 
-(1823) Software updates: 1 
-(1824) System chaincode: 1 
-(1825) Usage control: 1 
-(1826) Continuous monitoring: 1 
-(1827) Banknotes: 1 
-(1828) Digital money: 1 
-(1829) Cooperation innovation: 1 
-(1830) Internet +: 1 
-(1831) Blockchain WEB: 1 
-(1832) Sensor network: 1 
-(1833) Data quality: 1 
-(1834) Markovian arrival process (MAP): 1 
-(1835) Phase type (PH) distribution: 1 
-(1836) Matrix-geometric solution: 1 
-(1837) Block-structured Markov process: 1 
-(1838) 
+(1) Blockchain: 440 
+(2) Computing and Processing: 147 
+(3) Communication: 146 
+(4)  Networking and Broadcast Technologies: 146 
+(5) Signal Processing and Analysis: 124 
+(6) Robotics and Control Systems: 106 
+(7) Components: 95 
+(8)  Circuits: 95 
+(9)  Devices and Systems: 95 
+(10) Power: 92 
+(11)  Energy and Industry Applications: 92 
+(12) Fields: 75 
+(13)  Waves and Electromagnetics: 75 
+(14) General Topics for Engineers: 73 
+(15) Transportation: 66 
+(16) Bioengineering: 65 
+(17) Photonics and Electrooptics: 64 
+(18) Security: 57 
+(19) Engineering Profession: 56 
+(20) Engineered Materials: 56 
+(21)  Dielectrics and Plasmas: 56 
+(22) Cryptocurrency: 56 
+(23) Aerospace: 52 
+(24) Geoscience: 48 
+(25) Smart contracts: 45 
+(26) Blockchain technology: 43 
+(27) Nuclear Engineering: 43 
+(28) Bitcoin: 41 
+(29) Smart contract: 40 
+(30) Ethereum: 29 
+(31) Privacy: 28 
+(32) Distributed ledger: 25 
+(33) Trust: 19 
+(34) Distributed ledger technology: 18 
+(35) Internet of Things: 18 
+(36) Cryptocurrencies: 17 
+(37) Healthcare: 17 
+(38) IoT: 17 
+(39) Io: 14 
+(40) Decentralization: 13 
+(41) Machine learning: 12 
+(42) Security and privacy: 12 
+(43) E: 12 
+(44) Supply chain: 11 
+(45) Internet of things: 10 
+(46) Cryptography: 10 
+(47) Industry 4.0: 10 
+(48) Artificial intelligence: 10 
+(49) Big data: 9 
+(50) Supply chain management: 9 
+(51) T: 9 
+(52) Hyperledger: 9 
+(53) Literature review: 8 
+(54) Consensus: 8 
+(55) Access control: 8 
+(56) Traceability: 8 
+(57) Sustainability: 8 
+(58) Transparency: 7 
+(59) Governance: 7 
+(60) blockchain: 7 
+(61) Consensus algorithm: 7 
+(62) Applications: 7 
+(63) Blockchain applications: 7 
+(64) I: 7 
+(65) Cybersecurity: 7 
+(66) Anonymity: 6 
+(67) Software and its engineering: 6 
+(68) Computer systems organization: 6 
+(69) Peer-to-peer architectures: 6 
+(70) Business model: 6 
+(71) Technology: 6 
+(72) Distributed systems: 6 
+(73) Blockchain Technology: 6 
+(74) Cloud computing: 6 
+(75) Systematic review: 6 
+(76) Networks: 6 
+(77) Authentication: 6 
+(78) Mining: 6 
+(79) P: 6 
+(80) Shari’ah: 6 
+(81) Deep learning: 6 
+(82) Block chain: 5 
+(83) Architectures: 5 
+(84) Distributed architectures: 5 
+(85) Information systems: 5 
+(86) Network security: 5 
+(87) Disintermediation: 5 
+(88) Peer-to-peer: 5 
+(89) Vulnerability: 5 
+(90) Systematic literature review: 5 
+(91) Smart cities: 5 
+(92) General and reference: 5 
+(93) S: 5 
+(94) Law: 5 
+(95) T): 5 
+(96) D: 5 
+(97) Consensus mechanism: 5 
+(98) Digital currency: 4 
+(99) Applied computing: 4 
+(100) Data security: 4 
+(101) Decentralized: 4 
+(102) Fault tolerance: 4 
+(103) Smart city: 4 
+(104) Smart grid: 4 
+(105) Cloud: 4 
+(106) ICO: 4 
+(107) Tourism: 4 
+(108) Smart Contracts: 4 
+(109) Interoperability: 4 
+(110) Verification: 4 
+(111) Review: 4 
+(112) Halal: 4 
+(113) Blockchains: 4 
+(114) Transaction: 4 
+(115) Regulation: 4 
+(116) Digital economy: 4 
+(117) Document types: 4 
+(118) Surveys and overviews: 4 
+(119) Security services: 4 
+(120) B: 4 
+(121) A: 4 
+(122) Edge computing: 4 
+(123) Internet of : 4 
+(124) Data management: 4 
+(125) Education: 4 
+(126) Data privacy: 4 
+(127) Taxonomy: 4 
+(128) Digital transformation: 4 
+(129) Technology adoption: 4 
+(130) DLT: 4 
+(131) Hyperledger Fabric: 4 
+(132) L26: 4 
+(133) G12: 4 
+(134) Scalability: 3 
+(135) Digitalization: 3 
+(136) O33: 3 
+(137) Software organization and properties: 3 
+(138) Software creation and management: 3 
+(139) Platform: 3 
+(140) Reputation: 3 
+(141) Food supply chain: 3 
+(142) DApps: 3 
+(143) Proof-of-Work: 3 
+(144) Collaboration: 3 
+(145) Information asymmetry: 3 
+(146) BlockChain: 3 
+(147) Initial Coin Offerings (ICO): 3 
+(148) Contract: 3 
+(149) Emerging technology: 3 
+(150) Clinical trials: 3 
+(151) Consortium blockchain: 3 
+(152) Smart-contract: 3 
+(153) Logistics: 3 
+(154) Construction industry: 3 
+(155) Multi-agent systems: 3 
+(156) Developing countries: 3 
+(157) Human and societal aspects of security and privacy: 3 
+(158) Internet of Things (IoT): 3 
+(159) World : 3 
+(160) Wide : 3 
+(161) Web: 3 
+(162) Smart : 3 
+(163) R: 3 
+(164) Ethics: 3 
+(165) Innovation: 3 
+(166) Token economics: 3 
+(167) Digital signature: 3 
+(168) LSTM: 3 
+(169) G32: 3 
+(170) Systems security: 3 
+(171) Distributed systems security: 3 
+(172) Consensus protocol: 3 
+(173) Use cases: 3 
+(174) N: 3 
+(175) Software engineering: 3 
+(176) Permissioned blockchain: 3 
+(177) Hash: 3 
+(178) Data integrity: 3 
+(179) Hyperledger fabric: 3 
+(180) Microgrid: 3 
+(181) VANET: 3 
+(182) Selfish mining: 3 
+(183) Pharmaceutical supply chain: 3 
+(184) IoT devices: 3 
+(185) Threats: 3 
+(186) Blockchain research: 3 
+(187) PoW: 3 
+(188) PoS: 3 
+(189) PBFT: 3 
+(190) Survey: 3 
+(191) Hospitality: 3 
+(192) AI: 3 
+(193) Initial coin offering: 3 
+(194) Enterprise computing: 3 
+(195) Data analytics: 3 
+(196) Compliance: 3 
+(197) Disruptive technology: 3 
+(198) smart contract: 3 
+(199) Business innovation: 2 
+(200) Public ledger: 2 
+(201) Computational trust: 2 
+(202) Lightning network: 2 
+(203) Data sharing: 2 
+(204) Business models: 2 
+(205) Self-regulation: 2 
+(206) Risk: 2 
+(207) E-governance: 2 
+(208) Software functional properties: 2 
+(209) Formal methods: 2 
+(210) Theory of computation: 2 
+(211) Designing software: 2 
+(212) Crypto currency: 2 
+(213) Human-centered computing: 2 
+(214) E-government: 2 
+(215) Sharing economy: 2 
+(216) Trust-free system: 2 
+(217) Distributed ledgers: 2 
+(218) Miners: 2 
+(219) Social media: 2 
+(220) Mobility: 2 
+(221) E4: 2 
+(222) E5: 2 
+(223) Property: 2 
+(224) Case study: 2 
+(225) project management: 2 
+(226) Regulatory sandbox: 2 
+(227) Game theory: 2 
+(228) Proof of work: 2 
+(229) Bitcoin blockchain: 2 
+(230) G21: 2 
+(231) Software architecture: 2 
+(232) Sale Items: 2 
+(233) Data Marketplace: 2 
+(234) Solving Complex Mathematical Problems: 2 
+(235) 5G: 2 
+(236) Blockchain governance: 2 
+(237) Sovereignty: 2 
+(238) Cyberattack: 2 
+(239) Multi-Agent Systems: 2 
+(240) Blockchain benefits: 2 
+(241) Blockchain use cases: 2 
+(242) GDPR: 2 
+(243) Built environment: 2 
+(244) Socio-technical systems: 2 
+(245) Swarm robotics: 2 
+(246) Software development: 2 
+(247) Web applications: 2 
+(248) Cyber security: 2 
+(249) Energy: 2 
+(250) Supply : 2 
+(251) Management: 2 
+(252) Scoping review: 2 
+(253) M: 2 
+(254) Big Data: 2 
+(255) FinTech: 2 
+(256) Identity: 2 
+(257) Finance: 2 
+(258) Financial stability: 2 
+(259) Social network analysis: 2 
+(260) Digital banking: 2 
+(261) Legislation: 2 
+(262) Social and professional topics: 2 
+(263) Network properties: 2 
+(264) Advanced Software and Data Engineering for Secure Societies: 2 
+(265) Internet of things (: 2 
+(266) Prosumer: 2 
+(267) Renewable energy: 2 
+(268) Blockchain technologies: 2 
+(269) L: 2 
+(270) W: 2 
+(271) Business process management: 2 
+(272) Attacks: 2 
+(273) UAV: 2 
+(274) Genomics: 2 
+(275) Counterfeit: 2 
+(276) Blockchain architecture: 2 
+(277) Energy consumption: 2 
+(278) Supply chains: 2 
+(279) Encryption: 2 
+(280) Insurance: 2 
+(281) E-voting: 2 
+(282) E42: 2 
+(283) Distributed ledger technologies: 2 
+(284) Data markets: 2 
+(285) Fog computing: 2 
+(286) IIoT: 2 
+(287) State machine replication: 2 
+(288) eHealth: 2 
+(289) Digital evidence: 2 
+(290) Solidity: 2 
+(291) BIM: 2 
+(292) Volatility: 2 
+(293) Electricity market: 2 
+(294) Decentralized network: 2 
+(295) Data mining: 2 
+(296) Scientometrics: 2 
+(297) Privacy-preserving: 2 
+(298) Decentralised applications: 2 
+(299) Risk management: 2 
+(300) Efficiency: 2 
+(301) Design science: 2 
+(302) O3: 2 
+(303) DPoS: 2 
+(304) CiteSpace: 2 
+(305) Trustworthiness: 2 
+(306) BIoT: 2 
+(307) Initial coin offerings: 2 
+(308) Challenges: 2 
+(309) Byzantine fault tolerance: 2 
+(310) IPFS: 2 
+(311) Financial industry: 2 
+(312) PoA: 2 
+(313) Distributed Ledger Technology (DLT): 2 
+(314) Distributed consensus: 2 
+(315) Ganache: 2 
+(316) Marketing: 2 
+(317) Decentralised: 2 
+(318) Logging: 2 
+(319) Gamification: 2 
+(320) Smart-contracts: 2 
+(321) L86: 2 
+(322) Private blockchain: 2 
+(323) Algorithms: 2 
+(324) Smart healthcare: 2 
+(325) Motivation: 2 
+(326) Consensus algorithms: 2 
+(327) Decentralized ledger: 2 
+(328) Bibliometric analysis: 2 
+(329) Technology Acceptance Model (TAM): 2 
+(330) Neural network: 2 
+(331) Deep Learning Algorithms for Internet of Medical Things: 2 
+(332) Blockchain adoption: 2 
+(333) Benefits: 2 
+(334) Industrial : 2 
+(335) Industrial internet of things: 2 
+(336) Reputation systems: 2 
+(337) G: 2 
+(338) U: 2 
+(339) V: 2 
+(340) Electric vehicle: 2 
+(341) Smart farming: 2 
+(342) Blockchain security: 2 
+(343) Public administration: 2 
+(344) IoT security: 2 
+(345) K15: 2 
+(346) Public auditing: 2 
+(347) Initial Coin Offerings: 2 
+(348) Money laundering: 2 
+(349) Terrorism financing: 2 
+(350) Corruption: 2 
+(351) Ledger: 2 
+(352) Authorization: 2 
+(353) Banking industry transformation: 1 
+(354) Blind signatures: 1 
+(355) Equity crowdfunding: 1 
+(356) Equity registration and transaction: 1 
+(357) Voting of Shareholders: 1 
+(358) Regulation of equity crowdfunding: 1 
+(359) Off-chain transactions: 1 
+(360) Duplex micropayment channels: 1 
+(361) Synopsis: 1 
+(362) P2P platforms evolution: 1 
+(363) Social technology: 1 
+(364) New economy: 1 
+(365) Self-organizing communities: 1 
+(366) Adhocracies: 1 
+(367) Catallaxies: 1 
+(368) Random Oracle: 1 
+(369) Chain Growth: 1 
+(370) Security Parameter: 1 
+(371) Network Delay: 1 
+(372) Attack Strategy: 1 
+(373) Reproducibility: 1 
+(374) Disintegration: 1 
+(375) Behavior pattern clustering: 1 
+(376) Clustering: 1 
+(377) Sequences: 1 
+(378) Crowdfunding: 1 
+(379) Limited Group: 1 
+(380) Technical Failure: 1 
+(381) Wrong Result: 1 
+(382) Transaction Data: 1 
+(383) High Processing Speed: 1 
+(384) Modelling: 1 
+(385) Petri Net: 1 
+(386) Initial Public Offering: 1 
+(387) Real Money: 1 
+(388) Open Source Software Project: 1 
+(389) Financial Contract: 1 
+(390) Asymmetric Cryptography: 1 
+(391) Research framework: 1 
+(392) Service system: 1 
+(393) Technology impact: 1 
+(394) Decentralized Autonomous Organizations: 1 
+(395) 5: 1 
+(396) Enterprise ontology: 1 
+(397) Business model ontology: 1 
+(398) REA: 1 
+(399) Credit Card: 1 
+(400) Financial Service: 1 
+(401) Payment System: 1 
+(402) Financial Intermediary: 1 
+(403) Financial Inclusion: 1 
+(404) E-democracy: 1 
+(405) Automated static analysis: 1 
+(406) Dynamic analysis: 1 
+(407) Software verification: 1 
+(408) Logic: 1 
+(409) Logic and verification: 1 
+(410) Model checking: 1 
+(411) Software design engineering: 1 
+(412) Mining pool: 1 
+(413) Invalid share: 1 
+(414) DoS attack: 1 
+(415) Stratum protocol: 1 
+(416) Blockchain coding: 1 
+(417) Smart contract platforms: 1 
+(418) Smart contract programming: 1 
+(419) Decentralized computing and development: 1 
+(420) Ride-hailing service: 1 
+(421) Secure billing: 1 
+(422) Collaborative and social computing: 1 
+(423) Empirical studies in collaborative and social computing: 1 
+(424) Computers in other domains: 1 
+(425) Computing in government: 1 
+(426) Data management systems: 1 
+(427) Database management system engines: 1 
+(428) Distributed database transactions: 1 
+(429) Computing methodologies: 1 
+(430) Distributed computing methodologies: 1 
+(431) Research Challenges and Opportunities in Security and Privacy of Blockchain Technologies: 1 
+(432) Internet-of-Things (IoT) Big Data Trust Management: 1 
+(433) T security: 1 
+(434) T protocols: 1 
+(435) Bank account: 1 
+(436) Bottom-of-the-pyramid: 1 
+(437) Confidence: 1 
+(438) Context: 1 
+(439) Digital: 1 
+(440) Edelman trust barometer: 1 
+(441) Enforcement: 1 
+(442) Entrepreneurship: 1 
+(443) Everex: 1 
+(444) Expectations: 1 
+(445) Financial inclusion: 1 
+(446) Financial services: 1 
+(447) Financial services research forum: 1 
+(448) Formal: 1 
+(449) G-cash: 1 
+(450) Government: 1 
+(451) ICT: 1 
+(452) Infomediaries: 1 
+(453) Informal: 1 
+(454) Informal practices: 1 
+(455) Informality: 1 
+(456) Information asymmetries: 1 
+(457) Institutions: 1 
+(458) Lending: 1 
+(459) Low income: 1 
+(460) Microfinance: 1 
+(461) Mobile: 1 
+(462) Motivations: 1 
+(463) M-Pesa: 1 
+(464) Non-monetary barriers: 1 
+(465) Pareto: 1 
+(466) Practices: 1 
+(467) Qualitative: 1 
+(468) Remittances: 1 
+(469) Social entrepreneurs: 1 
+(470) Sociotechnical approach: 1 
+(471) Transactional costs: 1 
+(472) Trust asymmetry: 1 
+(473) Unbanked: 1 
+(474) Wetrust: 1 
+(475) World Bank: 1 
+(476) Blockchain Data: 1 
+(477) Bitcoin Address: 1 
+(478) Block Subsidy: 1 
+(479) Ring signature: 1 
+(480) NIZK: 1 
+(481) Argument of knowledge: 1 
+(482) Cyber-physical system-of-systems: 1 
+(483) Industrial Internet of Things: 1 
+(484) Interoperability of information: 1 
+(485) Distributed computing: 1 
+(486) Self-organisation: 1 
+(487) Genesis Block: 1 
+(488) Backbone Protocol: 1 
+(489) Round Complexity: 1 
+(490) Transaction Ledger: 1 
+(491) Autonomous: 1 
+(492) Vehicle: 1 
+(493) Services: 1 
+(494) Financial transaction: 1 
+(495) Cryptocurrency-economy: 1 
+(496) Control: 1 
+(497) New materialisms: 1 
+(498) Cross chain: 1 
+(499) Observer chain: 1 
+(500) Network protocol-transport layer: 1 
+(501) UINP application-layer protocol: 1 
+(502) UINP transport-layer protocol: 1 
+(503) Mutual funds: 1 
+(504) Performance evaluation: 1 
+(505) Holistic approach: 1 
+(506) System design: 1 
+(507) Legal contracts: 1 
+(508) scientific communications: 1 
+(509) virtual scientific communications: 1 
+(510) scientific and information service: 1 
+(511) scientific and information support: 1 
+(512) hash function: 1 
+(513) voting: 1 
+(514) Initial coin offerings (ICOs): 1 
+(515) Technology neutrality: 1 
+(516) Insolvency law: 1 
+(517) Intellectual property: 1 
+(518) Digital rights management: 1 
+(519) Copyright: 1 
+(520) Incentive design: 1 
+(521) Authenticity: 1 
+(522) Critique: 1 
+(523) Provenance: 1 
+(524) Decentralisation: 1 
+(525) Music industry: 1 
+(526) Proof of existence: 1 
+(527) Multi-energy system: 1 
+(528) Dynamic pricing: 1 
+(529) Konsensalgorithmus: 1 
+(530) Asymmetrische Verschlüsselung: 1 
+(531) Verteilte Buchführung: 1 
+(532) Kryptowährung: 1 
+(533) Asymmetric encryption: 1 
+(534) Distibuted ledger: 1 
+(535) Privacy Preserving Biometric Identification (PPBI): 1 
+(536) Zerocoin: 1 
+(537) Hill climbing attacks: 1 
+(538) Transaction network: 1 
+(539) Bitcoin adoption: 1 
+(540) Maritime industry: 1 
+(541) Green supply chain: 1 
+(542) Green IT: 1 
+(543) Procedural justice: 1 
+(544) Autonomous identity: 1 
+(545) Reciprocity: 1 
+(546) Active citizen: 1 
+(547) Information protection: 1 
+(548) Architecture: 1 
+(549) Certification: 1 
+(550) Quantum Mechanics: 1 
+(551) Heisenberg Uncertainty Principle: 1 
+(552) Neuroscience: 1 
+(553) Energy sector: 1 
+(554) Electric utility: 1 
+(555) Business process innovation: 1 
+(556) Energy transformation: 1 
+(557) Credit rationing: 1 
+(558) SMEs financing: 1 
+(559) G30: 1 
+(560) Relational database: 1 
+(561) Performance testing: 1 
+(562) MySQL: 1 
+(563) Architecture styles: 1 
+(564) Decentralized features: 1 
+(565) Blockchain as a Service: 1 
+(566) Service paradigm: 1 
+(567) Performance: 1 
+(568) Storage: 1 
+(569) Citizens Broadband Radio Service: 1 
+(570) Cognitive radio: 1 
+(571) Mobile broadband: 1 
+(572) Spectrum sharing: 1 
+(573) IT selection process: 1 
+(574) Decision models: 1 
+(575) Distributed-Ledger-Technology: 1 
+(576) Auswahlprozess: 1 
+(577) Fallstudie: 1 
+(578) Entscheidungsmodelle: 1 
+(579) Digitales Publizieren: 1 
+(580) Geschäftsmodelle für die Blockchain: 1 
+(581) Anwendungen der Blockchain-Technologie: 1 
+(582) Digital publishing: 1 
+(583) Business models for the blockchain: 1 
+(584) Applications of blockchain technology: 1 
+(585) Blockchain publishing: 1 
+(586) Blockchain Applications: 1 
+(587) Excellent Potential Applications: 1 
+(588) Node failure: 1 
+(589) Communication tree: 1 
+(590) Communication time: 1 
+(591) Non-functional requirements: 1 
+(592) Security requirements: 1 
+(593) Comparative analysis: 1 
+(594) SLA: 1 
+(595) Kelsen: 1 
+(596) Schmitt: 1 
+(597) State of exception: 1 
+(598) Technology usage: 1 
+(599) Smart places: 1 
+(600) Cryptocurrency exchange: 1 
+(601) Organisational adoption: 1 
+(602) Innovation theory: 1 
+(603) TOE considerations: 1 
+(604) Surveys: 1 
+(605) Informed consent: 1 
+(606) Agriculture: 1 
+(607) Smart Home: 1 
+(608) Food Supply Chain: 1 
+(609) Traditional Blockchain: 1 
+(610) Hazard Analysis And Critical Control Points (HACCP): 1 
+(611) Business: 1 
+(612) Decentralized databases: 1 
+(613) Organizations: 1 
+(614) Geospatial blockchain: 1 
+(615) Crypto-spatial coordinate system: 1 
+(616) Pharmaceuticals: 1 
+(617) Networked hospitality services: 1 
+(618) Anonymity and accountability: 1 
+(619) Patient: 1 
+(620) Voter-verified Paper Audit Trail (VVPATs): 1 
+(621) Internet Voting: 1 
+(622) Electronic Voting: 1 
+(623) Voting Machines: 1 
+(624) Secure food transaction: 1 
+(625) Consensus process: 1 
+(626) Online double auction: 1 
+(627) Combination strategy: 1 
+(628) Dynamic publications: 1 
+(629) Open decentralised publishing: 1 
+(630) Collaborative processes: 1 
+(631) Interacting processes: 1 
+(632) DMN: 1 
+(633) ERP system: 1 
+(634) Digital contents of cultural heritage: 1 
+(635) Verification system: 1 
+(636) Data transfer integrity: 1 
+(637) Queueing theory: 1 
+(638) Matrix-geometric solutions: 1 
+(639) Mining process: 1 
+(640) Block-generation process: 1 
+(641) Blockchain-building process: 1 
+(642) Bitcoin (BTC): 1 
+(643) Consensus Algorithm: 1 
+(644) Elliptic Curve Digital Signature Algorithm (ECDSA): 1 
+(645) Process management: 1 
+(646) Model transformation: 1 
+(647) Digital identity: 1 
+(648) IBE: 1 
+(649) Blockchain testing: 1 
+(650) P2P testing: 1 
+(651) Containers: 1 
+(652) Syllabus: 1 
+(653) Understanding blockchain: 1 
+(654) Decision-making: 1 
+(655) Random neural network: 1 
+(656) Digital documentation: 1 
+(657) Distributed Robotics: 1 
+(658) Decentralised systems: 1 
+(659) Swarm Intelligence: 1 
+(660) Collective Behavior: 1 
+(661) New business models: 1 
+(662) Information sharing: 1 
+(663) Bullwhip effect: 1 
+(664) Proof of Work (PoW): 1 
+(665) Discrete-event simulation: 1 
+(666) Performance metric: 1 
+(667) Quality of Blockchain (QoB): 1 
+(668) Distributed Ledger Technologies: 1 
+(669) Payments: 1 
+(670) Adoption constraints: 1 
+(671) OpenLitterMap: 1 
+(672) Littercoin: 1 
+(673) Plastic pollution: 1 
+(674) Open data: 1 
+(675) Process: 1 
+(676) Startup: 1 
+(677) Social aspects of security and privacy: 1 
+(678) Proof-of-Work (PoW): 1 
+(679) Cross-computing tools and techniques: 1 
+(680) Information systems applications: 1 
+(681) Computing platforms: 1 
+(682) Crowdsourcing: 1 
+(683) Incentive schemes: 1 
+(684) Software verification and validation: 1 
+(685) Software defect analysis: 1 
+(686) Software testing and debugging: 1 
+(687) Consumption: 1 
+(688) Agriculture : 1 
+(689) Sector: 1 
+(690) Educational : 1 
+(691) Background: 1 
+(692) Chain : 1 
+(693) lockchain: 1 
+(694) Tsecuritysmart hometransactionbitcoin: 1 
+(695) Biomedical domain: 1 
+(696) A-: 1 
+(697) Sc: 1 
+(698) Sentiment Analysis: 1 
+(699) Forecasting: 1 
+(700) CSAI: 1 
+(701) Legal framework: 1 
+(702) Shari’ah code: 1 
+(703) Guidelines: 1 
+(704) Fusion: 1 
+(705) Regulatory frameworks: 1 
+(706) Global: 1 
+(707) Cryptobot: 1 
+(708) Methods of cryptocurrency analysis: 1 
+(709) Cryptocurrency volatility: 1 
+(710) Cryptocurrency arbitrage: 1 
+(711) Mathematical statistics: 1 
+(712) Regulations: 1 
+(713) SWOT: 1 
+(714) Maqasid al-Shari’ah: 1 
+(715) Hedonic pricing: 1 
+(716) Moore–Penrose inverse: 1 
+(717) D46: 1 
+(718) C60: 1 
+(719) Market microstructure: 1 
+(720) Electronic trading: 1 
+(721) Market impact: 1 
+(722) Order flow: 1 
+(723) Payment gateways: 1 
+(724) Cryptographic primitives: 1 
+(725) Price prediction: 1 
+(726) Hidden Markov Models: 1 
+(727) Hidden Semi-Markov Models: 1 
+(728) Filtering: 1 
+(729) Nowcasting: 1 
+(730) Brute-force attack: 1 
+(731) Financial markets: 1 
+(732) Spillover effects: 1 
+(733) GARCH-in-mean model: 1 
+(734) Asymmetric BEKK model: 1 
+(735) Volatility transmission: 1 
+(736) C32: 1 
+(737) G15: 1 
+(738) Open Source Software: 1 
+(739) Mining software repositories: 1 
+(740) Digital technology: 1 
+(741) Global currency: 1 
+(742) Global coin: 1 
+(743) Monetary circulation: 1 
+(744) National cryptocurrency: 1 
+(745) 
+\(T{-}X\) family: 1 
+(746) Kurtosis: 1 
+(747) Quantile: 1 
+(748) Distribution: 1 
+(749) Webometrics: 1 
+(750) Ontological completeness: 1 
+(751) eSML: 1 
+(752) Socio-technical: 1 
+(753) Legal relevance: 1 
+(754) ANTLR: 1 
+(755) Block-chain: 1 
+(756) Legal practice: 1 
+(757) Privacy-preserving smart contracts: 1 
+(758) zk-SNARKs: 1 
+(759) UC-security: 1 
+(760) CRS model: 1 
+(761) Electronic document: 1 
+(762) Taxation: 1 
+(763) Computability: 1 
+(764) Turing complete language: 1 
+(765) Islamic trade finance: 1 
+(766) Islamic finance: 1 
+(767) Automatic fulfillment of obligation: 1 
+(768) Automated legal relations: 1 
+(769) Contract law: 1 
+(770) Cryptoassets: 1 
+(771) K120: 1 
+(772) Smart Contract: 1 
+(773) Colombia: 1 
+(774) Computing / technology policy: 1 
+(775) Computer crime: 1 
+(776) Privacy protections: 1 
+(777) Embedded and cyber-physical systems: 1 
+(778) Embedded systems: 1 
+(779) Network reliability: 1 
+(780) Distributed Computing Infrastructure for Cyber-Physical Systems: 1 
+(781) Mobile Service Computing with Internet of Things: 1 
+(782) Green Internet of Things: 1 
+(783) Key : 1 
+(784) Words: 1 
+(785) Radiology: 1 
+(786) S2: 1 
+(787) Data structure: 1 
+(788) Energy decentralisation: 1 
+(789) Peer-to-peer energy trading: 1 
+(790) Distributed ledger technology (: 1 
+(791) Project : 1 
+(792) Bank : 1 
+(793) Accounts (: 1 
+(794) As): 1 
+(795) Regulations and compliance: 1 
+(796) Unstructured data: 1 
+(797) Distributed databases: 1 
+(798) Land administration: 1 
+(799) Land : 1 
+(800) Registration: 1 
+(801) Cadastre: 1 
+(802) E 802.15.6: 1 
+(803) M2: 1 
+(804) Things: 1 
+(805) Reference architecture: 1 
+(806) Agroindustry: 1 
+(807) Food transparency: 1 
+(808) Seafood: 1 
+(809) Aquaculture: 1 
+(810) Fingerprinting: 1 
+(811) Fault detection: 1 
+(812) Fault diagnosis: 1 
+(813) Robotic farming: 1 
+(814) Precision agriculture: 1 
+(815) Digital social science: 1 
+(816) Data science: 1 
+(817) Responsible research and innovation: 1 
+(818) Agricultural knowledge and innovation systems: 1 
+(819) Anonymous: 1 
+(820) Traceable: 1 
+(821) Blockchain-aware business processes: 1 
+(822) Smart wallets: 1 
+(823) Costs: 1 
+(824) Decentralized system: 1 
+(825) Proof-of-credibility: 1 
+(826) MAS: 1 
+(827) Goal-based XAI: 1 
+(828) Explainability: 1 
+(829) Healthcare technology: 1 
+(830) Health informatics: 1 
+(831) Medical licensure: 1 
+(832) Electronic health records: 1 
+(833) Data Mining: 1 
+(834) Big Data analytics: 1 
+(835) Fake products: 1 
+(836) Information system: 1 
+(837) Research project: 1 
+(838) Database entity and attributes: 1 
+(839) Cryptographic algorithm: 1 
+(840) Mobile money: 1 
+(841) ICT4D: 1 
+(842) Internet-underserved areas: 1 
+(843) Offline channels: 1 
+(844) Bitcoin lightning network: 1 
+(845) Flocking: 1 
+(846) Referential integrity: 1 
+(847) Relations: 1 
+(848) Data access: 1 
+(849) Data stores: 1 
+(850) Access Control: 1 
+(851) XACML: 1 
+(852) Peer-to-Peer networks: 1 
+(853) Development process: 1 
+(854) Attendance management system: 1 
+(855) Unforgeable: 1 
+(856) Content cache: 1 
+(857) VEC: 1 
+(858) Private data sharing: 1 
+(859) Shared model training: 1 
+(860) Blockchain access control: 1 
+(861) Consortium data exchange: 1 
+(862) Deep learning training: 1 
+(863) Blockchain-based coordination: 1 
+(864) Linda on Ethereum: 1 
+(865) Linda on Fabric: 1 
+(866) Linda on Corda: 1 
+(867) Port of Hamburg: 1 
+(868) Seafreight: 1 
+(869) Sealed-bid auction: 1 
+(870) Software production: 1 
+(871) Software development integrity: 1 
+(872) Test-driven software development: 1 
+(873) Textile: 1 
+(874) The protection of digital copyright: 1 
+(875) Time stamp: 1 
+(876) Decentralized consensus: 1 
+(877) Electronic medical records: 1 
+(878) EMR: 1 
+(879) Pharma: 1 
+(880) Health information exchange: 1 
+(881) Pharmacogenomics: 1 
+(882) Robotics: 1 
+(883) Precision medicine: 1 
+(884) Agile: 1 
+(885) Scrum: 1 
+(886) Space information network: 1 
+(887) authentication: 1 
+(888) decentralized infrastructure: 1 
+(889) certification authorities: 1 
+(890) Blockstack infrastructure: 1 
+(891) Role-playing game: 1 
+(892) Flipped learning: 1 
+(893) 3d animation teaching material: 1 
+(894) Economy: 1 
+(895) Disruption: 1 
+(896) Future: 1 
+(897) Security issues: 1 
+(898) Double spending: 1 
+(899) Mining attacks and distributed techniques: 1 
+(900) Anti-fraud: 1 
+(901) Supervised: 1 
+(902) Xgboost: 1 
+(903) Random forests: 1 
+(904) SVM: 1 
+(905) Cybercrime: 1 
+(906) Critical national infrastructure (CNI): 1 
+(907) SCADA: 1 
+(908) Threat factors: 1 
+(909) Red teaming: 1 
+(910) Cyberwarfare: 1 
+(911) Data breaches: 1 
+(912) Cyber operations: 1 
+(913) Hyperledger and Blind signature: 1 
+(914) Evolution of money: 1 
+(915) Crypto currencies: 1 
+(916) Darwinian evolution for crypto currencies: 1 
+(917) Manufacturing value chain: 1 
+(918) Inter-organizational processes: 1 
+(919) Aesthetics: 1 
+(920) Critical technical practice: 1 
+(921) Interactional aesthetics: 1 
+(922) Internet of services: 1 
+(923) Cyber physical sytems: 1 
+(924) Microlending: 1 
+(925) Naive bayes classifier: 1 
+(926) Neural Network: 1 
+(927) User Management: 1 
+(928) Access credentials: 1 
+(929) Automata: 1 
+(930) DFA: 1 
+(931) Computation: 1 
+(932) Economy of Austria: 1 
+(933) Regression theorem: 1 
+(934) Monetary system: 1 
+(935) E-money: 1 
+(936) E59: 1 
+(937) Learning content creation: 1 
+(938) Instructional design: 1 
+(939) Internet-of-Things (IoT): 1 
+(940) Distributed pattern recognition: 1 
+(941) Event processing: 1 
+(942) Trade supply chain: 1 
+(943) Private data: 1 
+(944) Bitcoins: 1 
+(945) Distributed mobility service: 1 
+(946) Autonomous vehicles: 1 
+(947) Ridesharing: 1 
+(948) Distributed generation: 1 
+(949) Photovoltaic: 1 
+(950) Electric vehicles: 1 
+(951) Solar energy: 1 
+(952) Electric grid: 1 
+(953) Performance modeling: 1 
+(954) Fork-join queueing network: 1 
+(955) Mean-value analysis: 1 
+(956) I4.0: 1 
+(957) Temporal epistemic logic with probabilities: 1 
+(958) Formal model: 1 
+(959) Specification/verification: 1 
+(960) Encryption algorithms: 1 
+(961) ECC: 1 
+(962) RSA: 1 
+(963) GHOST: 1 
+(964) Provable security: 1 
+(965) Blockchain protocols: 1 
+(966) Electronic Health Record: 1 
+(967) Replicated systems: 1 
+(968) Byzantine failures: 1 
+(969) Digital investigation: 1 
+(970) Forensic readiness: 1 
+(971) Incident response: 1 
+(972) Digital witness: 1 
+(973) Decentralised computing: 1 
+(974) Liability attribution: 1 
+(975) System chaincode: 1 
+(976) Usage control: 1 
+(977) Continuous monitoring: 1 
+(978) Banknotes: 1 
+(979) Digital money: 1 
+(980) Data quality: 1 
+(981) Markovian arrival process (MAP): 1 
+(982) Phase type (PH) distribution: 1 
+(983) Matrix-geometric solution: 1 
+(984) Block-structured Markov process: 1 
+(985) 
 RG factorization: 1 
-(1839) Hospital 4.0: 1 
-(1840) CAD: 1 
-(1841) PDM/PLM: 1 
-(1842) Resilience: 1 
-(1843) Medical Administration Records (MAR): 1 
-(1844) Electronic Health Records (EHR): 1 
-(1845) Care Quality Commission (CQC): 1 
-(1846) Multi-Agent System: 1 
-(1847) Agri-food commodities: 1 
-(1848) Logistical utilities: 1 
-(1849) Smart mobile device: 1 
-(1850) Federated learning: 1 
-(1851) Byzantine devices: 1 
-(1852) Component and connector: 1 
-(1853) Architectural pattern: 1 
-(1854) Intensive data: 1 
-(1855) Cyber-attacks: 1 
-(1856) Secure software architectures: 1 
-(1857) Software architecture attributes: 1 
-(1858) Aadhaar: 1 
-(1859) Dark data: 1 
-(1860) App store: 1 
-(1861) Blockchain vehicular network: 1 
-(1862) Internet of vehicle: 1 
-(1863) Scalable: 1 
-(1864) Provable data possession: 1 
-(1865) Knowledge governance: 1 
-(1866) Dynamic alliance: 1 
-(1867) Identity privacy: 1 
-(1868) Proof-of-Work blockchain: 1 
-(1869) Agent-based model: 1 
-(1870) Empirical multiplayer game: 1 
-(1871) Attack: 1 
-(1872) Probative value: 1 
-(1873) Evidential value: 1 
-(1874) Hash rate: 1 
-(1875) C9: 1 
-(1876) G18: 1 
-(1877) K23: 1 
-(1878) Consistent hash: 1 
-(1879) Low energy consumption: 1 
-(1880) TP301: 1 
-(1881) Anonymous authentication: 1 
-(1882) Linkability: 1 
-(1883) Cross-domain routing: 1 
-(1884) Cooperatives: 1 
-(1885) Electronic marketplaces: 1 
-(1886) Value distribution: 1 
-(1887) O3 Innovation: 1 
-(1888) Research and Development: 1 
-(1889) Technological Change: 1 
-(1890) Intellectual Property Rights: 1 
-(1891) Health care system: 1 
-(1892) Exoskeleton: 1 
-(1893) Agile method: 1 
-(1894) Agile testing: 1 
-(1895) Collaborative problem-based learning: 1 
-(1896) Shared data: 1 
-(1897) Resignature algorithm: 1 
-(1898) Outsourcing algorithm: 1 
-(1899) E-voting/polling: 1 
-(1900) Blockchain voting: 1 
-(1901) Voting threats: 1 
-(1902) Image copyright protection: 1 
-(1903) Copyright transaction: 1 
-(1904) Cluster: 1 
-(1905) Correlation power analysis (CPA): 1 
-(1906) Module exponentiation: 1 
-(1907) K-means: 1 
-(1908) Side channel attack: 1 
-(1909) Musikindustrie: 1 
-(1910) Geschäftsmodell: 1 
-(1911) Transparenz: 1 
-(1912) Rechteverwertung: 1 
-(1913) music industry: 1 
-(1914) business modell: 1 
-(1915) transparency: 1 
-(1916) copyright management: 1 
-(1917) Anti-money laundering: 1 
-(1918) Inter-domain routing: 1 
-(1919) Routing verification: 1 
-(1920) Service Functions Chaining: 1 
-(1921) Virtual Network Functions-as-a-Service: 1 
-(1922) Peer to peer networking: 1 
-(1923) Custom manufacturing: 1 
-(1924) Feasibility: 1 
-(1925) Donation: 1 
-(1926) Zakaah: 1 
-(1927) Intrusion detection system: 1 
-(1928) Critical infrastructure: 1 
-(1929) Industrial systems: 1 
-(1930) Uncertainty-aware: 1 
-(1931) NSGA-III: 1 
-(1932) Lock chain research: 1 
-(1933) Scientometric: 1 
-(1934) Research cooperation: 1 
-(1935) Web of science: 1 
-(1936) Knowledge mapping: 1 
-(1937) Mobile blockchain: 1 
-(1938) IoT nodes: 1 
-(1939) Graph analysis: 1 
-(1940) Technical characteristic: 1 
-(1941) Co-authorships: 1 
-(1942) Bibliographic coupling: 1 
-(1943) Co-occurrence analysis: 1 
-(1944) Electronic health record (EHR): 1 
-(1945) Credit risk: 1 
-(1946) Operational risk: 1 
-(1947) Energy decentralization: 1 
-(1948) (Local) renewable energy communities: 1 
-(1949) Blockchain-based energy networks: 1 
-(1950) Cyber attacks: 1 
-(1951) Network supervision: 1 
-(1952) Data overhead: 1 
-(1953) Crowdsourcing services: 1 
-(1954) eID: 1 
-(1955) Government-issued electronic identities: 1 
-(1956) Pattern: 1 
-(1957) Blockchain-based solution: 1 
-(1958) Higher education innovation: 1 
-(1959) Certificate management: 1 
-(1960) Protocol: 1 
-(1961) Benchmark: 1 
-(1962) Performance analysis: 1 
-(1963) Performance optimization: 1 
-(1964) Digital certificate: 1 
-(1965) Mined by consensus: 1 
-(1966) Business and economics: 1 
-(1967) Understandability: 1 
-(1968) Absorptive capacity: 1 
-(1969) Firm performance: 1 
-(1970) Start-ups: 1 
-(1971) Supply Chain Management: 1 
-(1972) Local energy market: 1 
-(1973) Peer-to-peer markets: 1 
-(1974) Distributed energy resources: 1 
-(1975) Energy transition: 1 
-(1976)  IoT: 1 
-(1977) Scopus: 1 
-(1978) Conceptualization: 1 
-(1979) Terminology: 1 
-(1980) O39: 1 
-(1981) Academic training: 1 
-(1982) Standards: 1 
-(1983) Educational course structure: 1 
-(1984) Learnability: 1 
-(1985) Human-Centered design: 1 
-(1986) Digital forensics: 1 
-(1987) Startups: 1 
-(1988) Initial exchange offerings: 1 
-(1989) Prospectus: 1 
-(1990) Financial regulation: 1 
-(1991) Medical device: 1 
-(1992) Identity based encryption: 1 
-(1993) Projects ecosystem: 1 
-(1994) Technical and legal issues: 1 
-(1995) Supply chain provenance: 1 
-(1996) Geoengineering: 1 
-(1997) Solar Radiation Management: 1 
-(1998) Carbon Dioxide Removal: 1 
-(1999) futures markets: 1 
-(2000) TIP-Platform: 1 
-(2001) Sharing project information: 1 
-(2002) Sharing duplication project information: 1 
-(2003) Transaction structure: 1 
-(2004) Social shopping: 1 
-(2005) Loyalty program: 1 
-(2006) Transformation: 1 
-(2007) Bibliometric: 1 
-(2008) CCPs: 1 
-(2009) Systemic risk: 1 
-(2010) Derivatives: 1 
-(2011) Margins: 1 
-(2012) Clearing and settlement: 1 
-(2013) Liquidity: 1 
-(2014) Adverse selection: 1 
-(2015) Intermediated securities: 1 
-(2016) Manufacturing supply chain management: 1 
-(2017) Land title: 1 
-(2018) Registry: 1 
-(2019) NAPR: 1 
-(2020) The Bitfury Group: 1 
-(2021) Georgia: 1 
-(2022) Digital government: 1 
-(2023) Infrastructure: 1 
-(2024) Farming: 1 
-(2025) Commercialization: 1 
-(2026) User needs: 1 
-(2027) D82: 1 
-(2028) D83: 1 
-(2029) L15: 1 
-(2030) Online voting: 1 
-(2031) Iris recognition: 1 
-(2032) Emerging technologies: 1 
-(2033) Cloud forensics: 1 
-(2034) Digital forensic: 1 
-(2035) Docker container: 1 
-(2036) Access control system management: 1 
-(2037) Digital academic certificates: 1 
-(2038) Gas: 1 
-(2039) Technology evolution: 1 
-(2040) Technology S-curve: 1 
-(2041) Ecuador: 1 
-(2042) PoET: 1 
-(2043) Raft: 1 
-(2044) HIS: 1 
-(2045) Health data: 1 
-(2046) Artificial neural network: 1 
-(2047) Report sharing: 1 
-(2048) Medical diagnosis: 1 
-(2049) Disruptive technology governance: 1 
-(2050) Human right to access technology: 1 
-(2051) Smart economy: 1 
-(2052) Sustainable world: 1 
-(2053) Sixth dimension of human rights: 1 
-(2054) International inclusive framework: 1 
-(2055) Principles and ethics: 1 
-(2056) Message querring telemetry transport: 1 
-(2057) Review system: 1 
-(2058) Fraudulent land registration: 1 
-(2059) Ownership: 1 
-(2060) Co-ownership: 1 
-(2061) Shareholder rights: 1 
-(2062) Shareholder voting: 1 
-(2063) Shareholder engagement: 1 
-(2064) General meeting: 1 
-(2065) Repository technologies: 1 
-(2066) Research data sharing: 1 
-(2067) Digital right management: 1 
-(2068) Intelligent data management: 1 
-(2069) Continuance intention: 1 
-(2070) India: 1 
-(2071) Supply chain trust: 1 
-(2072) Threshold cryptosystem: 1 
-(2073) Structure: 1 
-(2074) Mechanism: 1 
-(2075) General Purpose Technologies: 1 
-(2076) Web intelligence: 1 
-(2077) Blockchain distributed ledger technology: 1 
-(2078) Participatory action research: 1 
-(2079) Enterprise modelling: 1 
-(2080) Disruptive innovations: 1 
-(2081) E-voting protocol: 1 
-(2082) Large scale: 1 
-(2083) Universal verifiability: 1 
-(2084) Proof of Stack: 1 
-(2085) Open network protocol: 1 
-(2086) Hybrid consensus: 1 
-(2087) Puzzle design: 1 
-(2088) Resource sharing: 1 
-(2089) Land Registry: 1 
-(2090) Metamask: 1 
-(2091) Remix IDE: 1 
-(2092) Legal aspects: 1 
-(2093) Encryption.: 1 
-(2094) Market-based systems: 1 
-(2095) Distributed manufacturing: 1 
-(2096) Distributed scheduling: 1 
-(2097) Response time: 1 
-(2098) Collaborative public governance: 1 
-(2099) Public infrastructural development: 1 
-(2100) Administration: 1 
-(2101) cloud storage: 1 
-(2102) public integrity auditing: 1 
-(2103) identity-based cryptography: 1 
-(2104) security analysis: 1 
-(2105) Learning logs: 1 
-(2106) Learning analytics: 1 
-(2107) Higher education: 1 
-(2108) k-12: 1 
-(2109) Lifelong learning: 1 
-(2110) Formal specifications: 1 
-(2111) Encrypted database: 1 
-(2112) Private chain: 1 
-(2113) Implementation: 1 
-(2114) Practical insights: 1 
-(2115) Online book publishing: 1 
-(2116) Carbon footprint: 1 
-(2117) Carbon emission management: 1 
-(2118) Blockchain data security: 1 
-(2119) Blockchain meta data: 1 
-(2120) Blockchain research themes: 1 
-(2121) Bloom filter: 1 
-(2122) Decentralised verification: 1 
-(2123) Endorsement policy: 1 
-(2124) Overview Hyperledger Fabric: 1 
-(2125) Labor: 1 
-(2126) Labor relations: 1 
-(2127) Transaction costs: 1 
-(2128) Employee lifecycle: 1 
-(2129) Recruiting: 1 
-(2130) Digital recruiting: 1 
-(2131) Multi-sided platforms: 1 
-(2132) Intelligent transport: 1 
-(2133) Data recording: 1 
-(2134) Attack mitigation: 1 
-(2135) Business Process Management: 1 
-(2136) Collaborative process management: 1 
-(2137) Choreography processes: 1 
-(2138) Process execution: 1 
-(2139) ElGamal elliptic curve cryptography: 1 
-(2140) E-balloting: 1 
-(2141) SHA-512: 1 
-(2142) Commercial paper financing: 1 
-(2143) Pythagorean fuzzy sets: 1 
-(2144) Pythagorean fuzzy analytic hierarchy process: 1 
-(2145) XES: 1 
-(2146) Electronic Voting Machine: 1 
-(2147) Fingerprint verification: 1 
-(2148) Hospital insurance: 1 
-(2149) Parking: 1 
-(2150) Healthcare Internet of Things (IoT): 1 
-(2151) Ambient Intelligence: 1 
-(2152) Smart Learning Environments: 1 
-(2153) Decentralised architecture: 1 
-(2154) Book management: 1 
-(2155) Web application: 1 
-(2156) Edge mobile computing: 1 
-(2157) IoT security and authentication: 1 
-(2158) Service discovery: 1 
-(2159) Microservices: 1 
-(2160) Privacy-preserving searching: 1 
-(2161) Resource distribution: 1 
-(2162) Enterprise services: 1 
-(2163) Layered architecture: 1 
-(2164) Service-Oriented Architecture (SOA): 1 
-(2165) Low-cost: 1 
-(2166) Low-power: 1 
-(2167) SwarmESB: 1 
-(2168) Decentralized authorization and authentication: 1 
-(2169) Attribute-based access control model: 1 
-(2170) Adapted PBFT protocol: 1 
-(2171) OAuth-like protocol: 1 
-(2172) Fingerprint matching: 1 
-(2173) Network infrastructure: 1 
-(2174) Linked Data: 1 
-(2175) RDF store: 1 
-(2176) Distributed file storage: 1 
-(2177) Audit logs: 1 
-(2178) Proof of Authority: 1 
-(2179) Content Centric Networking: 1 
-(2180) Multimedia data security: 1 
-(2181) IoT-healthcare: 1 
-(2182) Healthcare systems: 1 
-(2183) Ethereum platform: 1 
-(2184) Online e-voting: 1 
-(2185) Elliptic Curve Cryptography: 1 
-(2186) Stakeholder/innen-Befragung: 1 
-(2187) Co-Creation: 1 
-(2188) Energiewirtschaft: 1 
-(2189) Integration erneuerbarer Energien: 1 
-(2190) stakeholder survey: 1 
-(2191) co-creation: 1 
-(2192) energy industry: 1 
-(2193) integration of renewables: 1 
-(2194) PropTech: 1 
-(2195) Sentiment: 1 
-(2196) D81: 1 
-(2197) G41: 1 
-(2198) M13: 1 
-(2199) Micropayments: 1 
-(2200) Stellar: 1 
-(2201) Data analysis: 1 
-(2202) Sovereign identity: 1 
-(2203) Metamsk: 1 
-(2204) Digital ids: 1 
-(2205) ZKP: 1 
-(2206) Electronic Medical Record: 1 
-(2207) Internet of vehicles: 1 
-(2208) Zero knowledge: 1 
-(2209) Electronic payments: 1 
-(2210) Decentralized payment system: 1 
-(2211) Energy efficiency: 1 
-(2212) Monero: 1 
-(2213) Smart Contracting: 1 
-(2214) Ransomware: 1 
-(2215) Profitability: 1 
-(2216) Vehicular Adhoc Network: 1 
-(2217) IoMT: 1 
-(2218) Secure network: 1 
-(2219) Software Engineering: 1 
-(2220) Internet-of-Things: 1 
-(2221) Cloud services: 1 
-(2222) Semantic data integration: 1 
-(2223) Query processing: 1 
-(2224) Google: 1 
-(2225) Semantic Web: 1 
-(2226) Semantic blockchain: 1 
-(2227) Public Key Infrastructure: 1 
-(2228) DNS decentralization: 1 
-(2229) Blockchain Peer-to-Peer network: 1 
-(2230) Network clustering: 1 
-(2231) Network topology: 1 
-(2232) Broadcast algorithm: 1 
-(2233) Fuzzy ANP: 1 
-(2234) Process analytics: 1 
-(2235) RDBMS: 1 
-(2236) Smart environment: 1 
-(2237) Smart supply chain: 1 
-(2238) Electronic voting (e-voting): 1 
-(2239) Secure voting: 1 
-(2240) P2P network: 1 
-(2241) Smart water management: 1 
-(2242) Building Information Modeling: 1 
-(2243) Cyber-physical space: 1 
-(2244) BlockChain technology: 1 
-(2245) BlockChain beyond virtual currencies: 1 
-(2246) HyperLedger Fabric: 1 
-(2247) Distributed information systems: 1 
-(2248) Travel and tourism sector: 1 
-(2249) DAPPs: 1 
-(2250) Relational databases: 1 
-(2251) Google Sheets: 1 
-(2252) DAG: 1 
-(2253) IOTA: 1 
-(2254) Byteball: 1 
-(2255) Congestion pricing: 1 
-(2256) Rice supply chain: 1 
-(2257) FCI: 1 
-(2258) Food security and procurement: 1 
-(2259) Personal healthcare information system: 1 
-(2260) Medical data tokenization: 1 
-(2261) Chronic disease management: 1 
-(2262) Post-election vote check: 1 
-(2263) Blockchain of Things (BCoT): 1 
-(2264) Wireless Sensor Network (WSN): 1 
-(2265) Multimedia workflow: 1 
-(2266) Mobile cloud computing: 1 
-(2267) Cloudlet management: 1 
-(2268) Framework: 1 
-(2269) Atomic swap: 1 
-(2270) Blockchain-as-a-Service: 1 
-(2271) BaaS: 1 
-(2272) Security protocols: 1 
-(2273) Network architectures: 1 
-(2274) Models of computation: 1 
-(2275) Network performance evaluation: 1 
-(2276) Network performance analysis: 1 
-(2277) Online social networks: 1 
-(2278) Emerging Approaches to Cyber Security: 1 
-(2279) Blockchain-Enabled Trustworthy Systems: 1 
-(2280) New Advances in Blockchain-Based Wireless Networks: 1 
-(2281) Blockchain Technology: Principles and Applications: 1 
-(2282) Evolving Technologies in Energy Storage Systems for Energy Systems Applications: 1 
-(2283) Secure Communication for the Next Generation 5G and IoT Networks: 1 
-(2284) Blockchain challenges: 1 
-(2285) Blockchain functionality: 1 
-(2286) Ethical challenges: 1 
-(2287) Recommendation for : 1 
-(2288) Identity management system: 1 
-(2289) Blockchain-based identity management: 1 
-(2290) Self-sovereign: 1 
-(2291) Electronic health record system: 1 
-(2292) J: 1 
-(2293) L classification: 1 
-(2294) O2: 1 
-(2295) Z1: 1 
-(2296) Fin: 1 
-(2297) Tech: 1 
-(2298) Proof-of-: 1 
-(2299) Mining industry: 1 
-(2300) Sustainable manufacturing: 1 
-(2301) Product lifecycle management: 1 
-(2302) Security and transparency: 1 
-(2303) Food sustainability: 1 
-(2304) Consensus protocols: 1 
-(2305) Smart communities: 1 
-(2306) Securityautonomous vehicleblockchainattacksindustry 4.0: 1 
-(2307) Health systems: 1 
-(2308) Cloud exchange: 1 
-(2309) Vehicle-to-grid: 1 
-(2310) T5: 1 
-(2311) Healthcare 4.0: 1 
-(2312) Industrial automation: 1 
-(2313) Vehicles: 1 
-(2314) Unmanned : 1 
-(2315) Aerial : 1 
-(2316) Vehicle (: 1 
-(2317) V) network: 1 
-(2318) Factory: 1 
-(2319) Grid: 1 
-(2320) Chain: 1 
-(2321) E-: 1 
-(2322) Adaptive requirements: 1 
-(2323) P : 1 
-(2324) Data marketplace: 1 
-(2325) Homecare: 1 
-(2326) Food: 1 
-(2327) S1: 1 
-(2328) Food safety: 1 
-(2329) China: 1 
-(2330) Trust : 1 
-(2331) Direct observations: 1 
-(2332) Recommendations: 1 
-(2333) Healthcare system: 1 
-(2334) Wearable device: 1 
-(2335) G: : 1 
-(2336) Thz (terahertz) communication: 1 
-(2337) Information and communication technologies (: 1 
-(2338) Holographic connectivity: 1 
-(2339) Tactile internet: 1 
-(2340)  internet of things (: 1 
-(2341) O: 1 
-(2342)  blockchain technology: 1 
-(2343) T (: 1 
-(2344) Searching and indexing: 1 
-(2345) Data fusion: 1 
-(2346) Cloud and fog computing: 1 
-(2347) Agriculture supply chain: 1 
-(2348) Sustainable performance: 1 
-(2349) Supply chain visibility: 1 
-(2350) Supply chain resources: 1 
-(2351) Agri-: 1 
-(2352) Food 4.0: 1 
-(2353) Agriculture 4.0: 1 
-(2354) Omni-channel management: 1 
-(2355) Omni-channel strategy: 1 
-(2356) Omni-channel retailing: 1 
-(2357) Protection: 1 
-(2358) Types of integrations: 1 
-(2359) Stationary battery: 1 
-(2360) Photovoltaic energy: 1 
-(2361) Velectric vehicle: 1 
-(2362) Vplug-in hybrid electric vehicles: 1 
-(2363) Vbattery electric vehicle: 1 
-(2364) Sbattery energy storage system: 1 
-(2365) Vphotovoltaic: 1 
-(2366) Bphotovoltaic battery system: 1 
-(2367) V2: 1 
-(2368) Gvehicle-to-grid: 1 
-(2369) Pwillingness-to-pay: 1 
-(2370) Tfeed-in-tariff: 1 
-(2371) Rdistributed energy resources: 1 
-(2372) Sintegrated community energy systems: 1 
-(2373) Otransmission system operator: 1 
-(2374) Odistribution system operator: 1 
-(2375) Srenewable energy systems: 1 
-(2376) Agricultural supply chain: 1 
-(2377) Aadhaar authentication: 1 
-(2378) Argon2id: 1 
-(2379) DigiLocker: 1 
-(2380) Token offerings: 1 
-(2381) Cryptoexchanges: 1 
-(2382) Public records: 1 
-(2383) Energy internet of things: 1 
-(2384) Transmission storage: 1 
-(2385) Model-driven engineering: 1 
-(2386) Enterprise engineering: 1 
-(2387) ArchiMate: 1 
-(2388) HyperLedger Composer: 1 
-(2389) Journalism: 1 
-(2390) Ecommerce application: 1 
-(2391) Transform: 1 
-(2392) Dimensions: 1 
-(2393) Enterprises: 1 
-(2394) Polling agent: 1 
-(2395) Audit confirmation: 1 
-(2396) Automated authorization: 1 
-(2397) Automated data acquisition: 1 
-(2398) FISCO BCOS: 1 
-(2399)  distributed ledger technology: 1 
-(2400) Group signature: 1 
-(2401) Virtual item: 1 
-(2402) Platform planning: 1 
-(2403) Information technology: 1 
-(2404) Evolution: 1 
-(2405) End-to-end supply chain: 1 
-(2406) Research directions: 1 
-(2407) Digital health: 1 
-(2408) Mobile computing: 1 
-(2409) Mobile applications: 1 
-(2410) Majority protocols: 1 
-(2411) GPU computing: 1 
-(2412) Data authentication: 1 
-(2413) Product recall: 1 
-(2414) Counterfeiting: 1 
-(2415) Vehicular ad-hoc networks: 1 
-(2416) IV data sharing: 1 
-(2417) Biometric blockchain: 1 
-(2418) Distributed biometric credits: 1 
-(2419) Query-response: 1 
-(2420) Cross-site data sharing: 1 
-(2421) SaaS: 1 
-(2422) Hospital: 1 
-(2423) Federation: 1 
-(2424) Social networks: 1 
-(2425) Sharding: 1 
-(2426) MapReduce: 1 
-(2427) Dubai Customs: 1 
-(2428) Luxury cars exportation: 1 
-(2429) Distributed database: 1 
-(2430) Hash values: 1 
-(2431) Polyline API: 1 
-(2432) Energy exchange: 1 
-(2433) Power exchange: 1 
-(2434) Decentralized markets: 1 
-(2435) Graphical analysis: 1 
-(2436) Indian Judicial System: 1 
-(2437) Initial public offering: 1 
-(2438) IPO: 1 
-(2439) Security token offering: 1 
-(2440) STO: 1 
-(2441) Digital security offering: 1 
-(2442) DSO: 1 
-(2443) Custody: 1 
-(2444) Primary issuance: 1 
-(2445) Secondary trading: 1 
-(2446) Distributed exchange: 1 
-(2447) DEX: 1 
-(2448) Sustainable development goals (SDGs): 1 
-(2449) Eco-sustainability: 1 
-(2450) Life cycle assessment (LCA): 1 
-(2451) Corporate strategy: 1 
-(2452) Cloud manufacturing: 1 
-(2453) Additive manufacturing: 1 
-(2454) Game pricing: 1 
-(2455) Fuzzy algorithm: 1 
-(2456) e-Cheque: 1 
-(2457) Multithreaded parallel transaction search: 1 
-(2458) Raspberry Pi: 1 
-(2459) Shared resources: 1 
-(2460) Internet 3.0: 1 
-(2461) State registration: 1 
-(2462) Registries: 1 
-(2463) Permission blockchains: 1 
-(2464) Image sharing: 1 
-(2465) Interplanetary File System: 1 
-(2466) Private-key cryptography: 1 
-(2467) Patent statistics: 1 
-(2468) Patent analysis: 1 
-(2469) Financial product management: 1 
-(2470) Fiat money: 1 
-(2471) Authentication encryption: 1 
-(2472) Distributed architecture: 1 
-(2473) Drugs supply chain: 1 
-(2474) Drug counterfeit: 1 
-(2475) FPGA: 1 
-(2476) Hardware security modules: 1 
-(2477) Physical unclonable functions: 1 
-(2478) Crytography: 1 
-(2479) Data trust: 1 
-(2480) E24: 1 
-(2481) E44: 1 
-(2482) Identity authentication: 1 
-(2483) Diffie-Hellman: 1 
-(2484) User authentication: 1 
-(2485) Information management system: 1 
-(2486) Power system: 1 
-(2487) Electrical energy trading: 1 
-(2488) Security challenges: 1 
-(2489) Mean-risk analysis: 1 
-(2490) Fashionable products: 1 
-(2491) Geospatial technology: 1 
-(2492) Geographic Information System (GIS): 1 
-(2493) Sustainable farming: 1 
-(2494) Decision making: 1 
-(2495) Smart: 1 
-(2496) Approach: 1 
-(2497) Strategy: 1 
-(2498) System: 1 
-(2499) Money flow: 1 
-(2500) AMI networks: 1 
-(2501) Asset and wealth management: 1 
-(2502) Identity documents: 1 
-(2503) Decentralized PKI: 1 
-(2504) Decentralized social media: 1 
-(2505) Semantic network: 1 
-(2506) Auto-scaling: 1 
-(2507) Cloud and edge computing: 1 
-(2508) Arduino: 1 
-(2509) Miro-grid: 1 
-(2510) Distributed energy management: 1 
-(2511) Surveillance system: 1 
-(2512) Energy trading: 1 
-(2513) BOSE: 1 
-(2514) P2P lending: 1 
-(2515) Reverse logistics: 1 
-(2516) RFID: 1 
-(2517) TAM: 1 
-(2518) Risk-benefit: 1 
-(2519) Characteristics: 1 
-(2520) eHealth system: 1 
-(2521) Data auditing: 1 
-(2522) Fair trade: 1 
-(2523) Decentralized framework: 1 
-(2524) Public sector: 1 
-(2525) Business model guideline: 1 
-(2526) Electricity utility systems: 1 
-(2527) Electricity trading: 1 
-(2528) Consumers: 1 
-(2529) Prosumers: 1 
-(2530) SMEs: 1 
-(2531) Peer to peer (P2P): 1 
-(2532) OCR: 1 
-(2533) Austrian capital theory: 1 
-(2534) Institutional cryptoeconomics: 1 
-(2535) Cost of trust: 1 
-(2536) Organ transplant: 1 
-(2537) Organ trafficking: 1 
-(2538) Transplant tourism: 1 
-(2539) Maturity model: 1 
-(2540) Healthcare services: 1 
-(2541) Insurance agent: 1 
-(2542) Doctor: 1 
-(2543) Wearable devices: 1 
-(2544) Secure and Robust healthcare-based Blockchain (SRHB)approach: 1 
-(2545) The border gateway routing: 1 
-(2546) The public key infrastructure: 1 
-(2547) Blockchain based technology: 1 
-(2548) Federated cloud: 1 
-(2549) Blockchain federated cloud computing: 1 
-(2550) Offsite data: 1 
-(2551) Federated cloud computing security: 1 
-(2552) Trust e-Vote: 1 
-(2553) Configurability: 1 
-(2554) Mirror model: 1 
-(2555) Financial models: 1 
-(2556) Laws of Bradford and Zipf: 1 
-(2557) Real estate: 1 
-(2558) Tokenizing: 1 
-(2559) Technical risks: 1 
-(2560) Risk research: 1 
-(2561) e-governance: 1 
-(2562) e-voting: 1 
-(2563) Centralized system: 1 
-(2564) Blockchain and Distributed Ledger Technologies: 1 
-(2565) Tender Procurement System: 1 
-(2566) Fraud Detection: 1 
-(2567) Written form: 1 
-(2568) Electronic form: 1 
-(2569) Civil law: 1 
-(2570) K12: 1 
-(2571) Permission pool: 1 
-(2572) Cross-chain interaction: 1 
-(2573) Zero knowledge proof: 1 
-(2574) Authentication scheme: 1 
-(2575) Energy trading system: 1 
-(2576) Base station: 1 
-(2577) Sensor node: 1 
-(2578) Cluster head: 1 
-(2579) Rental platform: 1 
-(2580) Distributed registry: 1 
-(2581) Public procurement: 1 
-(2582) Electronic registration: 1 
-(2583) International trade deals: 1 
-(2584) К10: 1 
-(2585) K41: 1 
-(2586) O38: 1 
-(2587) L88: 1 
-(2588) Third party authenticator: 1 
-(2589) Tax collection and management: 1 
-(2590) Technology application: 1 
-(2591) Technology innovation: 1 
-(2592) Distributed IoT: 1 
-(2593) Photovoltaic self-consumption: 1 
-(2594) Internet-of-things (IoT): 1 
-(2595) umMTC: 1 
-(2596) uRLLC: 1 
-(2597) Electronic data: 1 
-(2598) Load balancing: 1 
-(2599) Economic networks: 1 
-(2600) Differential games: 1 
-(2601) Stochastic processes: 1 
-(2602) Control systems: 1 
-(2603) Assets digitization: 1 
-(2604) Role based access control: 1 
-(2605) Network measurement: 1 
-(2606) ARIMA: 1 
-(2607) Heuristic algorithm: 1 
-(2608) Data provenance: 1 
-(2609) Quantum entanglement: 1 
-(2610) Quantum digital signatures: 1 
-(2611) Quantum teleportation: 1 
-(2612) Traceability awareness of consumers: 1 
-(2613) Pricing: 1 
-(2614) Safe farming: 1 
-(2615) ZigBee: 1 
-(2616) Wireless sensor networks: 1 
-(2617) Cost of maintenance: 1 
-(2618) Universal access: 1 
-(2619) Data transactions: 1 
-(2620) Fair-exchange: 1 
-(2621) Personal health records: 1 
-(2622) Electronic health network: 1 
-(2623) Counterfeit medicine: 1 
-(2624) Pharma supply chain: 1 
-(2625) ABE: 1 
-(2626) Outsourced computation: 1 
-(2627) Kryptowährungen: 1 
-(2628) Wertpapierabwicklung: 1 
-(2629) Corporate Governance: 1 
-(2630) Settlement of transactions: 1 
-(2631) Corporate governance: 1 
-(2632) G19: 1 
-(2633) G29: 1 
-(2634) Enhanced Bell–LaPadula model (EBLP): 1 
-(2635) Access control policy: 1 
-(2636) Dynamic game theory: 1 
-(2637) Hamilton–Jacobi–Bellman equation: 1 
-(2638) Social optimum: 1 
-(2639) Nash equilibrium: 1 
-(2640) Myopic Nash equilibrium: 1 
-(2641) Pigovian tax: 1 
-(2642) WBAN: 1 
-(2643) Key agreement: 1 
-(2644) CLAKA: 1 
-(2645) TTP: 1 
-(2646) Cyberattacks: 1 
-(2647) Permissioned blockchains: 1 
-(2648) User targeting: 1 
-(2649) Data aggregators: 1 
-(2650) Factoring: 1 
-(2651) Intelligent contract: 1 
-(2652) Intelligent factoring: 1 
-(2653) Empowerment: 1 
-(2654) Health-care: 1 
-(2655) PHR: 1 
-(2656) DMP-France: 1 
-(2657) CFT: 1 
-(2658) IBFT: 1 
-(2659) POA: 1 
-(2660) Procurement: 1 
-(2661) Project-monitoring: 1 
-(2662) Bill of exchange: 1 
-(2663) DeFi: 1 
-(2664) Bank regulations: 1 
-(2665) Corporate banking: 1 
-(2666) Non-performing assets: 1 
-(2667) Reporting framework: 1 
-(2668) RegTech: 1 
-(2669) Traffic congestion: 1 
-(2670) Containerization: 1 
-(2671) bitcoin: 1 
-(2672) random oracle: 1 
-(2673) delay: 1 
-(2674) consensus protocol: 1 
-(2675) Fog: 1 
-(2676) DDoS: 1 
-(2677) FNOSD (fog node on special duty): 1 
-(2678) Remanufacturing process planning: 1 
-(2679) Case-based reasoning: 1 
-(2680) Nearest neighbor algorithm: 1 
-(2681) Certificateless public key: 1 
-(2682) Identity Authentication: 1 
-(2683) Multimedia sharing: 1 
-(2684) Vehicular social networks: 1 
-(2685) Localization: 1 
-(2686) Beacon nodes: 1 
-(2687) Steganography: 1 
-(2688) Behavior: 1 
-(2689) River sensing: 1 
-(2690) Hydrologic blockchain: 1 
-(2691) Flood feature extraction: 1 
-(2692) Time series machine learning: 1 
-(2693) Shared cloud storage: 1 
-(2694) Operation behavior logs: 1 
-(2695) Power losses: 1 
-(2696) Democratization: 1 
-(2697) Blockchain-based software: 1 
-(2698) User-centered design: 1 
-(2699) Decentralized autonomous software: 1 
-(2700) Attribute-based encryption: 1 
-(2701) BAN logic: 1 
-(2702) OPNET: 1 
-(2703) Allergy card: 1 
-(2704) Hybrid encryption: 1 
-(2705) Social responsibility: 1 
-(2706) Smart transportation system: 1 
-(2707) Intelligent transportation systems: 1 
-(2708) Token economy: 1 
-(2709) Opportunities of blockchain: 1 
-(2710) Liechtenstein: 1 
-(2711) Blockchain act: 1 
-(2712) FATF: 1 
-(2713) European parliament: 1 
-(2714) Dynamic accumulator: 1 
-(2715) One-stop identity authentication: 1 
-(2716) FHIR: 1 
-(2717) Older adults: 1 
-(2718) Peer-to-Peer logistics: 1 
-(2719) Data center: 1 
-(2720) TP393: 1 
-(2721) Immutable: 1 
-(2722) Swarm robots: 1 
-(2723) Distributed decision-making: 1 
-(2724) Behaviors collaboration: 1 
-(2725) Cyberspace: 1 
-(2726) Blockchain protocol: 1 
-(2727) Forest Fire: 1 
-(2728) Validation: 1 
-(2729) Secure multi-party computation: 1 
-(2730) Privacy-preserving technology: 1 
-(2731) Blockstack: 1 
-(2732) BNS: 1 
-(2733) ConsortiumDNS: 1 
-(2734) DNSSec: 1 
-(2735) DNSCurve: 1 
-(2736) Another keyword: 1 
-(2737) Standardization: 1 
-(2738) Systems engineering: 1 
-(2739) Misinformation: 1 
-(2740) Bit coin: 1 
-(2741) Latent Dirichlet Allocation: 1 
-(2742) Application: 1 
-(2743) Technology convergence: 1 
-(2744) Construction contract: 1 
-(2745) Cost management: 1 
-(2746) Energy revolution: 1 
-(2747) Blockchain-technology: 1 
-(2748) Blockchain concepts: 1 
-(2749) Blockchain types: 1 
-(2750) Blockchain issues: 1 
-(2751) blockchain taxonomy: 1 
-(2752) construction supply chain: 1 
-(2753) threat model analysis: 1 
-(2754) security level analysis: 1 
-(2755) cybersecurity: 1 
-(2756) vulnerability: 1 
-(2757) cyber-attack: 1 
-(2758) Consensus mechanisms: 1 
-(2759) CAP theorem: 1 
-(2760) Digital technologies: 1 
-(2761) Connected vehicle: 1 
-(2762) N20: 1 
-(2763) N70: 1 
-(2764) Secure contracts: 1 
-(2765) Paratransit: 1 
-(2766) UAE: 1 
-(2767) Blockchain platform: 1 
-(2768) Blockchain state: 1 
-(2769) Data storage: 1 
-(2770) Key-value: 1 
-(2771) LevelDB: 1 
-(2772) RocksDB: 1 
-(2773) Electoral process: 1 
-(2774) Ballot-box: 1 
-(2775) Voting system: 1 
-(2776) Votes: 1 
-(2777) Distributed ledger technology (DLT): 1 
-(2778) Insurance markets: 1 
-(2779) STEEP: 1 
-(2780) Security threats: 1 
-(2781) Main path analysis: 1 
-(2782) e-Commerce: 1 
-(2783) Cross bordering: 1 
-(2784) Customs procedures: 1 
-(2785) Blockchain-enabled smart contracts: 1 
-(2786) Intelligence units: 1 
-(2787) Investigation units: 1 
-(2788) Blockchain characteristics: 1 
-(2789) Use case: 1 
-(2790) Theory development: 1 
-(2791) Case study checklist: 1 
-(2792) Case study framework: 1 
-(2793) Botnet: 1 
-(2794) Denial of service: 1 
-(2795) Quantum computing: 1 
-(2796) Quantum cryptography: 1 
-(2797) Quantum money: 1 
-(2798) DSL: 1 
-(2799) Functional: 1 
-(2800) Haskell: 1 
-(2801) SMT: 1 
-(2802) blockchain technology: 1 
-(2803) supply chain finance: 1 
-(2804) risk management: 1 
-(2805) decentralization: 1 
-(2806) Evaluation framework: 1 
-(2807) Empirical evaluation: 1 
-(2808) Tor: 1 
-(2809) Onion services: 1 
-(2810) PII: 1 
-(2811) Internet of Medical Things: 1 
-(2812) Cloud storage security: 1 
-(2813) Tourism marketing
+(986) Hospital 4.0: 1 
+(987) CAD: 1 
+(988) PDM/PLM: 1 
+(989) Medical Administration Records (MAR): 1 
+(990) Electronic Health Records (EHR): 1 
+(991) Care Quality Commission (CQC): 1 
+(992) Component and connector: 1 
+(993) Architectural pattern: 1 
+(994) Cyber-attacks: 1 
+(995) Secure software architectures: 1 
+(996) Software architecture attributes: 1 
+(997) Software design tradeoffs: 1 
+(998) Knowledge governance: 1 
+(999) Dynamic alliance: 1 
+(1000) Identity privacy: 1 
+(1001) Location privacy: 1 
+(1002) Proof-of-Work blockchain: 1 
+(1003) Agent-based model: 1 
+(1004) Empirical multiplayer game: 1 
+(1005) Attack: 1 
+(1006) Crypto-currency: 1 
+(1007) Probative value: 1 
+(1008) Evidential value: 1 
+(1009) Hash rate: 1 
+(1010) Immutability: 1 
+(1011) C9: 1 
+(1012) G18: 1 
+(1013) K23: 1 
+(1014) E-voting/polling: 1 
+(1015) Blockchain voting: 1 
+(1016) Voting threats: 1 
+(1017) Musikindustrie: 1 
+(1018) Geschäftsmodell: 1 
+(1019) Transparenz: 1 
+(1020) Rechteverwertung: 1 
+(1021) music industry: 1 
+(1022) business modell: 1 
+(1023) transparency: 1 
+(1024) copyright management: 1 
+(1025) Anti-money laundering: 1 
+(1026) Artifact-driven monitoring: 1 
+(1027) Trusted process monitoring: 1 
+(1028) Cyber-physical systems: 1 
+(1029) Energy market: 1 
+(1030) Lock chain research: 1 
+(1031) Scientometric: 1 
+(1032) Research cooperation: 1 
+(1033) Web of science: 1 
+(1034) Knowledge mapping: 1 
+(1035) Mobile edge computing: 1 
+(1036) Mobile blockchain: 1 
+(1037) IoT nodes: 1 
+(1038) Anomaly detection: 1 
+(1039) Graph analysis: 1 
+(1040) Technical characteristic: 1 
+(1041) Co-authorships: 1 
+(1042) Bibliographic coupling: 1 
+(1043) Co-occurrence analysis: 1 
+(1044) Electronic health record (EHR): 1 
+(1045) Supply chain finance: 1 
+(1046) Credit risk: 1 
+(1047) Operational risk: 1 
+(1048) Electronic medical record: 1 
+(1049) Cyber attacks: 1 
+(1050) Network supervision: 1 
+(1051) Data overhead: 1 
+(1052) Crowdsourcing services: 1 
+(1053) Incentive mechanism: 1 
+(1054) eID: 1 
+(1055) Government-issued electronic identities: 1 
+(1056) Pattern: 1 
+(1057) Protocol: 1 
+(1058) Benchmark: 1 
+(1059) Performance analysis: 1 
+(1060) Performance optimization: 1 
+(1061) Business and economics: 1 
+(1062) Understandability: 1 
+(1063) Absorptive capacity: 1 
+(1064) Firm performance: 1 
+(1065) Start-ups: 1 
+(1066) Supply Chain Management: 1 
+(1067) Conceptualization: 1 
+(1068) Terminology: 1 
+(1069) O39: 1 
+(1070) Academic training: 1 
+(1071) Competencies: 1 
+(1072) Standards: 1 
+(1073) Educational course structure: 1 
+(1074) Network monitoring: 1 
+(1075) Learnability: 1 
+(1076) Human-Centered design: 1 
+(1077) Startups: 1 
+(1078) Initial exchange offerings: 1 
+(1079) Prospectus: 1 
+(1080) Financial regulation: 1 
+(1081) Projects ecosystem: 1 
+(1082) Technical and legal issues: 1 
+(1083) Geoengineering: 1 
+(1084) Solar Radiation Management: 1 
+(1085) Carbon Dioxide Removal: 1 
+(1086) futures markets: 1 
+(1087) smart contracts: 1 
+(1088) E-commerce: 1 
+(1089) Social shopping: 1 
+(1090) Loyalty program: 1 
+(1091) Transformation: 1 
+(1092) Bibliometric: 1 
+(1093) Electronic health records (EHRs): 1 
+(1094) CCPs: 1 
+(1095) Systemic risk: 1 
+(1096) Derivatives: 1 
+(1097) Margins: 1 
+(1098) Clearing and settlement: 1 
+(1099) Liquidity: 1 
+(1100) Adverse selection: 1 
+(1101) Intermediated securities: 1 
+(1102) Manufacturing supply chain management: 1 
+(1103) Land title: 1 
+(1104) Registry: 1 
+(1105) NAPR: 1 
+(1106) The Bitfury Group: 1 
+(1107) Georgia: 1 
+(1108) Farming: 1 
+(1109) Commercialization: 1 
+(1110) Market for lemons: 1 
+(1111) User needs: 1 
+(1112) D82: 1 
+(1113) D83: 1 
+(1114) L15: 1 
+(1115) Online voting: 1 
+(1116) Sidechain: 1 
+(1117) Iris recognition: 1 
+(1118) Emerging technologies: 1 
+(1119) Cloud forensics: 1 
+(1120) Digital forensic: 1 
+(1121) Docker container: 1 
+(1122) Digital academic certificates: 1 
+(1123) Gas: 1 
+(1124) Blockchain technology (BT): 1 
+(1125) Technology evolution: 1 
+(1126) Technology S-curve: 1 
+(1127) Ecuador: 1 
+(1128) PoET: 1 
+(1129) Raft: 1 
+(1130) HIS: 1 
+(1131) Disruptive technology governance: 1 
+(1132) Human right to access technology: 1 
+(1133) Smart economy: 1 
+(1134) Sustainable world: 1 
+(1135) Sixth dimension of human rights: 1 
+(1136) International inclusive framework: 1 
+(1137) Principles and ethics: 1 
+(1138) Shareholder rights: 1 
+(1139) Shareholder voting: 1 
+(1140) Shareholder engagement: 1 
+(1141) General meeting: 1 
+(1142) Repository technologies: 1 
+(1143) Research data sharing: 1 
+(1144) Digital right management: 1 
+(1145) Continuance intention: 1 
+(1146) India: 1 
+(1147) Supply chain trust: 1 
+(1148) Structure: 1 
+(1149) Mechanism: 1 
+(1150) Blockchain distributed ledger technology: 1 
+(1151) Participatory action research: 1 
+(1152) Enterprise modelling: 1 
+(1153) Disruptive innovations: 1 
+(1154) Proof of Stack: 1 
+(1155) Open network protocol: 1 
+(1156) Hybrid consensus: 1 
+(1157) Puzzle design: 1 
+(1158) Land Registry: 1 
+(1159) Metamask: 1 
+(1160) Remix IDE: 1 
+(1161) Distributed manufacturing: 1 
+(1162) Distributed scheduling: 1 
+(1163) Throughput: 1 
+(1164) Response time: 1 
+(1165) Collaborative public governance: 1 
+(1166) Public infrastructural development: 1 
+(1167) Policy: 1 
+(1168) Administration: 1 
+(1169) Learning logs: 1 
+(1170) Learning analytics: 1 
+(1171) Higher education: 1 
+(1172) k-12: 1 
+(1173) Lifelong learning: 1 
+(1174) Formal specifications: 1 
+(1175) Biometrics: 1 
+(1176) Encrypted database: 1 
+(1177) Private chain: 1 
+(1178) Implementation: 1 
+(1179) Practical insights: 1 
+(1180) Recommender system: 1 
+(1181) Endorsement policy: 1 
+(1182) Overview Hyperledger Fabric: 1 
+(1183) Employee lifecycle: 1 
+(1184) Recruitment: 1 
+(1185) Recruiting: 1 
+(1186) Digital recruiting: 1 
+(1187) Homomorphic encryption: 1 
+(1188) ElGamal elliptic curve cryptography: 1 
+(1189) E-balloting: 1 
+(1190) SHA-512: 1 
+(1191) Process mining: 1 
+(1192) XES: 1 
+(1193) Hospital insurance: 1 
+(1194) Collaborative: 1 
+(1195) Parking: 1 
+(1196) Book management: 1 
+(1197) Web application: 1 
+(1198) Privacy-preserving searching: 1 
+(1199) Resource distribution: 1 
+(1200) Enterprise services: 1 
+(1201) Layered architecture: 1 
+(1202) Service-Oriented Architecture (SOA): 1 
+(1203) SwarmESB: 1 
+(1204) Linked Data: 1 
+(1205) RDF store: 1 
+(1206) Distributed file storage: 1 
+(1207) Multimedia data security: 1 
+(1208) IoT-healthcare: 1 
+(1209) Healthcare systems: 1 
+(1210) Stakeholder/innen-Befragung: 1 
+(1211) Co-Creation: 1 
+(1212) Energiewirtschaft: 1 
+(1213) Integration erneuerbarer Energien: 1 
+(1214) stakeholder survey: 1 
+(1215) co-creation: 1 
+(1216) energy industry: 1 
+(1217) integration of renewables: 1 
+(1218) PropTech: 1 
+(1219) Twitter: 1 
+(1220) Sentiment: 1 
+(1221) D81: 1 
+(1222) G41: 1 
+(1223) M13: 1 
+(1224) Sovereign identity: 1 
+(1225) Metamsk: 1 
+(1226) Digital ids: 1 
+(1227) ZKP: 1 
+(1228) Electronic payments: 1 
+(1229) Decentralized payment system: 1 
+(1230) Energy efficiency: 1 
+(1231) Monero: 1 
+(1232) Smart Contracting: 1 
+(1233) Ransomware: 1 
+(1234) Profitability: 1 
+(1235) Vehicular Adhoc Network: 1 
+(1236) IoMT: 1 
+(1237) Secure network: 1 
+(1238) Software Engineering: 1 
+(1239) Internet-of-Things: 1 
+(1240) Cloud services: 1 
+(1241) Google: 1 
+(1242) Malware: 1 
+(1243) Hashing: 1 
+(1244) RDBMS: 1 
+(1245) Smart environment: 1 
+(1246) Smart supply chain: 1 
+(1247) Building Information Modeling: 1 
+(1248) Cyber-physical space: 1 
+(1249) BlockChain technology: 1 
+(1250) BlockChain beyond virtual currencies: 1 
+(1251) HyperLedger Fabric: 1 
+(1252) Distributed information systems: 1 
+(1253) Travel and tourism sector: 1 
+(1254) DAPPs: 1 
+(1255) Congestion pricing: 1 
+(1256) Rice supply chain: 1 
+(1257) FCI: 1 
+(1258) Food security and procurement: 1 
+(1259) Blockchain of Things (BCoT): 1 
+(1260) Internet of things (IoT): 1 
+(1261) Wireless Sensor Network (WSN): 1 
+(1262) Privacy-preserving protocols: 1 
+(1263) Framework: 1 
+(1264) Atomic swap: 1 
+(1265) Blockchain-as-a-Service: 1 
+(1266) BaaS: 1 
+(1267) Enterprise information systems: 1 
+(1268) Software system structures: 1 
+(1269) Software architectures: 1 
+(1270) Accessibility: 1 
+(1271) Accessibility design and evaluation methods: 1 
+(1272) Business rules: 1 
+(1273)  social and behavioral sciences: 1 
+(1274) Economics: 1 
+(1275) Operations research: 1 
+(1276) Industry and manufacturing: 1 
+(1277) Web services: 1 
+(1278) Professional topics: 1 
+(1279) Management of computing and information systems: 1 
+(1280) Project and people management: 1 
+(1281) Project management techniques: 1 
+(1282) Software implementation planning: 1 
+(1283) Software design techniques: 1 
+(1284) Consensus method: 1 
+(1285) I-enabled blockchain: 1 
+(1286) Performance evaluation criteria: 1 
+(1287) Security vulnerability: 1 
+(1288) Trust and permission models: 1 
+(1289) Pricing bubbles: 1 
+(1290) Digital payment: 1 
+(1291) Mobile payment: 1 
+(1292) Mobile banking: 1 
+(1293) Sidechains: 1 
+(1294) Decentralized applications: 1 
+(1295) Digital assets: 1 
+(1296) Distributed : 1 
+(1297) Merkle : 1 
+(1298) Treecryptography: 1 
+(1299) Correctness: 1 
+(1300) Security assurance: 1 
+(1301) Token: 1 
+(1302) Informetric analysis: 1 
+(1303) Bitcoin network: 1 
+(1304) Digital currencies: 1 
+(1305) Financial technology (Fintech): 1 
+(1306) Bitcoin nodes: 1 
+(1307) Bitcoin merchants: 1 
+(1308) P40: 1 
+(1309) O57: 1 
+(1310) L17: 1 
+(1311) D84: 1 
+(1312) Bibliometrics: 1 
+(1313) cryptocurrency: 1 
+(1314) literature review: 1 
+(1315) network analysis: 1 
+(1316) Social engineering: 1 
+(1317) Cryptocurrency usage: 1 
+(1318) Cryptocurrency benefits: 1 
+(1319) Cryptocurrency behaviour: 1 
+(1320) Prediction: 1 
+(1321) Investor attention: 1 
+(1322) Cryptocurrency market: 1 
+(1323) Linear and nonlinear causality: 1 
+(1324) Google Trends: 1 
+(1325) Hash algorithm: 1 
+(1326) Quantile regression: 1 
+(1327) G14: 1 
+(1328) Proof of ownership: 1 
+(1329) Proof of provenance: 1 
+(1330) Ether: 1 
+(1331) ETH: 1 
+(1332) Hurst exponent: 1 
+(1333) Triangular arbitrage: 1 
+(1334) Ether exchange rates: 1 
+(1335) Time series prediction: 1 
+(1336) Momentum: 1 
+(1337) Asset pricing: 1 
+(1338) Portfolio performance: 1 
+(1339) Portfolio management: 1 
+(1340) JEL classification: G11: 1 
+(1341) G11: 1 
+(1342) Cryptocurrency Users’ Knowledge: 1 
+(1343) Cryptocurrency Risks: 1 
+(1344) Cryptocurrency Benefits: 1 
+(1345) Anomalies: 1 
+(1346) Momentum effect: 1 
+(1347) Abnormal returns: 1 
+(1348) Patterns: 1 
+(1349) G17: 1 
+(1350) C63: 1 
+(1351) CNN: 1 
+(1352) BiLSTM: 1 
+(1353) Cryptocurrency price prediction: 1 
+(1354) Time series: 1 
+(1355) Price variation prediction: 1 
+(1356) Coin features: 1 
+(1357) Feature importance: 1 
+(1358) Open source software development: 1 
+(1359) Social media activity: 1 
+(1360) Stochastic differential equations: 1 
+(1361) Maximum likelihood estimation: 1 
+(1362) Predictive modeling: 1 
+(1363) Development process model: 1 
+(1364) Trustless append-only decentralized digital ledgers (TADDL): 1 
+(1365) Certified programming: 1 
+(1366) Certified compilation: 1 
+(1367) Programming languages: 1 
+(1368) Linear types: 1 
+(1369) Evaluation: 1 
+(1370) Criteria: 1 
+(1371) Slice matrix: 1 
+(1372) Multi-label classification: 1 
+(1373) Code clone: 1 
+(1374) Opportunism: 1 
+(1375) Incomplete contracts: 1 
+(1376) G23: 1 
+(1377) L14: 1 
+(1378) Security protocols: 1 
+(1379) Information storage systems: 1 
+(1380) Storage architectures: 1 
+(1381) Distributed storage: 1 
+(1382) Network architectures: 1 
+(1383) Network protocols: 1 
+(1384) Models of computation: 1 
+(1385) Network performance evaluation: 1 
+(1386) Network performance analysis: 1 
+(1387) Network types: 1 
+(1388) Overlay and other logical network structures: 1 
+(1389) Online social networks: 1 
+(1390) Blockchain-Enabled Trustworthy Systems: 1 
+(1391) New Advances in Blockchain-Based Wireless Networks: 1 
+(1392) Evolving Technologies in Energy Storage Systems for Energy Systems Applications: 1 
+(1393) Secure Communication for the Next Generation 5G and IoT Networks: 1 
+(1394) Blockchain challenges: 1 
+(1395) Blockchain functionality: 1 
+(1396) Financial technologies: 1 
+(1397) Ethical challenges: 1 
+(1398) Recommendation for : 1 
+(1399) Medical data: 1 
+(1400) Electronic health record system: 1 
+(1401) J: 1 
+(1402) L classification: 1 
+(1403) O2: 1 
+(1404) Z1: 1 
+(1405) Fin: 1 
+(1406) Tech: 1 
+(1407) Proof-of-: 1 
+(1408) Work: 1 
+(1409) Mining industry: 1 
+(1410) Sustainable manufacturing: 1 
+(1411) Product lifecycle management: 1 
+(1412) Security and transparency: 1 
+(1413) Food sustainability: 1 
+(1414) Consensus protocols: 1 
+(1415) Smart communities: 1 
+(1416) Health systems: 1 
+(1417) Cloud exchange: 1 
+(1418) Vehicle-to-grid: 1 
+(1419) T5: 1 
+(1420) Healthcare 4.0: 1 
+(1421) Industrial automation: 1 
+(1422) Unmanned : 1 
+(1423) Aerial : 1 
+(1424) Vehicle (: 1 
+(1425) V) network: 1 
+(1426) Things (: 1 
+(1427) Factory: 1 
+(1428) Grid: 1 
+(1429) Chain: 1 
+(1430) E-: 1 
+(1431) Smart home: 1 
+(1432) Adaptive requirements: 1 
+(1433) P2: 1 
+(1434) P : 1 
+(1435) Data marketplace: 1 
+(1436) Automation: 1 
+(1437) Homecare: 1 
+(1438) Traceability system: 1 
+(1439) Food safety: 1 
+(1440) China: 1 
+(1441) Biometric: 1 
+(1442) Healthcare system: 1 
+(1443) Wearable device: 1 
+(1444) T (: 1 
+(1445) Searching and indexing: 1 
+(1446) Data fusion: 1 
+(1447) Cloud and fog computing: 1 
+(1448) Agriculture supply chain: 1 
+(1449) Sustainable performance: 1 
+(1450) Supply chain visibility: 1 
+(1451) Supply chain resources: 1 
+(1452) Agri-: 1 
+(1453) Food 4.0: 1 
+(1454) Agriculture 4.0: 1 
+(1455) Omni-channel management: 1 
+(1456) Omni-channel strategy: 1 
+(1457) Omni-channel retailing: 1 
+(1458) Demand response: 1 
+(1459) Protection: 1 
+(1460) Stationary battery: 1 
+(1461) Photovoltaic energy: 1 
+(1462) Abbreviations: 1 
+(1463) Velectric vehicle: 1 
+(1464) H: 1 
+(1465) Vplug-in hybrid electric vehicles: 1 
+(1466) Vbattery electric vehicle: 1 
+(1467) Sbattery energy storage system: 1 
+(1468) Vphotovoltaic: 1 
+(1469) Bphotovoltaic battery system: 1 
+(1470) V2: 1 
+(1471) Gvehicle-to-grid: 1 
+(1472) Pwillingness-to-pay: 1 
+(1473) F: 1 
+(1474) Tfeed-in-tariff: 1 
+(1475) Rdistributed energy resources: 1 
+(1476) C: 1 
+(1477) Sintegrated community energy systems: 1 
+(1478) Otransmission system operator: 1 
+(1479) Odistribution system operator: 1 
+(1480) Srenewable energy systems: 1 
+(1481) Agricultural supply chain: 1 
+(1482) Aadhaar authentication: 1 
+(1483) Argon2id: 1 
+(1484) DigiLocker: 1 
+(1485) Token offerings: 1 
+(1486) Cryptoexchanges: 1 
+(1487) Public records: 1 
+(1488) Model-driven engineering: 1 
+(1489) Enterprise engineering: 1 
+(1490) ArchiMate: 1 
+(1491) DEMO: 1 
+(1492) HyperLedger Composer: 1 
+(1493) Ecommerce application: 1 
+(1494) Transform: 1 
+(1495) Dimensions: 1 
+(1496) Enterprises: 1 
+(1497)  distributed ledger technology: 1 
+(1498) Virtual item: 1 
+(1499) Platform planning: 1 
+(1500) Information technology: 1 
+(1501) Evolution: 1 
+(1502) End-to-end supply chain: 1 
+(1503) Research directions: 1 
+(1504) Digital health: 1 
+(1505) Mobile computing: 1 
+(1506) Mobile applications: 1 
+(1507) Majority protocols: 1 
+(1508) GPU computing: 1 
+(1509) Health care: 1 
+(1510) Product recall: 1 
+(1511) Counterfeiting: 1 
+(1512) Serialization: 1 
+(1513) Intelligent vehicles: 1 
+(1514) Vehicular ad-hoc networks: 1 
+(1515) IV data sharing: 1 
+(1516) Biometric blockchain: 1 
+(1517) Distributed biometric credits: 1 
+(1518) Multichain: 1 
+(1519) Query-response: 1 
+(1520) Cross-site data sharing: 1 
+(1521) Energy exchange: 1 
+(1522) Power exchange: 1 
+(1523) Decentralized markets: 1 
+(1524) Indian Judicial System: 1 
+(1525) Initial public offering: 1 
+(1526) IPO: 1 
+(1527) Security token offering: 1 
+(1528) STO: 1 
+(1529) Digital security offering: 1 
+(1530) DSO: 1 
+(1531) Custody: 1 
+(1532) Primary issuance: 1 
+(1533) Secondary trading: 1 
+(1534) Distributed exchange: 1 
+(1535) DEX: 1 
+(1536) Sustainable development goals (SDGs): 1 
+(1537) Eco-sustainability: 1 
+(1538) Life cycle assessment (LCA): 1 
+(1539) Corporate strategy: 1 
+(1540) Raspberry Pi: 1 
+(1541) Shared resources: 1 
+(1542) Internet 3.0: 1 
+(1543) Private-key cryptography: 1 
+(1544) Distributed network: 1 
+(1545) Patent statistics: 1 
+(1546) Patent analysis: 1 
+(1547) FPGA: 1 
+(1548) Hardware security modules: 1 
+(1549) Physical unclonable functions: 1 
+(1550) Crytography: 1 
+(1551) Data trust: 1 
+(1552) E24: 1 
+(1553) E44: 1 
+(1554) Power system: 1 
+(1555) Electrical energy trading: 1 
+(1556) Security challenges: 1 
+(1557) Coordination: 1 
+(1558) Mean-risk analysis: 1 
+(1559) Fashionable products: 1 
+(1560) Geospatial technology: 1 
+(1561) Geographic Information System (GIS): 1 
+(1562) Sustainable farming: 1 
+(1563) Decision making: 1 
+(1564) Smart: 1 
+(1565) Approach: 1 
+(1566) Strategy: 1 
+(1567) System: 1 
+(1568) Money flow: 1 
+(1569) Issues: 1 
+(1570) Asset and wealth management: 1 
+(1571) Adoption: 1 
+(1572) Identity documents: 1 
+(1573) Decentralized PKI: 1 
+(1574) Fintech: 1 
+(1575) P2P lending: 1 
+(1576) Reverse logistics: 1 
+(1577) RFID: 1 
+(1578) TAM: 1 
+(1579) Risk-benefit: 1 
+(1580) Characteristics: 1 
+(1581) Public sector: 1 
+(1582) Austrian capital theory: 1 
+(1583) Institutional cryptoeconomics: 1 
+(1584) Cost of trust: 1 
+(1585) Organ transplant: 1 
+(1586) Organ trafficking: 1 
+(1587) Transplant tourism: 1 
+(1588) Maturity model: 1 
+(1589) Federated cloud: 1 
+(1590) Blockchain federated cloud computing: 1 
+(1591) Offsite data: 1 
+(1592) Federated cloud computing security: 1 
+(1593) Financial models: 1 
+(1594) Laws of Bradford and Zipf: 1 
+(1595) Real estate: 1 
+(1596) Tokenizing: 1 
+(1597) Technical risks: 1 
+(1598) Risk research: 1 
+(1599) Written form: 1 
+(1600) Electronic form: 1 
+(1601) Civil law: 1 
+(1602) K12: 1 
+(1603) Rental platform: 1 
+(1604) Distributed registry: 1 
+(1605) Public procurement: 1 
+(1606) Electronic registration: 1 
+(1607) International trade deals: 1 
+(1608) К10: 1 
+(1609) K41: 1 
+(1610) O38: 1 
+(1611) L88: 1 
+(1612) Cloud storage: 1 
+(1613) Third party authenticator: 1 
+(1614) Tax collection and management: 1 
+(1615) Technology application: 1 
+(1616) Technology innovation: 1 
+(1617) Photovoltaic self-consumption: 1 
+(1618) Economic networks: 1 
+(1619) Differential games: 1 
+(1620) Stochastic processes: 1 
+(1621) Control systems: 1 
+(1622) Quantum entanglement: 1 
+(1623) Quantum digital signatures: 1 
+(1624) Quantum teleportation: 1 
+(1625) Traceability awareness of consumers: 1 
+(1626) Pricing: 1 
+(1627) Cost of maintenance: 1 
+(1628) Universal access: 1 
+(1629) Kryptowährungen: 1 
+(1630) Wertpapierabwicklung: 1 
+(1631) Corporate Governance: 1 
+(1632) Settlement of transactions: 1 
+(1633) Corporate governance: 1 
+(1634) G19: 1 
+(1635) G29: 1 
+(1636) Enhanced Bell–LaPadula model (EBLP): 1 
+(1637) Access control policy: 1 
+(1638) Distributed: 1 
+(1639) Bitcoin mining: 1 
+(1640) Dynamic game theory: 1 
+(1641) Differential game: 1 
+(1642) Hamilton–Jacobi–Bellman equation: 1 
+(1643) Social optimum: 1 
+(1644) Nash equilibrium: 1 
+(1645) Myopic Nash equilibrium: 1 
+(1646) Pigovian tax: 1 
+(1647) TTP: 1 
+(1648) Cyberattacks: 1 
+(1649) Permissioned blockchains: 1 
+(1650) User targeting: 1 
+(1651) Personal data: 1 
+(1652) Data aggregators: 1 
+(1653) CFT: 1 
+(1654) IBFT: 1 
+(1655) POA: 1 
+(1656) Enterprise Engineering: 1 
+(1657) DEMO methodology: 1 
+(1658) bitcoin: 1 
+(1659) random oracle: 1 
+(1660) delay: 1 
+(1661) consensus protocol: 1 
+(1662) Fog: 1 
+(1663) DDoS: 1 
+(1664) FNOSD (fog node on special duty): 1 
+(1665) Wireless sensor network: 1 
+(1666) Localization: 1 
+(1667) Beacon nodes: 1 
+(1668) Miner: 1 
+(1669) Steganography: 1 
+(1670) Behavior: 1 
+(1671) River sensing: 1 
+(1672) Hydrologic blockchain: 1 
+(1673) Flood feature extraction: 1 
+(1674) Time series machine learning: 1 
+(1675) Secure logging: 1 
+(1676) Shared cloud storage: 1 
+(1677) Operation behavior logs: 1 
+(1678) Allergy card: 1 
+(1679) Social responsibility: 1 
+(1680) Smart transportation system: 1 
+(1681) Intelligent transportation systems: 1 
+(1682) Token economy: 1 
+(1683) Risks: 1 
+(1684) Opportunities of blockchain: 1 
+(1685) Liechtenstein: 1 
+(1686) Blockchain act: 1 
+(1687) FATF: 1 
+(1688) European parliament: 1 
+(1689) Integrity: 1 
+(1690) Auditing: 1 
+(1691) FHIR: 1 
+(1692) Older adults: 1 
+(1693) Merkle tree: 1 
+(1694) Immutable: 1 
+(1695) Cyberspace: 1 
+(1696) Peer-to-peer networks: 1 
+(1697) Blockchain protocol: 1 
+(1698) Multimedia: 1 
+(1699) Secure multi-party computation: 1 
+(1700) Privacy-preserving technology: 1 
+(1701) DNS: 1 
+(1702) Namecoin: 1 
+(1703) Blockstack: 1 
+(1704) BNS: 1 
+(1705) ConsortiumDNS: 1 
+(1706) DNSSec: 1 
+(1707) DNSCurve: 1 
+(1708) Another keyword: 1 
+(1709) Standardization: 1 
+(1710) Systems engineering: 1 
+(1711) Bit coin: 1 
+(1712) Latent Dirichlet Allocation: 1 
+(1713) Application: 1 
+(1714) Technology convergence: 1 
+(1715) Construction contract: 1 
+(1716) Cost management: 1 
+(1717) Energy revolution: 1 
+(1718) Blockchain-technology: 1 
+(1719) Blockchain concepts: 1 
+(1720) Blockchain types: 1 
+(1721) Blockchain issues: 1 
+(1722) blockchain taxonomy: 1 
+(1723) construction supply chain: 1 
+(1724) threat model analysis: 1 
+(1725) security level analysis: 1 
+(1726) cybersecurity: 1 
+(1727) vulnerability: 1 
+(1728) cyber-attack: 1 
+(1729) Consensus mechanisms: 1 
+(1730) CAP theorem: 1 
+(1731) Peer-to-peer network: 1 
+(1732) Digital technologies: 1 
+(1733) Connected vehicle: 1 
+(1734) N20: 1 
+(1735) N70: 1 
+(1736) Non-repudiation: 1 
+(1737) UAE: 1 
+(1738) Blockchain platform: 1 
+(1739) Blockchain state: 1 
+(1740) Data storage: 1 
+(1741) Key-value: 1 
+(1742) LevelDB: 1 
+(1743) RocksDB: 1 
+(1744) Electoral process: 1 
+(1745) Ballot-box: 1 
+(1746) Voting system: 1 
+(1747) Africa: 1 
+(1748) Votes: 1 
+(1749) Distributed ledger technology (DLT): 1 
+(1750) Insurance markets: 1 
+(1751) STEEP: 1 
+(1752) Security threats: 1 
+(1753) Main path analysis: 1 
+(1754) e-Commerce: 1 
+(1755) Cross bordering: 1 
+(1756) Customs procedures: 1 
+(1757) Blockchain-enabled smart contracts: 1 
+(1758) Information security: 1 
+(1759) Intelligence units: 1 
+(1760) Investigation units: 1 
+(1761) Quantum computing: 1 
+(1762) Quantum cryptography: 1 
+(1763) Quantum money: 1 
+(1764) blockchain technology: 1 
+(1765) supply chain finance: 1 
+(1766) risk management: 1 
+(1767) decentralization: 1 
+(1768) Evaluation framework: 1 
+(1769) Empirical evaluation: 1 
+(1770) Tor: 1 
+(1771) Onion services: 1 
+(1772) PII: 1 
+(1773) Privacy protection: 1 
+(1774) Internet of Medical Things: 1 
+(1775) Tourism marketing
 : 1 
-(2814) Smart-cities: 1 
-(2815) Telecommunication: 1 
-(2816) Healthcare applications: 1 
-(2817) construction quality: 1 
-(2818) compliance checking: 1 
-(2819) information management: 1 
-(2820) Water analysis: 1 
-(2821) IOT sensing: 1 
-(2822) Permissioned blockchain network: 1 
-(2823) Layer-two blockchain protocols: 1 
-(2824) Blockchain scaling: 1 
-(2825) Cryptocurrency adoption: 1 
-(2826) Platform ecosystem: 1 
-(2827) Ecosystem: 1 
-(2828) Ecosystem analysis: 1 
-(2829) Similarities: 1 
-(2830) 1.020: Method: 1 
-(2831) 3.060: Business networking: 1 
-(2832) 3.150: Electronic markets: 1 
-(2833) 3.240: Internet of Things: 1 
-(2834) 3.260: Interorganisational Systems: 1 
-(2835) Medical tourism: 1 
-(2836) Value focussed thinking (VFT): 1 
-(2837) Decentralized access: 1 
-(2838) EHRs: 1 
-(2839) Role-based security: 1 
-(2840) Management accounting: 1 
-(2841) Financial accounting: 1 
-(2842) Technology integration: 1 
-(2843) Accounting information system: 1 
-(2844) quality traceability: 1 
-(2845) precast components: 1 
-(2846) framework: 1 
-(2847) General purpose technologies: 1 
-(2848) Diffusion: 1 
-(2849) Systematic mapping study: 1 
-(2850) Education certification: 1 
-(2851) Employment certification: 1 
-(2852) Skill certification: 1 
-(2853) Vickrey-Clarke-Groves (VCG) mechanism: 1 
-(2854) Accounting: 1 
-(2855) Learning objects: 1 
-(2856) Adaptive learning: 1 
-(2857) Curriculum design: 1 
-(2858) Threat modeling: 1 
-(2859) STRIDE: 1 
-(2860) LINDDUN: 1 
-(2861) Online social network: 1 
-(2862) Subject rights: 1 
-(2863) Blockchain tokens: 1 
-(2864) supply chain management: 1 
-(2865) construction: 1 
-(2866) Tax return: 1 
-(2867) Automated: 1 
-(2868) Green energy: 1 
-(2869) MDE: 1 
-(2870) MERODE: 1 
-(2871) Method: 1 
-(2872) Decentralized electronic marketplaces: 1 
-(2873) Computing resources: 1 
-(2874) Mapping: 1 
-(2875) Digital platform: 1 
-(2876) E-Healthcare: 1 
-(2877) UAV security: 1 
-(2878) UAANET: 1 
-(2879) MANET: 1 
-(2880) Health 4.0: 1 
-(2881) Crypto assets: 1 
-(2882) Poisoning attack: 1 
-(2883) BDN-based malware: 1 
-(2884) Malicious domain: 1 
-(2885) Random forest: 1 
-(2886) Patient-centred: 1 
-(2887) Footwear: 1 
-(2888) TOWS matrix: 1 
-(2889) Diffusion of innovations: 1 
-(2890) Transparency and traceability: 1 
-(2891) Competitive position: 1 
-(2892) Certificate authority: 1 
-(2893) Blockchain partitioning: 1 
-(2894) Blockchain sharding: 1 
-(2895) Central Bank Digital Currency: 1 
-(2896) Minimal viable governance: 1 
-(2897) Sandbox: 1 
-(2898) Ecosystems: 1 
-(2899) Token-based business models: 1 
-(2900) Hyperleder: 1 
-(2901) Digital verification: 1 
-(2902) Knowledge transfer: 1 
-(2903) Blockchain platforms: 1 
-(2904) Organizational knowledge: 1 
-(2905) Knowledge management systems: 1 
-(2906) Banking: 1 
-(2907) Systematic Mapping Study: 1 
-(2908) Stalker attack: 1 
-(2909) Covert channel construction: 1 
-(2910) Dynamic label: 1 
-(2911) Banking industry: 1 
-(2912) BC-Blockchain: 1 
-(2913) Bigdata analytics: 1 
-(2914) Vigilant information system: 1 
-(2915) Smart learning environment: 1 
-(2916) Open learning ecosystem: 1 
-(2917) Inclusion: 1 
-(2918) Technologies: 1 
-(2919) Application and services: 1 
-(2920) Civil registration: 1 
-(2921) Decentralized application: 1 
-(2922) Innovation adoption: 1 
-(2923) Small and-medium enterprises: 1 
-(2924) Managerial implications: 1 
-(2925) Cloud applications: 1 
-(2926) Distributed and parallel application: 1 
-(2927) Online payment: 1 
-(2928) E-booking: 1 
-(2929) Online learning system: 1 
-(2930) Network science: 1 
-(2931) Tourism management: 1 
-(2932) Competitive advantage: 1 
-(2933) Multimedia industry: 1 
-(2934) CCTV: 1 
-(2935) Intelligent video surveillance: 1 
-(2936) Genome: 1 
-(2937) Cross-site genomic datasets: 1 
-(2938) Access log audit: 1 
-(2939) Political imaginaries: 1 
-(2940) Prefigurative politics: 1 
-(2941) Technopolitics: 1 
-(2942) Temporal constraints: 1 
-(2943) Government services: 1 
-(2944) Blockchain case study: 1 
-(2945) Mobile crowd sourcing: 1 
-(2946) ITA: 1 
-(2947) TORU: 1 
-(2948) Central banking: 1 
-(2949) People’s Bank of China: 1 
-(2950) Libra: 1 
-(2951) Facebook: 1 
-(2952) Stablecoins: 1 
-(2953) Gold-backed stablecoins: 1 
-(2954) Crypto ban: 1 
-(2955) Argentina crypto ban: 1 
-(2956) Consistency: 1 
-(2957) Partial Synchrony: 1 
-(2958) Asynchrony: 1 
-(2959) Database: 1 
-(2960) Distributed algorithm: 1 
-(2961) Email protocol: 1 
-(2962) FDI attacks: 1 
-(2963) Organic farming: 1 
-(2964) AHP analysis: 1 
-(2965) Fair-trade: 1 
-(2966) Process choreography: 1 
-(2967) Research project management: 1 
-(2968) AVISPA: 1 
-(2969) Super-peer: 1 
-(2970) WSN: 1 
-(2971) Collaborative Intrusion Detection Systems: 1 
-(2972) HyperLedger: 1 
-(2973) Snort: 1 
-(2974) Medical research centers: 1 
-(2975) Data exchange: 1 
-(2976) Indigenous: 1 
-(2977) Natural resources: 1 
-(2978) Corporate Social Responsibility: 1 
-(2979) Outsourced data: 1 
-(2980) Untrusted environment: 1 
-(2981) Critical infrastructure protection: 1 
-(2982) Collaborative network: 1 
-(2983) Insider attack: 1 
-(2984) Challenge-based trust mechanism: 1 
-(2985) IoT data management: 1 
-(2986) Gateway: 1 
-(2987) CV distributed databases: 1 
-(2988) Competencies and qualifications: 1 
-(2989) Partners collaborative network: 1 
-(2990) Emergent technologies: 1 
-(2991) Ergonomics: 1 
-(2992) Wearable: 1 
-(2993) Manufacturing industry: 1 
-(2994) Occupational health and safety: 1 
-(2995) Dynamic consent management: 1 
-(2996) Smart campus: 1 
-(2997) Reward point exchange: 1 
-(2998) Composer: 1 
-(2999) Transcripts: 1 
-(3000) Blockchain based querying: 1 
-(3001) Distributed trust model: 1 
-(3002) Miner reputation: 1 
-(3003) Signaling games: 1 
-(3004) Software defined networks: 1 
-(3005) Trusted computing: 1 
-(3006) Open banking: 1 
-(3007) API consensus: 1 
-(3008) Supply chain risk management: 1 
-(3009) Dynamic capabilities: 1 
-(3010) Settlement model: 1 
-(3011) Decentralized IoT data exchange: 1 
-(3012) Blockchain node: 1 
-(3013) Private Ethereum blockchain: 1 
-(3014) IoT (Internet of Things) devices: 1 
-(3015) Resource constrained devices: 1 
-(3016) Central authority: 1 
-(3017) Cloud blockchain: 1 
-(3018) Edge blockchain devices: 1 
-(3019) Cloud application: 1 
-(3020) Runtime exception: 1 
-(3021) Out of gas: 1 
-(3022) Empirical study: 1 
-(3023) crowdsourcing: 1 
-(3024) secure: 1 
-(3025) Trust evaluation: 1 
-(3026) Data sanitization: 1 
-(3027) Key generation: 1 
-(3028) Optimization: 1 
-(3029) Internet protocol: 1 
-(3030) IP address: 1 
-(3031) Trusty: 1 
-(3032) Self-tallying: 1 
-(3033) Zero-knowledge proof: 1 
-(3034) Transportation systems: 1 
-(3035) Workflow interoperability: 1 
-(3036) Workflow enactment service: 1 
-(3037) Inter-organizational collaboration: 1 
-(3038) Knowledge risk management: 1 
-(3039) KRM capacity: 1 
-(3040) Integrated MCDM: 1 
-(3041) Fuzzy AHP: 1 
-(3042) Fuzzy TOPSIS: 1 
-(3043) Industrial IoT: 1 
-(3044) Sensors security: 1 
-(3045) Wireless sensors: 1 
-(3046) Thematic analysis: 1 
-(3047) DVFS: 1 
-(3048) GPU: 1 
-(3049) HPC: 1 
-(3050) Intellectual Property: 1 
-(3051) Copyright elearning: 1 
-(3052) Education privacy: 1 
-(3053) BOLL: 1 
-(3054) Bookroll: 1 
-(3055) Byzantine fault: 1 
-(3056) Mobile devices: 1 
-(3057) Mobile voting: 1 
-(3058) Two-factor authentication: 1 
-(3059) Edge AI: 1 
-(3060) E-health: 1 
-(3061) U-health: 1 
-(3062) ECG monitoring: 1 
-(3063) ECG feature extraction: 1 
-(3064) Ubiquitous health: 1 
-(3065) Location-based services: 1 
-(3066) Zero trust privacy model: 1 
-(3067) Ontology: 1 
-(3068) Antibodies: 1 
-(3069) Parallel computing methodologies: 1 
-(3070) Empirical studies: 1 
-(3071) Collaborative and social computing theory: 1 
-(3072)  concepts and paradigms: 1 
-(3073) G networks: 1 
-(3074) Blockchain5: 1 
-(3075) G : 1 
-(3076) Things5: 1 
-(3077) G services: 1 
-(3078) Diffusion of innovation: 1 
-(3079) Platform economy: 1 
+(1776) EHR: 1 
+(1777) Healthcare applications: 1 
+(1778) Platform ecosystem: 1 
+(1779) Ecosystem: 1 
+(1780) Ecosystem analysis: 1 
+(1781) Similarities: 1 
+(1782) 1.020: Method: 1 
+(1783) 3.060: Business networking: 1 
+(1784) 3.150: Electronic markets: 1 
+(1785) 3.240: Internet of Things: 1 
+(1786) 3.260: Interorganisational Systems: 1 
+(1787) Bibliometric study: 1 
+(1788) Medical tourism: 1 
+(1789) Value focussed thinking (VFT): 1 
+(1790) Role-based security: 1 
+(1791) Management accounting: 1 
+(1792) Financial accounting: 1 
+(1793) Technology integration: 1 
+(1794) Accounting information system: 1 
+(1795) quality traceability: 1 
+(1796) precast components: 1 
+(1797) framework: 1 
+(1798) Blockchain-based applications: 1 
+(1799) General purpose technologies: 1 
+(1800) Diffusion: 1 
+(1801) Systematic mapping study: 1 
+(1802) Accounting: 1 
+(1803) Fraud: 1 
+(1804) Learning objects: 1 
+(1805) Adaptive learning: 1 
+(1806) Curriculum design: 1 
+(1807) Threat modeling: 1 
+(1808) STRIDE: 1 
+(1809) LINDDUN: 1 
+(1810) supply chain management: 1 
+(1811) construction: 1 
+(1812) Tax return: 1 
+(1813) Automated: 1 
+(1814) Green energy: 1 
+(1815) Digital platform: 1 
+(1816) E-Healthcare: 1 
+(1817) UAV security: 1 
+(1818) UAANET: 1 
+(1819) MANET: 1 
+(1820) Health 4.0: 1 
+(1821) Crypto assets: 1 
+(1822) Poisoning attack: 1 
+(1823) Service and application: 1 
+(1824) Peer-to-Peer: 1 
+(1825) Distributed Ledger Technology: 1 
+(1826) Patient-centred: 1 
+(1827) Footwear: 1 
+(1828) TOWS matrix: 1 
+(1829) Diffusion of innovations: 1 
+(1830) Transparency and traceability: 1 
+(1831) Competitive position: 1 
+(1832) Certificate authority: 1 
+(1833) Public key infrastructure: 1 
+(1834) Blockchain partitioning: 1 
+(1835) Blockchain sharding: 1 
+(1836) DAO: 1 
+(1837) Minimal viable governance: 1 
+(1838) Sandbox: 1 
+(1839) Knowledge transfer: 1 
+(1840) Blockchain platforms: 1 
+(1841) Organizational knowledge: 1 
+(1842) Knowledge management systems: 1 
+(1843) Banking: 1 
+(1844) Systematic Mapping Study: 1 
+(1845) Stalker attack: 1 
+(1846) Banking industry: 1 
+(1847) BC-Blockchain: 1 
+(1848) Bigdata analytics: 1 
+(1849) Medication: 1 
+(1850) Vigilant information system: 1 
+(1851) Smart learning environment: 1 
+(1852) Open learning ecosystem: 1 
+(1853) Inclusion: 1 
+(1854) Technologies: 1 
+(1855) Application and services: 1 
+(1856) Civil registration: 1 
+(1857) Decentralized application: 1 
+(1858) Innovation adoption: 1 
+(1859) Small and-medium enterprises: 1 
+(1860) Managerial implications: 1 
+(1861) Cloud applications: 1 
+(1862) Distributed and parallel application: 1 
+(1863) Online payment: 1 
+(1864) E-booking: 1 
+(1865) Network science: 1 
+(1866) Tourism management: 1 
+(1867) Competitive advantage: 1 
+(1868) Political imaginaries: 1 
+(1869) Prefigurative politics: 1 
+(1870) Technopolitics: 1 
+(1871) BPMN: 1 
+(1872) Business process: 1 
+(1873) Temporal constraints: 1 
+(1874) Government services: 1 
+(1875) Blockchain case study: 1 
+(1876) Mobile crowd sourcing: 1 
+(1877) ITA: 1 
+(1878) TORU: 1 
+(1879) Central banking: 1 
+(1880) People’s Bank of China: 1 
+(1881) Libra: 1 
+(1882) Facebook: 1 
+(1883) Stablecoins: 1 
+(1884) Gold-backed stablecoins: 1 
+(1885) Crypto ban: 1 
+(1886) Argentina crypto ban: 1 
+(1887) Process choreography: 1 
+(1888) Reusability: 1 
+(1889) Collaborative Intrusion Detection Systems: 1 
+(1890) HyperLedger: 1 
+(1891) Snort: 1 
+(1892) Ergonomics: 1 
+(1893) Wearable: 1 
+(1894) Manufacturing industry: 1 
+(1895) Occupational health and safety: 1 
+(1896) Dynamic consent management: 1 
+(1897) Blockchain based querying: 1 
+(1898) Supply chain risk management: 1 
+(1899) Dynamic capabilities: 1 
+(1900) Settlement model: 1 
+(1901) Decentralized IoT data exchange: 1 
+(1902) Trust evaluation: 1 
+(1903) Data sanitization: 1 
+(1904) Key generation: 1 
+(1905) Optimization: 1 
+(1906) Integrated MCDM: 1 
+(1907) Fuzzy AHP: 1 
+(1908) Fuzzy TOPSIS: 1 
+(1909) Industrial IoT: 1 
+(1910) Sensors security: 1 
+(1911) Wireless sensors: 1 
+(1912) Thematic analysis: 1 
+(1913) Byzantine fault: 1 
+(1914) Decentralized systems: 1 
+(1915) Edge AI: 1 
+(1916) E-health: 1 
+(1917) U-health: 1 
+(1918) ECG monitoring: 1 
+(1919) ECG feature extraction: 1 
+(1920) Ubiquitous health: 1 
+(1921) Ontology: 1 
+(1922) G networks: 1 
+(1923) Blockchain5: 1 
+(1924) G : 1 
+(1925) Things5: 1 
+(1926) G services: 1 
+(1927) Diffusion of innovation: 1 
+(1928) Platform economy: 1 
