@@ -101,7 +101,7 @@ topics 处理 **
 # df1.to_excel("./out/all-filtered.xlsx", index=False)
 
 df = pd.read_excel("./out/all-filtered.xlsx")
-
+#
 df1 = pd.DataFrame(columns=["title", "abstract", "url"])
 df1["title"] = df["title"]
 df1["abstract"] = df["abstract"]
@@ -110,8 +110,8 @@ print(df1)
 
 df1.to_html("./out/tmp.htm", encoding="utf-8")
 
-# # 处理 index.txt 时加 1
-# df = pd.read_excel("./out/all-filtered-2.xlsx")
+# # index filter
+# df = pd.read_excel("./out/all-filtered.xlsx")
 # with open("./out/index.txt", "r", encoding="utf-8") as f:
 #     indexs = [int(i.strip()) for i in f.readlines()]
 #
