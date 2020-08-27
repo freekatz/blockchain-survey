@@ -125,3 +125,13 @@ df1.to_html("./out/tmp.htm", encoding="utf-8")
 #     print(df1)
 #
 #     df1.to_excel("./out/all-filtered-3.xlsx", encoding="utf-8", index=False)
+
+# df = pd.read_excel("./out/all-filtered.xlsx")
+#
+# print(df["abstract"].duplicated())
+#
+# ddf = df.drop_duplicates(["abstract"])
+#
+# print(ddf)
+#
+# ddf.to_excel("./out/all-filtered-1.xlsx", encoding="utf-8", index=False)
