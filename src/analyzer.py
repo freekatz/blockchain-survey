@@ -102,8 +102,9 @@ topics 处理 **
 
 df = pd.read_excel("./out/all-filtered.xlsx")
 #
-df1 = pd.DataFrame(columns=["title", "abstract", "url"])
+df1 = pd.DataFrame(columns=["title", "topics", "abstract", "url"])
 df1["title"] = df["title"]
+df1["topics"] = df["topics"]
 df1["abstract"] = df["abstract"]
 df1["url"] = df["url"]
 print(df1)
@@ -125,3 +126,13 @@ df1.to_html("./out/tmp.htm", encoding="utf-8")
 #     print(df1)
 #
 #     df1.to_excel("./out/all-filtered-3.xlsx", encoding="utf-8", index=False)
+
+# df = pd.read_excel("./out/all-filtered.xlsx")
+#
+# print(df["abstract"].duplicated())
+#
+# ddf = df.drop_duplicates(["abstract"])
+#
+# print(ddf)
+#
+# ddf.to_excel("./out/all-filtered-1.xlsx", encoding="utf-8", index=False)
