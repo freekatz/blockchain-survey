@@ -2,6 +2,7 @@
 """
 arxiv_base_url_nor = "https://arxiv.org/search"
 arxiv_base_url_adv = "https://arxiv.org/search/advanced"
+arxiv_xhr_url = "https://partner.semanticscholar.org/v1/paper/arXiv:%s?include_unknown_references=true"
 arxiv_payload_nor = {
     "query": "blockchain review",
     "searchtype": "all",
@@ -48,6 +49,9 @@ arxiv_payload_adv = {
     "size": "200",
     "start": "0",
 }
+arxiv_headers_xhr = {
+    "x-api-key": "6VzaAKS9aL8Q7L4qwuZyc1vFy2KCsdMSmICmjgNb"
+}
 arxiv_target_path = "./out/arxiv.xlsx"
 
 """ Springer config
@@ -85,7 +89,7 @@ acm_target_path = "./out/acm.xlsx"
 """
 science_direct_base_url = "https://www.sciencedirect.com/search"
 science_direct_detail_base_url = "https://www.sciencedirect.com/science/article/abs/pii"
-
+science_direct_xhr_url = "https://www.sciencedirect.com/sdfe/arp/pii/%s/citingArticles?creditCardPurchaseAllowed=true&preventTransactionalAccess=false&preventDocumentDelivery=true"
 science_direct_payload = {
     "date": "2009-2020",
     # "tak": "smart contract",

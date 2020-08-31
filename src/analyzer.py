@@ -100,15 +100,15 @@ topics 处理 **
 #
 # df1.to_excel("./out/all-filtered.xlsx", index=False)
 
-df = pd.read_excel("./out/all-filtered.xlsx")
+# df = pd.read_excel("./out/all-filtered.xlsx")
+# #
+# df1 = pd.DataFrame(columns=["title", "cite", "url"])
+# df1["title"] = df["title"]
+# df1["cite"] = df["cite"]
+# df1["url"] = df["url"]
+# print(df1)
 #
-df1 = pd.DataFrame(columns=["title", "abstract", "url"])
-df1["title"] = df["title"]
-df1["abstract"] = df["abstract"]
-df1["url"] = df["url"]
-print(df1)
-
-df1.to_html("./out/tmp.htm", encoding="utf-8")
+# df1.to_html("./out/tmp.htm", encoding="utf-8")
 
 # # index filter
 # df = pd.read_excel("./out/all-filtered.xlsx")
@@ -135,3 +135,14 @@ df1.to_html("./out/tmp.htm", encoding="utf-8")
 # print(ddf)
 #
 # ddf.to_excel("./out/all-filtered-1.xlsx", encoding="utf-8", index=False)
+
+df1 = pd.read_excel("./out/all-filtered.xlsx")
+df2 = pd.read_excel("./out/all-tmp.xlsx")
+
+df1["topics"] = df2["topics"]
+df1["publisher"] = df2["publisher"]
+df1["cite"] = df2["cite"]
+df1["authors"] = df2["authors"]
+df1["abstract"] = df2["abstract"]
+
+df1.to_excel("./out/all.xlsx", encoding="utf-8", index=False)

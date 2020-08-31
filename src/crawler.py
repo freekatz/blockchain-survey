@@ -34,7 +34,6 @@ class Crawler:
             return resp.text
         else:
             raise Exception("Un-support protocol type")
-        print(resp.url)
     
     def save(self, output, target):
         """
@@ -65,22 +64,16 @@ class ArxivCrawler(Crawler):
         super().__init__()
     
     def detail(self, out):
-        soup = self.open(out["url"])
-        out["title"] = soup.select_one("h1.title").text.replace("Title:", "")
-        out["topics"] = ""
-        out["publisher"] = "arxiv"
-        out["cite"] = ""
-        out["factor"] = ""
-        author_item = soup.select_one("div.authors")
-        a_items = author_item.select("a")
-        authors = ""
-        for a in a_items:
-            authors += a.text + ","
-        out["authors"] = authors[:-1]
-        dy = re.split(r"\.", re.split(r"/", out["url"])[-1])[0]
-        # out["date"] = "20" + str(dy[0:2]) + "-" + str(dy[2:])
-        out["date"] = "20" + str(dy[0:2])
-        out["abstract"] = soup.select_one("blockquote.abstract").text
+        arxiv_id = re.split("/", out["url"])[-1]
+        soup = self.open(arxiv_xhr_url % arxiv_id, headers=arxiv_headers_xhr)
+        js = json.loads(soup.text)
+        out["title"] = js["title"]
+        out["topics"] = ",".join([t["topic"] for t in js["topics"]])
+        out["publisher"] = js["venue"]
+        out["cite"] = str(len(js["citations"]))
+        out["authors"] = ",".join([t["name"] for t in js["authors"]])
+        out["year"] = js["year"]
+        out["abstract"] = js["abstract"]
         print(out)
     
     def run(self):
@@ -118,38 +111,43 @@ class SpringerCrawler(Crawler):
             for topic_item in topic_items:
                 topics += topic_item.text + ","
             out["topics"] = topics[:-1]
-            out["publisher"] = header_soup.select_one("p.c-article-info-details").text
+            out["publisher"] = re.split(",", header_soup.select_one("p.c-article-info-details").text)[0]
             try:
                 out["cite"] = header_soup.select("li.c-article-metrics-bar__item")[1].select_one(
                     "p.c-article-metrics-bar__count").text.replace("Citations", "").strip()
             except:
                 pass
-            out["factor"] = ""
             author_item = soup.select_one("ul.c-author-list")
             li_items = author_item.select("li")
             authors = ""
             for li in li_items:
                 authors += li.text
             out["authors"] = authors
-            out["date"] = header_soup.select_one("time")["datetime"]
+            out["year"] = header_soup.select_one("time")["datetime"]
             out["abstract"] = soup.select_one("div.c-article-section__content").text
-        elif "chapter" in out["url"]:
+        else: # chapter or reference work entry some others, maybe not fix all case
             topics = ""
             topic_items = soup.select("span.Keyword")
             for topic_item in topic_items:
                 topics += topic_item.text + ","
-            out["topics"] = topics[:-1]
-            out["publisher"] = soup.select_one("span.bibliographic-information__value").text
-            out["cite"] = ""
-            out["factor"] = ""
+            out["topics"] = topics[:-1].strip()
+            out["publisher"] = soup.select("span.bibliographic-information__value")[2].text
+            metrics = soup.select("li.article-metrics__item")
+            try:
+                for m in metrics:
+                    if m.select_one("span.test-metric-name").text == "Citations":
+                        out["cite"] = m.select_one("span.test-metric-count").text
+                        break
+                    else:
+                        out["cite"] = "0"
+            except:
+                out["cite"] = "0"
             out["authors"] = soup.select_one("div.authors__list").text
             try:
-                out["date"] = soup.select_one("span.article-dates__first-online").text
+                out["year"] = soup.select_one("span.article-dates__first-online").text
             except:
-                out["date"] = ""
+                out["year"] = ""
             out["abstract"] = soup.select_one("p.Para").text
-        else:
-            pass
         
         # print(out)
     
@@ -198,13 +196,12 @@ class AcmCrawler(Crawler):
         out["topics"] = topics[1:]
         out["publisher"] = soup.select_one("span.epub-section__title").text
         out["cite"] = soup.select_one("span.citation").text.replace("citation", "")
-        out["factor"] = ""
         author_items = soup.select("span.loa__author-name")
         authors = ""
         for author_item in author_items:
             authors += author_item.text + ","
         out["authors"] = authors[:-1].replace("about this author", "")
-        out["date"] = soup.select_one("span.epub-section__date").text
+        out["year"] = soup.select_one("span.epub-section__date").text
         out["abstract"] = soup.select_one("div.abstractSection").text
         print(out)
     
@@ -236,26 +233,16 @@ class ScienceDirectCrawler(Crawler):
         print(out["url"])
         soup = super().open(out["url"], headers=science_direct_headers)
         out["title"] = soup.select_one("span.title-text").text
-        topics = ""
-        try:
-            topic_item = soup.select_one("div.Keywords").text.strip().replace("Keywords", "")
-            topic = ""
-        except:
-            topic_item = ""
-            topic = ","
-        for ch in topic_item:
-            if 'A' <= ch <= 'Z':
-                topics += topic + ","
-                topic = ""
-            topic += ch
-        topics += topic
-        out["topics"] = topics[1:]
+        out["topics"] = ",".join([k.text for k in soup.select("div.keyword")])
         try:
             out["publisher"] = soup.select_one("a.publication-title-link").text
         except:
             out["publisher"] = ""
-        out["cite"] = ""
-        out["factor"] = ""
+        
+        xhr_url = science_direct_xhr_url % re.split("/", out["url"])[-1]
+        html = super().open(xhr_url, headers=science_direct_headers).text
+        js = json.loads(html)
+        out["cite"] = str(js["hitCount"])
         authors = ""
         author_items = soup.select("a.author")
         for author_item in author_items:
@@ -263,9 +250,9 @@ class ScienceDirectCrawler(Crawler):
         out["authors"] = authors[:-1]
         date = re.split(", ", soup.select_one("div.text-xs").text.strip())
         try:
-            out["date"] = date[1]
+            out["year"] = date[1]
         except:
-            out["date"] = date[0].replace("Available online ", "")
+            out["year"] = date[0].replace("Available online ", "")
         
         try:
             out["abstract"] = soup.select_one("div.Abstracts").text
@@ -309,25 +296,18 @@ class IeeeCrawler(Crawler):
         js = json.loads(js_str)
         print(js)
         out["title"] = js["title"]
-        topics = ""
-        try:
-            for topic_item in js["topics"]:
-                topics += topic_item + ","
-        except:
-            for topic_item in js["pubTopics"]:
-                topics += topic_item["name"] + ","
-        out["topics"] = topics[:-1]
+        topics = []
+        for item in js["keywords"]:
+            topic = item["type"] + ":" + ",".join(item["kwd"])
+            topics.append(topic)
+        out["topics"] = ";".join(topics)
         out["publisher"] = js["displayPublicationTitle"]
         out["cite"] = js["metrics"]["citationCountPaper"]
-        out["factor"] = ""
         try:
-            authors = ""
-            for author_item in js["authors"]:
-                authors += author_item["name"] + ","
-            out["authors"] = authors[:-1]
+            out["authors"] = ",".join([a["name"] for a in js["authors"]])
         except:
             pass
-        out["date"] = js["publicationDate"]
+        out["year"] = js["publicationDate"]
         out["abstract"] = js["abstract"]
         
         print(out)
@@ -419,5 +399,7 @@ if __name__ == '__main__':
     # science_direct = ScienceDirectCrawler()
     # science_direct.run()
     
-    ieee = IeeeCrawler()
-    ieee.run()
+    # ieee = IeeeCrawler()
+    # ieee.run()
+    
+    pass

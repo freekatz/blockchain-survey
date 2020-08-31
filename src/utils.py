@@ -17,7 +17,7 @@ import os
 def merga():
     # 将文件读取出来放一个列表里面
     
-    pwd = './out/all/'  # 获取文件目录
+    pwd = './out/tmp/'  # 获取文件目录
     
     # 新建列表，存放文件名
     file_list = []
@@ -36,7 +36,7 @@ def merga():
     df = pd.concat(dfs, sort=False)
     
     # 写入excel文件，不包含索引数据
-    df.to_excel('./out/all.xlsx', index=False)
+    df.to_excel('./out/all-tmp.xlsx', index=False)
     
 if __name__ == '__main__':
     merga()
