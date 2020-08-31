@@ -1,22 +1,68 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 """
-@File    :   topics.py    
-@Desc    :   
+@File    :   topics.py
+@Desc    :
 @Project :   src
 @Contact :   1uvu.zhang@gmail.com
 @License :   (C)Copyright 2018-2020, 1UVU.COM
 @WebSite :   1uvu.com
 @Modify Time           @Author        @Version
 ------------           -------        --------
-2020/08/28 16:25       1uvu           1.0         
+2020/08/31 16:03       1uvu           0.0.1
 """
-
-import texthero as hero
 import pandas as pd
+import copy
+
+from settings import out_data
+from crawler import *
+
+def topics(out):
+    arxiv = ArxivCrawler()
+    springer = SpringerCrawler()
+    acm = AcmCrawler()
+    science_direct = ScienceDirectCrawler()
+    ieee = IeeeCrawler()
+    out["topics"] = ""
+    out["publisher"] = ""
+    out["cite"] = ""
+
+    # cite update
+    origin = out["origin"]
+    if origin == "arxiv":
+        # arxiv.detail(out)
+        pass
+    elif origin == "springer":
+        # springer.detail(out)
+        pass
+    elif origin == "acm":
+        # acm.detail(out)
+        pass
+    elif origin == "science_direct":
+        # science_direct.detail(out)
+        pass
+    elif origin == "ieee":
+        ieee.detail(out)
+        # pass
+    else:
+        raise Exception("Unknown Origin.")
+    
+    print(out)
 
 if __name__ == '__main__':
-    text = "Since the release of Bitcoins as crypto currency, Bitcoin has played a prominent part in the media. However, not Bitcoin but the underlying technology blockchain offers the possibility to innovatively change industries. The decentralized structure of the blockchain is particularly suitable for implementing control and business processes in microgrids, using smart contracts and decentralized applications. This paper provides a state of the art survey overview of current blockchain technology based projects with the potential to revolutionize microgrids and provides a first attempt to technically characterize different start-up approaches. The most promising use case from the microgrid perspective is peer-to-peer trading, where energy is exchanged and traded locally between consumers and prosumers. An application concept for distributed PV generation is provided in this promising area."
-    s = pd.Series(text)
-    s = hero.clean(s)
-    print(s[0])
+    df = pd.read_excel("./out/all-filtered.xlsx")
+    target_path = "./out/all-ieee.xlsx"
+    crawler = Crawler()
+    output = []
+    a = 479
+    i = 479
+    for origin, url in zip(df["origin"][a:], df["url"][a:]):
+        print(origin + ":" + url)
+        out = copy.deepcopy(out_data)
+        out["origin"] = origin
+        out["url"] = url
+        topics(out)
+        i += 1
+        print(i)
+        output.append(out)
+        crawler.save(output, target_path)

@@ -36,7 +36,7 @@ def merga():
     df = pd.concat(dfs, sort=False)
     
     # 写入excel文件，不包含索引数据
-    df.to_excel('./out/all-tmp.xlsx', index=False)
+    df.to_excel('./out/all-2.xlsx', index=False)
     
 if __name__ == '__main__':
     merga()

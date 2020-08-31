@@ -40,12 +40,12 @@ topics 处理 **
 # merge
 # utils
 
-# # remove blank
-# df = pd.read_excel("./out/all-filtered.xlsx")
-# print(df.isnull().any())
-# d = df.dropna(axis=0, subset=["topics"])
-# print(d.isnull().any())
-# d.to_excel("./out/all-filtered-has_topics.xlsx", index=False)
+# remove blank
+df = pd.read_excel("./out/all-filled-na.xlsx")
+print(df.isnull().any())
+d = df.fillna("NaN")
+print(d.isnull().any())
+d.to_excel("./out/all-filled-na.xlsx", index=False)
 
 # # rank
 # df = pd.read_excel("./out/all-filtered-has_topics.xlsx")
@@ -136,13 +136,15 @@ topics 处理 **
 #
 # ddf.to_excel("./out/all-filtered-1.xlsx", encoding="utf-8", index=False)
 
-df1 = pd.read_excel("./out/all-filtered.xlsx")
-df2 = pd.read_excel("./out/all-tmp.xlsx")
-
-df1["topics"] = df2["topics"]
-df1["publisher"] = df2["publisher"]
-df1["cite"] = df2["cite"]
-df1["authors"] = df2["authors"]
-df1["abstract"] = df2["abstract"]
-
-df1.to_excel("./out/all.xlsx", encoding="utf-8", index=False)
+# df1 = pd.read_excel("./out/all-1.xlsx")
+# df2 = pd.read_excel("./out/all-2.xlsx")
+#
+# for i in range(len(df2)):
+#     if df2["origin"][i] == "ieee":
+#         df1["topics"][i] = df2["topics"][i]
+#         df1["publisher"][i] = df2["publisher"][i]
+#         df1["cite"][i] = df2["cite"][i]
+#         df1["authors"][i] = df2["authors"][i]
+#         df1["abstract"][i] = df2["abstract"][i]
+#
+# df1.to_excel("./out/all.xlsx", encoding="utf-8", index=False)
