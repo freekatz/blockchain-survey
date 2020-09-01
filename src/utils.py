@@ -11,10 +11,53 @@
 ------------           -------        --------
 2020/08/14 19:30       1uvu           1.0         
 """
+import nltk.stem as ns
 import pandas as pd
 import os
+import re
 
-def merga():
+
+def remove_chore(string) -> str:
+    s = re.sub(r"\(.*\)", "", string.strip())
+    s = re.sub(r"\[.*\]", "", s)
+    return s
+
+
+def similar_replace(string) -> str:
+    words = re.split(",", string)
+    similar_items = open("./res/similar.txt", "r", encoding="utf-8").readlines()
+    # print(similar_items)
+    
+    ws = words
+    for item in similar_items:
+        if item[0] == "#": continue
+        i = 0
+        item = item.strip()
+        s_list = re.split("==", item)
+        
+        for w in words:
+            if w in s_list:
+                ws[i] = s_list[0]
+            
+            i += 1
+    
+    s = ",".join(ws)
+    return s
+
+
+def stem(string, lemmatizer: ns.WordNetLemmatizer()) -> str:
+    words = re.split(" ", string)
+    
+    ws = []
+    for word in words:
+        lemma = lemmatizer.lemmatize(word, 'n')
+        ws.append(lemma)
+    
+    s = " ".join([lemmatizer.lemmatize(word, 'v') for word in ws])
+    return s
+
+
+def merge():
     # 将文件读取出来放一个列表里面
     
     pwd = './out/tmp/'  # 获取文件目录
@@ -37,6 +80,7 @@ def merga():
     
     # 写入excel文件，不包含索引数据
     df.to_excel('./out/all-2.xlsx', index=False)
-    
+
+
 if __name__ == '__main__':
-    merga()
+    merge()
