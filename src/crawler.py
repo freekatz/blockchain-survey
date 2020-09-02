@@ -44,7 +44,7 @@ class Crawler:
         """
         df = pd.DataFrame(output)
         df = df[out_data.keys()]
-        ext = re.split(r"\.", target)[-1]
+        ext = re.split(r"", target)[-1]
         if ext == "xlsx" or ext == "xls":
             df.to_excel(target, encoding='utf-8', index=False)
         elif ext == "csv":

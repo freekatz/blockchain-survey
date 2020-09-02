@@ -12,175 +12,155 @@
 2020/08/14 20:14       1uvu           1.0         
 """
 from collections import Counter
-import texthero as hero
-import nltk.stem as ns
 import pandas as pd
 import numpy as np
 import json
+import copy
 import re
 
-from utils import *
-
+from utils import stem, similar_replace, remove_chore
+from plot import cloud_plot, bar_plot
 """
-1. 每个话题词对应一个出现频率（所有），再分别对每年的话题词统计频率（每年）
-2. 每年对应多个论文，一个论文对应多个话题词
+1. 每个话题词对应一个出现频率（所有），再分别对每年的话题词统计频率（每年） 1
+2. 每年对应多个论文，一个论文对应多个话题词（根据 1 扫描整个数据集的话题，即可找出对应话题所属的文章，对于一年时，只需额外规定下年份即可）
 结合 1，2 可画出每年 + 所有的话题词频率排行榜，及参考论文 1 中的图二
-3. 每个话题词对应一个出现引用量（所有），再分别对每年的话题词统计引用量（每年）
+3. 每个话题词对应一个出现引用量（所有），再分别对每年的话题词统计引用量（每年） 1
 结合 2，3 可画出画出每年 + 所有的话题词频率排行榜，及类似论文 1 中的图二
-4. 根据话题引用量和频率可生成词云（每年和所有）
+4. 根据话题引用量和频率可生成词云（每年和所有） 1
 """
+
+
 # TODO: 20200902 以上分析 + 代码重新组织，完成初始版本
 
-# fetch topics
-df = pd.read_excel("./out/all-filled-na.xlsx")
-topic_items = df["topics"]
-topics = []
-i = 0
-for t_item in topic_items:
-    o_item = df["origin"][i]
-    if o_item == "ieee":
-        if "Author" in t_item:
-            ts = re.split(",", re.split(":", t_item)[-1])
-        elif "IEEE" in t_item:
-            ts = re.split(",", re.search("IEEE Keywords:(.*?);", t_item).groups()[0])
-        else:
-            ts = re.split(",", re.search("INSPEC: Controlled Indexing:(.*?);", t_item).groups()[0])
+def topics_ranking(topics: pd.Series, opt="freq", args=None) -> {}:
+    """
+    
+    :param topics: topics series
+    :param opt: 'freq' means frequency or 'cite'
+    :param args: a dict like {"base": None, "year": None}, base is cite or None, and year series
+    :return:
+    """
+    rtn = {
+        "all_rank": None,
+        "items": [
+        
+        ]
+    }
+
+    rtn_item = {
+                "year": "",
+                "rank": {}
+            }
+
+    year = args["year"]
+    base = args["base"]
+    
+    if opt == "freq":
+        # all freq rank
+        single_topics = []
+        for t in topics:
+            if pd.isna(t):
+                single_topics += ["NaN"]
+            else:
+                single_topics += re.split(",", t)
+        all_rank = dict(Counter(single_topics))
+        rtn["all_rank"] = all_rank
+        # freq rank year by year
+        year_set = set(year)
+        for y in year_set:
+            item = copy.deepcopy(rtn_item)
+            item["year"] = y
+            s_topics = []
+            for _y, _t in zip(year, topics):
+                if _y == y:
+                    if pd.isna(_t):
+                        s_topics += ["NaN"]
+                    else:
+                        s_topics += re.split(",", _t)
+            _rank = dict(Counter(s_topics))
+            item["rank"] = _rank
+            rtn["items"].append(item)
+        
+    elif opt == "cite":
+        # if topics nan, then pass
+        # merge => {"topic", cite}
+        all_rank = {}
+        for t, c in zip(topics, base):
+            if not pd.isna(t):
+                for tt in re.split(",", t):
+                    if tt in all_rank.keys():
+                        all_rank[tt] += int(c)
+                    else:
+                        all_rank[tt] = int(c)
+        rtn["all_rank"] = all_rank
+        # freq rank year by year
+        year_set = set(year)
+        for y in year_set:
+            item = copy.deepcopy(rtn_item)
+            item["year"] = y
+            _rank = {}
+            for _y, _t, _c in zip(year, topics, base):
+                if _y == y:
+                    if not pd.isna(_t):
+                        for _tt in re.split(",", _t):
+                            if _tt in _rank.keys():
+                                _rank[_tt] += int(_c)
+                            else:
+                                _rank[_tt] = int(_c)
+            item["rank"] = _rank
+            rtn["items"].append(item)
+        pass
     else:
-        ts = re.split(",", str(t_item))
-    for t in ts:
-        t.replace(" - ", "-")
-        if len(re.split("and", t)) == 2 and "-" not in t:
-            topics += re.split("and", t)
-            continue
-        if len(re.split("/", t)) == 2:
-            topics += re.split("/", t)
-            continue
-        if "lockchain" in t and len(re.split(" ", t)) >= 2:
-            t = re.split(" ", t)[-1]
-        if t != "":
-            topics.append(t.replace("\xa0", ""))
+        raise Exception("Invalid option string.")
+    
+    return rtn
 
-    i += 1
 
-# lowercase etc. preprocess
-s = pd.Series(topics)
-s = hero.lowercase(s)
-s = hero.remove_html_tags(s)
+if __name__ == '__main__':
+    df = pd.read_excel("./out/all-preprocessed.xlsx")
+    
+    opt = "freq"
 
-# normalize
-lemmatizer = ns.WordNetLemmatizer()
-ws = list(s)
-ws_copy = list(s)
-topics = []
-for w in ws:
-    topics.append(similar_replace(stem(remove_chore(w), lemmatizer)))
+    res = topics_ranking(
+        df["topics"],
+        opt,
+        {
+            "base": None,
+            "year": df["year"]
+        }
+    )
+    # opt = "cite"
+    #
+    # res = topics_ranking(
+    #     df["topics"],
+    #     opt,
+    #     {
+    #         "base": df["cite"],
+    #         "year": df["year"]
+    #     }
+    # )
 
-# ranking
-topics_rank = dict(Counter(topics))
-
-js = json.dumps(topics_rank)
-with open("./out/topics_rank.json", "w") as f:
-    f.write(js)
-import wordcloud
-
-# 构建词云对象w，设置词云图片宽、高、字体、背景颜色等参数
-w = wordcloud.WordCloud(
-    width=1000,height=700,
-    background_color='white',
-    font_path='msyh.ttc'
-)
-
-# 调用词云对象的generate方法，将文本传入
-w.generate_from_frequencies(topics_rank)
-
-# 将生成的词云保存为output2-poem.png图片文件，保存到当前文件夹中
-w.to_file('./out/topics-word-cloud.png')
-
-f = open("./out/topics_rank.txt", "w", encoding="utf-8")
-i = 1
-for topic in sorted(topics_rank.items(), key=lambda x: x[1], reverse=True):
-    f.write(f"({i}) {topic[0]}: {topic[1]} \n")
-    # print(f"({i}) {topic[0]}: {topic[1]}")
-    i += 1
-f.close()
-
-# # # rm titles
-# #
-# # """
-# # B/based
-# # P/powered
-# # B/blockchain-
-# # E/enabled
-# # """
-# ts = []
-# with open("./out/titles.txt", "r", encoding="utf-8") as f:
-#     for t in f.readlines():
-#         if "Enabled" not in t:
-#             ts.append(t)
-#
-# f.close()
-# with open("./out/titles.txt", "w", encoding="utf-8") as f:
-#     for t in ts:
-#         f.write(t)
-
-# df = pd.read_excel("./out/all-test.xlsx")
-# f = open("./out/titles.txt", "r", encoding="utf-8")
-# titles = [s.strip() for s in f.readlines()]
-#
-# # i=0
-# # for t in df["title"]:
-# #     print(t + ": " + titles[i])
-# #     print(t in titles)
-# #     i+=1
-# df1 = df[df['title'].isin(titles)]
-#
-# df1.to_excel("./out/all-filtered.xlsx", index=False)
-
-# df = pd.read_excel("./out/all-filtered.xlsx")
-# #
-# df1 = pd.DataFrame(columns=["title", "cite", "url"])
-# df1["title"] = df["title"]
-# df1["cite"] = df["cite"]
-# df1["url"] = df["url"]
-# print(df1)
-#
-# df1.to_html("./out/tmp.htm", encoding="utf-8")
-
-# # index filter
-# df = pd.read_excel("./out/all-filtered.xlsx")
-# with open("./out/index.txt", "r", encoding="utf-8") as f:
-#     indexs = [int(i.strip()) for i in f.readlines()]
-#
-#     titles = []
-#     for i in range(len(df["title"])):
-#         if i not in indexs:
-#             titles.append(df["title"][i])
-#
-#     df1 = df[df["title"].isin(titles)]
-#
-#     print(df1)
-#
-#     df1.to_excel("./out/all-filtered-3.xlsx", encoding="utf-8", index=False)
-
-# df = pd.read_excel("./out/all-filtered.xlsx")
-#
-# print(df["abstract"].duplicated())
-#
-# ddf = df.drop_duplicates(["abstract"])
-#
-# print(ddf)
-#
-# ddf.to_excel("./out/all-filtered-1.xlsx", encoding="utf-8", index=False)
-
-# df1 = pd.read_excel("./out/all-1.xlsx")
-# df2 = pd.read_excel("./out/all-2.xlsx")
-#
-# for i in range(len(df2)):
-#     if df2["origin"][i] == "ieee":
-#         df1["topics"][i] = df2["topics"][i]
-#         df1["publisher"][i] = df2["publisher"][i]
-#         df1["cite"][i] = df2["cite"][i]
-#         df1["authors"][i] = df2["authors"][i]
-#         df1["abstract"][i] = df2["abstract"][i]
-#
-# df1.to_excel("./out/all.xlsx", encoding="utf-8", index=False)
+    rank = res["all_rank"]
+    f = open("./out/rank/%s/txt/all_rank.txt" % opt, "w", encoding="utf-8")
+    i = 1
+    for topic in sorted(rank.items(), key=lambda x: x[1], reverse=True):
+        f.write(f"({i}) {topic[0]}: {topic[1]} \n")
+        # print(f"({i}) {topic[0]}: {topic[1]}")
+        i += 1
+    f.close()
+    # plot
+    cloud_plot(rank, "./out/rank/%s/cloud/all_wordcloud.png" % opt)
+    bar_plot(rank, "./out/rank/%s/bar/all_bar.png" % opt)
+    for i in range(len(res["items"])):
+        _item = res["items"][i]
+        _rank = _item["rank"]
+        f = open("./out/rank/%s/txt/%s_rank.txt" % (opt, _item["year"]), "w", encoding="utf-8")
+        i = 1
+        for topic in sorted(_rank.items(), key=lambda x: x[1], reverse=True):
+            f.write(f"({i}) {topic[0]}: {topic[1]} \n")
+            # print(f"({i}) {topic[0]}: {topic[1]}")
+            i += 1
+        f.close()
+        # plot
+        cloud_plot(_rank, "./out/rank/%s/cloud/%s_wordcloud.png" % (opt, _item["year"]))
+        bar_plot(_rank, "./out/rank/%s/bar/%s_bar.png" % (opt, _item["year"]))

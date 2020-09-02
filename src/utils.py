@@ -45,7 +45,8 @@ def similar_replace(string) -> str:
     return s
 
 
-def stem(string, lemmatizer: ns.WordNetLemmatizer()) -> str:
+def stem(string, lemmatizer: ns.WordNetLemmatizer) -> str:
+    if string == "pos": return string
     words = re.split(" ", string)
     
     ws = []
@@ -57,11 +58,8 @@ def stem(string, lemmatizer: ns.WordNetLemmatizer()) -> str:
     return s
 
 
-def merge():
+def merge(pwd: str, target: str):
     # 将文件读取出来放一个列表里面
-    
-    pwd = './out/tmp/'  # 获取文件目录
-    
     # 新建列表，存放文件名
     file_list = []
     
@@ -79,8 +77,10 @@ def merge():
     df = pd.concat(dfs, sort=False)
     
     # 写入excel文件，不包含索引数据
-    df.to_excel('./out/all-2.xlsx', index=False)
+    df.to_excel(target, index=False)
 
 
 if __name__ == '__main__':
-    merge()
+    pwd = './out/tmp/'  # 获取文件目录
+    target = './out/all-2.xlsx'
+    merge(pwd, target)
