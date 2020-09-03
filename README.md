@@ -1,5 +1,4 @@
 # auto survey
----
 ![Visitors](https://visitor-badge.laobi.icu/badge?page_id=1uvu.bc-survey.readme.1)
 ---
 
