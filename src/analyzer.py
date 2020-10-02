@@ -19,7 +19,8 @@ import copy
 import re
 
 from utils import stem, similar_replace, remove_chore
-from plot import cloud_plot, bar_plot
+from plot import plot_pipeline
+
 """
 1. 每个话题词对应一个出现频率（所有），再分别对每年的话题词统计频率（每年） 1
 2. 每年对应多个论文，一个论文对应多个话题词（根据 1 扫描整个数据集的话题，即可找出对应话题所属的文章，对于一年时，只需额外规定下年份即可）
@@ -36,9 +37,11 @@ def topics_ranking(topics: pd.Series, opt="freq", args=None) -> {}:
     """
     
     :param topics: topics series
-    :param opt: 'freq' means frequency or 'cite'
+    :param opt: 'freq' means frequency or 'cite', as the basis of topics ranking
     :param args: a dict like {"base": None, "year": None}, base is cite or None, and year series
-    :return:
+    :return: like the following dict struct, the all_rank is all topics rank,
+    a tuple list like [(<topics str>, <freq or cites>), (...), ...],
+    and the items contain 5 years 2016-2020's topics rank
     """
     rtn = {
         "all_rank": None,
@@ -46,12 +49,12 @@ def topics_ranking(topics: pd.Series, opt="freq", args=None) -> {}:
         
         ]
     }
-
+    
     rtn_item = {
-                "year": "",
-                "rank": {}
-            }
-
+        "year": "",
+        "rank": {}
+    }
+    
     year = args["year"]
     base = args["base"]
     
@@ -80,7 +83,7 @@ def topics_ranking(topics: pd.Series, opt="freq", args=None) -> {}:
             _rank = dict(Counter(s_topics))
             item["rank"] = _rank
             rtn["items"].append(item)
-        
+    
     elif opt == "cite":
         # if topics nan, then pass
         # merge => {"topic", cite}
@@ -116,51 +119,47 @@ def topics_ranking(topics: pd.Series, opt="freq", args=None) -> {}:
     return rtn
 
 
+def format(res: dict) -> pd.DataFrame:
+    rank = res["all_rank"]
+    df = pd.DataFrame(index=list(rank.keys()), columns=["all"])
+    df["all"] = list(rank.values())
+    
+    rank_items = res["items"]
+    year_rank = []
+    for item in rank_items:
+        year_rank = []
+        _rank = item["rank"]
+        _year = item["year"]
+        _r = []
+        for t in rank.keys():
+            if t in _rank.keys():
+                _r.append(_rank[t])
+            else:
+                _r.append(0)
+        df[str(_year)] = _r
+    return df
+
+
 if __name__ == '__main__':
     df = pd.read_excel("./out/all-preprocessed.xlsx")
     
-    opt = "freq"
-
-    res = topics_ranking(
-        df["topics"],
-        opt,
-        {
-            "base": None,
-            "year": df["year"]
-        }
-    )
-    # opt = "cite"
-    #
-    # res = topics_ranking(
-    #     df["topics"],
-    #     opt,
-    #     {
-    #         "base": df["cite"],
-    #         "year": df["year"]
-    #     }
-    # )
-
-    rank = res["all_rank"]
-    f = open("./out/rank/%s/txt/all_rank.txt" % opt, "w", encoding="utf-8")
-    i = 1
-    for topic in sorted(rank.items(), key=lambda x: x[1], reverse=True):
-        f.write(f"({i}) {topic[0]}: {topic[1]} \n")
-        # print(f"({i}) {topic[0]}: {topic[1]}")
-        i += 1
-    f.close()
-    # plot
-    cloud_plot(rank, "./out/rank/%s/cloud/all_wordcloud.png" % opt)
-    bar_plot(rank, "./out/rank/%s/bar/all_bar.png" % opt)
-    for i in range(len(res["items"])):
-        _item = res["items"][i]
-        _rank = _item["rank"]
-        f = open("./out/rank/%s/txt/%s_rank.txt" % (opt, _item["year"]), "w", encoding="utf-8")
-        i = 1
-        for topic in sorted(_rank.items(), key=lambda x: x[1], reverse=True):
-            f.write(f"({i}) {topic[0]}: {topic[1]} \n")
-            # print(f"({i}) {topic[0]}: {topic[1]}")
-            i += 1
-        f.close()
-        # plot
-        cloud_plot(_rank, "./out/rank/%s/cloud/%s_wordcloud.png" % (opt, _item["year"]))
-        bar_plot(_rank, "./out/rank/%s/bar/%s_bar.png" % (opt, _item["year"]))
+    options = ["freq", "cite"]
+    for opt in options:
+        if opt == "freq":
+            base = None
+        elif opt == "cite":
+            base = df["cite"]
+        else:
+            base = None
+        res = topics_ranking(
+            df["topics"],
+            opt,
+            {
+                "base": base,
+                "year": df["year"]
+            }
+        )
+        
+        ddf = format(res)
+        print(ddf)
+        ddf.to_excel("./out/rank/all-analyzed-%s.xlsx" % opt)
