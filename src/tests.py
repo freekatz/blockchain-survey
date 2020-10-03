@@ -119,51 +119,40 @@ plt.grid(axis="x", linestyle=":", linewidth=0.5)
 plt.tight_layout()
 plt.savefig("./out/rank/f1.png")
 
-# mycolors = ['tab:red', 'tab:blue', 'tab:green', 'tab:orange', 'tab:brown', 'tab:grey', 'tab:pink', 'tab:olive']
-# columns = ["all", "2016", "2017", "2018", "2019", "2020"]
-#
-# # Draw Plot
-# # fig, ax = plt.subplots(1, 1, figsize=(16, 9), dpi=300)
-# ax=plt.gca()
-# i = 0
-# for t in columns:
-#     yi = ddf[t].values.tolist()
-#     ax.fill_between(x, y1=yi, y2=yi, label=columns[i], alpha=0.8, color=mycolors[i], linewidth=1)
-#     i += 1
-#
-# # Decorations
-# ax.set_title('f2', fontsize=18)
-# ax.legend(loc='best', fontsize=12, ncol=4)
-# plt.xticks(x[::1], fontsize=6, horizontalalignment='left', rotation=320)
-# plt.yticks(np.arange(0, 360.0, 50), fontsize=8)
-# plt.xlim(x[0], x[-1])
-#
-# # # Draw Tick lines
-# # for y in np.arange(0, 150.0, 30):
-# #     plt.hlines(y, xmin=0, xmax=len(x), colors='black', alpha=0.3, linestyles="--", lw=0.5)
-#
-# # Lighten borders
-# plt.gca().spines["top"].set_alpha(0)
-# plt.gca().spines["bottom"].set_alpha(.3)
-# plt.gca().spines["right"].set_alpha(0)
-# plt.gca().spines["left"].set_alpha(.3)
-#
-# plt.rcParams['figure.dpi'] = 600
-# plt.rcParams['savefig.dpi'] = 600
-# plt.tight_layout()
-# plt.grid(axis="x", linestyle=":", linewidth=0.5)
-# plt.savefig("./out/rank/f2.png")
+'''-------------------'''
+mycolors = ['tab:red', 'tab:blue', 'tab:green', 'tab:orange', 'tab:brown', 'tab:grey', 'tab:pink', 'tab:olive']
+columns = ["all", "2016", "2017", "2018", "2019", "2020"]
 
-# ddf.plot.bar(y=ddf.columns[1:], stacked=True)
-#
-# ax = plt.gca()
-# ax.set_title('f3', fontsize=18)
-# ax.legend(loc='best', fontsize=12, ncol=4)
-# plt.xticks(fontsize=6, horizontalalignment='left', rotation=320)
-# plt.yticks(np.arange(0, 360.0, 50), fontsize=8)
-#
-# plt.rcParams['figure.dpi'] = 600
-# plt.rcParams['savefig.dpi'] = 600
-# plt.tight_layout()
-# plt.grid(axis="y", linestyle=":", linewidth=0.5)
-# plt.savefig("./out/rank/f3.png")
+# Draw Plot
+# fig, ax = plt.subplots(1, 1, figsize=(16, 9), dpi=300)
+ax=plt.gca()
+i = 0
+for t in columns:
+    yi = ddf[t].values.tolist()
+    ax.fill_between(x, y1=yi, y2=yi, label=columns[i], alpha=0.8, color=mycolors[i], linewidth=1)
+    i += 1
+
+# Decorations
+ax.set_title('f2', fontsize=18)
+ax.legend(loc='best', fontsize=12, ncol=4)
+plt.xticks(x[::1], fontsize=6, horizontalalignment='left', rotation=320)
+plt.yticks(np.arange(0, 360.0, 50), fontsize=8)
+plt.xlim(x[0], x[-1])
+
+# # Draw Tick lines
+# for y in np.arange(0, 150.0, 30):
+#     plt.hlines(y, xmin=0, xmax=len(x), colors='black', alpha=0.3, linestyles="--", lw=0.5)
+
+# Lighten borders
+plt.gca().spines["top"].set_alpha(0)
+plt.gca().spines["bottom"].set_alpha(.3)
+plt.gca().spines["right"].set_alpha(0)
+plt.gca().spines["left"].set_alpha(.3)
+
+plt.rcParams['figure.dpi'] = 600
+plt.rcParams['savefig.dpi'] = 600
+plt.tight_layout()
+plt.grid(axis="x", linestyle=":", linewidth=0.5)
+plt.savefig("./out/rank/f2.png")
+
+

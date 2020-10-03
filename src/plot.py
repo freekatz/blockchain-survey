@@ -11,6 +11,8 @@
 ------------           -------        --------
 2020/09/01 18:37       1uvu           1.0         
 """
+import os
+
 import matplotlib.pyplot as plt
 from numpy import median
 import seaborn as sns
@@ -22,7 +24,16 @@ import copy
 import re
 
 
-def cloud_plot(rank: dict, target: str):
+def txt_rank(rank: dict, target: str):
+    f = open(target, "w", encoding="utf-8")
+    i = 1
+    for topic in sorted(rank.items(), key=lambda x: x[1], reverse=True):
+        f.write(f"({i}) {topic[0]}: {topic[1]} \n")
+        i += 1
+    f.close()
+
+
+def word_cloud_plot(rank: dict, target: str):
     # style define
     w = wordcloud.WordCloud(
         width=1000, height=700,
@@ -38,13 +49,13 @@ def cloud_plot(rank: dict, target: str):
     w.to_file(target)
 
 
-def bar_plot(rank: dict, target: str, limit=20):
+def bar_rank_plot(rank: dict, target: str, limit=20):
     # style define
     sns.set(style="darkgrid")
     f1, ax = plt.subplots(figsize=(14, 10))
     ax.set_xlabel(re.search("rank/(.*?)/bar", target).groups()[0], fontsize=20)
     ax.set_ylabel('topic', fontsize=20, color='r')
-    ax.set_title(re.search("bar/(.*?)_bar.png", target).groups()[0])
+    ax.set_title(re.search("bar/(.*?)_bar_rank.png", target).groups()[0])
     
     _rank = copy.deepcopy(rank)
     try:
@@ -59,58 +70,63 @@ def bar_plot(rank: dict, target: str, limit=20):
     f1.savefig(target, dpi=100, bbox_inches='tight')
 
 
-def test_plot(df):
-    x = df['date'].values.tolist()
-    y1 = df['psavert'].values.tolist()
-    y2 = df['uempmed'].values.tolist()
-    y3 = df['pce'].values.tolist()
-    y4 = df['pop'].values.tolist()
-    mycolors = ['tab:red', 'tab:blue', 'tab:green', 'tab:orange', 'tab:brown', 'tab:grey', 'tab:pink', 'tab:olive']
-    columns = ['psavert', 'uempmed']
-    
-    # Draw Plot
-    fig, ax = plt.subplots(1, 1, figsize=(16, 9), dpi=80)
-    ax.fill_between(x, y1=y1, y2=0, label=columns[1], alpha=0.5, color=mycolors[1], linewidth=2)
-    ax.fill_between(x, y1=y2, y2=0, label=columns[0], alpha=0.5, color=mycolors[0], linewidth=2)
-    ax.fill_between(x, y1=y3, y2=0, label=columns[1], alpha=0.5, color=mycolors[1], linewidth=2)
-    ax.fill_between(x, y1=y4, y2=0, label=columns[0], alpha=0.5, color=mycolors[0], linewidth=2)
-    # Decorations
-    ax.set_title('Personal Savings Rate vs Median Duration of Unemployment', fontsize=18)
-    ax.set(ylim=[0, 30])
-    ax.legend(loc='best', fontsize=12)
-    plt.xticks(x[::50], fontsize=10, horizontalalignment='center')
-    plt.yticks(np.arange(2.5, 30.0, 2.5), fontsize=10)
-    plt.xlim(-10, x[-1])
-    
-    # Draw Tick lines
-    for y in np.arange(2.5, 30.0, 2.5):
-        plt.hlines(y, xmin=0, xmax=len(x), colors='black', alpha=0.3, linestyles="--", lw=0.5)
-    
-    # Lighten borders
-    plt.gca().spines["top"].set_alpha(0)
-    plt.gca().spines["bottom"].set_alpha(.3)
-    plt.gca().spines["right"].set_alpha(0)
-    plt.gca().spines["left"].set_alpha(.3)
-    plt.show()
+def bar_hop_plot(df: pd.DataFrame, target: str, limit: int, sort_col: str, height: float, step: int):
+    ddf = df.sort_values(sort_col)[0 - limit:]
+    try:
+        ddf = ddf.drop(index=np.nan)
+    except:
+        pass
+    ddf.plot.bar(y=ddf.columns[1:], stacked=True)
 
+    ax = plt.gca()
+    ax.set_title('f3', fontsize=18)
+    ax.legend(loc='best', fontsize=12, ncol=4)
+    plt.xticks(fontsize=6, horizontalalignment='left', rotation=320)
+    plt.yticks(np.arange(0, height, step), fontsize=8)
+
+    plt.rcParams['figure.dpi'] = 600
+    plt.rcParams['savefig.dpi'] = 600
+    plt.tight_layout()
+    plt.grid(axis="y", linestyle=":", linewidth=0.5)
+    plt.savefig(target)
 
 
 def plot_pipeline(df: pd.DataFrame, opt: str):
-    pass
-    # f = open("./out/rank/%s/txt/%s_rank.txt" % (opt, suf), "w", encoding="utf-8")
-    # i = 1
-    # for topic in sorted(rank.items(), key=lambda x: x[1], reverse=True):
-    #     f.write(f"({i}) {topic[0]}: {topic[1]} \n")
-    #     # print(f"({i}) {topic[0]}: {topic[1]}")
-    #     i += 1
-    # f.close()
-    # # plot pipeline
-    # cloud_plot(rank, "./out/rank/%s/cloud/%s_wordcloud.png" % (opt, suf))
-    # bar_plot(rank, "./out/rank/%s/bar/%s_bar.png" % (opt, suf))
+    # for col in df.columns:
+    #     ddf = df.sort_values(col)
+    #     rank = {}
+    #     for topic, n in zip(ddf.index, ddf[col]):
+    #         if type(topic) is not str: continue
+    #         rank[topic] = n
+    #
+    #     p1 = "./out/rank/%s/txt/" % opt
+    #     p2 = "./out/rank/%s/cloud/" % opt
+    #     p3 = "./out/rank/%s/bar/" % opt
+    #     path = [p1, p2, p3]
+    #     for p in path:
+    #         if not os.path.exists(p):
+    #             os.makedirs(p)
+    #     # plot pipeline
+    #     # print(rank)
+    #     txt_rank(rank, p1 + "%s_rank.txt" % col)
+    #     word_cloud_plot(rank, p2 + "%s_word_cloud.png" % col)
+    #     bar_rank_plot(rank, p3 + "%s_bar_rank.png" % col)
+    if opt=="cite":
+        height = 3000
+        step = 200
+    else:
+        height = 360
+        step = 50
+    bar_hop_plot(df, "./out/rank/bar-hop-%s.png" % opt, 30, "all", height, step)
 
-# 改得通用一些
+
+# todo 代码还是要继续改，现在太慢了，结构也不行，主要是画图这里
 # 散点图：竖轴 topics，横轴 year；竖轴 cite，横轴 topics；再来个 3D 的
 # 条形图：1. topics 排行：frequency，cite；2. 每年论文数量排行：其中每一年中的论文某个话题数量
 
 
-
+if __name__ == '__main__':
+    options = ["freq", "cite"]
+    for opt in options:
+        df = pd.read_excel('out/rank/all-analyzed-%s.xlsx' % opt, index_col=0)
+        plot_pipeline(df, opt)
