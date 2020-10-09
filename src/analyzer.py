@@ -63,7 +63,7 @@ def topics_ranking(topics: pd.Series, opt="freq", args=None) -> {}:
         single_topics = []
         for t in topics:
             if pd.isna(t):
-                single_topics += ["NaN"]
+                single_topics += [np.nan]
             else:
                 single_topics += re.split(",", t)
         all_rank = dict(Counter(single_topics))
@@ -77,7 +77,7 @@ def topics_ranking(topics: pd.Series, opt="freq", args=None) -> {}:
             for _y, _t in zip(year, topics):
                 if _y == y:
                     if pd.isna(_t):
-                        s_topics += ["NaN"]
+                        s_topics += [np.nan]
                     else:
                         s_topics += re.split(",", _t)
             _rank = dict(Counter(s_topics))
@@ -140,26 +140,30 @@ def format(res: dict) -> pd.DataFrame:
     return df
 
 
+def analyzer_pipeline(df: pd.DataFrame, opt: str):
+    if opt == "freq":
+        base = None
+    elif opt == "cite":
+        base = df["cite"]
+    else:
+        base = None
+    res = topics_ranking(
+        df["topics"],
+        opt,
+        {
+            "base": base,
+            "year": df["year"]
+        }
+    )
+    
+    ddf = format(res)
+    print(ddf)
+    ddf.to_excel("./out/rank/all-ranking-%s.xlsx" % opt)
+
+
 if __name__ == '__main__':
     df = pd.read_excel("./out/all-preprocessed.xlsx")
     
     options = ["freq", "cite"]
     for opt in options:
-        if opt == "freq":
-            base = None
-        elif opt == "cite":
-            base = df["cite"]
-        else:
-            base = None
-        res = topics_ranking(
-            df["topics"],
-            opt,
-            {
-                "base": base,
-                "year": df["year"]
-            }
-        )
-        
-        ddf = format(res)
-        print(ddf)
-        ddf.to_excel("./out/rank/all-analyzed-%s.xlsx" % opt)
+        analyzer_pipeline(df, opt)

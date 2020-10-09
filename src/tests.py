@@ -76,7 +76,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 # Import Data
-df = pd.read_excel('out/rank/all-analyzed-freq.xlsx', index_col=0)
+df = pd.read_excel('out/rank/all-ranking-freq.xlsx', index_col=0)
 
 limit = 30
 ddf = df.sort_values("all")[0 - limit:]

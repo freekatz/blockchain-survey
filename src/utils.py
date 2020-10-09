@@ -80,6 +80,27 @@ def merge(pwd: str, target: str):
     df.to_excel(target, index=False)
 
 
+def df_rank(df: pd.DataFrame, col: str) -> dict:
+    ddf = df.sort_values(col)
+    rank = {}
+    for topic, n in zip(ddf.index, ddf[col]):
+        if type(topic) is not str: continue
+        rank[topic] = n
+        
+    return rank
+
+
+def df_coincide(df: pd.DataFrame, cols: list) -> pd.DataFrame:
+    """
+    
+    :param df:
+    :param cols: the coincide of cols
+    :return:
+    """
+    ddf = df[cols][~df.isin(["0"])].dropna()
+    df = df[df.index.isin(ddf.index)]
+    return df
+
 if __name__ == '__main__':
     pwd = './out/tmp/'  # 获取文件目录
     target = './out/all-2.xlsx'

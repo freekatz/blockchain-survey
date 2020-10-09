@@ -19,7 +19,7 @@ import re
 from utils import stem, similar_replace, remove_chore
 
 
-def batching(df: pd.DataFrame) -> pd.DataFrame:
+def preprocess_pipeline(df: pd.DataFrame) -> pd.DataFrame:
     # drop duplicates
     # date2year
     # fill na and modify invalid value
@@ -104,6 +104,6 @@ def norm(df: pd.DataFrame) -> pd.Series:
 if __name__ == '__main__':
     df = pd.read_excel("./out/all.xlsx")
     
-    ddf = batching(df)
+    ddf = preprocess_pipeline(df)
     
     ddf.to_excel("./out/all-preprocessed.xlsx", index=False, encoding="utf-8")

@@ -23,6 +23,8 @@ import json
 import copy
 import re
 
+from utils import df_rank, df_coincide
+
 
 def txt_rank(rank: dict, target: str):
     f = open(target, "w", encoding="utf-8")
@@ -41,10 +43,7 @@ def word_cloud_plot(rank: dict, target: str):
         font_path='msyh.ttc'
     )
     _rank = copy.deepcopy(rank)
-    try:
-        _rank.pop("NaN")
-    except:
-        pass
+    
     w.generate_from_frequencies(_rank)
     w.to_file(target)
 
@@ -58,10 +57,6 @@ def bar_rank_plot(rank: dict, target: str, limit=20):
     ax.set_title(re.search("bar/(.*?)_bar_rank.png", target).groups()[0])
     
     _rank = copy.deepcopy(rank)
-    try:
-        _rank.pop("NaN")
-    except:
-        pass
     _rank = sorted(_rank.items(), key=lambda it: it[1], reverse=True)
     
     x = [int(v[1]) for v in _rank[:limit]]
@@ -72,18 +67,14 @@ def bar_rank_plot(rank: dict, target: str, limit=20):
 
 def bar_hop_plot(df: pd.DataFrame, target: str, limit: int, sort_col: str, height: float, step: int):
     ddf = df.sort_values(sort_col)[0 - limit:]
-    try:
-        ddf = ddf.drop(index=np.nan)
-    except:
-        pass
     ddf.plot.bar(y=ddf.columns[1:], stacked=True)
-
+    
     ax = plt.gca()
     ax.set_title('f3', fontsize=18)
     ax.legend(loc='best', fontsize=12, ncol=4)
     plt.xticks(fontsize=6, horizontalalignment='left', rotation=320)
     plt.yticks(np.arange(0, height, step), fontsize=8)
-
+    
     plt.rcParams['figure.dpi'] = 600
     plt.rcParams['savefig.dpi'] = 600
     plt.tight_layout()
@@ -91,13 +82,18 @@ def bar_hop_plot(df: pd.DataFrame, target: str, limit: int, sort_col: str, heigh
     plt.savefig(target)
 
 
+def test(df: pd.DataFrame, opt: str):
+    cols = ["2017", "2018", "2019", "2020"]
+    ddf = df_coincide(df, cols)
+    
+    ddf = ddf.sort_values("all")
+    
+    ddf.to_html("./t-%s.htm" % opt)
+
+
 def plot_pipeline(df: pd.DataFrame, opt: str):
     # for col in df.columns:
-    #     ddf = df.sort_values(col)
-    #     rank = {}
-    #     for topic, n in zip(ddf.index, ddf[col]):
-    #         if type(topic) is not str: continue
-    #         rank[topic] = n
+    #     rank = df_rank(df, col)
     #
     #     p1 = "./out/rank/%s/txt/" % opt
     #     p2 = "./out/rank/%s/cloud/" % opt
@@ -106,21 +102,24 @@ def plot_pipeline(df: pd.DataFrame, opt: str):
     #     for p in path:
     #         if not os.path.exists(p):
     #             os.makedirs(p)
-    #     # plot pipeline
-    #     # print(rank)
+    #
     #     txt_rank(rank, p1 + "%s_rank.txt" % col)
     #     word_cloud_plot(rank, p2 + "%s_word_cloud.png" % col)
     #     bar_rank_plot(rank, p3 + "%s_bar_rank.png" % col)
-    if opt=="cite":
+    
+    if opt == "cite":
         height = 3000
         step = 200
     else:
         height = 360
         step = 50
     bar_hop_plot(df, "./out/rank/bar-hop-%s.png" % opt, 30, "all", height, step)
+    
+    # df_coincide(df)
+    test(df, opt)
 
 
-# todo 代码还是要继续改，现在太慢了，结构也不行，主要是画图这里
+# todo 代码还是要继续改，现在太慢了，结构也不行(主要是画图这里，重复的处理过程应该用一个函数自动进行)
 # 散点图：竖轴 topics，横轴 year；竖轴 cite，横轴 topics；再来个 3D 的
 # 条形图：1. topics 排行：frequency，cite；2. 每年论文数量排行：其中每一年中的论文某个话题数量
 
@@ -128,5 +127,11 @@ def plot_pipeline(df: pd.DataFrame, opt: str):
 if __name__ == '__main__':
     options = ["freq", "cite"]
     for opt in options:
-        df = pd.read_excel('out/rank/all-analyzed-%s.xlsx' % opt, index_col=0)
-        plot_pipeline(df, opt)
+        df = pd.read_excel('out/rank/all-ranking-%s.xlsx' % opt, index_col=0)
+        # todo rm the NaN
+        try:
+            ddf = df.drop(index=["nothing", np.nan, "null", ""]).dropna()
+        except:
+            ddf = df.drop(index=["nothing"]).dropna()
+        plot_pipeline(ddf, opt)
+        # ddf.to_excel("./t.xlsx")
