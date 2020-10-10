@@ -13,6 +13,7 @@
 """
 import nltk.stem as ns
 import pandas as pd
+import numpy as np
 import os
 import re
 
@@ -80,11 +81,15 @@ def merge(pwd: str, target: str):
     df.to_excel(target, index=False)
 
 
+def drop_nan(df: pd.DataFrame) -> pd.DataFrame:
+    ddf = df.dropna().drop(axis=0, index=["nothing", "nan"])
+    return ddf
+
 def df_rank(df: pd.DataFrame, col: str) -> dict:
     ddf = df.sort_values(col)
     rank = {}
     for topic, n in zip(ddf.index, ddf[col]):
-        if type(topic) is not str: continue
+        # if type(topic) is not str: continue
         rank[topic] = n
         
     return rank

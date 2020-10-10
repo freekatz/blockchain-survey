@@ -14,6 +14,7 @@
 import texthero as hero
 import nltk.stem as ns
 import pandas as pd
+import numpy as np
 import re
 
 from utils import stem, similar_replace, remove_chore
@@ -41,7 +42,7 @@ def drop(df: pd.DataFrame) -> pd.DataFrame:
         because it maybe rm data lines but no duplicated
     """
     ddf = df.copy(deep=False)
-    
+    # don't drop nan here
     return ddf.drop_duplicates(["abstract"]).drop_duplicates(["url"]).drop_duplicates(["title"])
 
 
@@ -60,8 +61,6 @@ def fill(df: pd.DataFrame) -> pd.DataFrame:
     cite = [lambda x: "0" if pd.isna(c) else c for c in df["cite"]]
     ddf = df.copy(deep=False)
     ddf["cite"] = cite
-    
-    ddf.fillna("nan")
     
     return ddf
 

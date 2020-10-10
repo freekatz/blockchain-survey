@@ -21,17 +21,6 @@ import re
 from utils import stem, similar_replace, remove_chore
 from plot import plot_pipeline
 
-"""
-1. 每个话题词对应一个出现频率（所有），再分别对每年的话题词统计频率（每年） 1
-2. 每年对应多个论文，一个论文对应多个话题词（根据 1 扫描整个数据集的话题，即可找出对应话题所属的文章，对于一年时，只需额外规定下年份即可）
-结合 1，2 可画出每年 + 所有的话题词频率排行榜，及参考论文 1 中的图二
-3. 每个话题词对应一个出现引用量（所有），再分别对每年的话题词统计引用量（每年） 1
-结合 2，3 可画出画出每年 + 所有的话题词频率排行榜，及类似论文 1 中的图二
-4. 根据话题引用量和频率可生成词云（每年和所有） 1
-"""
-
-
-# TODO: 20200902 以上分析 + 代码重新组织，完成初始版本
 
 def topics_ranking(topics: pd.Series, opt="freq", args=None) -> {}:
     """
@@ -125,7 +114,6 @@ def format(res: dict) -> pd.DataFrame:
     df["all"] = list(rank.values())
     
     rank_items = res["items"]
-    year_rank = []
     for item in rank_items:
         year_rank = []
         _rank = item["rank"]
@@ -157,8 +145,8 @@ def analyzer_pipeline(df: pd.DataFrame, opt: str):
     )
     
     ddf = format(res)
-    print(ddf)
     ddf.to_excel("./out/rank/all-ranking-%s.xlsx" % opt)
+    return ddf
 
 
 if __name__ == '__main__':

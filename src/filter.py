@@ -12,6 +12,7 @@
 2020/09/02 14:51       1uvu           0.0.1
 """
 
+
 # # # rm titles auto
 # #
 # # """
@@ -71,3 +72,7 @@
 #     print(df1)
 #
 #     df1.to_excel("./out/all-filtered-3.xlsx", encoding="utf-8", index=False)
+
+
+def filter_pipeline():
+    pass

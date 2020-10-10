@@ -87,8 +87,7 @@ def test(df: pd.DataFrame, opt: str):
     ddf = df_coincide(df, cols)
     
     ddf = ddf.sort_values("all")
-    
-    ddf.to_html("./t-%s.htm" % opt)
+    print(ddf)
 
 
 def plot_pipeline(df: pd.DataFrame, opt: str):
@@ -115,7 +114,6 @@ def plot_pipeline(df: pd.DataFrame, opt: str):
         step = 50
     bar_hop_plot(df, "./out/rank/bar-hop-%s.png" % opt, 30, "all", height, step)
     
-    # df_coincide(df)
     test(df, opt)
 
 
@@ -128,10 +126,5 @@ if __name__ == '__main__':
     options = ["freq", "cite"]
     for opt in options:
         df = pd.read_excel('out/rank/all-ranking-%s.xlsx' % opt, index_col=0)
-        # todo rm the NaN
-        try:
-            ddf = df.drop(index=["nothing", np.nan, "null", ""]).dropna()
-        except:
-            ddf = df.drop(index=["nothing"]).dropna()
-        plot_pipeline(ddf, opt)
-        # ddf.to_excel("./t.xlsx")
+        plot_pipeline(df, opt)
+        
