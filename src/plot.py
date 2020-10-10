@@ -23,7 +23,7 @@ import json
 import copy
 import re
 
-from utils import df_rank, df_coincide
+from utils import drop_nan, df_coincide
 
 
 def txt_rank(rank: dict, target: str):
@@ -84,9 +84,20 @@ def bar_hop_plot(df: pd.DataFrame, target: str, limit: int, sort_col: str, heigh
 
 def test(df: pd.DataFrame, opt: str):
     cols = ["2017", "2018", "2019", "2020"]
-    ddf = df_coincide(df, cols)
+    labels = ["0"]
+    ddf = df_coincide(df, cols, labels)
     
-    ddf = ddf.sort_values("all")
+    ddf = ddf.sort_values("all", ascending=False)
+    print(ddf)
+    ddf.to_html("./%s-coincide.htm" % opt)
+    
+    
+def test1(df):
+    cols = ["2016", "2017", "2018", "2019", "2020"]
+    labels = ["bitcoin", "ethereum", "hyperledger"]
+    ddf = df[cols][df.index.isin(labels)]
+    ddf = df[df.index.isin(ddf.index)]
+    ddf = ddf.sort_values("all", ascending=False)
     print(ddf)
 
 
@@ -106,15 +117,16 @@ def plot_pipeline(df: pd.DataFrame, opt: str):
     #     word_cloud_plot(rank, p2 + "%s_word_cloud.png" % col)
     #     bar_rank_plot(rank, p3 + "%s_bar_rank.png" % col)
     
-    if opt == "cite":
-        height = 3000
-        step = 200
-    else:
-        height = 360
-        step = 50
-    bar_hop_plot(df, "./out/rank/bar-hop-%s.png" % opt, 30, "all", height, step)
+    # if opt == "cite":
+    #     height = 3000
+    #     step = 200
+    # else:
+    #     height = 360
+    #     step = 50
+    # bar_hop_plot(df, "./out/rank/bar-hop-%s.png" % opt, 30, "all", height, step)
     
-    test(df, opt)
+    # test(df, opt)
+    test1(df)
 
 
 # todo 代码还是要继续改，现在太慢了，结构也不行(主要是画图这里，重复的处理过程应该用一个函数自动进行)
@@ -126,5 +138,6 @@ if __name__ == '__main__':
     options = ["freq", "cite"]
     for opt in options:
         df = pd.read_excel('out/rank/all-ranking-%s.xlsx' % opt, index_col=0)
-        plot_pipeline(df, opt)
+        dff = drop_nan(df)
+        plot_pipeline(dff, opt)
         

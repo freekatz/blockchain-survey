@@ -85,26 +85,29 @@ def drop_nan(df: pd.DataFrame) -> pd.DataFrame:
     ddf = df.dropna().drop(axis=0, index=["nothing", "nan"])
     return ddf
 
+
 def df_rank(df: pd.DataFrame, col: str) -> dict:
     ddf = df.sort_values(col)
     rank = {}
     for topic, n in zip(ddf.index, ddf[col]):
         # if type(topic) is not str: continue
         rank[topic] = n
-        
+    
     return rank
 
 
-def df_coincide(df: pd.DataFrame, cols: list) -> pd.DataFrame:
+def df_coincide(df: pd.DataFrame, cols: list, labels: list) -> pd.DataFrame:
     """
     
+    :param labels:
     :param df:
     :param cols: the coincide of cols
     :return:
     """
-    ddf = df[cols][~df.isin(["0"])].dropna()
+    ddf = df[cols][~df.isin(labels)]
     df = df[df.index.isin(ddf.index)]
     return df
+
 
 if __name__ == '__main__':
     pwd = './out/tmp/'  # 获取文件目录
