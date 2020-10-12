@@ -88,7 +88,6 @@ def test(df: pd.DataFrame, opt: str):
     ddf = df_coincide(df, cols, labels)
     
     ddf = ddf.sort_values("all", ascending=False)
-    print(ddf)
     ddf.to_html("./%s-coincide.htm" % opt)
     
     
@@ -125,8 +124,8 @@ def plot_pipeline(df: pd.DataFrame, opt: str):
     #     step = 50
     # bar_hop_plot(df, "./out/rank/bar-hop-%s.png" % opt, 30, "all", height, step)
     
-    # test(df, opt)
-    test1(df)
+    test(df, opt)
+    # test1(df)
 
 
 # todo 代码还是要继续改，现在太慢了，结构也不行(主要是画图这里，重复的处理过程应该用一个函数自动进行)

@@ -31,7 +31,8 @@ def similar_replace(string) -> str:
     
     ws = words
     for item in similar_items:
-        if item[0] == "#": continue
+        if "//" in item[:2]:
+            continue
         i = 0
         item = item.strip()
         s_list = re.split("==", item)
@@ -104,9 +105,8 @@ def df_coincide(df: pd.DataFrame, cols: list, labels: list) -> pd.DataFrame:
     :param cols: the coincide of cols
     :return:
     """
-    ddf = df[cols][~df.isin(labels)]
-    df = df[df.index.isin(ddf.index)]
-    return df
+    ddf = df[cols][~df.isin(labels)].dropna(axis=0)
+    return df[df.index.isin(ddf.index)]
 
 
 if __name__ == '__main__':

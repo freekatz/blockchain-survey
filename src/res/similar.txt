@@ -1,3 +1,4 @@
+// 使用 "//" 放在行首可以跳过该行，可在其后写上注释
 internet of things==iot==internet of thing
 distribute ledger==distributed ledger technology==dlt==distribute ledger technology==distributed ledger
 blockchain==block chain==block-chain==bc-blockchain==blockchains
@@ -31,6 +32,6 @@ crash fault tolerance==crash fault tolerant consensus
 mining pool==mine pool
 double spending==double spend problem
 cloud compute==cloud
-# use null to replace the general topics such as blockchain, review, etc.
+// 可使用 nothing 代替准备去掉的话题词，如 blockchain，review，tutorial 等等
 nothing==review==blockchain==NaN
 system security==distribute system security
