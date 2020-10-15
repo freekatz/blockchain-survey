@@ -11,7 +11,7 @@
 ------------           -------        --------
 2020/09/01 12:08       1uvu           1.0         
 """
-import nltk.stem as nots
+# import nltk.stem as nots
 
 # from utils import *
 #
@@ -160,14 +160,14 @@ import re
 
 from utils import *
 
-a = open("./out/rank/freq/txt/all_rank.txt", "r")
-topics = [re.search(r"\) (.*): ", l).groups()[0] for l in a.readlines()]
-s = open("./res/security.txt", "r")
-securities = [l.replace("\n", "") for l in s.readlines()]
-a.close()
-s.close()
-print(topics)
-not_securities = [l for l in topics if l not in securities]
-ns = open("./res/not-security.txt", "w")
-ns.write("\n".join(not_securities))
-ns.close()
+"""
+todo
+1 为每一个话题词加入向量：与哪些话题词，论文相关联
+2 解决重复加问题，替换同义词时，对于同一篇文章中的去重即可
+"""
+
+s = "blockchain,block chain,business model,disintegration,digital currency"
+
+ss = similar_replace(s)
+
+print(ss)

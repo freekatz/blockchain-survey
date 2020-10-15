@@ -48,6 +48,7 @@ def drop(df: pd.DataFrame) -> pd.DataFrame:
 
 def year(df: pd.DataFrame) -> pd.Series:
     pass
+    # todo 完善代码
     return df["year"]
 
 
@@ -56,7 +57,7 @@ def fill(df: pd.DataFrame) -> pd.DataFrame:
     
     :param df:
     :return:
-    :notice: only 'cite' series be filled by '0', others use 'NaN' to fill
+    :notice: only 'cite' series be filled by '0', others use 'nothing' to fill
     """
     cite = [lambda x: "0" if pd.isna(c) else c for c in df["cite"]]
     ddf = df.copy(deep=False)

@@ -42,8 +42,7 @@ def similar_replace(string) -> str:
                 ws[i] = s_list[0]
             
             i += 1
-    
-    s = ",".join(ws)
+    s = ",".join(set(ws))
     return s
 
 
