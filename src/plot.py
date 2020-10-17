@@ -104,9 +104,9 @@ def plot_pipeline(df: pd.DataFrame, opt: str):
     # for col in df.columns:
     #     rank = df_rank(df, col)
     #
-    #     p1 = "./out/rank/%s/txt/" % opt
-    #     p2 = "./out/rank/%s/cloud/" % opt
-    #     p3 = "./out/rank/%s/bar/" % opt
+    #     p1 = "./out/plot/%s/txt/" % opt
+    #     p2 = "./out/plot/%s/cloud/" % opt
+    #     p3 = "./out/plot/%s/bar/" % opt
     #     path = [p1, p2, p3]
     #     for p in path:
     #         if not os.path.exists(p):

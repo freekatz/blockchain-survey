@@ -21,6 +21,9 @@ import re
 from utils import stem, similar_replace, remove_chore
 from plot import plot_pipeline
 
+out_path = "./out"
+out_target_path = out_path + "/analyzer"
+
 
 # todo refactor this function
 def topics_analysis(topics: pd.Series, opt="freq", args=None) -> {}:
@@ -142,7 +145,7 @@ def topics_vector(df: pd.DataFrame, security_topics: list) -> dict:
                 t.remove('nothing')
             except:
                 pass
-    jf = open("./out/security.json", "w")
+    jf = open(out_target_path + "/security.json", "w")
     js = json.dumps(rtn_topic)
     jf.write(js)
     jf.close()
@@ -156,7 +159,7 @@ def topics_vector(df: pd.DataFrame, security_topics: list) -> dict:
     df1["url"] = ddf["url"]
     df1["topics"] = ddf["topics"]
 
-    df1.to_html('./out/security.htm')
+    df1.to_html(out_target_path + "/security.htm")
     return rtn_topic
 
 
@@ -197,7 +200,7 @@ def analyzer_pipeline(df: pd.DataFrame, opt: str):
     )
     
     ddf = format(res)
-    ddf.to_excel("./out/rank/all-ranking-%s.xlsx" % opt)
+    ddf.to_excel(out_target_path + "/all-%s.xlsx" % opt)
     return ddf
 
 
