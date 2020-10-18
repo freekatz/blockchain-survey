@@ -28,6 +28,7 @@ class Crawler:
             payload = {}
         if method == "GET":
             resp = requests.get(url, params=payload, headers=headers, proxies=proxies)
+            print(resp.url)
             return BeautifulSoup(resp.text, "lxml")
         elif method == "POST":
             resp = requests.post(url, data=payload, headers=headers, proxies=proxies)
@@ -393,8 +394,8 @@ if __name__ == '__main__':
     # springer = SpringerCrawler()
     # springer.run()
     
-    # acm = AcmCrawler()
-    # acm.run()
+    acm = AcmCrawler()
+    acm.run()
     
     # science_direct = ScienceDirectCrawler()
     # science_direct.run()

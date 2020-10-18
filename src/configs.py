@@ -62,11 +62,17 @@ springer_index_range_end = 58
 springer_detail_base_url = "https://link.springer.com"
 springer_payload = {
     "date-facet-mode": "between",
-    "dc.title": "smart contract",
-    "facet-start-year": "2009",
+    # "dc.title": "",
+    "facet-start-year": "2014",
     "facet-end-year": "2020",
+    "facet-language": "En",
+    "facet-content-type": "ConferencePaper",
+    # OR
+    # "facet-content-type": "Article",
     "showAll": "true",
-    "query": "(survey OR review OR overview OR tutorial)"
+    "query": "(Bitcoin OR Ethereum OR Blockchain OR Distributed Ledger) \
+            AND (security OR risk OR threat OR challenges OR attack OR vulnerabilities OR vulnerability) \
+            AND NOT (Survey OR Overview OR Review OR Tutorial)"
 }
 springer_target_path = "./out/springer.xlsx"
 
@@ -77,11 +83,17 @@ acm_detail_base_url = "https://dl.acm.org"
 acm_payload = {
     "fillQuickSearch": "false",
     "expand": "all",
-    "AfterYear": "2009",
+    "AfterYear": "2014",
     "BeforeYear": "2020",
-    "AllField": "Abstract:(cryptocurrency OR consensus OR smart contract) AND Title:(survey OR review OR tutorial OR overview)",
+    "AllField": "[[Abstract:bitcoin] OR [Abstract:ethereum] OR [Abstract:blockchain] OR [Abstract:distributed ledger]] AND [[Abstract:security] OR [Abstract:risk] OR [Abstract:threat] OR [Abstract:challenges] OR [Abstract:attack] OR [Abstract:vulnerabilities] OR [Abstract:vulnerability]] AND NOT [[Title:survey] OR [Title:review] OR [Title:tutorial] [Title:overview]] AND [Publication Date: (01/01/2014 TO 12/31/2020)]",
     "pageSize": "50"
 }
+
+"""
+https://dl.acm.org/action/doSearch?
+fillQuickSearch=false&expand=all&AfterYear=2014&BeforeYear=2020
+&AllField=Keyword%3A%28security+OR+risk+OR+threat+OR+challenges+OR+attack+OR+vulnerabilities+OR+vulnerability%29+AND+Title%3A%28NOT+%28Survey+OR+Overview+OR+Review+OR+Tutorial%29%29+AND+Abstract%3A%28Bitcoin+OR+Ethereum+OR+Blockchain+OR+%28Distributed+AND+Ledger%29%29
+"""
 
 acm_target_path = "./out/acm.xlsx"
 
