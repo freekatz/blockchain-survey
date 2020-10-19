@@ -18,6 +18,7 @@ from filter import filter_pipeline
 from analyzer import analyzer_pipeline
 from plot import plot_pipeline
 from utils import drop_nan
+from settings import *
 
 """
 crawler.py 1
@@ -30,9 +31,9 @@ plot.py doing...
 if __name__ == '__main__':
     filter_pipeline()
     
-    df = pd.read_excel("./out/all.xlsx")
+    df = pd.read_excel(output_root_dir + "/all.xlsx")
     ddf = preprocess_pipeline(df)
-    ddf.to_excel("./out/all-preprocessed.xlsx", index=False, encoding="utf-8")
+    ddf.to_excel(preprocess_output_dir + "/all-preprocessed.xlsx", index=False, encoding="utf-8")
     
     options = ["freq", "cite"]
     for opt in options:

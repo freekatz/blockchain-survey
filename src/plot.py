@@ -23,7 +23,8 @@ import json
 import copy
 import re
 
-from utils import drop_nan, df_coincide
+from utils import drop_nan, df_coincide, df_rank
+from settings import *
 
 
 def txt_rank(rank: dict, target: str):
@@ -52,9 +53,9 @@ def bar_rank_plot(rank: dict, target: str, limit=20):
     # style define
     sns.set(style="darkgrid")
     f1, ax = plt.subplots(figsize=(14, 10))
-    ax.set_xlabel(re.search("rank/(.*?)/bar", target).groups()[0], fontsize=20)
+    ax.set_xlabel(re.search("/(.*?)/bar", target).groups()[0], fontsize=20)
     ax.set_ylabel('topic', fontsize=20, color='r')
-    ax.set_title(re.search("bar/(.*?)_bar_rank.png", target).groups()[0])
+    ax.set_title(re.search("/(.*?)_bar_rank.png", target).groups()[0])
     
     _rank = copy.deepcopy(rank)
     _rank = sorted(_rank.items(), key=lambda it: it[1], reverse=True)
@@ -73,7 +74,7 @@ def bar_hop_plot(df: pd.DataFrame, target: str, limit: int, sort_col: str, heigh
     ax.set_title('f3', fontsize=18)
     ax.legend(loc='best', fontsize=12, ncol=4)
     plt.xticks(fontsize=6, horizontalalignment='left', rotation=320)
-    plt.yticks(np.arange(0, height, step), fontsize=8)
+    # plt.yticks(np.arange(0, height, step), fontsize=8)
     
     plt.rcParams['figure.dpi'] = 600
     plt.rcParams['savefig.dpi'] = 600
@@ -101,30 +102,31 @@ def test1(df):
 
 
 def plot_pipeline(df: pd.DataFrame, opt: str):
-    # for col in df.columns:
-    #     rank = df_rank(df, col)
-    #
-    #     p1 = "./out/plot/%s/txt/" % opt
-    #     p2 = "./out/plot/%s/cloud/" % opt
-    #     p3 = "./out/plot/%s/bar/" % opt
-    #     path = [p1, p2, p3]
-    #     for p in path:
-    #         if not os.path.exists(p):
-    #             os.makedirs(p)
-    #
-    #     txt_rank(rank, p1 + "%s_rank.txt" % col)
-    #     word_cloud_plot(rank, p2 + "%s_word_cloud.png" % col)
-    #     bar_rank_plot(rank, p3 + "%s_bar_rank.png" % col)
+    for col in df.columns:
+        rank = df_rank(df, col)
+
+        p1 = plot_output_dir + "/%s/txt/" % opt
+        p2 = plot_output_dir + "/%s/cloud/" % opt
+        p3 = plot_output_dir + "/%s/bar/" % opt
+        path = [p1, p2, p3]
+        for p in path:
+            if not os.path.exists(p):
+                os.makedirs(p)
+
+        txt_rank(rank, p1 + "%s_rank.txt" % col)
+        word_cloud_plot(rank, p2 + "%s_word_cloud.png" % col)
+        bar_rank_plot(rank, p3 + "%s_bar_rank.png" % col)
     
     # if opt == "cite":
-    #     height = 3000
-    #     step = 200
+    #     height = 5000
+    #     step = 250
     # else:
-    #     height = 360
+    #     height = 800
     #     step = 50
-    # bar_hop_plot(df, "./out/rank/bar-hop-%s.png" % opt, 30, "all", height, step)
+    # bar_hop_plot(df, plot_output_dir + "/bar-hop-%s.png" % opt, 30, "all", height, step)
+    bar_hop_plot(df, plot_output_dir + "/bar-hop-%s.png" % opt, 30, "all", 0, 0)
     
-    test(df, opt)
+    # test(df, opt)
     # test1(df)
 
 
@@ -136,7 +138,6 @@ def plot_pipeline(df: pd.DataFrame, opt: str):
 if __name__ == '__main__':
     options = ["freq", "cite"]
     for opt in options:
-        df = pd.read_excel('out/rank/all-ranking-%s.xlsx' % opt, index_col=0)
-        dff = drop_nan(df)
-        plot_pipeline(dff, opt)
+        df = pd.read_excel(analyzer_output_dir + '/all-%s.xlsx' % opt, index_col=0)
+        plot_pipeline(df, opt)
         

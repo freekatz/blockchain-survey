@@ -26,9 +26,9 @@ def preprocess_pipeline(df: pd.DataFrame) -> pd.DataFrame:
     # fill na and modify invalid value
     # topics normalize
     ddf = df.copy()
-    drop(ddf)
     ddf["year"] = year(ddf)
-    fill(ddf)
+    ddf = fill(ddf)
+    ddf = drop(ddf)
     ddf["topics"] = norm(ddf)
     return ddf
 
@@ -42,14 +42,21 @@ def drop(df: pd.DataFrame) -> pd.DataFrame:
         because it maybe rm data lines but no duplicated
     """
     ddf = df.copy(deep=False)
+    ddf = ddf.drop_duplicates(["abstract"]).drop_duplicates(["url"]).drop_duplicates(["title"])
     # don't drop nan here
-    return ddf.drop_duplicates(["abstract"]).drop_duplicates(["url"]).drop_duplicates(["title"])
+    return ddf
 
 
 def year(df: pd.DataFrame) -> pd.Series:
-    pass
-    # todo 完善代码
-    return df["year"]
+    ys = []
+    for _y in df["year"]:
+        year = str(_y).strip()
+        if "-" in year and not re.search("[a-z|A-Z]", year):
+            y = re.split("-", year)[0]
+        else:
+            y = re.split(" ", year)[-1]
+        ys.append(y)
+    return pd.Series(ys)
 
 
 def fill(df: pd.DataFrame) -> pd.DataFrame:
@@ -59,9 +66,14 @@ def fill(df: pd.DataFrame) -> pd.DataFrame:
     :return:
     :notice: only 'cite' series be filled by '0', others use 'nothing' to fill
     """
-    cite = [lambda x: "0" if pd.isna(c) else c for c in df["cite"]]
+    cite = []
+    for c in df["cite"]:
+        if pd.isna(c):
+            cite.append("0")
+        else:
+            cite.append(str(re.split(" ", str(c))[0]))
     ddf = df.copy(deep=False)
-    ddf["cite"] = cite
+    ddf["cite"] = pd.Series(cite)
     
     return ddf
 
@@ -98,6 +110,7 @@ def norm(df: pd.DataFrame) -> pd.Series:
             if t != "":
                 topic.append(t.replace("\xa0", ""))
         topics.append(",".join([similar_replace(stem(remove_chore(t), lemmatizer)) for t in topic]))
+        # topics.append(",".join([stem(remove_chore(t), lemmatizer) for t in topic]))
     return pd.Series(topics)
 
 

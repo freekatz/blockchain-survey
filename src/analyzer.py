@@ -20,9 +20,7 @@ import re
 
 from utils import stem, similar_replace, remove_chore
 from plot import plot_pipeline
-
-out_path = "./out"
-out_target_path = out_path + "/analyzer"
+from settings import *
 
 
 # todo refactor this function
@@ -145,13 +143,13 @@ def topics_vector(df: pd.DataFrame, security_topics: list) -> dict:
                 t.remove('nothing')
             except:
                 pass
-    jf = open(out_target_path + "/security.json", "w")
+    jf = open(analyzer_output_dir + "/security.json", "w")
     js = json.dumps(rtn_topic)
     jf.write(js)
     jf.close()
     us = set(ul)
     ddf = df[df['url'].isin(us)]
-    ddf.to_excel("./out/all-security.xlsx", index=False)
+    ddf.to_excel(analyzer_output_dir = "/all-security.xlsx", index=False)
     df1 = pd.DataFrame(columns=["title", "year", "abstract", "url", "topics"])
     df1["title"] = ddf["title"]
     df1["year"] = ddf["year"]
@@ -159,7 +157,7 @@ def topics_vector(df: pd.DataFrame, security_topics: list) -> dict:
     df1["url"] = ddf["url"]
     df1["topics"] = ddf["topics"]
 
-    df1.to_html(out_target_path + "/security.htm")
+    df1.to_html(analyzer_output_dir + "/security.htm")
     return rtn_topic
 
 
@@ -200,7 +198,7 @@ def analyzer_pipeline(df: pd.DataFrame, opt: str):
     )
     
     ddf = format(res)
-    ddf.to_excel(out_target_path + "/all-%s.xlsx" % opt)
+    ddf.to_excel(analyzer_output_dir + "/all-%s.xlsx" % opt)
     return ddf
 
 

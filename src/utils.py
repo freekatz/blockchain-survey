@@ -17,6 +17,7 @@ import numpy as np
 import os
 import re
 
+from settings import *
 
 def remove_chore(string) -> str:
     s = re.sub(r"\(.*\)", "", string.strip())
@@ -26,7 +27,7 @@ def remove_chore(string) -> str:
 
 def similar_replace(string) -> str:
     words = re.split(",", string)
-    similar_items = open("./res/similar.txt", "r", encoding="utf-8").readlines()
+    similar_items = open(similar_replace_path, "r", encoding="utf-8").readlines()
     # print(similar_items)
     
     ws = words
@@ -109,6 +110,6 @@ def df_coincide(df: pd.DataFrame, cols: list, labels: list) -> pd.DataFrame:
 
 
 if __name__ == '__main__':
-    pwd = './out/tmp/'  # 获取文件目录
-    target = './out/all-2.xlsx'
+    pwd = crawler_output_dir  # 获取文件目录
+    target = crawler_output_dir + '/all.xlsx'
     merge(pwd, target)

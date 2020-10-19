@@ -28,7 +28,6 @@ class Crawler:
             payload = {}
         if method == "GET":
             resp = requests.get(url, params=payload, headers=headers, proxies=proxies)
-            print(resp.url)
             return BeautifulSoup(resp.text, "lxml")
         elif method == "POST":
             resp = requests.post(url, data=payload, headers=headers, proxies=proxies)
@@ -45,7 +44,7 @@ class Crawler:
         """
         df = pd.DataFrame(output)
         df = df[out_data.keys()]
-        ext = re.split(r"", target)[-1]
+        ext = re.split(r"\.", target)[-1]
         if ext == "xlsx" or ext == "xls":
             df.to_excel(target, encoding='utf-8', index=False)
         elif ext == "csv":
@@ -65,16 +64,29 @@ class ArxivCrawler(Crawler):
         super().__init__()
     
     def detail(self, out):
+        print(out["url"])
         arxiv_id = re.split("/", out["url"])[-1]
         soup = self.open(arxiv_xhr_url % arxiv_id, headers=arxiv_headers_xhr)
         js = json.loads(soup.text)
-        out["title"] = js["title"]
-        out["topics"] = ",".join([t["topic"] for t in js["topics"]])
-        out["publisher"] = js["venue"]
-        out["cite"] = str(len(js["citations"]))
-        out["authors"] = ",".join([t["name"] for t in js["authors"]])
-        out["year"] = js["year"]
-        out["abstract"] = js["abstract"]
+        print(js)
+        try:
+            print(js["error"])
+            soup = super().open(out["url"])
+            out["title"] = soup.select_one("h1.title").text
+            out["topics"] = ""
+            out["publisher"] = ""
+            out["cite"] = 0
+            out["authors"] = ",".join([a.text for a in soup.select_one("div.authors").select("a")])
+            out["year"] = re.split(" ", soup.select_one("div.dateline").text)[-1][:-1]
+            out["abstract"] = soup.select_one("blockquote.abstract").text
+        except:
+            out["title"] = js["title"]
+            out["topics"] = ",".join([t["topic"] for t in js["topics"]])
+            out["publisher"] = js["venue"]
+            out["cite"] = str(len(js["citations"]))
+            out["authors"] = ",".join([t["name"] for t in js["authors"]])
+            out["year"] = js["year"]
+            out["abstract"] = js["abstract"]
         print(out)
     
     def run(self):
@@ -83,7 +95,6 @@ class ArxivCrawler(Crawler):
         :return: NULL
         """
         soup = super().open(arxiv_base_url_adv, arxiv_payload_adv)
-        print(soup)
         url_items = soup.select("p.list-title")
         output = []
         i = 1
@@ -96,7 +107,7 @@ class ArxivCrawler(Crawler):
             super().save(output, arxiv_target_path)
             i += 1
             print(i)
-
+            
 
 class SpringerCrawler(Crawler):
     def __init__(self):
@@ -250,7 +261,7 @@ class ScienceDirectCrawler(Crawler):
             authors += author_item.text + ","
         out["authors"] = authors[:-1]
         date = re.split(", ", soup.select_one("div.text-xs").text.strip())
-        try:
+        try:  # 使用基于 doi url 来获取 year
             out["year"] = date[1]
         except:
             out["year"] = date[0].replace("Available online ", "")
@@ -287,7 +298,7 @@ class IeeeCrawler(Crawler):
     def __init__(self):
         super(IeeeCrawler, self).__init__()
     
-    def detail(self, out):
+    def detail(self, out):  # this function must run in a SIM network
         print(out["url"])
         html = super().open(out["url"]).text
         try:
@@ -322,7 +333,7 @@ class IeeeCrawler(Crawler):
         df = pd.read_excel(ieee_target_u_path)
         url_items = list(df["url"])
         output = []
-        for i in range(0, len(url_items)):
+        for i in range(0, len(url_items)):  # this
             url_item = url_items[i]
             out = copy.deepcopy(out_data)
             out["url"] = url_item
@@ -335,7 +346,7 @@ class IeeeCrawler(Crawler):
     def url_get(self):
         driver = webdriver.Firefox()
         output = []
-        for i in range(1, 10):
+        for i in range(6, 10):  # this
             ieee_payload["pageNumber"] = str(i)
             t_resp = requests.get(ieee_base_url, ieee_payload)
             ieee_headers["Referer"] = t_resp.url
@@ -388,14 +399,14 @@ class IeeeCrawler(Crawler):
 
 
 if __name__ == '__main__':
-    # arxiv = ArxivCrawler()
+    # arxiv = ArxivCrawler()  # cite valid
     # arxiv.run()
 
-    # springer = SpringerCrawler()
+    # springer = SpringerCrawler()  # cites valid
     # springer.run()
     
-    acm = AcmCrawler()
-    acm.run()
+    # acm = AcmCrawler()
+    # acm.run()
     
     # science_direct = ScienceDirectCrawler()
     # science_direct.run()

@@ -9,7 +9,7 @@ out_data = {
     "title": "",
     "topics": "",
     "publisher": "",
-    "cites": "",
+    "cite": "",
     "authors": "",
     "url": "",
     "abstract": "",
@@ -28,3 +28,5 @@ analyzer_output_dir = output_root_dir + "/analyzer"
 plot_output_dir = output_root_dir + "/plot"
 
 plot_chart_types = []
+
+similar_replace_path = input_root_dir + "/similar.txt"
