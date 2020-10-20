@@ -46,8 +46,9 @@ def topics_analysis(topics: pd.Series, opt="freq", args=None) -> {}:
         "items": {}
     }
     
-    year_list = args["year"]
+    year_list = [str(y) for y in args["year"]]
     base_list = args["base"]
+    year_set = [str(y) for y in sorted(set(year_list), reverse=False)]
     
     if opt == "freq":
         # all freq rank
@@ -59,8 +60,6 @@ def topics_analysis(topics: pd.Series, opt="freq", args=None) -> {}:
                 all_topics += re.split(",", t)
         all = dict(Counter(all_topics))
         rtn["all"] = all
-        # freq rank year by year
-        year_set = set(year_list)
         for y in year_set:
             year = copy.deepcopy(rtn_year)
             year["year"] = y
@@ -89,8 +88,6 @@ def topics_analysis(topics: pd.Series, opt="freq", args=None) -> {}:
                     else:
                         all[tt] = int(b)
         rtn["all"] = all
-        # freq rank year by year
-        year_set = set(year_list)
         for y in year_set:
             year = copy.deepcopy(rtn_year)
             year["year"] = y
@@ -174,7 +171,7 @@ def format(res: dict) -> pd.DataFrame:
         _y = []
         for t in items.keys():
             if t in _year_items.keys():
-                _y.append(items[t])
+                _y.append(_year_items[t])
             else:
                 _y.append(0)
         df[str(_year)] = _y
@@ -203,10 +200,12 @@ def analyzer_pipeline(df: pd.DataFrame, opt: str):
 
 
 if __name__ == '__main__':
-    df = pd.read_excel("./out/all-preprocessed.xlsx")
-    s = open("./res/security.txt", "r")
-    topics_vector(df, [l.strip() for l in s.readlines()])
+    df = pd.read_excel(preprocess_output_dir + "/all-preprocessed.xlsx")
     
-    # options = ["freq", "cite"]
-    # for opt in options:
-    #     analyzer_pipeline(df, opt)
+    # s = open("./res/security.txt", "r")
+    # topics_vector(df, [l.strip() for l in s.readlines()])
+    
+    options = ["freq", "cite"]
+    # options = ["freq"]
+    for opt in options:
+        analyzer_pipeline(df, opt)

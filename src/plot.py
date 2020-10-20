@@ -66,12 +66,14 @@ def bar_rank_plot(rank: dict, target: str, limit=20):
     f1.savefig(target, dpi=100, bbox_inches='tight')
 
 
-def bar_hop_plot(df: pd.DataFrame, target: str, limit: int, sort_col: str, height: float, step: int):
+def bar_hop_plot(df: pd.DataFrame, opt: str, limit: int, sort_col: str, height: float, step: int):
+    target = plot_output_dir + "/bar-hop-%s.png" % opt
+    
     ddf = df.sort_values(sort_col)[0 - limit:]
     ddf.plot.bar(y=ddf.columns[1:], stacked=True)
     
     ax = plt.gca()
-    ax.set_title('f3', fontsize=18)
+    ax.set_title(opt, fontsize=18)
     ax.legend(loc='best', fontsize=12, ncol=4)
     plt.xticks(fontsize=6, horizontalalignment='left', rotation=320)
     # plt.yticks(np.arange(0, height, step), fontsize=8)
@@ -117,14 +119,15 @@ def plot_pipeline(df: pd.DataFrame, opt: str):
         word_cloud_plot(rank, p2 + "%s_word_cloud.png" % col)
         bar_rank_plot(rank, p3 + "%s_bar_rank.png" % col)
     
-    # if opt == "cite":
-    #     height = 5000
-    #     step = 250
-    # else:
-    #     height = 800
-    #     step = 50
-    # bar_hop_plot(df, plot_output_dir + "/bar-hop-%s.png" % opt, 30, "all", height, step)
-    bar_hop_plot(df, plot_output_dir + "/bar-hop-%s.png" % opt, 30, "all", 0, 0)
+    if opt == "cite":
+        height = 5000
+        step = 250
+    else:
+        height = 800
+        step = 50
+    bar_hop_plot(df, opt, 30, "all", height, step)
+    
+    # bar_hop_plot(df, plot_output_dir + "/bar-hop-%s.png" % opt, 30, "all", 0, 0)
     
     # test(df, opt)
     # test1(df)
