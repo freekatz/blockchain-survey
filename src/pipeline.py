@@ -29,14 +29,18 @@ plot.py doing...
 """
 
 if __name__ == '__main__':
-    filter_pipeline()
     
-    df = pd.read_excel(output_root_dir + "/all.xlsx")
-    ddf = preprocess_pipeline(df)
-    ddf.to_excel(preprocess_output_dir + "/all-preprocessed.xlsx", index=False, encoding="utf-8")
-    
+    ori_df = pd.read_excel(output_root_dir + "/all.xlsx")
+    pp_df = preprocess_pipeline(ori_df)
+    pp_df.to_excel(preprocess_output_dir + "/all-preprocessed.xlsx", index=False, encoding="utf-8")
+
+    f_df = filter_pipeline(pp_df)
+
+    f_df.to_excel(filter_output_dir + "/all-no_filtered-auto.xlsx", index=False)
+    pp_df[~pp_df["title"].isin(f_df["title"])].to_excel(filter_output_dir + "/all-filtered-auto.xlsx", index=False)
+
     options = ["freq", "cite"]
     for opt in options:
-        dddf = analyzer_pipeline(ddf, opt)
-        dff = drop_nan(dddf)
-        plot_pipeline(dff, opt)
+        a_df = analyzer_pipeline(f_df, opt)
+        dff = drop_nan(a_df)
+        plot_pipeline(a_df, opt)

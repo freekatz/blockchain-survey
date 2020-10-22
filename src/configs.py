@@ -1,5 +1,17 @@
 from settings import *
 
+# filter patterns
+allow_patterns = [
+
+]
+
+deny_patterns = [
+    "(use|using|with|by|through|via|[B|b]ase[d|] on)(.*?)[B|b]lockchain",
+    "[B|b]lockchain((-| - )+?)(.*?)([P|p]owered|[B|b]ased|[E|e]abled|[D|d]riven|)",
+    "(use|using|with|by|through|via|[B|b]ase[d|] on)(.*?)[C|c]ontract",
+    "[C|c]ontract((-| - )+?)(.*?)([P|p]owered|[B|b]ased|[E|e]abled|[D|d]riven|)"
+]
+
 """ arxiv config
 """
 # arxiv_base_url_nor = "https://arxiv.org/search"

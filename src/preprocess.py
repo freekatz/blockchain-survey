@@ -42,8 +42,9 @@ def drop(df: pd.DataFrame) -> pd.DataFrame:
         because it maybe rm data lines but no duplicated
     """
     ddf = df.copy(deep=False)
+    ddf = ddf.dropna(subset=["topics", "abstract"])
     ddf = ddf.drop_duplicates(["abstract"]).drop_duplicates(["url"]).drop_duplicates(["title"])
-    # don't drop nan here
+    
     return ddf
 
 
@@ -83,12 +84,12 @@ def norm(df: pd.DataFrame) -> pd.Series:
     lemmatizer = ns.WordNetLemmatizer()
     topics = []
     for t_item, o_item in zip(ddf["topics"], ddf["origin"]):
-        # ieee topics select
+        # author topics first select
         if o_item == "ieee":
-            if "IEEE" in t_item:
-                ts = re.split(",", re.search("IEEE Keywords:(.*?);", t_item).groups()[0])
-            elif "Author" in t_item:
+            if "Author" in t_item:
                 ts = re.split(",", re.split(":", t_item)[-1])
+            elif "IEEE" in t_item:
+                ts = re.split(",", re.search("IEEE Keywords:(.*?);", t_item).groups()[0])
             else:
                 ts = re.split(",", re.search("INSPEC: Controlled Indexing:(.*?);", t_item).groups()[0])
         else:

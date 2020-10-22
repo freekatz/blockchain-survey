@@ -156,18 +156,16 @@
 # plt.savefig("./out/rank/f2.png")
 
 
+import pandas as pd
 import re
 
+from filter import filter_auto
+from settings import *
+from configs import *
 from utils import *
 
-"""
-todo
-1 为每一个话题词加入向量：与哪些话题词，论文相关联
-2 解决重复加问题，替换同义词时，对于同一篇文章中的去重即可
-"""
+df = pd.read_excel(filter_output_dir + "/all-no_filtered-auto.xlsx")
 
-s = "blockchain,block chain,business model,disintegration,digital currency"
+ddf = df[["title", "topics"]]
 
-ss = similar_replace(s)
-
-print(ss)
+ddf.to_html(output_root_dir + "/filter.htm")

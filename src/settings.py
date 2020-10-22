@@ -21,11 +21,11 @@ options = ["freq", "cite"]
 
 input_root_dir = "./input"
 output_root_dir = "./output"
-crawler_output_dir = output_root_dir + "/crawler"
-filter_output_dir = output_root_dir + "/filter"
-preprocess_output_dir = output_root_dir + "/preprocess"
-analyzer_output_dir = output_root_dir + "/analyzer"
-plot_output_dir = output_root_dir + "/plot"
+crawler_output_dir = output_root_dir + "/1-crawler"
+preprocess_output_dir = output_root_dir + "/2-preprocess"
+filter_output_dir = output_root_dir + "/3-filter"
+analyzer_output_dir = output_root_dir + "/4-analyzer"
+plot_output_dir = output_root_dir + "/5-plot"
 
 plot_chart_types = []
 

@@ -39,7 +39,7 @@ def similar_replace(string) -> str:
         s_list = re.split("==", item)
         
         for w in words:
-            if w in s_list:
+            if w != "" and w in s_list:
                 ws[i] = s_list[0]
             
             i += 1
@@ -83,7 +83,7 @@ def merge(pwd: str, target: str):
 
 
 def drop_nan(df: pd.DataFrame) -> pd.DataFrame:
-    ddf = df.dropna().drop(axis=0, index=["nothing", "nan"])
+    ddf = df.dropna().drop(axis=0, index=["nothing", ""])
     return ddf
 
 
@@ -110,6 +110,6 @@ def df_coincide(df: pd.DataFrame, cols: list, labels: list) -> pd.DataFrame:
 
 
 if __name__ == '__main__':
-    pwd = crawler_output_dir  # 获取文件目录
-    target = crawler_output_dir + '/all.xlsx'
+    pwd = crawler_output_dir + "/fill_topics"  # 获取文件目录
+    target = crawler_output_dir + '/all-1787-fill_topic.xlsx'
     merge(pwd, target)

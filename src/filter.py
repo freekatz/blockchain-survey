@@ -11,68 +11,56 @@
 ------------           -------        --------
 2020/09/02 14:51       1uvu           0.0.1
 """
+import re
+import pandas as pd
+
+from configs import *
+from settings import *
 
 
-# # # rm titles auto
-# #
-# # """
-# # B/based
-# # P/powered
-# # B/blockchain-
-# # E/enabled
-# # """
-# ts = []
-# with open("./out/titles.txt", "r", encoding="utf-8") as f:
-#     for t in f.readlines():
-#         if "Enabled" not in t:
-#             ts.append(t)
-#
-# f.close()
-# with open("./out/titles.txt", "w", encoding="utf-8") as f:
-#     for t in ts:
-#         f.write(t)
+def filter_auto(df: pd.DataFrame) -> pd.DataFrame:
+    ddf = df.copy(deep=True)
+    titles = df["title"].tolist()
 
-# df = pd.read_excel("./out/all-test.xlsx")
-# f = open("./out/titles.txt", "r", encoding="utf-8")
-# titles = [s.strip() for s in f.readlines()]
-#
-# # i=0
-# # for t in df["title"]:
-# #     print(t + ": " + titles[i])
-# #     print(t in titles)
-# #     i+=1
-# df1 = df[df['title'].isin(titles)]
-#
-# df1.to_excel("./out/all-filtered.xlsx", index=False)
+    # todo
+    """
+    1. allow list 必要吗？
+    2. *add allow patterns and *merge the a_titles and d_titles when filter as last
+    3. maybe filter the topics?
+    """
+    # a_titles = []
+    # for p in allow_patterns:
+    #     for t in titles:
+    #         if re.search(p, t) is not None:
+    #             a_titles.append(t)
+    # ddf = ddf[ddf["title"].isin(a_titles)]
 
-# # # rm titles manual
-# df = pd.read_excel("./out/all-filtered.xlsx")
-# #
-# df1 = pd.DataFrame(columns=["title", "cite", "url"])
-# df1["title"] = df["title"]
-# df1["cite"] = df["cite"]
-# df1["url"] = df["url"]
-# print(df1)
-#
-# df1.to_html("./out/tmp.htm", encoding="utf-8")
+    d_titles = []
+    for p in deny_patterns:
+        for t in titles:
+            if re.search(p, t) is not None:
+                d_titles.append(t)
+    ddf = ddf[~ddf["title"].isin(d_titles)]
+    return ddf
 
 
-# # index filter based manual
-# df = pd.read_excel("./out/all-filtered.xlsx")
-# with open("./out/index.txt", "r", encoding="utf-8") as f:
-#     indexs = [int(i.strip()) for i in f.readlines()]
-#
-#     titles = []
-#     for i in range(len(df["title"])):
-#         if i not in indexs:
-#             titles.append(df["title"][i])
-#
-#     df1 = df[df["title"].isin(titles)]
-#
-#     print(df1)
-#
-#     df1.to_excel("./out/all-filtered-3.xlsx", encoding="utf-8", index=False)
-
-
-def filter_pipeline():
+def filter_manual():
     pass
+
+
+def filter_pipeline(df: pd.DataFrame) -> pd.DataFrame:
+    ddf = filter_auto(df)
+
+    filter_manual()
+    return ddf
+
+
+if __name__ == '__main__':
+    df = pd.read_excel(preprocess_output_dir + "/all-preprocessed.xlsx")
+    
+    ddf = filter_pipeline(df)
+
+    ddf.to_excel(filter_output_dir + "/all-no_filtered-auto.xlsx", index=False)
+    df[~df["title"].isin(ddf["title"])].to_excel(filter_output_dir + "/all-filtered-auto.xlsx", index=False)
+
+
