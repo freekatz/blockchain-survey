@@ -23,7 +23,7 @@ import json
 import copy
 import re
 
-from utils import drop_nan, df_coincide, df_rank
+from utils import df_coincide, df_rank
 from settings import *
 
 
@@ -133,14 +133,8 @@ def plot_pipeline(df: pd.DataFrame, opt: str):
     # test1(df)
 
 
-# todo 代码还是要继续改，现在太慢了，结构也不行(主要是画图这里，重复的处理过程应该用一个函数自动进行)
-# 散点图：竖轴 topics，横轴 year；竖轴 cite，横轴 topics；再来个 3D 的
-# 条形图：1. topics 排行：frequency，cite；2. 每年论文数量排行：其中每一年中的论文某个话题数量
-
-
 if __name__ == '__main__':
     options = ["freq", "cite"]
     for opt in options:
         df = pd.read_excel(analyzer_output_dir + '/all-%s.xlsx' % opt, index_col=0)
         plot_pipeline(df, opt)
-        

@@ -23,7 +23,8 @@ from plot import plot_pipeline
 from settings import *
 
 
-# todo refactor this function
+# todo
+#  refactor this function
 def topics_analysis(topics: pd.Series, opt="freq", args=None) -> {}:
     """
     
@@ -55,9 +56,9 @@ def topics_analysis(topics: pd.Series, opt="freq", args=None) -> {}:
         all_topics = []
         for t in topics:
             if pd.isna(t):
-                all_topics += ["nothing"]
+                all_topics += [nan_str]
             else:
-                all_topics += re.split(",", t)
+                all_topics += list(set(re.split(",", t)))
         all = dict(Counter(all_topics))
         rtn["all"] = all
         for y in year_set:
@@ -67,9 +68,9 @@ def topics_analysis(topics: pd.Series, opt="freq", args=None) -> {}:
             for _y, _t in zip(year_list, topics):
                 if _y == y:
                     if pd.isna(_t):
-                        year_topics += ["nothing"]
+                        year_topics += [nan_str]
                     else:
-                        year_topics += re.split(",", _t)
+                        year_topics += list(set(re.split(",", _t)))
             items = dict(Counter(year_topics))
             year["items"] = items
             rtn["years"].append(year)
@@ -77,10 +78,10 @@ def topics_analysis(topics: pd.Series, opt="freq", args=None) -> {}:
     elif opt == "cite":
         # if topics nan, then pass
         # merge => {"topic", cite}
-        all = {"nothing": 0}
+        all = {nan_str: 0}
         for b, t in zip(base_list, topics):
             if pd.isna(t):
-                all["nothing"] += int(b)
+                all[nan_str] += int(b)
             else:
                 for tt in re.split(",", t):
                     if tt in all.keys():
@@ -91,11 +92,11 @@ def topics_analysis(topics: pd.Series, opt="freq", args=None) -> {}:
         for y in year_set:
             year = copy.deepcopy(rtn_year)
             year["year"] = y
-            items = {"nothing": 0}
+            items = {nan_str: 0}
             for _y, _t, _b in zip(year_list, topics, base_list):
                 if _y == y:
                     if pd.isna(_t):
-                        items["nothing"] += int(_b)
+                        items[nan_str] += int(_b)
                     else:
                         for _tt in re.split(",", _t):
                             if _tt in items.keys():
@@ -137,7 +138,7 @@ def topics_vector(df: pd.DataFrame, security_topics: list) -> dict:
             except:
                 pass
             try:
-                t.remove('nothing')
+                t.remove(nan_str)
             except:
                 pass
     jf = open(analyzer_output_dir + "/security.json", "w")
@@ -195,6 +196,7 @@ def analyzer_pipeline(df: pd.DataFrame, opt: str):
     )
     
     ddf = format(res)
+    ddf = ddf[~ddf.index.isin([nan_str, "", np.nan, "nan"])]
     ddf.to_excel(analyzer_output_dir + "/all-%s.xlsx" % opt)
     return ddf
 

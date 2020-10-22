@@ -18,6 +18,7 @@ import numpy as np
 import re
 
 from utils import stem, similar_replace, remove_chore
+from settings import *
 
 
 def preprocess_pipeline(df: pd.DataFrame) -> pd.DataFrame:
@@ -26,12 +27,32 @@ def preprocess_pipeline(df: pd.DataFrame) -> pd.DataFrame:
     # fill na and modify invalid value
     # topics normalize
     ddf = df.copy()
+    
     ddf["year"] = year(ddf)
+    ddf["topics"] = norm(ddf)
+    ddf = clean(ddf)
     ddf = fill(ddf)
     ddf = drop(ddf)
-    ddf["topics"] = norm(ddf)
+    
     return ddf
 
+
+def clean(df: pd.DataFrame) -> pd.DataFrame:
+    # topics clean
+    ddf = df.copy(deep=False)
+    topics = ddf["topics"]
+    p_topics = []
+    for t in topics:
+        if type(t) is not str:
+            p_topics.append(nan_str)
+            continue
+        t_list = re.split(r",", t)
+        topic = ",".join(set(t_list))
+        p_topics.append(topic)
+    ddf["topics"] = pd.Series(p_topics)
+    
+    return ddf
+    
 
 def drop(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -42,7 +63,8 @@ def drop(df: pd.DataFrame) -> pd.DataFrame:
         because it maybe rm data lines but no duplicated
     """
     ddf = df.copy(deep=False)
-    ddf = ddf.dropna(subset=["topics", "abstract"])
+    ddf = ddf.dropna(how='all', subset=["topics", "abstract"])
+    ddf = ddf[~ddf["topics"].isin([nan_str, "nan", "", np.nan])]
     ddf = ddf.drop_duplicates(["abstract"]).drop_duplicates(["url"]).drop_duplicates(["title"])
     
     return ddf
@@ -91,7 +113,10 @@ def norm(df: pd.DataFrame) -> pd.Series:
             elif "IEEE" in t_item:
                 ts = re.split(",", re.search("IEEE Keywords:(.*?);", t_item).groups()[0])
             else:
-                ts = re.split(",", re.search("INSPEC: Controlled Indexing:(.*?);", t_item).groups()[0])
+                try:
+                    ts = re.split(",", re.search("INSPEC: Controlled Indexing:(.*?);", t_item).groups()[0])
+                except:
+                    ts = re.split(",", str(t_item))
         else:
             ts = re.split(",", str(t_item))
             
@@ -116,8 +141,8 @@ def norm(df: pd.DataFrame) -> pd.Series:
 
 
 if __name__ == '__main__':
-    df = pd.read_excel("./out/all.xlsx")
+    df = pd.read_excel(output_root_dir + "/all.xlsx")
     
     ddf = preprocess_pipeline(df)
     
-    ddf.to_excel("./out/all-preprocessed.xlsx", index=False, encoding="utf-8")
+    ddf.to_excel(preprocess_output_dir + "/all-preprocessed.xlsx", index=False)

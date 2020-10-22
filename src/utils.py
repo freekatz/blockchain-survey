@@ -19,12 +19,14 @@ import re
 
 from settings import *
 
+
 def remove_chore(string) -> str:
     s = re.sub(r"\(.*\)", "", string.strip())
     s = re.sub(r"\[.*\]", "", s)
     return s
 
 
+# todo update similar.txt
 def similar_replace(string) -> str:
     words = re.split(",", string)
     similar_items = open(similar_replace_path, "r", encoding="utf-8").readlines()
@@ -80,11 +82,6 @@ def merge(pwd: str, target: str):
     
     # 写入excel文件，不包含索引数据
     df.to_excel(target, index=False)
-
-
-def drop_nan(df: pd.DataFrame) -> pd.DataFrame:
-    ddf = df.dropna().drop(axis=0, index=["nothing", ""])
-    return ddf
 
 
 def df_rank(df: pd.DataFrame, col: str) -> dict:
