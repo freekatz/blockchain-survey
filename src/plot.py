@@ -49,7 +49,7 @@ def word_cloud_plot(rank: dict, target: str):
     w.to_file(target)
 
 
-def bar_rank_plot(rank: dict, target: str, limit=20):
+def bar_rank_plot(rank: dict, target: str, limit=10):
     # style define
     sns.set(style="darkgrid")
     f1, ax = plt.subplots(figsize=(14, 10))
@@ -86,12 +86,12 @@ def bar_hop_plot(df: pd.DataFrame, opt: str, limit: int, sort_col: str, height: 
 
 
 def test(df: pd.DataFrame, opt: str):
-    cols = ["2017", "2018", "2019", "2020"]
+    cols = ["2016", "2017", "2018", "2019", "2020"]
     labels = ["0"]
     ddf = df_coincide(df, cols, labels)
     
     ddf = ddf.sort_values("all", ascending=False)
-    ddf.to_html("./%s-coincide.htm" % opt)
+    ddf.to_html(plot_output_dir + "./%s-coincide.htm" % opt)
     
     
 def test1(df):
@@ -118,18 +118,18 @@ def plot_pipeline(df: pd.DataFrame, opt: str):
         txt_rank(rank, p1 + "%s_rank.txt" % col)
         word_cloud_plot(rank, p2 + "%s_word_cloud.png" % col)
         bar_rank_plot(rank, p3 + "%s_bar_rank.png" % col)
-    
+
     if opt == "cite":
         height = 5000
         step = 250
     else:
         height = 800
         step = 50
-    bar_hop_plot(df, opt, 30, "all", height, step)
+    bar_hop_plot(df, opt, 15, "all", height, step)
     
     # bar_hop_plot(df, plot_output_dir + "/bar-hop-%s.png" % opt, 30, "all", 0, 0)
     
-    # test(df, opt)
+    test(df, opt)
     # test1(df)
 
 

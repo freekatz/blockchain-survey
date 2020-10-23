@@ -1,11 +1,11 @@
 // 使用 "//" 放在行首可以跳过该行，可在其后写上注释
-internet of things==iot==internet of thing
-distribute ledger==distributed ledger technology==dlt==distribute ledger technology==distributed ledger
+internet of things==iot==internet of thing==internet-of-things
+distributed ledger==distributed ledger technology==dlt==distribute ledger technology==distribute ledger==distribute==ledger
 blockchain==block chain==block-chain==bc-blockchain==blockchains
 proof-of-work==pow==proof of work
 proof-of-stake==pos==proof of stake
 consensus==consensus algorithm==consensus protocol==consensus mechanism
-peer-to-peer==peer-to-peer compute==p2p==peer to peer
+peer-to-peer==peer-to-peer compute==p2p==peer to peer==peer-2-peer
 zero-knowledge proof==zero-knowledge-proof==zero knowledge proof==zkp==zero-knowledge
 e-health==ehealth==e-healthcare
 cyberattack==cyber attack==cyber-attack
@@ -27,11 +27,18 @@ cyber attack==cyberattack==network attack
 security==cyber security==cybersecurity==network security
 deep learning==deep learn
 machine learning==machine learn
-byzantine fault tolerance==byzantine fault==byzantine fault tolerant consensus
+byzantine fault tolerance==byzantine fault==byzantine fault tolerant consensus==byzantine fault-tolerant
 crash fault tolerance==crash fault tolerant consensus
-mining pool==mine pool
+mining pool==mine pool==bitcoin mine pool
 double spending==double spend problem
 cloud compute==cloud
-// 可使用 nothing 代替准备去掉的话题词，如 blockchain，review，tutorial 等等
-nothing==review==blockchain==NaN
+threat==security threat
+database==distribute database
+double spend attack==double spend
+51% attack==51 attack
+cyber attack==cyberattack==cyberattacks
+software security==software security engineer
 system security==distribute system security
+// 可使用 nothing 代替准备去掉的话题词，如 blockchain，review，tutorial 等等
+// 建议将 nothing 这一行放到最后一行
+nothing==review==blockchain==NaN==r==eh==tx==tc==1.0==2.0==60g40==68m01==91a60==99-00==g18==c58==c63

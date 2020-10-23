@@ -30,15 +30,18 @@ plot.py doing...
 if __name__ == '__main__':
     
     ori_df = pd.read_excel(output_root_dir + "/all.xlsx")
-    
+
     pp_df = preprocess_pipeline(ori_df)
     pp_df.to_excel(preprocess_output_dir + "/all-preprocessed.xlsx", index=False)
 
     f_df = filter_pipeline(pp_df)
-    f_df.to_excel(filter_output_dir + "/all-no_filtered-auto.xlsx", index=False)
-    pp_df[~pp_df["title"].isin(f_df["title"])].to_excel(filter_output_dir + "/all-filtered-auto.xlsx", index=False)
+    f_df.to_excel(filter_output_auto_dir + "/all-no_filtered.xlsx", index=False)
+    pp_df[~pp_df["title"].isin(f_df["title"])].to_excel(filter_output_auto_dir + "/all-filtered.xlsx", index=False)
 
-    options = ["freq", "cite"]
-    for opt in options:
-        a_df = analyzer_pipeline(f_df, opt)
-        plot_pipeline(a_df, opt)
+    # do filter manually
+
+    # f_df = pd.read_excel(filter_output_manual_dir + "/all-no_filtered.xlsx")
+    # options = ["freq", "cite"]
+    # for opt in options:
+    #     a_df = analyzer_pipeline(f_df, opt)
+    #     plot_pipeline(a_df, opt)

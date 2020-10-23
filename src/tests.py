@@ -158,22 +158,29 @@
 
 import pandas as pd
 import re
+import os
 
+from preprocess import preprocess_pipeline
 from filter import filter_auto
 from settings import *
 from configs import *
 from utils import *
 
-df = pd.read_excel(filter_output_dir + "/all-filtered-auto.xlsx")
+df = pd.read_excel(filter_output_manual_dir + "/all-no_filtered.xlsx")
+os.remove(filter_output_manual_dir + "/all-no_filtered.xlsx")
+dp = pd.read_excel(preprocess_output_dir + "/all-preprocessed.xlsx")
+df_p = preprocess_pipeline(df)
+df_p.to_excel(filter_output_manual_dir + "/all-no_filtered.xlsx", index=False)
+df_p.to_excel(output_root_dir + "/all-nf.xlsx", index=False)
+df_p.to_excel(output_root_dir + "/test.xlsx", index=False)
+dp[~dp["title"].isin(df_p["title"])].to_excel(filter_output_manual_dir + "/all-filtered.xlsx", index=False)
 
-ddf = df.copy(deep=True)
-titles = df["title"].tolist()
-
-a_titles = []
-for p in allow_patterns:
-    for t in titles:
-        if re.search(p, t) is not None:
-            a_titles.append(t)
-            
-print(a_titles)
+# a_titles = []
+# for p in allow_patterns:
+#     for t in titles:
+#         if re.search(p, t) is not None:
+#             a_titles.append(t)
+#
+# print("\n".join(a_titles))
+# print(len(a_titles))
 # ddf = ddf[ddf["title"].isin(a_titles)]

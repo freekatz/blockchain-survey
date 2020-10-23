@@ -202,7 +202,7 @@ def analyzer_pipeline(df: pd.DataFrame, opt: str):
 
 
 if __name__ == '__main__':
-    df = pd.read_excel(preprocess_output_dir + "/all-preprocessed.xlsx")
+    df = pd.read_excel(filter_output_manual_dir + "/all-no_filtered.xlsx")
     
     # s = open("./res/security.txt", "r")
     # topics_vector(df, [l.strip() for l in s.readlines()])

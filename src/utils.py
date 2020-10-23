@@ -20,9 +20,16 @@ import re
 from settings import *
 
 
-def remove_chore(string) -> str:
-    s = re.sub(r"\(.*\)", "", string.strip())
-    s = re.sub(r"\[.*\]", "", s)
+def remove_chore(string: str) -> str:
+    if len(string) < 1 or type(string) is not str:
+        return string
+    s = string.strip()
+    if s[0] == " " or s[0] == "-":
+        s = s[1:]
+    if s[-1] == " ":
+        s = s[:-1]
+    s = re.sub(r"\(.*\)", "", s)
+    s = re.sub(r"\[(.*)]", "", s)
     return s
 
 
@@ -107,6 +114,7 @@ def df_coincide(df: pd.DataFrame, cols: list, labels: list) -> pd.DataFrame:
 
 
 if __name__ == '__main__':
-    pwd = crawler_output_dir + "/fill_topics"  # 获取文件目录
-    target = crawler_output_dir + '/all-1787-fill_topic.xlsx'
+    pwd = filter_output_manual_dir  # 获取文件目录
+    target = filter_output_manual_dir + '/all-no_filtered.xlsx'
+    os.remove(target)
     merge(pwd, target)
