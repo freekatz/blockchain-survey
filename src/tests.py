@@ -164,8 +164,16 @@ from settings import *
 from configs import *
 from utils import *
 
-df = pd.read_excel(filter_output_dir + "/all-no_filtered-auto.xlsx")
+df = pd.read_excel(filter_output_dir + "/all-filtered-auto.xlsx")
 
-ddf = df[["title", "topics"]]
+ddf = df.copy(deep=True)
+titles = df["title"].tolist()
 
-ddf.to_html(output_root_dir + "/filter.htm")
+a_titles = []
+for p in allow_patterns:
+    for t in titles:
+        if re.search(p, t) is not None:
+            a_titles.append(t)
+            
+print(a_titles)
+# ddf = ddf[ddf["title"].isin(a_titles)]

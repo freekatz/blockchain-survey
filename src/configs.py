@@ -1,17 +1,20 @@
 from settings import *
 
 # filter patterns
-allow_patterns = [
-
+allow_patterns = [  # 在手工过滤之前，自动过滤之后使用，从被过滤掉的条目中找出被误滤的
+    "(:|[E|e]nhanced])(.*?)[B|b]lockchain",
+    # (Bitcoin OR Ethereum OR Blockchain OR (Distributed AND Ledger)) \
+    #             AND (security OR risk OR threat OR challenges OR attack OR vulnerabilities OR vulnerability) \
+    #             AND NOT (Survey OR Overview OR Review OR Tutorial)
 ]
 
 deny_patterns = [
-    "(use|using|with|by|through|via|[B|b]ase[d|] on)(.*?)[B|b]lockchain",
-    "[B|b]lockchain((-| - )+?)(.*?)([P|p]owered|[B|b]ased|[E|e]abled|[D|d]riven|)",
-    "(use|using|with|by|through|via|[B|b]ase[d|] on)(.*?)[C|c]ontract",
-    "[C|c]ontract((-| - )+?)(.*?)([P|p]owered|[B|b]ased|[E|e]abled|[D|d]riven|)"
+    "([U|u]se|[U|u]sing|[W|w]ith|[B|b]y|[T|t]hrough|[V|v]ia|[B|b]ase[d|] on)(.*?)[B|b]lockchain",
+    "[B|b]lockchain((-| - )*?)(.*?)([P|p]owered|[B|b]ased|[E|e]abled|[D|d]riven|for)",
+    "([U|u]se|[U|u]sing|[W|w]ith|[B|b]y|[T|t]hrough|[V|v]ia|[B|b]ase[d|] on)(.*?)[C|c]ontract",
+    "[C|c]ontract((-| - )*?)(.*?)([P|p]owered|[B|b]ased|[E|e]abled|[D|d]riven|for)"
 ]
-
+# On the Feasibility of Secure Logging for Industrial Control Systems Using Blockchain
 """ arxiv config
 """
 # arxiv_base_url_nor = "https://arxiv.org/search"

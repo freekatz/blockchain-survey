@@ -22,12 +22,6 @@ def filter_auto(df: pd.DataFrame) -> pd.DataFrame:
     ddf = df.copy(deep=True)
     titles = df["title"].tolist()
 
-    # todo
-    """
-    1. allow list 必要吗？
-    2. *add allow patterns and *merge the a_titles and d_titles when filter as last
-    3. maybe filter the topics?
-    """
     # a_titles = []
     # for p in allow_patterns:
     #     for t in titles:
