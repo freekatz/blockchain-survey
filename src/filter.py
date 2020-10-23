@@ -54,7 +54,7 @@ if __name__ == '__main__':
     
     ddf = filter_pipeline(df)
 
-    ddf.to_excel(filter_output_dir + "/all-no_filtered-auto.xlsx", index=False)
+    ddf.to_excel(filter_output_auto_dir + "/all-no_filtered-auto.xlsx", index=False)
     df[~df["title"].isin(ddf["title"])].to_excel(filter_output_dir + "/all-filtered-auto.xlsx", index=False)
 
 
