@@ -166,14 +166,14 @@ from settings import *
 from configs import *
 from utils import *
 
-df = pd.read_excel(filter_output_manual_dir + "/all-no_filtered.xlsx")
-os.remove(filter_output_manual_dir + "/all-no_filtered.xlsx")
-dp = pd.read_excel(preprocess_output_dir + "/all-preprocessed.xlsx")
-df_p = preprocess_pipeline(df)
-df_p.to_excel(filter_output_manual_dir + "/all-no_filtered.xlsx", index=False)
-df_p.to_excel(output_root_dir + "/all-nf.xlsx", index=False)
-df_p.to_excel(output_root_dir + "/test.xlsx", index=False)
-dp[~dp["title"].isin(df_p["title"])].to_excel(filter_output_manual_dir + "/all-filtered.xlsx", index=False)
+# df = pd.read_excel(filter_output_manual_dir + "/all-no_filtered.xlsx")
+# os.remove(filter_output_manual_dir + "/all-no_filtered.xlsx")
+# dp = pd.read_excel(preprocess_output_dir + "/all-preprocessed.xlsx")
+# df_p = preprocess_pipeline(df)
+# df_p.to_excel(filter_output_manual_dir + "/all-no_filtered.xlsx", index=False)
+# df_p.to_excel(output_root_dir + "/all-nf.xlsx", index=False)
+# df_p.to_excel(output_root_dir + "/test.xlsx", index=False)
+# dp[~dp["title"].isin(df_p["title"])].to_excel(filter_output_manual_dir + "/all-filtered.xlsx", index=False)
 
 # a_titles = []
 # for p in allow_patterns:
@@ -184,3 +184,9 @@ dp[~dp["title"].isin(df_p["title"])].to_excel(filter_output_manual_dir + "/all-f
 # print("\n".join(a_titles))
 # print(len(a_titles))
 # ddf = ddf[ddf["title"].isin(a_titles)]
+
+
+df = pd.read_excel(output_root_dir + "/all-f.xlsx")
+
+dff = df[["year", "origin", "title", "abstract", "url"]]
+dff.to_html(output_root_dir + "/all-f.htm")
