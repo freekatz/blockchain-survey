@@ -21,7 +21,7 @@ from settings import *
 
 
 def remove_chore(string: str) -> str:
-    if len(string) < 1 or type(string) is not str:
+    if len(string) <= 1 or type(string) is not str:
         return string
     s = string.strip()
     if s[0] == " " or s[0] == "-":

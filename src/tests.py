@@ -185,8 +185,13 @@ from utils import *
 # print(len(a_titles))
 # ddf = ddf[ddf["title"].isin(a_titles)]
 
+df = pd.read_excel(output_root_dir + "/all-pp.xlsx")
+ys = []
+year = df["year"]
 
-df = pd.read_excel(output_root_dir + "/all-f.xlsx")
+for y in year:
+    ys.append(re.split("\.", str(y))[0])
 
-dff = df[["year", "origin", "title", "abstract", "url"]]
-dff.to_html(output_root_dir + "/all-f.htm")
+df["year"] = pd.Series(year)
+
+df.to_excel(output_root_dir + "/s.xlsx", index=False)

@@ -1,859 +1,660 @@
-(1) internet of things: 147 
-(2) security: 111 
-(3) consensus: 99 
-(4) bitcoin: 66 
-(5) vulnerability: 62 
-(6) authentication: 61 
-(7) wireless: 60 
-(8) survey: 60 
-(9) healthcare industry: 60 
-(10) threat: 46 
-(11) communication infrastructure: 40 
-(12) distribute application: 40 
-(13) process model: 40 
-(14) smart community: 40 
-(15) cryptocurrency: 39 
-(16) contract: 28 
-(17) privacy: 28 
-(18) ethereum: 27 
-(19) algorithm: 24 
-(20) distributed ledger: 17 
-(21) digital signature: 13 
-(22) distribute transaction: 12 
-(23) double-spending: 12 
-(24) system security: 12 
-(25) computation: 12 
-(26) machine learning: 11 
-(27) public-key cryptography: 11 
-(28) population: 10 
-(29) security event detection: 10 
-(30) data gather: 10 
-(31) omness: 10 
-(32) sensor: 10 
-(33) home automation: 10 
-(34) cyber-physical system: 10 
-(35) vulnerability detection: 10 
-(36) static analysis: 10 
-(37) solidity: 10 
-(38) distribute autonomous organization: 9 
-(39) payment system: 9 
-(40) financial infrastructure: 9 
-(41) user perception: 9 
-(42) usability: 9 
-(43) trade-off: 9 
-(44) credit: 9 
-(45) debit card: 9 
-(46) governance: 9 
-(47) electrum: 8 
-(48) bitcoin wallet security: 8 
-(49) cryptocurrency wallet: 8 
-(50) bitcoin wallet forensics: 8 
-(51) multibit hd: 8 
-(52) cryptography: 8 
-(53) bitcoins: 8 
-(54) shard: 7 
-(55) jot: 7 
-(56) direct acyclic graph: 7 
-(57) procedural generation: 7 
-(58) asynchrony: 7 
-(59) replay attack: 7 
-(60) ring signature: 7 
-(61) immutable object: 7 
-(62) markov chain monte carlo: 7 
-(63) selection algorithm: 7 
-(64) 51% attack: 7 
-(65) iota: 7 
-(66) mathematics: 7 
-(67) simulation: 7 
-(68) block withhold attack: 7 
-(69) lattice: 7 
-(70) hash function: 7 
-(71) ecdsa: 6 
-(72) crypto: 6 
-(73) hide number problem: 6 
-(74) operation research: 6 
-(75) economics of security: 6 
-(76) apply compute: 6 
-(77) industry: 6 
-(78) hierarchical storage management: 6 
-(79) storage management: 6 
-(80) information system: 6 
-(81) information storage system: 6 
-(82) human and societal aspect of security and privacy: 6 
-(83) modulus of continuity: 6 
-(84) rsa: 6 
-(85) modulus robot: 6 
-(86) manufacture: 6 
-(87) sybil attack: 6 
-(88) game theory: 5 
-(89) requirement: 5 
-(90) formal verification: 5 
-(91) nash equilibrium: 5 
-(92) evolutionary stability: 5 
-(93) program analysis: 5 
-(94) computer performance: 4 
-(95) business logic: 4 
-(96) software portability: 4 
-(97) overflow vulnerability: 4 
-(98) virtual machine: 4 
-(99) traction teampage: 4 
-(100) computer data storage: 4 
-(101) lock: 4 
-(102) taint analysis: 4 
-(103) shv-secured hash value: 4 
-(104) attack: 4 
-(105) distribute compute: 4 
-(106) security service: 4 
-(107) secure element: 4 
-(108) block: 4 
-(109) trust: 3 
-(110) immutability attack: 3 
-(111) information security: 3 
-(112) software engineer: 3 
-(113) software lifecycle: 3 
-(114) security smell: 3 
-(115) proof-of-work: 3 
-(116) double spend attack: 3 
-(117) interoperability: 3 
-(118) antivirus software: 3 
-(119) network: 2 
-(120) pool mine: 2 
-(121) coin hop attack: 2 
-(122) mining pool: 2 
-(123) peer-to-peer: 2 
-(124) database: 2 
-(125) untraceability: 2 
-(126) sleepy model: 2 
-(127) auction: 2 
-(128) dishonest majority: 2 
-(129) application security: 2 
-(130) zero-knowledge proof: 2 
-(131) cooperative defense: 2 
-(132) offline player: 2 
-(133) distribute denial-of-service: 2 
-(134) pseudonymity: 2 
-(135) mine: 2 
-(136) contract agreement: 2 
-(137) brute-force attack: 2 
-(138) brute-force search: 2 
-(139) protocol documentation: 2 
-(140) anonymity: 2 
-(141) marijuana abuse: 2 
-(142) software: 2 
-(143) network property: 2 
-(144) hybrid: 2 
-(145) universal-composability: 2 
-(146) cybersecurity framework: 2 
-(147) pki system: 2 
-(148) archiecture: 2 
-(149) access control list: 2 
-(150) distributed-ledger: 2 
-(151) domain-specific security and privacy architecture: 2 
-(152) decompilation: 2 
-(153) share scheme: 2 
-(154) cyber risk mitigation: 2 
-(155) criterion rank: 2 
-(156) phishing: 2 
-(157) social engineer: 2 
-(158) malware: 2 
-(159) time-based zero knowledge proof of knowledge: 2 
-(160) fuzz test: 2 
-(161) cybersecurity vulnerability assessment: 2 
-(162) industrial internet of thing: 2 
-(163) data privacy: 2 
-(164) graph analysis: 2 
-(165) garch: 2 
-(166) intraday financial risk: 2 
-(167) adaptive-security: 2 
-(168) service: 2 
-(169) architecture: 2 
-(170) proof-of-stake: 2 
-(171) plaintext: 1 
-(172) singular curve: 1 
-(173) propagation delay: 1 
-(174) software deployment: 1 
-(175) end-to-end principle: 1 
-(176) security analysis: 1 
-(177) supersingular curve: 1 
-(178) denial-of-service attack: 1 
-(179) partition: 1 
-(180) fault attack: 1 
-(181) security vulnerability: 1 
-(182) embed security: 1 
-(183) invalid curve attack: 1 
-(184) gpu process: 1 
-(185) openssl: 1 
-(186) consensus validation: 1 
-(187) byzantine general problem: 1 
-(188) owasp mobile: 1 
-(189) smartphone application: 1 
-(190) delay attack: 1 
-(191) high performance compute: 1 
-(192) on-off attack: 1 
-(193) sharding: 1 
-(194) security deposit: 1 
-(195) contract theory: 1 
-(196) efficient storage: 1 
-(197) distribute trust: 1 
-(198) cryptonote: 1 
-(199) wban: 1 
-(200) security.: 1 
-(201) trust framework: 1 
-(202) game: 1 
-(203) storage balance: 1 
-(204) elliptic curve: 1 
-(205) learn with error: 1 
-(206) selfish mine: 1 
-(207) peer-to-peer architecture: 1 
-(208) computer system organization: 1 
-(209) distribute architecture: 1 
-(210) economics of mine: 1 
-(211) merkle tree: 1 
-(212) proof-of-work system: 1 
-(213) access control: 1 
-(214) authorization: 1 
-(215) value: 1 
-(216) theory of security: 1 
-(217) network reliability: 1 
-(218) replicator dynamic: 1 
-(219) mine pool selection: 1 
-(220) evolutionary game theory: 1 
-(221) performance: 1 
-(222) system architecture: 1 
-(223) ibc: 1 
-(224) tendermint: 1 
-(225) security practice: 1 
-(226) risk: 1 
-(227) correctness: 1 
-(228) fork: 1 
-(229) e-voting system: 1 
-(230) key derivation function: 1 
-(231) web of trust: 1 
-(232) byzantine fault tolerance: 1 
-(233) type signature: 1 
-(234) eclipse-attack: 1 
-(235) multi-factor authentication: 1 
-(236) formal method: 1 
-(237) stealth: 1 
-(238) social network: 1 
-(239) enterprise compute: 0 
-(240) risk assessment: 0 
-(241) protocol: 0 
-(242) triangle attack: 0 
-(243) trace analysis: 0 
-(244) industrial internet of thing privacy: 0 
-(245) industrial internet of thing security: 0 
-(246) liquid democracy: 0 
-(247) delegative vote: 0 
-(248) immutability: 0 
-(249) logistics: 0 
-(250) network center operation: 0 
-(251) defence application: 0 
-(252) battlefield management system: 0 
-(253) smart power management: 0 
-(254) raft: 0 
-(255) jam: 0 
+(1) bitcoin: 55 
+(2) security: 51 
+(3) internet of things: 31 
+(4) cryptocurrency: 30 
+(5) contract: 28 
+(6) algorithm: 23 
+(7) ethereum: 18 
+(8) privacy: 15 
+(9) digital signature: 13 
+(10) double-spending: 12 
+(11) computation: 12 
+(12) distribute transaction: 12 
+(13) machine learning: 11 
+(14) public-key cryptography: 11 
+(15) static analysis: 10 
+(16) vulnerability detection: 10 
+(17) solidity: 10 
+(18) home automation: 10 
+(19) sensor: 10 
+(20) population: 10 
+(21) omness: 10 
+(22) user perception: 9 
+(23) usability: 9 
+(24) trade-off: 9 
+(25) credit: 9 
+(26) debit card: 9 
+(27) bitcoin wallet security: 8 
+(28) cryptocurrency wallet: 8 
+(29) bitcoin wallet forensics: 8 
+(30) bitcoins: 8 
+(31) multibit hd: 8 
+(32) electrum: 8 
+(33) lattice: 7 
+(34) direct acyclic graph: 7 
+(35) immutable object: 7 
+(36) mathematics: 7 
+(37) 51% attack: 7 
+(38) asynchrony: 7 
+(39) simulation: 7 
+(40) markov chain monte carlo: 7 
+(41) iota: 7 
+(42) selection algorithm: 7 
+(43) shard: 7 
+(44) ring signature: 7 
+(45) jot: 7 
+(46) hash function: 7 
+(47) procedural generation: 7 
+(48) replay attack: 7 
+(49) modulus of continuity: 6 
+(50) rsa: 6 
+(51) modulus robot: 6 
+(52) cryptography: 6 
+(53) crypto: 6 
+(54) system security: 6 
+(55) sybil attack: 6 
+(56) human and societal aspect of security and privacy: 6 
+(57) economics of security: 6 
+(58) ecdsa: 6 
+(59) hide number problem: 6 
+(60) requirement: 5 
+(61) program analysis: 5 
+(62) block: 4 
+(63) lock: 4 
+(64) computer data storage: 4 
+(65) virtual machine: 4 
+(66) software portability: 4 
+(67) traction teampage: 4 
+(68) formal verification: 4 
+(69) distribute compute: 4 
+(70) attack: 4 
+(71) computer performance: 4 
+(72) taint analysis: 4 
+(73) business logic: 4 
+(74) overflow vulnerability: 4 
+(75) shv-secured hash value: 4 
+(76) trust: 3 
+(77) information security: 3 
+(78) software engineer: 3 
+(79) software lifecycle: 3 
+(80) proof-of-work: 3 
+(81) antivirus software: 3 
+(82) secure element: 3 
+(83) security smell: 3 
+(84) immutability attack: 3 
+(85) double spend attack: 3 
+(86) block withhold attack: 2 
+(87) distributed ledger: 2 
+(88) garch: 2 
+(89) auction: 2 
+(90) mine: 2 
+(91) mining pool: 2 
+(92) network property: 2 
+(93) database: 2 
+(94) distribute denial-of-service: 2 
+(95) cooperative defense: 2 
+(96) network: 2 
+(97) sleepy model: 2 
+(98) dishonest majority: 2 
+(99) offline player: 2 
+(100) hybrid: 2 
+(101) coin hop attack: 2 
+(102) zero-knowledge proof: 2 
+(103) brute-force search: 2 
+(104) pki system: 2 
+(105) time-based zero knowledge proof of knowledge: 2 
+(106) architecture: 2 
+(107) fuzz test: 2 
+(108) protocol documentation: 2 
+(109) proof-of-stake: 2 
+(110) data privacy: 2 
+(111) archiecture: 2 
+(112) access control list: 2 
+(113) cybersecurity framework: 2 
+(114) malware: 2 
+(115) social engineer: 2 
+(116) phishing: 2 
+(117) criterion rank: 2 
+(118) share scheme: 2 
+(119) peer-to-peer: 2 
+(120) contract agreement: 2 
+(121) cyber risk mitigation: 2 
+(122) graph analysis: 2 
+(123) intraday financial risk: 2 
+(124) pool mine: 2 
+(125) adaptive-security: 2 
+(126) universal-composability: 2 
+(127) brute-force attack: 2 
+(128) marijuana abuse: 2 
+(129) distributed-ledger: 2 
+(130) vulnerability: 2 
+(131) service: 2 
+(132) decompilation: 2 
+(133) cybersecurity vulnerability assessment: 2 
+(134) industrial internet of thing: 2 
+(135) smartphone application: 1 
+(136) invalid curve attack: 1 
+(137) contract theory: 1 
+(138) embed security: 1 
+(139) fault attack: 1 
+(140) web of trust: 1 
+(141) singular curve: 1 
+(142) supersingular curve: 1 
+(143) social network: 1 
+(144) owasp mobile: 1 
+(145) risk: 1 
+(146) proof-of-work system: 1 
+(147) value: 1 
+(148) security deposit: 1 
+(149) eclipse-attack: 1 
+(150) sharding: 1 
+(151) security.: 1 
+(152) on-off attack: 1 
+(153) wban: 1 
+(154) elliptic curve: 1 
+(155) learn with error: 1 
+(156) distribute trust: 1 
+(157) security vulnerability: 1 
+(158) gpu process: 1 
+(159) game: 1 
+(160) delay attack: 1 
+(161) high performance compute: 1 
+(162) efficient storage: 1 
+(163) authorization: 1 
+(164) peer-to-peer architecture: 1 
+(165) computer system organization: 1 
+(166) openssl: 1 
+(167) economics of mine: 1 
+(168) network reliability: 1 
+(169) consensus validation: 1 
+(170) selfish mine: 1 
+(171) tendermint: 1 
+(172) ibc: 1 
+(173) storage balance: 1 
+(174) merkle tree: 1 
+(175) security practice: 1 
+(176) system architecture: 1 
+(177) fork: 1 
+(178) authentication: 1 
+(179) e-voting system: 1 
+(180) propagation delay: 1 
+(181) byzantine general problem: 1 
+(182) cryptonote: 1 
+(183) key derivation function: 1 
+(184) type signature: 1 
+(185) stealth: 1 
+(186) partition: 1 
+(187) denial-of-service attack: 1 
+(188) distribute architecture: 1 
+(189) security service: 1 
+(190) security analysis: 1 
+(191) byzantine fault tolerance: 1 
+(192) multi-factor authentication: 1 
+(193) replicator dynamic: 1 
+(194) mine pool selection: 1 
+(195) evolutionary game theory: 1 
+(196) performance: 1 
+(197) enterprise compute: 0 
+(198) protocol: 0 
+(199) risk assessment: 0 
+(200) tor: 0 
+(201) data provenance: 0 
+(202) block mine: 0 
+(203) cloud compute: 0 
+(204) consensus security: 0 
+(205) network model: 0 
+(206) compromise of the protocol: 0 
+(207) blockmesh: 0 
+(208) reward: 0 
+(209) gap game: 0 
+(210) digital transaction: 0 
+(211) behavior monitor: 0 
+(212) triangle attack: 0 
+(213) reward mechanism: 0 
+(214) participatory sense: 0 
+(215) zksnarks: 0 
+(216) incentive: 0 
+(217) crowd-sensing: 0 
+(218) blockchain.: 0 
+(219) gas consumption: 0 
+(220) atomicity violation: 0 
+(221) vulnerability trigger: 0 
+(222) man in the middle: 0 
+(223) transaction system: 0 
+(224) threat categorization: 0 
+(225) stubborn mine: 0 
+(226) uncle block: 0 
+(227) dependability: 0 
+(228) data report: 0 
+(229) trace analysis: 0 
+(230) industrial internet of thing privacy: 0 
+(231) industrial internet of thing security: 0 
+(232) carrier sense multiple access: 0 
+(233) attack technique: 0 
+(234) maker-checker: 0 
+(235) integrity: 0 
+(236) internal attack: 0 
+(237) financial system: 0 
+(238) security architecture: 0 
+(239) energy transaction: 0 
+(240) channel: 0 
+(241) microgrid: 0 
+(242) test: 0 
+(243) privacy solution: 0 
+(244) privacy issue: 0 
+(245) security issue: 0 
+(246) security solution: 0 
+(247) technology: 0 
+(248) topologicalanalysis: 0 
+(249) immutability: 0 
+(250) supply chain: 0 
+(251) logistics: 0 
+(252) network center operation: 0 
+(253) defence application: 0 
+(254) battlefield management system: 0 
+(255) dependable: 0 
 (256) theorem prove: 0 
-(257) law: 0 
-(258) polynomial: 0 
-(259) data provenance: 0 
-(260) malicious attack: 0 
-(261) block mine: 0 
-(262) consensus security: 0 
-(263) energy efficient: 0 
-(264) accountability: 0 
-(265) veracity: 0 
-(266) blockchain.: 0 
-(267) crowd-sensing: 0 
-(268) zksnarks: 0 
-(269) participatory sense: 0 
-(270) data report: 0 
-(271) reward mechanism: 0 
-(272) behavior monitor: 0 
-(273) digital transaction: 0 
-(274) gap game: 0 
-(275) reward: 0 
-(276) blockmesh: 0 
-(277) compromise of the protocol: 0 
-(278) electronic payment system: 0 
-(279) chain: 0 
-(280) information technology: 0 
-(281) network model: 0 
-(282) cloud compute: 0 
-(283) high attack tolerant: 0 
-(284) fault tolerant: 0 
-(285) security assurance: 0 
-(286) hypergeometric distribution: 0 
-(287) cyberterrorism: 0 
-(288) flow verification: 0 
-(289) sdn: 0 
-(290) transparency: 0 
-(291) intelligent management: 0 
-(292) dynamic difficulty factor: 0 
-(293) mtc confirmation mechanism: 0 
-(294) fork attack: 0 
-(295) adoption: 0 
-(296) organisation.: 0 
-(297) goal: 0 
-(298) control: 0 
-(299) adaptive: 0 
-(300) data management: 0 
-(301) analytics: 0 
-(302) complexity: 0 
-(303) application: 0 
-(304) maximum-likelihood criterion pool selection: 0 
-(305) failure probability: 0 
-(306) genetic algorithm: 0 
-(307) gasless send: 0 
-(308) double-spending attack: 0 
-(309) logic risk location: 0 
-(310) topologicalanalysis: 0 
-(311) technology: 0 
-(312) security solution: 0 
-(313) security issue: 0 
-(314) privacy issue: 0 
-(315) privacy solution: 0 
-(316) test: 0 
-(317) distribute consensus: 0 
-(318) microgrid: 0 
-(319) channel: 0 
-(320) energy transaction: 0 
-(321) security architecture: 0 
-(322) financial system: 0 
-(323) internal attack: 0 
-(324) integrity: 0 
-(325) maker-checker: 0 
-(326) attack technique: 0 
-(327) carrier sense multiple access: 0 
-(328) collision avoidance: 0 
-(329) high transaction volume: 0 
-(330) gas consumption: 0 
-(331) atomicity violation: 0 
-(332) unintended consequence: 0 
-(333) computational resource: 0 
-(334) hacker: 0 
-(335) two-phase commit protocol: 0 
-(336) algorithmic efficiency: 0 
-(337) xinerama: 0 
-(338) expectation propagation: 0 
-(339) experiment: 0 
-(340) dust attack: 0 
-(341) block propagation: 0 
-(342) countermeasure: 0 
-(343) eclipse attack: 0 
-(344) peer-to-peer network: 0 
-(345) bitcoin security: 0 
-(346) decentralize payment system: 0 
-(347) bitcoin cyberattacks: 0 
-(348) digital money: 0 
-(349) digital wallet: 0 
-(350) p2p transaction: 0 
-(351) moral hazard: 0 
-(352) distribute system: 0 
-(353) programmer: 0 
-(354) concurrent compute: 0 
-(355) global network: 0 
-(356) essence: 0 
-(357) barcode: 0 
-(358) artificial general intelligence: 0 
-(359) control flow: 0 
-(360) autonomous decentralize system: 0 
-(361) business continuity: 0 
-(362) disaster recovery: 0 
-(363) color gradient: 0 
-(364) scott continuity: 0 
-(365) gene regulatory network: 0 
-(366) artificial intelligence: 0 
-(367) emoticon: 0 
-(368) align: 0 
-(369) online petition: 0 
-(370) shamir's secret share: 0 
-(371) identifier: 0 
-(372) fault model: 0 
-(373) computer security: 0 
-(374) mortar method: 0 
-(375) conflict check protocol: 0 
-(376) conflict: 0 
-(377) arbitration mechanism: 0 
-(378) vulnerability analysis: 0 
-(379) incentive: 0 
-(380) ransomware: 0 
-(381) cryptolocker: 0 
-(382) cybercrime: 0 
-(383) objectionable content: 0 
-(384) database security: 0 
-(385) decentralization: 0 
-(386) bitcoin mine: 0 
-(387) selfish miner: 0 
-(388) secure compute: 0 
-(389) archival science: 0 
-(390) dependable: 0 
-(391) uncle block: 0 
-(392) stubborn mine: 0 
-(393) threat categorization: 0 
-(394) transaction system: 0 
-(395) man in the middle: 0 
-(396) vulnerability trigger: 0 
-(397) defence: 0 
-(398) geth: 0 
-(399) algorithmic game theory: 0 
-(400) anti-dust: 0 
-(401) mine process: 0 
-(402) miner: 0 
-(403) block withhold: 0 
-(404) cyber threat intelligence: 0 
-(405) cryptocurrency exchange: 0 
-(406) light ethereum subprotocol: 0 
-(407) light client: 0 
-(408) crypto currency digital security: 0 
-(409) digital currency: 0 
-(410) risk decision: 0 
-(411) transaction: 0 
-(412) hack: 0 
-(413) software defect: 0 
-(414) blochchain: 0 
-(415) hash: 0 
-(416) tor: 0 
-(417) anonimity: 0 
-(418) hyperledger: 0 
-(419) bitcoin monitor: 0 
-(420) majority attack: 0 
-(421) hyper- ledger: 0 
-(422) quantum information: 0 
-(423) stablecoin: 0 
-(424) defi: 0 
-(425) bitcoin security countermeasure: 0 
-(426) trend in bitcoin security breach: 0 
-(427) challenge mechanism: 0 
-(428) binary tree: 0 
-(429) light node: 0 
-(430) ticket owner: 0 
-(431) invalid ticket: 0 
-(432) concert organizer: 0 
-(433) contrast of attack: 0 
-(434) security detection model: 0 
-(435) analysis method: 0 
-(436) impossibility triangle: 0 
-(437) update: 0 
-(438) honest node: 0 
-(439) current timestamp: 0 
-(440) payment transaction: 0 
-(441) money supply: 0 
-(442) previous block: 0 
-(443) federate learn: 0 
-(444) proof of location: 0 
-(445) security in machine learn: 0 
-(446) spatio-temporal consensus: 0 
-(447) data protection: 0 
-(448) distribute computation: 0 
-(449) denial of service resistance: 0 
-(450) hash cash: 0 
-(451) threshold cryptography: 0 
-(452) incentive compatibility: 0 
-(453) financial network: 0 
-(454) reentrant attack: 0 
-(455) softfork transition scheme: 0 
-(456) compromise hash: 0 
-(457) evaluation mechanism: 0 
-(458) rscoin: 0 
-(459) proof of authenticity: 0 
-(460) electronic health record: 0 
-(461) block synchronization: 0 
-(462) correlate equilibrium: 0 
-(463) large deviation theory: 0 
-(464) financial institution: 0 
-(465) financial market: 0 
-(466) economic security: 0 
-(467) mine strategy: 0 
-(468) client puzzle: 0 
-(469) adversarial attack: 0 
-(470) security parameter: 0 
-(471) monetization: 0 
-(472) road traffic congestion: 0 
-(473) token: 0 
-(474) crypto-currencies: 0 
-(475) vehicle to vehicle: 0 
-(476) tamper-proof wallet: 0 
-(477) offline payment: 0 
-(478) signature scheme: 0 
-(479) elliptic curve digital signature algorithm: 0 
-(480) malleability problem: 0 
-(481) casper: 0 
-(482) micropayments: 0 
-(483) multi-signature aggregation: 0 
-(484) responsiveness: 0 
-(485) mt.gox: 0 
-(486) exchange platform: 0 
-(487) virtual currency: 0 
-(488) e-currency: 0 
-(489) exchange market: 0 
-(490) chunk size: 0 
-(491) local chain: 0 
-(492) blind signature: 0 
-(493) address map: 0 
-(494) overwhelm probability: 0 
-(495) immigration: 0 
-(496) gateless entry: 0 
-(497) decentralize sanitizers: 0 
-(498) access control encryption: 0 
-(499) user privacy: 0 
-(500) power system: 0 
-(501) sg-eiot: 0 
-(502) distribute network security: 0 
-(503) discretionary access control: 0 
-(504) economic model: 0 
-(505) gas limit a a kill criterion: 0 
-(506) vulnerability injection: 0 
-(507) modifier issue: 0 
-(508) mutation test: 0 
-(509) cyberintrusions: 0 
-(510) wannacry ransomware: 0 
-(511) human cognition: 0 
-(512) output address: 0 
-(513) input address: 0 
-(514) om walk: 0 
-(515) dyck path: 0 
-(516) catalan number: 0 
-(517) spectrum sense: 0 
-(518) ssdf attack: 0 
-(519) double threshold energy detection: 0 
-(520) technology management: 0 
-(521) tangle: 0 
-(522) ripple: 0 
-(523) 00-01: 0 
-(524) algor: 0 
-(525) network function virtualization: 0 
-(526) distribute intelligence: 0 
-(527) trust in iot: 0 
-(528) iot security challenge: 0 
-(529) software define network: 0 
-(530) iot data privacy: 0 
-(531) 5g wireless technology: 0 
-(532) audit log: 0 
-(533) input filter: 0 
-(534) protection: 0 
-(535) practical application: 0 
-(536) interoperable-blockchains: 0 
-(537) financial service: 0 
-(538) protocol security: 0 
-(539) animal trace: 0 
-(540) e-cash: 0 
-(541) traceability: 0 
-(542) payment: 0 
-(543) mobile money: 0 
-(544) ussd: 0 
-(545) wallet: 0 
-(546) security exploitation: 0 
-(547) fasle positive: 0 
-(548) fpga: 0 
-(549) embed system: 0 
-(550) prototype: 0 
-(551) wireless network: 0 
-(552) real-time consensus: 0 
-(553) emerge technology: 0 
-(554) cyber risk: 0 
-(555) immutable: 0 
-(556) cyber attack: 0 
-(557) blockchain;-privacy: 0 
-(558) data security: 0 
-(559) censorship attack: 0 
-(560) peer-to-peer system: 0 
-(561) ict: 0 
-(562) bank: 0 
-(563) collusion: 0 
-(564) offline channel: 0 
-(565) banzhaf index: 0 
-(566) honest miner: 0 
-(567) metal node: 0 
-(568) subchain: 0 
-(569) finite state machine: 0 
-(570) design pattern: 0 
-(571) automatic code generation: 0 
-(572) technical driver: 0 
-(573) non-technical driver: 0 
-(574) libra: 0 
-(575) decentralize finance: 0 
-(576) open finance: 0 
-(577) facebook: 0 
-(578) cloud storage: 0 
-(579) amazon web service: 0 
-(580) secure log: 0 
-(581) distribute immutabilization: 0 
-(582) test indicator: 0 
-(583) system component: 0 
-(584) firstcoin: 0 
-(585) pay-to-public-key-hash  protocol: 0 
-(586) swift: 0 
-(587) public ledger: 0 
-(588) decentralize peer-to-peer: 0 
-(589) decentralize autonomous organization: 0 
-(590) fintech: 0 
-(591) seconomics vulnerability: 0 
-(592) cyber physical system: 0 
-(593) reason: 0 
-(594) risk engineer: 0 
-(595) risk management: 0 
-(596) integrate risk analysis: 0 
-(597) delay: 0 
-(598) om oracle: 0 
-(599) botnets: 0 
-(600) c&c: 0 
-(601) monitor system: 0 
-(602) mitigation: 0 
-(603) defensive protocol: 0 
-(604) p2p network: 0 
-(605) trojan message attack: 0 
-(606) ontology: 0 
-(607) computer: 0 
-(608) node: 0 
-(609) quantum algorithm: 0 
-(610) intrusion: 0 
-(611) world: 0 
-(612) web mine: 0 
-(613) quantum compute: 0 
-(614) web: 0 
-(615) malware mitigation: 0 
-(616) wide: 0 
-(617) anomaly detection: 0 
-(618) supervise learn: 0 
-(619) learn paradigm: 0 
-(620) privacy policy: 0 
-(621) online bank: 0 
-(622) social: 0 
-(623) technology policy: 0 
-(624) electronic fund transfer: 0 
-(625) secure online transaction: 0 
-(626) supervise learn by classification: 0 
-(627) compute: 0 
-(628) network simulation: 0 
-(629) software security: 0 
-(630) challenge: 0 
-(631) iot security: 0 
-(632) fuzzer: 0 
-(633) fuzzing: 0 
-(634) test oracle: 0 
-(635) verification: 0 
-(636) operate system security: 0 
-(637) network performance evaluation: 0 
-(638) electronic commerce: 0 
-(639) information system application: 0 
-(640) property: 0 
-(641) compute platform: 0 
-(642) software performance: 0 
-(643) software organization: 0 
-(644) extra-functional property: 0 
-(645) it engineer: 0 
-(646) digital cash: 0 
-(647) future scope: 0 
-(648) professional topic: 0 
-(649) program language usability: 0 
-(650) empirical study: 0 
-(651) logic: 0 
-(652) security in hardware: 0 
-(653) human-centered compute: 0 
-(654) denial of service: 0 
-(655) security in digital system: 0 
-(656) safety: 0 
-(657) security patch: 0 
-(658) secure multiparty computation: 0 
-(659) storage architecture: 0 
-(660) distribute storage: 0 
-(661) data center network: 0 
-(662) network service: 0 
-(663) network manageability: 0 
-(664) network management: 0 
-(665) measurement: 0 
-(666) network type: 0 
-(667) program: 0 
-(668) probability: 0 
-(669) statistic: 0 
-(670) software library: 0 
-(671) tool: 0 
-(672) repository: 0 
-(673) software notation: 0 
-(674) data dissemination: 0 
-(675) debug: 0 
-(676) software creation: 0 
-(677) mathematics of compute: 0 
-(678) software defect analysis: 0 
-(679) software test: 0 
-(680) software verification: 0 
-(681) attacker advantage: 0 
-(682) mathematical model: 0 
-(683) time-based model: 0 
-(684) double-spend attack: 0 
-(685) message authentication code: 0 
-(686) validation: 0 
-(687) experimentation: 0 
-(688) dapp: 0 
-(689) timestamp: 0 
-(690) mobile: 0 
-(691) wireless security: 0 
-(692) network protocol: 0 
-(693) peer-to-peer protocol: 0 
-(694) application layer protocol: 0 
-(695) key management: 0 
-(696) compute methodology: 0 
-(697) other attack: 0 
-(698) distribute compute methodology: 0 
-(699) query of encrypt data: 0 
-(700) storage security: 0 
-(701) security evaluation: 0 
-(702) domain specific language: 0 
-(703) cryptographic protocol: 0 
-(704) computational complexity: 0 
-(705) privacy-preserving protocol: 0 
-(706) management: 0 
-(707) exploit: 0 
-(708) hardware: 0 
-(709) wireless interconnect: 0 
-(710) design: 0 
-(711) analysis of algorithm: 0 
-(712) theory of computation: 0 
-(713) security protocol: 0 
-(714) network architecture: 0 
-(715) interconnect: 0 
-(716) interface: 0 
-(717) wireless device: 0 
-(718) radio frequency: 0 
-(719) communication hardware: 0 
-(720) agriculture: 0 
-(721) supply chain: 0 
-(722) storage: 0 
-(723) integrate circuit: 0 
-(724) symmetric cryptography: 0 
-(725) computer in other domain: 0 
-(726) cryptanalysis: 0 
-(727) decentralize: 0 
-(728) solution: 0 
-(729) smart city: 0 
-(730) channel exfiltration: 0 
-(731) air gap wallet: 0 
-(732) fork after withhold: 0 
-(733) proof of authority: 0 
-(734) self-sovereign identity: 0 
-(735) cryptographic attack: 0 
-(736) membership service provider: 0 
-(737) air gap storage: 0 
-(738) goldfinger attack: 0 
-(739) intrusion detection: 0 
-(740) security framework: 0 
-(741) mobile healthcare: 0 
-(742) racs: 0 
-(743) insider threat: 0 
-(744) collaborative intrusion detection: 0 
-(745) trust management: 0 
-(746) statistical significance: 0 
-(747) entity: 0 
-(748) attack surface: 0 
-(749) private key storage: 0 
-(750) synergy: 0 
-(751) certification: 0 
-(752) ephrin type-b receptor 1: 0 
-(753) time complexity: 0 
-(754) tablet dosage form: 0 
-(755) tablet computer: 0 
-(756) smartphone: 0 
-(757) markov model: 0 
-(758) exponential: 0 
-(759) health fraud: 0 
-(760) program paradigm: 0 
-(761) human: 0 
-(762) e-commerce: 0 
-(763) smart device: 0 
-(764) real-time clock: 0 
-(765) key extraction: 0 
-(766) botnet: 0 
-(767) cross-computing tool and technique: 0 
-(768) web application security: 0 
-(769) ddos: 0 
-(770) identity management: 0 
-(771) switzerl: 0 
-(772) postal: 0 
-(773) first-order logic: 0 
-(774) encapsulation: 0 
-(775) type system: 0 
-(776) dependability: 0 
-(777) separation logic: 0 
-(778) honeypot: 0 
-(779) domain-specific language: 0 
-(780) software bug: 0 
-(781) information sensitivity: 0 
-(782) unitarity: 0 
-(783) hyperledger fabric: 0 
-(784) b-method: 0 
-(785) post-quantum cryptography: 0 
-(786) confidentiality: 0 
-(787) naruto shippuden: clash of ninja revolution 3: 0 
-(788) rodin tool: 0 
-(789) first-order predicate: 0 
-(790) automate theorem prove: 0 
-(791) principle of abstraction: 0 
-(792) business process: 0 
-(793) spectral leakage: 0 
-(794) fault detection: 0 
-(795) isolation: 0 
-(796) enterprise system: 0 
-(797) data integrity: 0 
-(798) encryption: 0 
-(799) telephone number: 0 
-(800) email: 0 
-(801) communication endpoint: 0 
-(802) cryptographic hash function: 0 
-(803) pervasive informatics: 0 
-(804) tamper resistance: 0 
-(805) trust third party: 0 
-(806) interaction: 0 
-(807) centralize compute: 0 
-(808) digital linear tape: 0 
-(809) stateless protocol: 0 
-(810) general-purpose model: 0 
-(811) program language: 0 
-(812) refinement: 0 
-(813) differential privacy: 0 
-(814) fault tolerance: 0 
-(815) edge compute: 0 
-(816) quantum entanglement: 0 
-(817) autonomous robot: 0 
-(818) genesis: 0 
-(819) e-commerce infrastructure: 0 
-(820) enterprise integration: 0 
-(821) transport protocol: 0 
-(822) page strategy: 0 
-(823) web application: 0 
-(824) sample: 0 
-(825) markov chain: 0 
-(826) software design tradeoff: 0 
-(827) design software: 0 
-(828) document type: 0 
-(829) general conference proceed: 0 
-(830) network economics: 0 
-(831) metric: 0 
-(832) general: 0 
-(833) estimation: 0 
-(834) numerical analysis: 0 
-(835) adversary: 0 
-(836) evaluation: 0 
-(837) network algorithm: 0 
-(838) information system economics: 0 
-(839) reference: 0 
-(840) management of compute: 0 
-(841) social aspect of security: 0 
-(842) temporal logic: 0 
-(843) record storage system: 0 
-(844) scalability: 0 
-(845) holographic principle: 0 
-(846) self-organization: 0 
-(847) unsupervised learn: 0 
-(848) usability in security: 0 
-(849) amortize analysis: 0 
-(850) transfer function: 0 
-(851) recovery procedure: 0 
-(852) information-theoretic technique: 0 
-(853) overhead: 0 
-(854) parallel compute methodology: 0 
-(855) personally identifiable information: 0 
-(856) throughput: 0 
-(857) web protocol security: 0 
-(858) parallel algorithm: 0 
-(859) commitment scheme: 0 
+(257) polynomial: 0 
+(258) malicious attack: 0 
+(259) fault tolerant: 0 
+(260) genetic algorithm: 0 
+(261) security assurance: 0 
+(262) logic risk location: 0 
+(263) law: 0 
+(264) double-spending attack: 0 
+(265) archival science: 0 
+(266) selfish miner: 0 
+(267) eclipse attack: 0 
+(268) countermeasure: 0 
+(269) block propagation: 0 
+(270) dust attack: 0 
+(271) node: 0 
+(272) computational resource: 0 
+(273) unintended consequence: 0 
+(274) moral hazard: 0 
+(275) programmer: 0 
+(276) mortar method: 0 
+(277) responsiveness: 0 
+(278) identifier: 0 
+(279) shamir's secret share: 0 
+(280) essence: 0 
+(281) peer-to-peer network: 0 
+(282) global network: 0 
+(283) computer: 0 
+(284) quantum compute: 0 
+(285) quantum algorithm: 0 
+(286) temporal logic: 0 
+(287) quantum entanglement: 0 
+(288) centralize compute: 0 
+(289) differential privacy: 0 
+(290) trust third party: 0 
+(291) tamper resistance: 0 
+(292) pervasive informatics: 0 
+(293) cryptographic hash function: 0 
+(294) encryption: 0 
+(295) data integrity: 0 
+(296) enterprise system: 0 
+(297) quantum information: 0 
+(298) bitcoin security: 0 
+(299) decentralize payment system: 0 
+(300) bitcoin cyberattacks: 0 
+(301) bitcoin mine: 0 
+(302) decentralization: 0 
+(303) survey: 0 
+(304) database security: 0 
+(305) objectionable content: 0 
+(306) vulnerability analysis: 0 
+(307) defence: 0 
+(308) geth: 0 
+(309) computer security: 0 
+(310) algorithmic game theory: 0 
+(311) anti-dust: 0 
+(312) majority attack: 0 
+(313) blochchain: 0 
+(314) software defect: 0 
+(315) hack: 0 
+(316) governance: 0 
+(317) hyper- ledger: 0 
+(318) digital money: 0 
+(319) digital wallet: 0 
+(320) p2p transaction: 0 
+(321) distribute system: 0 
+(322) conflict check protocol: 0 
+(323) conflict: 0 
+(324) secure compute: 0 
+(325) arbitration mechanism: 0 
+(326) miner: 0 
+(327) block withhold: 0 
+(328) cyber threat intelligence: 0 
+(329) cryptocurrency exchange: 0 
+(330) light ethereum subprotocol: 0 
+(331) light client: 0 
+(332) mine process: 0 
+(333) naruto shippuden: clash of ninja revolution 3: 0 
+(334) collision avoidance: 0 
+(335) hypergeometric distribution: 0 
+(336) incentive compatibility: 0 
+(337) threshold cryptography: 0 
+(338) denial of service resistance: 0 
+(339) distribute computation: 0 
+(340) client puzzle: 0 
+(341) om walk: 0 
+(342) dyck path: 0 
+(343) catalan number: 0 
+(344) distribute immutabilization: 0 
+(345) secure log: 0 
+(346) amazon web service: 0 
+(347) cloud storage: 0 
+(348) automatic code generation: 0 
+(349) design pattern: 0 
+(350) reentrant attack: 0 
+(351) finite state machine: 0 
+(352) metal node: 0 
+(353) honest miner: 0 
+(354) banzhaf index: 0 
+(355) offline channel: 0 
+(356) collusion: 0 
+(357) firstcoin: 0 
+(358) pay-to-public-key-hash  protocol: 0 
+(359) trojan message attack: 0 
+(360) p2p network: 0 
+(361) defensive protocol: 0 
+(362) mitigation: 0 
+(363) monitor system: 0 
+(364) c&c: 0 
+(365) botnets: 0 
+(366) subchain: 0 
+(367) softfork transition scheme: 0 
+(368) compromise hash: 0 
+(369) evaluation mechanism: 0 
+(370) multi-signature aggregation: 0 
+(371) human cognition: 0 
+(372) wannacry ransomware: 0 
+(373) cyberintrusions: 0 
+(374) mutation test: 0 
+(375) modifier issue: 0 
+(376) vulnerability injection: 0 
+(377) gas limit a a kill criterion: 0 
+(378) discretionary access control: 0 
+(379) user privacy: 0 
+(380) access control encryption: 0 
+(381) decentralize sanitizers: 0 
+(382) e-cash: 0 
+(383) update: 0 
+(384) security detection model: 0 
+(385) contrast of attack: 0 
+(386) concert organizer: 0 
+(387) rscoin: 0 
+(388) block synchronization: 0 
+(389) correlate equilibrium: 0 
+(390) large deviation theory: 0 
+(391) data protection: 0 
+(392) spatio-temporal consensus: 0 
+(393) om oracle: 0 
+(394) proof of location: 0 
+(395) trend in bitcoin security breach: 0 
+(396) challenge mechanism: 0 
+(397) binary tree: 0 
+(398) light node: 0 
+(399) ticket owner: 0 
+(400) invalid ticket: 0 
+(401) bitcoin security countermeasure: 0 
+(402) failure probability: 0 
+(403) delay: 0 
+(404) integrate risk analysis: 0 
+(405) hash: 0 
+(406) cyber risk: 0 
+(407) artificial intelligence: 0 
+(408) emerge technology: 0 
+(409) real-time consensus: 0 
+(410) wireless network: 0 
+(411) prototype: 0 
+(412) embed system: 0 
+(413) fpga: 0 
+(414) transaction: 0 
+(415) fasle positive: 0 
+(416) security exploitation: 0 
+(417) wallet: 0 
+(418) defi: 0 
+(419) immutable: 0 
+(420) risk management: 0 
+(421) application: 0 
+(422) information technology: 0 
+(423) measurement: 0 
+(424) complexity: 0 
+(425) adaptive: 0 
+(426) control: 0 
+(427) goal: 0 
+(428) organisation.: 0 
+(429) adoption: 0 
+(430) fork attack: 0 
+(431) mtc confirmation mechanism: 0 
+(432) dynamic difficulty factor: 0 
+(433) cybercrime: 0 
+(434) cyberterrorism: 0 
+(435) stablecoin: 0 
+(436) cyber attack: 0 
+(437) blockchain;-privacy: 0 
+(438) hardware: 0 
+(439) risk engineer: 0 
+(440) reason: 0 
+(441) cyber physical system: 0 
+(442) seconomics vulnerability: 0 
+(443) fintech: 0 
+(444) decentralize autonomous organization: 0 
+(445) decentralize peer-to-peer: 0 
+(446) public ledger: 0 
+(447) swift: 0 
+(448) bank: 0 
+(449) payment: 0 
+(450) ict: 0 
+(451) peer-to-peer system: 0 
+(452) financial service: 0 
+(453) practical application: 0 
+(454) protection: 0 
+(455) input filter: 0 
+(456) censorship attack: 0 
+(457) protocol security: 0 
+(458) game theory: 0 
+(459) interoperable-blockchains: 0 
+(460) spectrum sense: 0 
+(461) ssdf attack: 0 
+(462) ontology: 0 
+(463) double threshold energy detection: 0 
+(464) hyperledger: 0 
+(465) ripple: 0 
+(466) 00-01: 0 
+(467) algor: 0 
+(468) digital currency: 0 
+(469) audit log: 0 
+(470) tangle: 0 
+(471) holographic principle: 0 
+(472) ddos: 0 
+(473) software creation: 0 
+(474) secure online transaction: 0 
+(475) domain-specific security and privacy architecture: 0 
+(476) electronic fund transfer: 0 
+(477) technology policy: 0 
+(478) social: 0 
+(479) online bank: 0 
+(480) privacy policy: 0 
+(481) wide: 0 
+(482) malware mitigation: 0 
+(483) smart city: 0 
+(484) web: 0 
+(485) web application security: 0 
+(486) web mine: 0 
+(487) world: 0 
+(488) intrusion: 0 
+(489) anomaly detection: 0 
+(490) network simulation: 0 
+(491) network performance evaluation: 0 
+(492) synergy: 0 
+(493) certification: 0 
+(494) software security: 0 
+(495) it engineer: 0 
+(496) extra-functional property: 0 
+(497) compute: 0 
+(498) software organization: 0 
+(499) professional topic: 0 
+(500) program language usability: 0 
+(501) probability: 0 
+(502) mathematics of compute: 0 
+(503) network protocol: 0 
+(504) statistic: 0 
+(505) message authentication code: 0 
+(506) symmetric cryptography: 0 
+(507) double-spend attack: 0 
+(508) time-based model: 0 
+(509) mathematical model: 0 
+(510) attacker advantage: 0 
+(511) software verification: 0 
+(512) software test: 0 
+(513) validation: 0 
+(514) software defect analysis: 0 
+(515) debug: 0 
+(516) data dissemination: 0 
+(517) exploit: 0 
+(518) solution: 0 
+(519) entity: 0 
+(520) software notation: 0 
+(521) repository: 0 
+(522) tool: 0 
+(523) software library: 0 
+(524) program: 0 
+(525) security patch: 0 
+(526) software performance: 0 
+(527) compute platform: 0 
+(528) private key storage: 0 
+(529) dapp: 0 
+(530) markov model: 0 
+(531) attack surface: 0 
+(532) decentralize: 0 
+(533) timestamp: 0 
+(534) air gap storage: 0 
+(535) wireless security: 0 
+(536) trust management: 0 
+(537) collaborative intrusion detection: 0 
+(538) channel exfiltration: 0 
+(539) air gap wallet: 0 
+(540) cryptographic attack: 0 
+(541) insider threat: 0 
+(542) racs: 0 
+(543) mobile healthcare: 0 
+(544) cyber-physical system: 0 
+(545) security framework: 0 
+(546) consensus: 0 
+(547) intrusion detection: 0 
+(548) statistical significance: 0 
+(549) goldfinger attack: 0 
+(550) threat: 0 
+(551) key extraction: 0 
+(552) information system: 0 
+(553) future scope: 0 
+(554) iot security: 0 
+(555) property: 0 
+(556) information system application: 0 
+(557) digital cash: 0 
+(558) electronic commerce: 0 
+(559) operate system security: 0 
+(560) ephrin type-b receptor 1: 0 
+(561) time complexity: 0 
+(562) tablet dosage form: 0 
+(563) information sensitivity: 0 
+(564) tablet computer: 0 
+(565) smartphone: 0 
+(566) exponential: 0 
+(567) botnet: 0 
+(568) health fraud: 0 
+(569) program paradigm: 0 
+(570) verification: 0 
+(571) test oracle: 0 
+(572) human: 0 
+(573) e-commerce: 0 
+(574) smart device: 0 
+(575) real-time clock: 0 
+(576) fuzzing: 0 
+(577) fuzzer: 0 
+(578) challenge: 0 
+(579) empirical study: 0 
+(580) membership service provider: 0 
+(581) privacy-preserving protocol: 0 
+(582) transfer function: 0 
+(583) computational complexity: 0 
+(584) principle of abstraction: 0 
+(585) automate theorem prove: 0 
+(586) first-order predicate: 0 
+(587) rodin tool: 0 
+(588) b-method: 0 
+(589) domain-specific language: 0 
+(590) honeypot: 0 
+(591) type system: 0 
+(592) first-order logic: 0 
+(593) refinement: 0 
+(594) program language: 0 
+(595) genesis: 0 
+(596) digital linear tape: 0 
+(597) stateless protocol: 0 
+(598) general-purpose model: 0 
+(599) fault tolerance: 0 
+(600) pseudonymity: 0 
+(601) theory of security: 0 
+(602) markov chain: 0 
+(603) scalability: 0 
+(604) cryptographic protocol: 0 
+(605) analysis of algorithm: 0 
+(606) theory of computation: 0 
+(607) software: 0 
+(608) security protocol: 0 
+(609) network architecture: 0 
+(610) application security: 0 
+(611) fork after withhold: 0 
+(612) numerical analysis: 0 
+(613) key management: 0 
+(614) edge compute: 0 
+(615) adversary: 0 
+(616) distribute compute methodology: 0 
+(617) management: 0 
+(618) query of encrypt data: 0 
+(619) storage security: 0 
+(620) proof of authority: 0 
+(621) formal method: 0 
+(622) security evaluation: 0 
+(623) domain specific language: 0 
+(624) sample: 0 
+(625) compute methodology: 0 
+(626) autonomous robot: 0 
+(627) design: 0 
+(628) anonymity: 0 
+(629) record storage system: 0 
+(630) page strategy: 0 
+(631) information storage system: 0 
+(632) personally identifiable information: 0 
+(633) isolation: 0 
+(634) apply compute: 0 
+(635) spectral leakage: 0 
+(636) general conference proceed: 0 
+(637) reference: 0 
+(638) general: 0 
+(639) mobile: 0 
+(640) enterprise integration: 0 
+(641) human-centered compute: 0 
+(642) security in hardware: 0 
+(643) confidentiality: 0 
+(644) business process: 0 
+(645) logic: 0 
+(646) amortize analysis: 0 
+(647) recovery procedure: 0 
+(648) document type: 0 
+(649) untraceability: 0 
+(650) commitment scheme: 0 
+(651) supervise learn: 0 
+(652) overhead: 0 
+(653) fault detection: 0 
+(654) software bug: 0 
+(655) interaction: 0 
+(656) post-quantum cryptography: 0 
+(657) throughput: 0 
+(658) unsupervised learn: 0 
+(659) learn paradigm: 0 
+(660) hyperledger fabric: 0 
