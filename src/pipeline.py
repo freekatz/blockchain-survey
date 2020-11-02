@@ -19,6 +19,7 @@ from analyzer import analyzer_pipeline
 from plot import plot_pipeline
 from settings import *
 
+# todo sim.txt class rule
 """
 crawler.py 1
 filter.py 0

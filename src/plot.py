@@ -157,22 +157,21 @@ def plot_pipeline(df: pd.DataFrame, opt: str):
     #     txt_rank(rank, p1 + "%s_rank.txt" % col)
     #     word_cloud_plot(rank, p2 + "%s_word_cloud.png" % col)
     #     bar_rank_plot(rank, p3 + "%s_bar_rank.png" % col)
-    #
-    # if opt == "cite":
-    #     height = 5000
-    #     step = 250
-    # else:
-    #     height = 800
-    #     step = 50
+
+    if opt == "cite":
+        height = 5000
+        step = 250
+    else:
+        height = 60
+        step = 12
     cols = ["all", "2016", "2017", "2018", "2019", "2020"]
     ddf = df[cols]
-    # bar_hop_plot(ddf, opt, 15, "all", height, step)
-    # bar_hop_plot(df, plot_output_dir + "/bar-hop-%s.png" % opt, 30, "all", 0, 0)
+    bar_hop_plot(ddf, opt, 15, "all", height, step)
     
     # test(df, opt)
     # test1(df)
     
-    labels = ["contract", "software", "network", "consensus", "proof-of-work"]
+    labels = ["cryptography", "mine", "consensus protocol", "solidity", "network", "formal approach"]
     line_plot(ddf[cols[1:]], labels)
 
 

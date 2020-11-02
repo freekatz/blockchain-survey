@@ -10,7 +10,7 @@ allow_patterns = [  #  todo 在手工过滤之前，自动过滤之后使用，�
 ]
 
 deny_patterns = [
-    "([U|u]se|[U|u]sing|[W|w]ith|[B|b]y|[T|t]hrough|[V|v]ia|[O|o]ver|[B|b]ase[d|] on)(.*?)([B|b]lock( *?)[C|c]hain|[C|c]ontract|[D|d]istributed|[E|e]thereum|[B|b]itcoin)",
+    "([U|u]se|[U|u]sing|[W|w]ith|[B|b]y|[T|t]hrough|[V|v]ia|[O|o]ver|[B|b]ase[d|] on)(.*?)([B|b]lock( *?)[C|c]hain|[C|c]ontract|[D|d]istributed|[E|e]thereum|[B|b]itcoin|[L|l]edger)",
     "([B|b]lock( *?)[C|c]hain(s*?)|[C|c]ontract|[D|d]istributed|[E|e]thereum|[B|b]itcoin)((-| - | )*?)(.*?)([P|p]owered|[B|b]ased|[E|e]nabled|[D|d]riven|for)",
 ]
 # On the Feasibility of Secure Logging for Industrial Control Systems Using Blockchain

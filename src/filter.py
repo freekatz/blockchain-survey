@@ -38,9 +38,7 @@ def filter_auto(df: pd.DataFrame) -> pd.DataFrame:
     return ddf
 
 
-def filter_manual():
-    df = pd.read_excel(preprocess_output_dir + "/all-preprocessed.xlsx")
-    
+def filter_manual(df: pd.DataFrame):
     ddf = pd.read_excel(filter_output_manual_dir + "/all-nf.xlsx")
     
     return df[df["title"].isin(ddf["title"])]
@@ -49,7 +47,7 @@ def filter_manual():
 def filter_pipeline(df: pd.DataFrame) -> pd.DataFrame:
     # ddf = filter_auto(df)
 
-    ddf = filter_manual()
+    ddf = filter_manual(df)
     return ddf
 
 
