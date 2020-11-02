@@ -14,6 +14,7 @@
 import os
 
 import matplotlib.pyplot as plt
+from matplotlib import ticker
 from numpy import median
 import seaborn as sns
 import pandas as pd
@@ -72,16 +73,21 @@ def bar_hop_plot(df: pd.DataFrame, opt: str, limit: int, sort_col: str, height: 
     ddf = df.sort_values(sort_col)[0 - limit:]
     ddf.plot.bar(y=ddf.columns[1:], stacked=True)
     
+    if is_survey:
+        title = "Literature Frequency about Blockchain Survey"
+    else:
+        title = "Literature Frequency about Blockchain Security"
+    
     ax = plt.gca()
-    ax.set_title(opt, fontsize=18)
-    ax.legend(loc='best', fontsize=12, ncol=4)
+    ax.set_title(title, fontsize=13)
+    ax.legend(loc='best', fontsize=8, ncol=6)
     plt.xticks(fontsize=6, horizontalalignment='left', rotation=320)
     # plt.yticks(np.arange(0, height, step), fontsize=8)
     
     plt.rcParams['figure.dpi'] = 600
     plt.rcParams['savefig.dpi'] = 600
     plt.tight_layout()
-    plt.grid(axis="y", linestyle=":", linewidth=0.5)
+    plt.grid(axis="y", linestyle=":", linewidth=0.8)
     plt.savefig(target)
 
 
@@ -103,38 +109,77 @@ def test1(df):
     print(ddf)
 
 
+def line_plot(df: pd.DataFrame, labels: list):
+    ddf = df[df.index.isin(labels)].T
+    print(ddf)
+    _, ax = plt.subplots()
+
+    # Be sure to only pick integer tick locations.
+    for axis in [ax.xaxis, ax.yaxis]:
+        axis.set_major_locator(ticker.MaxNLocator(integer=True))
+    plt.style.use('ggplot')
+    plt.rcParams['font.sans-serif'] = ['Microsoft YaHei']
+    plt.rcParams['axes.unicode_minus'] = False
+    for l in labels:
+        plt.plot(ddf.index,  # x轴数据
+                 ddf[l],  # y轴数据
+                 linestyle='-',  # 折线类型
+                 linewidth=2,  # 折线宽度
+                 # color='steelblue',  # 折线颜色
+                 marker='o',  # 折线图中添加圆点
+                 markersize=4,  # 点的大小
+                 markeredgecolor='black',  # 点的边框色
+                 markerfacecolor='brown',  # 点的填充色
+                 )
+    plt.xticks(fontsize=8, horizontalalignment='left', rotation=320)  # 改变x轴文字值的文字大小
+    plt.ylabel('Frequency')
+    plt.legend(loc='upper left', fontsize=8, ncol=1, labels=labels)
+    plt.title("1", fontsize=13)
+    plt.rcParams['figure.dpi'] = 600
+    plt.rcParams['savefig.dpi'] = 600
+    plt.tight_layout()
+    plt.grid(axis="y", linestyle=":", linewidth=0.8)
+    plt.savefig(output_root_dir + "/1.png")
+
+
 def plot_pipeline(df: pd.DataFrame, opt: str):
-    for col in df.columns:
-        rank = df_rank(df, col)
-
-        p1 = plot_output_dir + "/%s/txt/" % opt
-        p2 = plot_output_dir + "/%s/cloud/" % opt
-        p3 = plot_output_dir + "/%s/bar/" % opt
-        path = [p1, p2, p3]
-        for p in path:
-            if not os.path.exists(p):
-                os.makedirs(p)
-
-        txt_rank(rank, p1 + "%s_rank.txt" % col)
-        word_cloud_plot(rank, p2 + "%s_word_cloud.png" % col)
-        bar_rank_plot(rank, p3 + "%s_bar_rank.png" % col)
-
-    if opt == "cite":
-        height = 5000
-        step = 250
-    else:
-        height = 800
-        step = 50
-    bar_hop_plot(df, opt, 15, "all", height, step)
+    # for col in df.columns:
+    #     rank = df_rank(df, col)
+    #
+    #     p1 = plot_output_dir + "/%s/txt/" % opt
+    #     p2 = plot_output_dir + "/%s/cloud/" % opt
+    #     p3 = plot_output_dir + "/%s/bar/" % opt
+    #     path = [p1, p2, p3]
+    #     for p in path:
+    #         if not os.path.exists(p):
+    #             os.makedirs(p)
+    #
+    #     txt_rank(rank, p1 + "%s_rank.txt" % col)
+    #     word_cloud_plot(rank, p2 + "%s_word_cloud.png" % col)
+    #     bar_rank_plot(rank, p3 + "%s_bar_rank.png" % col)
+    #
+    # if opt == "cite":
+    #     height = 5000
+    #     step = 250
+    # else:
+    #     height = 800
+    #     step = 50
+    cols = ["all", "2016", "2017", "2018", "2019", "2020"]
+    ddf = df[cols]
+    # bar_hop_plot(ddf, opt, 15, "all", height, step)
     # bar_hop_plot(df, plot_output_dir + "/bar-hop-%s.png" % opt, 30, "all", 0, 0)
     
-    test(df, opt)
+    # test(df, opt)
     # test1(df)
+    
+    labels = ["contract", "software", "network", "consensus", "proof-of-work"]
+    line_plot(ddf[cols[1:]], labels)
 
 
 # todo plot 可指定年份时间段
 if __name__ == '__main__':
-    options = ["freq", "cite"]
+    # options = ["freq", "cite"]
+    options = ["freq"]
     for opt in options:
         df = pd.read_excel(analyzer_output_dir + '/all-%s.xlsx' % opt, index_col=0)
         plot_pipeline(df, opt)

@@ -19,8 +19,15 @@ out_data = {
 nan_str = "nothing"
 options = ["freq", "cite"]
 
-input_root_dir = "./input"
-output_root_dir = "./output"
+# is_survey = True
+is_survey = False
+if is_survey:
+    s = "/survey"
+else:
+    s = ""
+
+input_root_dir = "./input" + s
+output_root_dir = "./output" + s
 crawler_output_dir = output_root_dir + "/1-crawler"
 preprocess_output_dir = output_root_dir + "/2-preprocess"
 filter_output_auto_dir = output_root_dir + "/3-filter/auto"

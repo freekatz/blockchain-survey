@@ -39,22 +39,27 @@ def filter_auto(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def filter_manual():
-    pass
+    df = pd.read_excel(preprocess_output_dir + "/all-preprocessed.xlsx")
+    
+    ddf = pd.read_excel(filter_output_manual_dir + "/all-nf.xlsx")
+    
+    return df[df["title"].isin(ddf["title"])]
 
 
 def filter_pipeline(df: pd.DataFrame) -> pd.DataFrame:
-    ddf = filter_auto(df)
+    # ddf = filter_auto(df)
 
-    filter_manual()
+    ddf = filter_manual()
     return ddf
 
 
 if __name__ == '__main__':
-    df = pd.read_excel(preprocess_output_dir + "/all-preprocessed.xlsx")
-    
-    ddf = filter_pipeline(df)
-
-    ddf.to_excel(filter_output_auto_dir + "/all-no_filtered-auto.xlsx", index=False)
-    df[~df["title"].isin(ddf["title"])].to_excel(filter_output_dir + "/all-filtered-auto.xlsx", index=False)
+    pass
+    # df = pd.read_excel(preprocess_output_dir + "/all-preprocessed.xlsx")
+    #
+    # ddf = pd.read_excel(filter_output_manual_dir + "/all-nf.xlsx")
+    #
+    # df[df["title"].isin(ddf["title"])].to_excel(filter_output_manual_dir + "/all-nf.xlsx", index=False)
+    # df[df["title"].isin(ddf["title"])].to_excel(output_root_dir + "/all-nf.xlsx", index=False)
 
 
