@@ -73,11 +73,16 @@ def bar_hop_plot(df: pd.DataFrame, opt: str, limit: int, sort_col: str, height: 
     ddf = df.sort_values(sort_col)[0 - limit:]
     ddf.plot.bar(y=ddf.columns[1:], stacked=True)
     
-    if is_survey:
-        title = "Literature Frequency about Blockchain Survey"
+    if opt == "freq":
+        if is_survey:
+            title = "Literature Frequency rank about Blockchain Survey"
+        else:
+            title = "Literature Frequency rank about Blockchain Security"
     else:
-        title = "Literature Frequency about Blockchain Security"
-    
+        if is_survey:
+            title = "Literature Cite rank about Blockchain Survey"
+        else:
+            title = "Literature Cite rank about Blockchain Security"
     ax = plt.gca()
     ax.set_title(title, fontsize=13)
     ax.legend(loc='best', fontsize=8, ncol=6)
@@ -91,29 +96,11 @@ def bar_hop_plot(df: pd.DataFrame, opt: str, limit: int, sort_col: str, height: 
     plt.savefig(target)
 
 
-def test(df: pd.DataFrame, opt: str):
-    cols = ["2015", "2016", "2017", "2018", "2019", "2020"]
-    labels = ["0"]
-    ddf = df_coincide(df, cols, labels)
-    
-    ddf = ddf.sort_values("all", ascending=False)
-    ddf.to_html(plot_output_dir + "./%s-coincide.htm" % opt, index=True)
-
-
-def test1(df):
-    cols = ["2015", "2016", "2017", "2018", "2019", "2020"]
-    labels = ["bitcoin", "ethereum", "hyperledger"]
-    ddf = df[cols][df.index.isin(labels)]
-    ddf = df[df.index.isin(ddf.index)]
-    ddf = ddf.sort_values("all", ascending=False)
-    print(ddf)
-
-
 def line_plot(df: pd.DataFrame, labels: list):
     ddf = df[df.index.isin(labels)].T
     print(ddf)
     _, ax = plt.subplots()
-
+    
     # Be sure to only pick integer tick locations.
     for axis in [ax.xaxis, ax.yaxis]:
         axis.set_major_locator(ticker.MaxNLocator(integer=True))
@@ -139,25 +126,47 @@ def line_plot(df: pd.DataFrame, labels: list):
     plt.rcParams['savefig.dpi'] = 600
     plt.tight_layout()
     plt.grid(axis="y", linestyle=":", linewidth=0.8)
-    plt.savefig(output_root_dir + "/1.png")
+    plt.savefig(plot_output_dir + "/topics line.png")
+
+
+def c(df: pd.DataFrame, cols: list, target: str, labels: list):
+    pass
+
+
+def test(df: pd.DataFrame, opt: str):
+    cols = ["2015", "2016", "2017", "2018", "2019", "2020"]
+    labels = ["0"]
+    ddf = df_coincide(df, cols, labels)
+    
+    ddf = ddf.sort_values("all", ascending=False)
+    ddf.to_html(plot_output_dir + "./%s-coincide.htm" % opt, index=True)
+
+
+def test1(df):
+    cols = ["2015", "2016", "2017", "2018", "2019", "2020"]
+    labels = ["bitcoin", "ethereum", "hyperledger"]
+    ddf = df[cols][df.index.isin(labels)]
+    ddf = df[df.index.isin(ddf.index)]
+    ddf = ddf.sort_values("all", ascending=False)
+    print(ddf)
 
 
 def plot_pipeline(df: pd.DataFrame, opt: str):
-    # for col in df.columns:
-    #     rank = df_rank(df, col)
-    #
-    #     p1 = plot_output_dir + "/%s/txt/" % opt
-    #     p2 = plot_output_dir + "/%s/cloud/" % opt
-    #     p3 = plot_output_dir + "/%s/bar/" % opt
-    #     path = [p1, p2, p3]
-    #     for p in path:
-    #         if not os.path.exists(p):
-    #             os.makedirs(p)
-    #
-    #     txt_rank(rank, p1 + "%s_rank.txt" % col)
-    #     word_cloud_plot(rank, p2 + "%s_word_cloud.png" % col)
-    #     bar_rank_plot(rank, p3 + "%s_bar_rank.png" % col)
-
+    for col in df.columns:
+        rank = df_rank(df, col)
+        
+        p1 = plot_output_dir + "/%s/txt/" % opt
+        p2 = plot_output_dir + "/%s/cloud/" % opt
+        p3 = plot_output_dir + "/%s/bar/" % opt
+        path = [p1, p2, p3]
+        for p in path:
+            if not os.path.exists(p):
+                os.makedirs(p)
+        
+        txt_rank(rank, p1 + "%s_rank.txt" % col)
+        word_cloud_plot(rank, p2 + "%s_word_cloud.png" % col)
+        bar_rank_plot(rank, p3 + "%s_bar_rank.png" % col)
+    
     if opt == "cite":
         height = 5000
         step = 250
@@ -170,15 +179,19 @@ def plot_pipeline(df: pd.DataFrame, opt: str):
     
     # test(df, opt)
     # test1(df)
-    
-    labels = ["cryptography", "mine", "consensus protocol", "solidity", "network", "formal approach"]
-    line_plot(ddf[cols[1:]], labels)
+    if opt == "freq":
+        cols = ["all", "2016", "2017", "2018", "2019", "2020"]
+        ddf = df[cols]
+        if is_survey:
+            labels = ["cryptography", "consensus protocol", "network"]
+        else:
+            labels = ["cryptography", "mine", "consensus protocol", "solidity", "network", "formal approach"]
+        line_plot(ddf[cols[1:]], labels)
 
 
 # todo plot 可指定年份时间段
 if __name__ == '__main__':
-    # options = ["freq", "cite"]
-    options = ["freq"]
+    options = ["freq", "cite"]
     for opt in options:
         df = pd.read_excel(analyzer_output_dir + '/all-%s.xlsx' % opt, index_col=0)
         plot_pipeline(df, opt)

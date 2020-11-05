@@ -52,7 +52,7 @@ def clean(df: pd.DataFrame) -> pd.DataFrame:
     ddf["topics"] = pd.Series(p_topics)
     
     return ddf
-    
+
 
 def drop(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -78,7 +78,7 @@ def year(df: pd.DataFrame) -> pd.Series:
             y = re.split("-", year)[0]
         else:
             y = re.split(" ", year)[-1]
-        ys.append(y)
+        ys.append(re.split("\.", y)[0])
     return pd.Series(ys)
 
 
@@ -119,7 +119,7 @@ def norm(df: pd.DataFrame) -> pd.Series:
                     ts = re.split(",", str(t_item))
         else:
             ts = re.split(",", str(t_item))
-            
+        
         # topic of one paper process
         ts = hero.remove_html_tags(hero.lowercase(pd.Series(ts)))
         topic = []

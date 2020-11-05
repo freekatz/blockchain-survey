@@ -40,7 +40,6 @@ def filter_auto(df: pd.DataFrame) -> pd.DataFrame:
 
 def filter_manual(df: pd.DataFrame):
     ddf = pd.read_excel(filter_output_manual_dir + "/all-nf.xlsx")
-    
     return df[df["title"].isin(ddf["title"])]
 
 
