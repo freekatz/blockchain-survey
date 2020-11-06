@@ -65,24 +65,24 @@ def bar_rank_plot(rank: dict, target: str, limit=10):
     y = [k[0] for k in _rank[:limit]]
     sns.barplot(x=x, y=y, color="c", orient="h", estimator=median, palette="Blues_d")
     f1.savefig(target, dpi=100, bbox_inches='tight')
+    plt.cla()
 
 
-def bar_hop_plot(df: pd.DataFrame, opt: str, limit: int, sort_col: str, height: float, step: int):
+def bar_hop_plot(df: pd.DataFrame, opt: str, height: float, step: int):
     target = plot_output_dir + "/bar-hop-%s.png" % opt
     
-    ddf = df.sort_values(sort_col)[0 - limit:]
-    ddf.plot.bar(y=ddf.columns[1:], stacked=True)
+    df.plot.bar(y=df.columns[1:], stacked=True)
     
     if opt == "freq":
         if is_survey:
-            title = "Literature Frequency rank about Blockchain Survey"
+            title = "Literature Frequency Rank about Blockchain Survey"
         else:
-            title = "Literature Frequency rank about Blockchain Security"
+            title = "Literature Frequency Rank about Blockchain Security"
     else:
         if is_survey:
-            title = "Literature Cite rank about Blockchain Survey"
+            title = "Literature Cite Rank about Blockchain Survey"
         else:
-            title = "Literature Cite rank about Blockchain Security"
+            title = "Literature Cite Rank about Blockchain Security"
     ax = plt.gca()
     ax.set_title(title, fontsize=13)
     ax.legend(loc='best', fontsize=8, ncol=6)
@@ -94,13 +94,19 @@ def bar_hop_plot(df: pd.DataFrame, opt: str, limit: int, sort_col: str, height: 
     plt.tight_layout()
     plt.grid(axis="y", linestyle=":", linewidth=0.8)
     plt.savefig(target)
+    plt.cla()
 
 
 def line_plot(df: pd.DataFrame, labels: list):
     ddf = df[df.index.isin(labels)].T
-    print(ddf)
     _, ax = plt.subplots()
     
+
+    if is_survey:
+        title = "Topic Line about Blockchain Survey"
+    else:
+        title = "Topic Line  about Blockchain Security"
+
     # Be sure to only pick integer tick locations.
     for axis in [ax.xaxis, ax.yaxis]:
         axis.set_major_locator(ticker.MaxNLocator(integer=True))
@@ -121,16 +127,107 @@ def line_plot(df: pd.DataFrame, labels: list):
     plt.xticks(fontsize=8, horizontalalignment='left', rotation=320)  # 改变x轴文字值的文字大小
     plt.ylabel('Frequency')
     plt.legend(loc='upper left', fontsize=8, ncol=1, labels=labels)
-    plt.title("1", fontsize=13)
+    plt.title(title, fontsize=13)
     plt.rcParams['figure.dpi'] = 600
     plt.rcParams['savefig.dpi'] = 600
     plt.tight_layout()
     plt.grid(axis="y", linestyle=":", linewidth=0.8)
     plt.savefig(plot_output_dir + "/topics line.png")
+    plt.cla()
+    
+
+def bar_hop_plot2(df: pd.DataFrame, col: str, target: str, labels: list) -> (dict, set):
+    # target re match
+
+    d = pd.DataFrame(index=labels, columns=["all", "relevant", "no_relevant"])
+    items = df[col]
+    all = []
+    relevant = []
+    no_relevant = []
+
+    sec = set()
+    for l in labels:
+        number = [0, 0]
+        for it in items:
+            if it is not np.nan:
+                ts = [i.strip() for i in re.split(",", it)]
+                if l in ts:
+                    number[0] = number[0] + 1
+                    if target in ts:
+                        sec.add(it)
+                        number[1] = number[1] + 1
+                        # print(f"========\n{l} | {target}: {it}")
+        all.append(number[0])
+        relevant.append(number[1])
+        no_relevant.append(number[0] - number[1])
+    d["all"] = all
+    d["relevant"] = relevant
+    d["no_relevant"] = no_relevant
+    print(len(sec))
+    dd = d.sort_values("all")
+    
+    dd.plot.bar(y=d.columns[1:], stacked=True)
+    
+    title = "Literature Frequency Rank Relevant Security [Security Number: %s]" % (str(len(sec)))
+
+    ax = plt.gca()
+    ax.set_title(title, fontsize=13)
+    ax.legend(loc='best', fontsize=8, ncol=6)
+    plt.xticks(fontsize=6, horizontalalignment='left', rotation=320)
+    # plt.yticks(np.arange(0, height, step), fontsize=8)
+    
+    plt.rcParams['figure.dpi'] = 600
+    plt.rcParams['savefig.dpi'] = 600
+    plt.tight_layout()
+    plt.grid(axis="y", linestyle=":", linewidth=0.8)
+    plt.savefig(plot_output_dir + "/bar-hop-freq-2.png")
+    plt.cla()
+
+    rtn = {}
+    ls = labels.tolist()
+    ls.remove(target)
+    for it in items:
+        if it in sec:
+            ts = [i.strip() for i in re.split(",", it)]
+            for l in ls:
+                if l in rtn.keys():
+                    if l in ts:
+                        rtn[l] += 1
+                else:
+                    rtn[l] = 0
+    return rtn, sec
 
 
-def c(df: pd.DataFrame, cols: list, target: str, labels: list):
-    pass
+def pie_plot(d: dict, total: int, th: float):
+    sum = np.sum(list(d.values()))
+    nth_index = []
+    others = 0
+    for (l, n) in d.items():
+        if int(n) < th * sum / 100:
+            others += int(n)
+            nth_index.append(l)
+    # print(np.sum(list(d.values())))
+    for l in nth_index:
+        d.pop(l)
+    # print(np.sum(list(d.values())))
+    d["others"] = others
+    relevant = d.values()
+    labels = [i + ": " + str(r) for (i, r) in d.items()]
+    patches, l_text, p_text = plt.pie(list(relevant), labels=labels, autopct='%.2f', radius=1, startangle=90)
+
+    for t in p_text:
+        t.set_size(9)
+
+    for t in l_text:
+        t.set_size(7)
+
+    plt.axis('equal')
+    title = "Topics Pie Relevant Security [Number: %s, Total: %s]" % (str(total), str(sum))
+    plt.title(title, fontsize=13)
+    plt.tight_layout()
+    plt.savefig(plot_output_dir + "/pie-freq.png")
+    plt.cla()
+
 
 
 def test(df: pd.DataFrame, opt: str):
@@ -152,38 +249,46 @@ def test1(df):
 
 
 def plot_pipeline(df: pd.DataFrame, opt: str):
-    for col in df.columns:
-        rank = df_rank(df, col)
-        
-        p1 = plot_output_dir + "/%s/txt/" % opt
-        p2 = plot_output_dir + "/%s/cloud/" % opt
-        p3 = plot_output_dir + "/%s/bar/" % opt
-        path = [p1, p2, p3]
-        for p in path:
-            if not os.path.exists(p):
-                os.makedirs(p)
-        
-        txt_rank(rank, p1 + "%s_rank.txt" % col)
-        word_cloud_plot(rank, p2 + "%s_word_cloud.png" % col)
-        bar_rank_plot(rank, p3 + "%s_bar_rank.png" % col)
-    
+    # for col in df.columns:
+    #     rank = df_rank(df, col)
+    #
+    #     p1 = plot_output_dir + "/%s/txt/" % opt
+    #     p2 = plot_output_dir + "/%s/cloud/" % opt
+    #     p3 = plot_output_dir + "/%s/bar/" % opt
+    #     path = [p1, p2, p3]
+    #     for p in path:
+    #         if not os.path.exists(p):
+    #             os.makedirs(p)
+    #
+    #     txt_rank(rank, p1 + "%s_rank.txt" % col)
+    #     word_cloud_plot(rank, p2 + "%s_word_cloud.png" % col)
+    #     bar_rank_plot(rank, p3 + "%s_bar_rank.png" % col)
+    #
     if opt == "cite":
         height = 5000
         step = 250
     else:
         height = 60
         step = 12
-    cols = ["all", "2016", "2017", "2018", "2019", "2020"]
-    ddf = df[cols]
-    bar_hop_plot(ddf, opt, 15, "all", height, step)
     
+    cols = ["all", "2016", "2017", "2018", "2019", "2020"]
+    limit = 15
+    sort_col = "all"
+    ddf = df[cols].sort_values(sort_col)[0 - limit:]
+    
+    bar_hop_plot(ddf, opt, height, step)
     # test(df, opt)
     # test1(df)
     if opt == "freq":
-        cols = ["all", "2016", "2017", "2018", "2019", "2020"]
-        ddf = df[cols]
         if is_survey:
-            labels = ["cryptography", "consensus protocol", "network"]
+            d = pd.read_excel(preprocess_output_dir + "/all-pp.xlsx")
+            col = "topics"
+            target = "security"
+            labels = ddf.sort_values(sort_col)[0 - limit:].index
+            rtn, sec = bar_hop_plot2(d, col, target, labels)
+            pie_plot(rtn, len(sec), 3.0)
+            labels = [target, "cryptography", "consensus protocol", "network"]
+            pass
         else:
             labels = ["cryptography", "mine", "consensus protocol", "solidity", "network", "formal approach"]
         line_plot(ddf[cols[1:]], labels)
@@ -191,6 +296,7 @@ def plot_pipeline(df: pd.DataFrame, opt: str):
 
 # todo plot 可指定年份时间段
 if __name__ == '__main__':
+
     options = ["freq", "cite"]
     for opt in options:
         df = pd.read_excel(analyzer_output_dir + '/all-%s.xlsx' % opt, index_col=0)
