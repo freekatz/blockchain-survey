@@ -287,7 +287,7 @@ def plot_pipeline(df: pd.DataFrame, opt: str):
             labels = ddf.sort_values(sort_col)[0 - limit:].index
             rtn, sec = bar_hop_plot2(d, col, target, labels)
             pie_plot(rtn, len(sec), 3.0)
-            labels = [target, "cryptography", "consensus protocol", "network"]
+            labels = [target, "contract", "bitcoin", "internet of things", "network", "consensus protocol"]
             pass
         else:
             labels = ["cryptography", "mine", "consensus protocol", "solidity", "network", "formal approach"]
