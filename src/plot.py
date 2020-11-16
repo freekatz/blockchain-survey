@@ -66,12 +66,12 @@ def bar_rank_plot(rank: dict, target: str, limit=10):
     sns.barplot(x=x, y=y, color="c", orient="h", estimator=median, palette="Blues_d")
     f1.savefig(target, dpi=100, bbox_inches='tight')
     plt.cla()
-
-
+    
+    
 def bar_hop_plot(df: pd.DataFrame, opt: str, height: float, step: int):
     target = plot_output_dir + "/bar-hop-%s.png" % opt
-    
-    df.plot.bar(y=df.columns[1:], stacked=True)
+    _y = df.columns[1:]
+    df.plot.bar(y=_y, stacked=True, colormap='BuGn_r',edgecolor='k')
     
     if opt == "freq":
         if is_survey:
@@ -85,7 +85,24 @@ def bar_hop_plot(df: pd.DataFrame, opt: str, height: float, step: int):
             title = "Literature Cite Rank about Blockchain Security"
     ax = plt.gca()
     ax.set_title(title, fontsize=13)
-    ax.legend(loc='best', fontsize=8, ncol=6)
+    ax.legend(loc='upper left', fontsize=10, ncol=6)
+    
+    # # index = [i.replace(" ", "\n") for i in df.index]
+    #
+    # the_table = plt.table(cellText=np.array(df.T),
+    #           cellLoc='center',
+    #           cellColours=None,
+    #           rowLabels=df.columns,
+    #           rowColours=plt.cm.BuPu(np.linspace(0, 0.5, len(df.columns)))[::-1],  # BuPu可替换成其他colormap
+    #           colLabels=None,
+    #           colColours=plt.cm.Reds(np.linspace(0, 0.5, len(df.index)))[::-1],
+    #           rowLoc='right',
+    #           loc='top'
+    #           )
+    # the_table.auto_set_font_size(False)
+    # the_table.set_fontsize(8)
+    
+    # plt.xticks([])
     plt.xticks(fontsize=6, horizontalalignment='left', rotation=320)
     # plt.yticks(np.arange(0, height, step), fontsize=8)
     
@@ -101,12 +118,11 @@ def line_plot(df: pd.DataFrame, labels: list):
     ddf = df[df.index.isin(labels)].T
     _, ax = plt.subplots()
     
-
     if is_survey:
         title = "Topic Line about Blockchain Survey"
     else:
         title = "Topic Line  about Blockchain Security"
-
+    
     # Be sure to only pick integer tick locations.
     for axis in [ax.xaxis, ax.yaxis]:
         axis.set_major_locator(ticker.MaxNLocator(integer=True))
@@ -134,17 +150,64 @@ def line_plot(df: pd.DataFrame, labels: list):
     plt.grid(axis="y", linestyle=":", linewidth=0.8)
     plt.savefig(plot_output_dir + "/topics line.png")
     plt.cla()
+
+
+def line_hop_plot(df: pd.DataFrame, opt: str):
+    target = plot_output_dir + "/line-hop-%s.png" % opt
+    if opt == "freq":
+        if is_survey:
+            title = "Literature Frequency Rank about Blockchain Survey"
+        else:
+            title = "Literature Frequency Rank about Blockchain Security"
+    else:
+        if is_survey:
+            title = "Literature Cite Rank about Blockchain Survey"
+        else:
+            title = "Literature Cite Rank about Blockchain Security"
+
+    x = df.index.tolist()
+
+    vstack = []
+    columns = df.columns[1:]
+    for t in columns:
+        yi = df[t].values.tolist()
+        vstack.append(yi)
+
+    y = np.vstack(vstack)
+    # Plot for each column
+    labs = columns
+    ax = plt.gca()
+    mycolors = ['tab:red', 'tab:blue', 'tab:green', 'tab:orange', 'tab:brown', 'tab:grey', 'tab:pink', 'tab:olive']
+    ax.stackplot(x, y, labels=labs, colors=mycolors, alpha=0.8)
+
+    # Decorations
+    ax.set_title(title, fontsize=18)
+    ax.legend(loc="upper left", fontsize=10, ncol=6)
+    plt.xticks(x[::1], fontsize=6, horizontalalignment='left', rotation=320)
+    plt.xlim(x[0], x[-1])
+
+    # Lighten borders
+    plt.gca().spines["top"].set_alpha(0)
+    plt.gca().spines["bottom"].set_alpha(.3)
+    plt.gca().spines["right"].set_alpha(0)
+    plt.gca().spines["left"].set_alpha(.3)
+
+    plt.rcParams['figure.dpi'] = 600
+    plt.rcParams['savefig.dpi'] = 600
+    plt.grid(axis="x", linestyle=":", linewidth=0.5)
+    plt.tight_layout()
+    plt.savefig(target)
     
 
 def bar_hop_plot2(df: pd.DataFrame, col: str, target: str, labels: list) -> (dict, set):
     # target re match
-
+    
     d = pd.DataFrame(index=labels, columns=["all", "relevant", "no_relevant"])
     items = df[col]
     all = []
     relevant = []
     no_relevant = []
-
+    
     sec = set()
     for l in labels:
         number = [0, 0]
@@ -169,7 +232,7 @@ def bar_hop_plot2(df: pd.DataFrame, col: str, target: str, labels: list) -> (dic
     dd.plot.bar(y=d.columns[1:], stacked=True)
     
     title = "Literature Frequency Rank Relevant Security [Security Number: %s]" % (str(len(sec)))
-
+    
     ax = plt.gca()
     ax.set_title(title, fontsize=13)
     ax.legend(loc='best', fontsize=8, ncol=6)
@@ -182,7 +245,7 @@ def bar_hop_plot2(df: pd.DataFrame, col: str, target: str, labels: list) -> (dic
     plt.grid(axis="y", linestyle=":", linewidth=0.8)
     plt.savefig(plot_output_dir + "/bar-hop-freq-2.png")
     plt.cla()
-
+    
     rtn = {}
     ls = labels.tolist()
     ls.remove(target)
@@ -214,13 +277,13 @@ def pie_plot(d: dict, total: int, th: float):
     relevant = d.values()
     labels = [i + ": " + str(r) for (i, r) in d.items()]
     patches, l_text, p_text = plt.pie(list(relevant), labels=labels, autopct='%.2f', radius=1, startangle=90)
-
+    
     for t in p_text:
         t.set_size(9)
-
+    
     for t in l_text:
         t.set_size(7)
-
+    
     plt.axis('equal')
     title = "Topics Pie Relevant Security [Number: %s, Total: %s]" % (str(total), str(sum))
     plt.title(title, fontsize=13)
@@ -229,9 +292,8 @@ def pie_plot(d: dict, total: int, th: float):
     plt.cla()
 
 
-
 def test(df: pd.DataFrame, opt: str):
-    cols = ["2015", "2016", "2017", "2018", "2019", "2020"]
+    cols = ["2016", "2017", "2018", "2019", "2020"]
     labels = ["0"]
     ddf = df_coincide(df, cols, labels)
     
@@ -240,7 +302,7 @@ def test(df: pd.DataFrame, opt: str):
 
 
 def test1(df):
-    cols = ["2015", "2016", "2017", "2018", "2019", "2020"]
+    cols = ["2016", "2017", "2018", "2019", "2020"]
     labels = ["bitcoin", "ethereum", "hyperledger"]
     ddf = df[cols][df.index.isin(labels)]
     ddf = df[df.index.isin(ddf.index)]
@@ -263,7 +325,7 @@ def plot_pipeline(df: pd.DataFrame, opt: str):
     #     txt_rank(rank, p1 + "%s_rank.txt" % col)
     #     word_cloud_plot(rank, p2 + "%s_word_cloud.png" % col)
     #     bar_rank_plot(rank, p3 + "%s_bar_rank.png" % col)
-    #
+    
     if opt == "cite":
         height = 5000
         step = 250
@@ -277,26 +339,27 @@ def plot_pipeline(df: pd.DataFrame, opt: str):
     ddf = df[cols].sort_values(sort_col)[0 - limit:]
     
     bar_hop_plot(ddf, opt, height, step)
+    # line_hop_plot(ddf, opt)
     # test(df, opt)
     # test1(df)
-    if opt == "freq":
-        if is_survey:
-            d = pd.read_excel(preprocess_output_dir + "/all-pp.xlsx")
-            col = "topics"
-            target = "security"
-            labels = ddf.sort_values(sort_col)[0 - limit:].index
-            rtn, sec = bar_hop_plot2(d, col, target, labels)
-            pie_plot(rtn, len(sec), 3.0)
-            labels = [target, "contract", "bitcoin", "internet of things", "network", "consensus protocol"]
-            pass
-        else:
-            labels = ["cryptography", "mine", "consensus protocol", "solidity", "network", "formal approach"]
-        line_plot(ddf[cols[1:]], labels)
+    # if opt == "freq":
+    #     if is_survey:
+    #         d = pd.read_excel(preprocess_output_dir + "/all-pp.xlsx")
+    #         col = "topics"
+    #         target = "security"
+    #         labels = ddf.sort_values(sort_col)[0 - limit:].index
+    #         rtn, sec = bar_hop_plot2(d, col, target, labels)
+    #         pie_plot(rtn, len(sec), 5.0)
+    #         labels = [target, "performance", "privacy"]
+    #         pass
+    #     else:
+    #         labels = ["cryptography", "mine", "consensus protocol", "solidity", "network", "formal approach"]
+    #     line_plot(ddf[cols[1:]], labels)
 
 
 # todo plot 可指定年份时间段
 if __name__ == '__main__':
-
+    
     options = ["freq", "cite"]
     for opt in options:
         df = pd.read_excel(analyzer_output_dir + '/all-%s.xlsx' % opt, index_col=0)

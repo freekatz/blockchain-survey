@@ -197,6 +197,7 @@ def analyzer_pipeline(df: pd.DataFrame, opt: str):
     
     ddf = format(res)
     ddf = ddf[~ddf.index.isin([nan_str, "", np.nan, "nan"])]
+    ddf = ddf[~ddf["all"].isin(["1"])]
     ddf.to_excel(analyzer_output_dir + "/all-%s.xlsx" % opt)
     return ddf
 
