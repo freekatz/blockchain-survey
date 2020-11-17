@@ -19,8 +19,8 @@ out_data = {
 nan_str = "nothing"
 options = ["freq", "cite"]
 
-is_survey = True
-# is_survey = False
+# is_survey = True
+is_survey = False
 if is_survey:
     s = "/survey"
 else:

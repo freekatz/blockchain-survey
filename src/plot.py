@@ -311,34 +311,34 @@ def test1(df):
 
 
 def plot_pipeline(df: pd.DataFrame, opt: str):
-    # for col in df.columns:
-    #     rank = df_rank(df, col)
+    for col in df.columns:
+        rank = df_rank(df, col)
+
+        p1 = plot_output_dir + "/%s/txt/" % opt
+        p2 = plot_output_dir + "/%s/cloud/" % opt
+        p3 = plot_output_dir + "/%s/bar/" % opt
+        path = [p1, p2, p3]
+        for p in path:
+            if not os.path.exists(p):
+                os.makedirs(p)
+
+        txt_rank(rank, p1 + "%s_rank.txt" % col)
+        word_cloud_plot(rank, p2 + "%s_word_cloud.png" % col)
+        bar_rank_plot(rank, p3 + "%s_bar_rank.png" % col)
+    
+    # if opt == "cite":
+    #     height = 5000
+    #     step = 250
+    # else:
+    #     height = 60
+    #     step = 12
     #
-    #     p1 = plot_output_dir + "/%s/txt/" % opt
-    #     p2 = plot_output_dir + "/%s/cloud/" % opt
-    #     p3 = plot_output_dir + "/%s/bar/" % opt
-    #     path = [p1, p2, p3]
-    #     for p in path:
-    #         if not os.path.exists(p):
-    #             os.makedirs(p)
+    # cols = ["all", "2016", "2017", "2018", "2019", "2020"]
+    # limit = 15
+    # sort_col = "all"
+    # ddf = df[cols].sort_values(sort_col)[0 - limit:]
     #
-    #     txt_rank(rank, p1 + "%s_rank.txt" % col)
-    #     word_cloud_plot(rank, p2 + "%s_word_cloud.png" % col)
-    #     bar_rank_plot(rank, p3 + "%s_bar_rank.png" % col)
-    
-    if opt == "cite":
-        height = 5000
-        step = 250
-    else:
-        height = 60
-        step = 12
-    
-    cols = ["all", "2016", "2017", "2018", "2019", "2020"]
-    limit = 15
-    sort_col = "all"
-    ddf = df[cols].sort_values(sort_col)[0 - limit:]
-    
-    bar_hop_plot(ddf, opt, height, step)
+    # bar_hop_plot(ddf, opt, height, step)
     # line_hop_plot(ddf, opt)
     # test(df, opt)
     # test1(df)
