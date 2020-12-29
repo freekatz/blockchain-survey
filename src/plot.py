@@ -104,7 +104,7 @@ def bar_hop_plot(df: pd.DataFrame, opt: str, height: float, step: int):
     
     # plt.xticks([])
     plt.xticks(fontsize=6, horizontalalignment='left', rotation=320)
-    # plt.yticks(np.arange(0, height, step), fontsize=8)
+    plt.yticks(np.arange(0, height, step), fontsize=8)
     
     plt.rcParams['figure.dpi'] = 600
     plt.rcParams['savefig.dpi'] = 600
@@ -226,9 +226,8 @@ def bar_hop_plot2(df: pd.DataFrame, col: str, target: str, labels: list) -> (dic
     d["all"] = all
     d["relevant"] = relevant
     d["no_relevant"] = no_relevant
-    print(len(sec))
     dd = d.sort_values("all")
-    
+    print(dd)
     dd.plot.bar(y=d.columns[1:], stacked=True)
     
     title = "Literature Frequency Rank Relevant Security [Security Number: %s]" % (str(len(sec)))
@@ -311,50 +310,59 @@ def test1(df):
 
 
 def plot_pipeline(df: pd.DataFrame, opt: str):
-    for col in df.columns:
-        rank = df_rank(df, col)
-
-        p1 = plot_output_dir + "/%s/txt/" % opt
-        p2 = plot_output_dir + "/%s/cloud/" % opt
-        p3 = plot_output_dir + "/%s/bar/" % opt
-        path = [p1, p2, p3]
-        for p in path:
-            if not os.path.exists(p):
-                os.makedirs(p)
-
-        txt_rank(rank, p1 + "%s_rank.txt" % col)
-        word_cloud_plot(rank, p2 + "%s_word_cloud.png" % col)
-        bar_rank_plot(rank, p3 + "%s_bar_rank.png" % col)
+    # for col in df.columns:
+    #     rank = df_rank(df, col)
+    #
+    #     p1 = plot_output_dir + "/%s/txt/" % opt
+    #     p2 = plot_output_dir + "/%s/cloud/" % opt
+    #     p3 = plot_output_dir + "/%s/bar/" % opt
+    #     path = [p1, p2, p3]
+    #     for p in path:
+    #         if not os.path.exists(p):
+    #             os.makedirs(p)
+    #
+    #     txt_rank(rank, p1 + "%s_rank.txt" % col)
+    #     word_cloud_plot(rank, p2 + "%s_word_cloud.png" % col)
+    #     bar_rank_plot(rank, p3 + "%s_bar_rank.png" % col)
     
-    # if opt == "cite":
-    #     height = 5000
-    #     step = 250
-    # else:
-    #     height = 60
-    #     step = 12
-    #
-    # cols = ["all", "2016", "2017", "2018", "2019", "2020"]
-    # limit = 15
-    # sort_col = "all"
-    # ddf = df[cols].sort_values(sort_col)[0 - limit:]
-    #
+    if opt == "cite":
+        height = 5000
+        step = 250
+    else:
+        height = 60
+        step = 12
+
+    cols = ["all", "2016", "2017", "2018", "2019", "2020"]
+    limit = 15
+    sort_col = "all"
+    ddf = df[cols].sort_values(sort_col)[0 - limit:]
+
+    print(ddf["all"].tolist())
+
     # bar_hop_plot(ddf, opt, height, step)
     # line_hop_plot(ddf, opt)
     # test(df, opt)
     # test1(df)
-    # if opt == "freq":
-    #     if is_survey:
-    #         d = pd.read_excel(preprocess_output_dir + "/all-pp.xlsx")
-    #         col = "topics"
-    #         target = "security"
-    #         labels = ddf.sort_values(sort_col)[0 - limit:].index
-    #         rtn, sec = bar_hop_plot2(d, col, target, labels)
-    #         pie_plot(rtn, len(sec), 5.0)
-    #         labels = [target, "performance", "privacy"]
-    #         pass
-    #     else:
-    #         labels = ["cryptography", "mine", "consensus protocol", "solidity", "network", "formal approach"]
-    #     line_plot(ddf[cols[1:]], labels)
+    if opt == "freq":
+        d = pd.read_excel(preprocess_output_dir + "/all-pp.xlsx")
+        col = "topics"
+        target = "consensus"
+        labels = ddf.sort_values(sort_col)[0 - limit:].index
+        rtn, sec = bar_hop_plot2(d, col, target, labels)
+        print(rtn)
+        print(sec)
+        if is_survey:
+            d = pd.read_excel(preprocess_output_dir + "/all-pp.xlsx")
+            col = "topics"
+            target = "consensus"
+            labels = ddf.sort_values(sort_col)[0 - limit:].index
+            rtn, sec = bar_hop_plot2(d, col, target, labels)
+            # pie_plot(rtn, len(sec), 5.0)
+            labels = [target, "performance", "privacy"]
+            pass
+        else:
+            labels = ["cryptography"]
+        # line_plot(ddf[cols[1:]], labels)
 
 
 # todo plot 可指定年份时间段

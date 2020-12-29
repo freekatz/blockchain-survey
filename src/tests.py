@@ -185,13 +185,10 @@ from utils import *
 # print(len(a_titles))
 # ddf = ddf[ddf["title"].isin(a_titles)]
 
-df = pd.read_excel(output_root_dir + "/all-pp.xlsx")
-ys = []
-year = df["year"]
 
-for y in year:
-    ys.append(re.split("\.", str(y))[0])
+at = [l.decode().replace("\n", "").strip() for l in open(input_root_dir + "/2.txt", "rb").readlines()]
+lt = [l.decode().replace("\n", "").strip() for l in open(input_root_dir + "/1.txt", "rb").readlines()]
 
-df["year"] = pd.Series(year)
+tt = list(set(at).difference(set(lt)))
 
-df.to_excel(output_root_dir + "/s.xlsx", index=False)
+print(tt)

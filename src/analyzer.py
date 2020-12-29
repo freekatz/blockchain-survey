@@ -179,6 +179,25 @@ def format(res: dict) -> pd.DataFrame:
     return df
 
 
+def sec_remove(df, cols):
+    print(df)
+
+    all = df["all"]
+    subs = [0]*len(all)
+    for col in cols:
+        for i in range(len(subs)):
+            subs[i] = subs[i] + int(df[col][i])
+        
+    df = df.drop(columns=cols)
+    for i in range(len(subs)):
+        all[i] = all[i] - subs[i]
+        
+    df["all"] = all
+    
+    return df
+    
+
+
 def analyzer_pipeline(df: pd.DataFrame, opt: str):
     if opt == "freq":
         base = None
@@ -197,7 +216,8 @@ def analyzer_pipeline(df: pd.DataFrame, opt: str):
     
     ddf = format(res)
     ddf = ddf[~ddf.index.isin([nan_str, "", np.nan, "nan"])]
-    # ddf = ddf[~ddf["all"].isin(["1"])] # 去掉频率为 1 的
+    ddf = ddf[~ddf["all"].isin(["1"])]  # 去掉频率为 1 的
+    ddf = sec_remove(ddf, ["2014", "2015"])
     ddf.to_excel(analyzer_output_dir + "/all-%s.xlsx" % opt)
     return ddf
 

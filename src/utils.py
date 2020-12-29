@@ -113,8 +113,19 @@ def df_coincide(df: pd.DataFrame, cols: list, labels: list) -> pd.DataFrame:
     return df[df.index.isin(ddf.index)]
 
 
+def isInter(a,b):
+    result = list(set(a)&set(b))
+    if result:
+        return True
+    else:
+        return False
+
+
 if __name__ == '__main__':
-    pwd = filter_output_manual_dir  # 获取文件目录
-    target = filter_output_manual_dir + '/all-no_filtered.xlsx'
-    os.remove(target)
+    pwd = output_root_dir + "/last"  # 获取文件目录
+    target = output_root_dir + '/all-last.xlsx'
+    try:
+        os.remove(target)
+    except:
+        pass
     merge(pwd, target)
