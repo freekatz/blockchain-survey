@@ -46,6 +46,7 @@ labels = {
                    'evaluation==performance evaluation criterion==network performance evaluation==performance '
                    'model==firm performance==performance analysis==network performance analysis==performance '
                    'optimization==performance evaluation criterion',
+    'interoperability': 'interoperability==interoperability of information',
 }
 
 title_list = []
