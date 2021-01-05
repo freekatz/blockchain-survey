@@ -157,6 +157,7 @@
 
 
 import pandas as pd
+import numpy as np
 import re
 import os
 
@@ -166,29 +167,15 @@ from settings import *
 from configs import *
 from utils import *
 
-# df = pd.read_excel(filter_output_manual_dir + "/all-no_filtered.xlsx")
-# os.remove(filter_output_manual_dir + "/all-no_filtered.xlsx")
-# dp = pd.read_excel(preprocess_output_dir + "/all-preprocessed.xlsx")
-# df_p = preprocess_pipeline(df)
-# df_p.to_excel(filter_output_manual_dir + "/all-no_filtered.xlsx", index=False)
-# df_p.to_excel(output_root_dir + "/all-nf.xlsx", index=False)
-# df_p.to_excel(output_root_dir + "/test.xlsx", index=False)
-# dp[~dp["title"].isin(df_p["title"])].to_excel(filter_output_manual_dir + "/all-filtered.xlsx", index=False)
+d = pd.read_excel(output_root_dir + '/all-nf.xlsx')
 
-# a_titles = []
-# for p in allow_patterns:
-#     for t in titles:
-#         if re.search(p, t) is not None:
-#             a_titles.append(t)
-#
-# print("\n".join(a_titles))
-# print(len(a_titles))
-# ddf = ddf[ddf["title"].isin(a_titles)]
-
-
-at = [l.decode().replace("\n", "").strip() for l in open(input_root_dir + "/2.txt", "rb").readlines()]
-lt = [l.decode().replace("\n", "").strip() for l in open(input_root_dir + "/1.txt", "rb").readlines()]
-
-tt = list(set(at).difference(set(lt)))
-
-print(tt)
+titles = ['A survey of data transfer and storage techniques in prevalent cryptocurrencies and suggested improvements', 'A Survey on Consensus Protocols in Blockchain for IoT Networks', 'A Survey on Ethereum Systems Security: Vulnerabilities, Attacks and Defenses', 'A Survey on Feasibility and Suitability of Blockchain Techniques for the E-Voting Systems', 'An Empirical Study into the Success of Listed Smart Contracts in Ethereum', 'Blockchain Mutability: Challenges and Proposed Solutions', 'Blockchain Technologies for the Internet of Things: Research Issues and Challenges', 'Blockchain Technology Overview', 'Integration of Blockchain and Cloud of Things: Architecture, Applications and Challenges', 'Machine Learning in/for Blockchain: Future and Challenges', 'Security Analysis Methods on Ethereum Smart Contract Vulnerabilities: A Survey', 'What is Stablecoin?: A Survey on Its Mechanism and Potential as Decentralized Payment Systems']
+topics = []
+for t, to in zip(d.title, d.topics):
+    if t in titles:
+        topics.append('nan')
+    else:
+        topics.append(to)
+        
+d.topics = pd.Series(topics)
+d.to_excel(output_root_dir + '/all-new.xlsx', index=False)

@@ -18,13 +18,13 @@ from settings import *
 from utils import *
 
 path = '/all-nf.xlsx'
-df = pd.read_excel(output_root_dir + "/all-nf.xlsx")
+df = pd.read_excel(output_root_dir + "/all-new.xlsx")
 df = df.dropna()
 title_items = df['title']
 topics_items = df['topics']
 
 labels = {
-    'security': 'security==cyber attack==cyber-attack==cyberattack==network attack==human and societal aspect of '
+    'security': 'security==communication security==security service==security and privacy==cyber attack==cyber-attack==cyberattack==network attack==human and societal aspect of '
                 'security and privacy==cyber security==cybersecurity==network security==system security==distribute '
                 'system security==authentication==vulnerability==computer security==formal verification==cyber '
                 'attack==computer crime==data security==attack==volatility==verification==intrusion '
@@ -39,14 +39,14 @@ labels = {
                 'research==technical risk==risk-benefit==decentralize pki==mean-risk analysis==security '
                 'challenge==tamper resistance==resistance==secure bill==social aspect of security==risk '
                 'assessment==uc-security==cutlery fork==application security==denial',
-    'privacy': 'privacy==data privacy==information privacy==human and societal aspect of security and '
+    'privacy': 'privacy==security and privacy==data privacy==information privacy==human and societal aspect of security and '
                'privacy==privacy-preserving==privacy protection==preserve privacy==privacy-preserving '
                'technology==privacy-preserving smart contract==data integrity',
     'performance': 'performance==data storage==scalability==throughput==computer performance==performance '
                    'evaluation==performance evaluation criterion==network performance evaluation==performance '
                    'model==firm performance==performance analysis==network performance analysis==performance '
                    'optimization==performance evaluation criterion',
-    'interoperability': 'interoperability==interoperability of information',
+    'interoperability': 'interoperability==interoperability of information==interblockchain',
 }
 
 title_list = []
@@ -79,3 +79,4 @@ dddf['abstract'] = list(ddf['abstract'])
 
 ddf.to_excel(analyzer_output_dir + '/spp.xlsx', index=False)
 dddf.to_html(analyzer_output_dir + '/spp.htm', index=True)
+
