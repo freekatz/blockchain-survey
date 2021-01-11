@@ -1,237 +1,204 @@
-(1) bitcoin: 34 
-(2) security: 19 
-(3) contract: 19 
-(4) IoT: 15 
-(5) network: 12 
-(6) cryptocurrency: 10 
-(7) privacy: 9 
-(8) consensus: 8 
-(9) proof-of-work: 5 
-(10) cryptography: 5 
-(11) performance: 4 
-(12) open research: 3 
+(1) bitcoin: 24 
+(2) smart contract: 19 
+(3) security: 16 
+(4) consensus: 15 
+(5) p2p network: 14 
+(6) IoT: 12 
+(7) cryptocurrency: 9 
+(8) cryptography: 7 
+(9) privacy: 6 
+(10) trust: 4 
+(11) healthcare: 4 
+(12) supply chain: 4 
 (13) software: 3 
-(14) supply chain: 3 
-(15) initial coin offer: 3 
-(16) ecosystem: 3 
-(17) trust: 3 
-(18) server: 3 
-(19) computation: 3 
-(20) healthcare: 3 
-(21) ethereum: 3 
-(22) robotics: 2 
-(23) open-source software: 2 
-(24) robot: 2 
-(25) simulation: 2 
-(26) distribute database: 2 
-(27) overhead: 2 
-(28) smart city: 2 
-(29) market research: 2 
-(30) dog: 2 
-(31) digital forensics: 2 
-(32) architecture: 2 
-(33) food supply chain: 2 
-(34) system design: 2 
-(35) logistics: 2 
-(36) internet backbone: 2 
-(37) money: 1 
+(14) server: 3 
+(15) ethereum: 3 
+(16) performance: 3 
+(17) smart city: 3 
+(18) initial coin offer: 3 
+(19) architecture: 2 
+(20) market research: 2 
+(21) distribute database: 2 
+(22) food supply chain: 2 
+(23) logistics: 2 
+(24) dog: 2 
+(25) digital forensics: 2 
+(26) distribute compute: 2 
+(27) analytics: 2 
+(28) multi-agent system: 1 
+(29) project management: 1 
+(30) o33: 1 
+(31) distribute system: 1 
+(32) emerge technology: 1 
+(33) ico: 1 
+(34) peer-to-peer network: 1 
+(35) 5g: 1 
+(36) tourism: 1 
+(37) business: 1 
 (38) anonymity: 1 
-(39) peer-to-peer network: 1 
-(40) construction industry: 1 
-(41) socio-technical system: 1 
-(42) build environment: 1 
-(43) matrix-geometric solution: 1 
-(44) vote-based consensus: 1 
-(45) clinical trial: 1 
-(46) autonomous system: 1 
-(47) government: 1 
-(48) bank: 1 
-(49) transparency: 1 
-(50) disintegration: 1 
-(51) computational model: 1 
-(52) biological system model: 1 
-(53) finance: 1 
-(54) artificial intelligence: 1 
-(55) peer-to-peer architecture: 1 
-(56) distribute architecture: 1 
-(57) information system: 1 
-(58) computer system organization: 1 
-(59) apply compute: 1 
-(60) e-government: 1 
-(61) convergence: 1 
-(62) zero-knowledge proof: 1 
-(63) node - plant part: 1 
-(64) protocol documentation: 1 
-(65) software propagation: 1 
-(66) edge compute: 1 
-(67) taxonomy: 1 
-(68) software engineer: 1 
-(69) systematics: 1 
-(70) communication protocol: 1 
-(71) game theory: 1 
-(72) traceability: 1 
-(73) interoperability: 1 
-(74) high- and low-level: 1 
-(75) antivirus software: 1 
-(76) numerous: 1 
-(77) immutable object: 1 
+(39) matrix-geometric solution: 1 
+(40) socio-technical system: 1 
+(41) build environment: 1 
+(42) construction industry: 1 
+(43) industrial internet of thing: 1 
+(44) transparency: 1 
+(45) energy sector: 1 
+(46) clinical trial: 1 
+(47) property: 1 
+(48) proposal: 1 
+(49) smart grid: 1 
+(50) use case: 1 
+(51) hyperledger fabric: 1 
+(52) iot: 1 
+(53) history: 1 
+(54) traceability: 1 
+(55) data management: 1 
+(56) robotics: 1 
+(57) mine: 1 
+(58) incentive mechanism: 1 
+(59) interoperability: 1 
+(60) tool: 1 
+(61) game theory: 1 
+(62) artificial intelligence: 1 
+(63) big data: 1 
+(64) overview: 1 
+(65) survey: 1 
+(66) compute: 1 
+(67) apply compute: 1 
+(68) distribute architecture: 1 
+(69) computer system organization: 1 
+(70) e-government: 1 
+(71) peer-to-peer architecture: 1 
+(72) information system: 1 
+(73) fault tolerance: 1 
+(74) dapp: 1 
+(75) computational model: 1 
+(76) computer architecture: 1 
+(77) computer science: 1 
 (78) library: 1 
-(79) computer science: 1 
-(80) company: 1 
-(81) digital currency: 1 
-(82) data mine: 1 
-(83) project management: 1 
-(84) internet: 1 
-(85) smart grid: 1 
-(86) energy sector: 1 
-(87) fault tolerance: 1 
-(88) o33: 1 
-(89) 5g: 1 
-(90) emerge technology: 1 
-(91) ico: 1 
-(92) multi-agent system: 1 
-(93) tourism: 1 
-(94) business: 1 
-(95) distribute system: 1 
-(96) sensor: 1 
-(97) industrial internet of thing: 1 
-(98) distribute compute: 1 
-(99) economics: 1 
-(100) technological innovation: 1 
-(101) digital signature: 1 
-(102) big data: 1 
-(103) compute: 1 
-(104) computer architecture: 1 
-(105) conference: 1 
-(106) fabric: 1 
-(107) monitor: 1 
-(108) ip network: 1 
-(109) information technology: 1 
-(110) history: 1 
-(111) proposal: 1 
-(112) smart home: 1 
-(113) vii: 1 
-(114) systematic map study: 0 
-(115) control system: 0 
-(116) reference: 0 
-(117) document type: 0 
-(118) overview: 0 
-(119) general: 0 
-(120) survey: 0 
-(121) security service: 0 
-(122) network property: 0 
-(123) structure: 0 
-(124) type: 0 
-(125) education: 0 
-(126) ledger: 0 
-(127) reliability: 0 
-(128) task analysis: 0 
-(129) stakeholder: 0 
-(130) delay: 0 
-(131) ehr: 0 
-(132) fpga: 0 
-(133) energy exchange: 0 
-(134) renewable energy: 0 
-(135) compliance: 0 
-(136) use case: 0 
-(137) data management: 0 
-(138) decentralize system: 0 
-(139) electronic health record: 0 
-(140) fintech: 0 
-(141) access control: 0 
-(142) legislation: 0 
-(143) digital economy: 0 
-(144) scoping review: 0 
-(145) energy: 0 
-(146) business process: 0 
-(147) embed system: 0 
-(148) categorization: 0 
-(149) trust third party: 0 
-(150) quality of service: 0 
-(151) program paradigm: 0 
-(152) grid compute: 0 
-(153) centralize compute: 0 
-(154) disruptive technology: 0 
-(155) holism: 0 
-(156) correctness: 0 
-(157) solidity: 0 
-(158) autonomous robot: 0 
-(159) energy consumption: 0 
-(160) behavior: 0 
-(161) speculative execution: 0 
-(162) emergence: 0 
-(163) solution: 0 
-(164) algorithm: 0 
-(165) mathematical optimization: 0 
-(166) quantum compute: 0 
-(167) machine learning: 0 
-(168) proof-of-stake: 0 
-(169) floor: 0 
-(170) ards characteristic: 0 
-(171) ceiling function: 0 
-(172) benefit: 0 
-(173) mine: 0 
-(174) flaw hypothesis methodology: 0 
-(175) sustainability: 0 
-(176) coordination: 0 
-(177) deep learning: 0 
-(178) vanet: 0 
-(179) organization: 0 
-(180) renewable energy source: 0 
-(181) microgrids: 0 
-(182) byzantine fault tolerance: 0 
-(183) entity: 0 
-(184) requirement: 0 
-(185) interaction: 0 
-(186) fog compute: 0 
-(187) cap theorem: 0 
-(188) e-commerce: 0 
-(189) cyberspace: 0 
-(190) decentralize application: 0 
-(191) hash: 0 
-(192) merkle tree: 0 
-(193) decentralization: 0 
-(194) business innovation: 0 
-(195) nash equilibrium: 0 
-(196) public ledger: 0 
-(197) computational trust: 0 
-(198) cloud storage: 0 
-(199) sharding: 0 
-(200) ethic: 0 
-(201) bibliography: 0 
-(202) innovation: 0 
-(203) reputation system: 0 
-(204) online bank: 0 
-(205) tutorial: 0 
-(206) transaction: 0 
-(207) fault tolerant system: 0 
-(208) law: 0 
-(209) medical service: 0 
-(210) hyperledger: 0 
-(211) electronic medical record: 0 
-(212) hyperledger fabric: 0 
-(213) industrial iot: 0 
-(214) state machine replication: 0 
-(215) e-health: 0 
-(216) pharmaceutical supply chain: 0 
-(217) decentralize: 0 
-(218) decentralize network: 0 
-(219) scientometrics: 0 
-(220) research: 0 
-(221) pbft: 0 
-(222) web application: 0 
-(223) citespace: 0 
-(224) dpos: 0 
-(225) business model: 0 
-(226) industry: 0 
-(227) formal specification: 0 
-(228) distribute consensus: 0 
-(229) biot: 0 
-(230) data structure: 0 
-(231) st: 0 
-(232) poa: 0 
-(233) r: 0 
-(234) om oracle: 0 
-(235) challenge: 0 
-(236) data share: 0 
-(237) database: 0 
+(79) systematics: 1 
+(80) sensor: 1 
+(81) economics: 1 
+(82) company: 1 
+(83) technological innovation: 1 
+(84) biological system model: 1 
+(85) digital signature: 1 
+(86) government: 1 
+(87) challenge: 1 
+(88) bank: 1 
+(89) smart home: 1 
+(90) conference: 1 
+(91) monitor: 1 
+(92) fabric: 1 
+(93) ip network: 1 
+(94) data mine: 1 
+(95) information technology: 1 
+(96) internet: 1 
+(97) finance: 1 
+(98) systematic map study: 0 
+(99) renewable energy source: 0 
+(100) fintech: 0 
+(101) bibliography: 0 
+(102) tutorial: 0 
+(103) online bank: 0 
+(104) reputation system: 0 
+(105) database: 0 
+(106) e-health: 0 
+(107) vanet: 0 
+(108) empirical study: 0 
+(109) ecosystem: 0 
+(110) requirement: 0 
+(111) governance: 0 
+(112) nash equilibrium: 0 
+(113) game: 0 
+(114) internet of energy: 0 
+(115) energy internet: 0 
+(116) energy trade: 0 
+(117) microgrid: 0 
+(118) business innovation: 0 
+(119) computational trust: 0 
+(120) public ledger: 0 
+(121) r: 0 
+(122) ledger: 0 
+(123) data share: 0 
+(124) microgrids: 0 
+(125) organization: 0 
+(126) fault tolerant system: 0 
+(127) law: 0 
+(128) type: 0 
+(129) structure: 0 
+(130) control system: 0 
+(131) taxonomy: 0 
+(132) task analysis: 0 
+(133) stakeholder: 0 
+(134) delay: 0 
+(135) ehr: 0 
+(136) fpga: 0 
+(137) energy exchange: 0 
+(138) energy: 0 
+(139) cloud storage: 0 
+(140) machine learning: 0 
+(141) sharding: 0 
+(142) transaction: 0 
+(143) scoping review: 0 
+(144) renewable energy: 0 
+(145) disruptive technology: 0 
+(146) compliance: 0 
+(147) decentralize application: 0 
+(148) data structure: 0 
+(149) merkle tree: 0 
+(150) benefit: 0 
+(151) ethic: 0 
+(152) medical service: 0 
+(153) innovation: 0 
+(154) hyperledger: 0 
+(155) 5g network: 0 
+(156) om oracle: 0 
+(157) 5g service: 0 
+(158) software define network: 0 
+(159) edge compute: 0 
+(160) energy consumption: 0 
+(161) quantum compute: 0 
+(162) sustainability: 0 
+(163) hash: 0 
+(164) web application: 0 
+(165) electronic medical record: 0 
+(166) network: 0 
+(167) network property: 0 
+(168) embed system: 0 
+(169) general: 0 
+(170) deep learning: 0 
+(171) reference: 0 
+(172) document type: 0 
+(173) state machine replication: 0 
+(174) decentralize: 0 
+(175) pharmaceutical supply chain: 0 
+(176) decentralize network: 0 
+(177) research: 0 
+(178) scientometrics: 0 
+(179) pbft: 0 
+(180) citespace: 0 
+(181) biot: 0 
+(182) e-commerce: 0 
+(183) software engineer: 0 
+(184) poa: 0 
+(185) smart factory: 0 
+(186) industry: 0 
+(187) coordination: 0 
+(188) reliability: 0 
+(189) industrial iot: 0 
+(190) digital economy: 0 
+(191) business model: 0 
+(192) education: 0 
+(193) decentralize system: 0 
+(194) st: 0 
+(195) ards: 0 
+(196) legislation: 0 
+(197) electronic health record: 0 
+(198) formal specification: 0 
+(199) distribute consensus: 0 
+(200) access control: 0 
+(201) 5g internet of thing: 0 
+(202) framework: 0 
+(203) dpos: 0 
+(204) decentralization: 0 

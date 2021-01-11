@@ -52,7 +52,7 @@ def sec():
 
 def sur():
     ori_df = pd.read_excel(output_root_dir + "/all-nf.xlsx")
-    
+
     pp_df = preprocess_pipeline(ori_df)
     pp_df.to_excel(preprocess_output_dir + "/all-preprocessed.xlsx", index=False)
     pp_df.to_excel(preprocess_output_dir + "/all-pp.xlsx", index=False)
@@ -60,7 +60,7 @@ def sur():
     options = ["freq", "cite"]
     for opt in options:
         a_df = analyzer_pipeline(pp_df, opt)
-        plot_pipeline(a_df, opt)
+        # plot_pipeline(a_df, opt)
         
         
 # survey

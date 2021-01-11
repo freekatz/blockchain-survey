@@ -324,7 +324,7 @@ def plot_pipeline(df: pd.DataFrame, opt: str):
     #     txt_rank(rank, p1 + "%s_rank.txt" % col)
     #     word_cloud_plot(rank, p2 + "%s_word_cloud.png" % col)
     #     bar_rank_plot(rank, p3 + "%s_bar_rank.png" % col)
-    
+    #
     if opt == "cite":
         height = 5000
         step = 250
@@ -339,10 +339,10 @@ def plot_pipeline(df: pd.DataFrame, opt: str):
 
     print(ddf["all"].tolist())
 
-    # bar_hop_plot(ddf, opt, height, step)
-    # line_hop_plot(ddf, opt)
-    # test(df, opt)
-    # test1(df)
+    bar_hop_plot(ddf, opt, height, step)
+    line_hop_plot(ddf, opt)
+    test(df, opt)
+    test1(df)
     if opt == "freq":
         d = pd.read_excel(preprocess_output_dir + "/all-pp.xlsx")
         col = "topics"
@@ -357,12 +357,12 @@ def plot_pipeline(df: pd.DataFrame, opt: str):
             target = "consensus"
             labels = ddf.sort_values(sort_col)[0 - limit:].index
             rtn, sec = bar_hop_plot2(d, col, target, labels)
-            # pie_plot(rtn, len(sec), 5.0)
-            labels = [target, "performance", "privacy"]
+            pie_plot(rtn, len(sec), 5.0)
+            labels = [target, "performance", "privacy", "interoperability"]
             pass
         else:
             labels = ["cryptography"]
-        # line_plot(ddf[cols[1:]], labels)
+        line_plot(ddf[cols[1:]], labels)
 
 
 # todo plot 可指定年份时间段

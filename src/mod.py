@@ -18,8 +18,7 @@ from settings import *
 from utils import *
 
 path = '/all-nf.xlsx'
-df = pd.read_excel(output_root_dir + "/all-new.xlsx")
-df = df.dropna()
+df = pd.read_excel(output_root_dir + "/all-nf.xlsx")
 title_items = df['title']
 topics_items = df['topics']
 
@@ -52,10 +51,13 @@ labels = {
 title_list = []
 tag_list = []
 for title, topics in zip(title_items, topics_items):
+    if type(topics) != type(str):
+        continue
+    topics = similar_replace(topics)
     topics_list = re.split(',', topics)
     _tag = []
     for key in labels:
-        if isInter(topics_list, re.split('==', labels[key])):
+        if key in topics:
             if title not in title_list:
                 title_list.append(title)
             _tag.append(key)
@@ -80,3 +82,5 @@ dddf['abstract'] = list(ddf['abstract'])
 ddf.to_excel(analyzer_output_dir + '/spp.xlsx', index=False)
 dddf.to_html(analyzer_output_dir + '/spp.htm', index=True)
 
+
+# todo 加上标签每年的数量

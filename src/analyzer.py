@@ -217,7 +217,7 @@ def analyzer_pipeline(df: pd.DataFrame, opt: str):
     ddf = format(res)
     ddf = ddf[~ddf.index.isin([nan_str, "", np.nan, "nan"])]
     ddf = ddf[~ddf["all"].isin(["1"])]  # 去掉频率为 1 的
-    ddf = sec_remove(ddf, ["2014", "2015"])
+    # ddf = sec_remove(ddf, ["2014", "2015"])
     ddf.to_excel(analyzer_output_dir + "/all-%s.xlsx" % opt)
     return ddf
 
