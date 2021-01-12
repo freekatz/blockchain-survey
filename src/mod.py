@@ -41,7 +41,8 @@ labels = {
     'privacy': 'privacy==security and privacy==data privacy==information privacy==human and societal aspect of security and '
                'privacy==privacy-preserving==privacy protection==preserve privacy==privacy-preserving '
                'technology==privacy-preserving smart contract==data integrity',
-    'performance': 'performance==data storage==scalability==throughput==computer performance==performance '
+    'performance': 'performance==data storage==computer data storage==information storage system==storage architecture'
+                   '==distribute storage==storage management==distribute file storage==scalability==throughput==computer performance==performance '
                    'evaluation==performance evaluation criterion==network performance evaluation==performance '
                    'model==firm performance==performance analysis==network performance analysis==performance '
                    'optimization==performance evaluation criterion',
@@ -51,18 +52,21 @@ labels = {
 title_list = []
 tag_list = []
 for title, topics in zip(title_items, topics_items):
-    if type(topics) != type(str):
-        continue
+    # if type(topics) != type(''):
+    #     continue
     topics = similar_replace(topics)
+    
     topics_list = re.split(',', topics)
     _tag = []
+    f = False
     for key in labels:
         if key in topics:
-            if title not in title_list:
-                title_list.append(title)
+            f = True
             _tag.append(key)
             print(_tag, topics_list)
-    tag_list.append(','.join(_tag))
+    if f:
+        title_list.append(title)
+        tag_list.append(','.join(_tag))
 
 tag_list = [l for l in tag_list if l != '']
 title_list = list(set(title_list))
@@ -82,5 +86,3 @@ dddf['abstract'] = list(ddf['abstract'])
 ddf.to_excel(analyzer_output_dir + '/spp.xlsx', index=False)
 dddf.to_html(analyzer_output_dir + '/spp.htm', index=True)
 
-
-# todo 加上标签每年的数量

@@ -154,7 +154,8 @@
 # plt.tight_layout()
 # plt.grid(axis="x", linestyle=":", linewidth=0.5)
 # plt.savefig("./out/rank/f2.png")
-
+import copy
+from collections import Counter
 
 import pandas as pd
 import numpy as np
@@ -167,15 +168,29 @@ from settings import *
 from configs import *
 from utils import *
 
-d = pd.read_excel(output_root_dir + '/all-nf.xlsx')
 
-titles = ['A survey of data transfer and storage techniques in prevalent cryptocurrencies and suggested improvements', 'A Survey on Consensus Protocols in Blockchain for IoT Networks', 'A Survey on Ethereum Systems Security: Vulnerabilities, Attacks and Defenses', 'A Survey on Feasibility and Suitability of Blockchain Techniques for the E-Voting Systems', 'An Empirical Study into the Success of Listed Smart Contracts in Ethereum', 'Blockchain Mutability: Challenges and Proposed Solutions', 'Blockchain Technologies for the Internet of Things: Research Issues and Challenges', 'Blockchain Technology Overview', 'Integration of Blockchain and Cloud of Things: Architecture, Applications and Challenges', 'Machine Learning in/for Blockchain: Future and Challenges', 'Security Analysis Methods on Ethereum Smart Contract Vulnerabilities: A Survey', 'What is Stablecoin?: A Survey on Its Mechanism and Potential as Decentralized Payment Systems']
-topics = []
-for t, to in zip(d.title, d.topics):
-    if t in titles:
-        topics.append('nan')
-    else:
-        topics.append(to)
-        
-d.topics = pd.Series(topics)
-d.to_excel(output_root_dir + '/all-new.xlsx', index=False)
+def topics_vector(df: pd.DataFrame, labels: list) -> dict:
+    rtn_topic = {}
+    origin_topics = df["topics"].tolist()
+    urls = df["url"].tolist()
+    topics = [(u, re.split(",", similar_replace(str(o)))) for u, o in zip(urls, origin_topics)]
+    for l in labels:
+        for topic in topics:
+            if type(topic) != type(''):
+                continue
+            if l in topic[1]:
+                if l not in rtn_topic.keys():
+                    rtn_topic[l] = [[topic[0]], [[l] + topic[1]]]
+                else:
+                    rtn_topic[l][0].append(topic[0])
+                    rtn_topic[l][1].append(topic[1])
+    return rtn_topic
+
+
+if __name__ == '__main__':
+    df = pd.read_excel(output_root_dir + "/all-nf.xlsx")
+    labels = ['security', 'privacy', 'performance', 'interoperability']
+    
+    r = topics_vector(df, labels)
+    print(r)
+    print(len(r[labels[0]][0]))
