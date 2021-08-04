@@ -34,6 +34,7 @@ class Crawler:
             return resp.text
         else:
             raise Exception("Un-support protocol type")
+        
     
     def save(self, output, target):
         """
@@ -129,12 +130,15 @@ class SpringerCrawler(Crawler):
                     "p.c-article-metrics-bar__count").text.replace("Citations", "").strip()
             except:
                 pass
-            author_item = soup.select_one("ul.c-author-list")
-            li_items = author_item.select("li")
-            authors = ""
-            for li in li_items:
-                authors += li.text
-            out["authors"] = authors
+            try:
+                author_item = soup.select_one("ul.c-author-list")
+                li_items = author_item.select("li")
+                authors = ""
+                for li in li_items:
+                    authors += li.text
+                out["authors"] = authors
+            except:
+                out["authors"] = ""
             out["year"] = header_soup.select_one("time")["datetime"]
             out["abstract"] = soup.select_one("div.c-article-section__content").text
         else: # chapter or reference work entry some others, maybe not fix all case
@@ -346,7 +350,7 @@ class IeeeCrawler(Crawler):
     def url_get(self):
         driver = webdriver.Firefox()
         output = []
-        for i in range(6, 10):  # this
+        for i in range(1, 10):  # this
             ieee_payload["pageNumber"] = str(i)
             t_resp = requests.get(ieee_base_url, ieee_payload)
             ieee_headers["Referer"] = t_resp.url
@@ -357,6 +361,7 @@ class IeeeCrawler(Crawler):
             soup = BeautifulSoup(html, "lxml")
             url_items = soup.select("div.List-results-items")
             for url_item in url_items:
+                print(url_item)
                 out = copy.deepcopy(out_data)
                 out["url"] = ieee_detail_base_url + url_item.select_one("a")["href"]
                 out["origin"] = "ieee"
@@ -399,19 +404,20 @@ class IeeeCrawler(Crawler):
 
 
 if __name__ == '__main__':
-    # arxiv = ArxivCrawler()  # cite valid
+    # arxiv = ArxivCrawler()
     # arxiv.run()
 
-    # springer = SpringerCrawler()  # cites valid
+    # springer = SpringerCrawler()
     # springer.run()
     
     # acm = AcmCrawler()
     # acm.run()
     
-    # science_direct = ScienceDirectCrawler()
-    # science_direct.run()
+    science_direct = ScienceDirectCrawler()
+    science_direct.run()
     
     # ieee = IeeeCrawler()
-    # ieee.run()
+    # ieee.url_get()  # first exec this
+    # ieee.run()  # and then exec this
     
     pass

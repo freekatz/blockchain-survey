@@ -228,7 +228,7 @@ if __name__ == '__main__':
     # s = open("./res/security.txt", "r")
     # topics_vector(df, [l.strip() for l in s.readlines()])
     
-    options = ["freq", "cite"]
-    # options = ["freq"]
+    # options = ["freq", "cite"]
+    options = ["freq"]
     for opt in options:
         analyzer_pipeline(df, opt)

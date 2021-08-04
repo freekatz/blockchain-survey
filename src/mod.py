@@ -22,32 +22,11 @@ df = pd.read_excel(output_root_dir + "/all-nf.xlsx")
 title_items = df['title']
 topics_items = df['topics']
 
-labels = {
-    'security': 'security==communication security==security service==security and privacy==cyber attack==cyber-attack==cyberattack==network attack==human and societal aspect of '
-                'security and privacy==cyber security==cybersecurity==network security==system security==distribute '
-                'system security==authentication==vulnerability==computer security==formal verification==cyber '
-                'attack==computer crime==data security==attack==volatility==verification==intrusion '
-                'detection==vulnerability==threat==risk==information security==model check==threat model==distribute '
-                'system security==system security==communication security==human and societal aspect of security and '
-                'privacy==risk management==ddos==denial-of-service attack==cybercrime==operational risk==credit '
-                'risk==cyber spy==stateful firewall==secure network==do attack==eclipse attack==sybil==cloud compute '
-                'security==provable security==ghost==unforgeable==threat factor==mine attack==security '
-                'issue==security level analysis==threat model analysis==security threat==cyberattacks==secure '
-                'multi-party computation==stalker attack==51% attack==security assurance==security '
-                'vulnerability==security protocol==crytography==hardware security module==iot security==risk '
-                'research==technical risk==risk-benefit==decentralize pki==mean-risk analysis==security '
-                'challenge==tamper resistance==resistance==secure bill==social aspect of security==risk '
-                'assessment==uc-security==cutlery fork==application security==denial',
-    'privacy': 'privacy==security and privacy==data privacy==information privacy==human and societal aspect of security and '
-               'privacy==privacy-preserving==privacy protection==preserve privacy==privacy-preserving '
-               'technology==privacy-preserving smart contract==data integrity',
-    'performance': 'performance==data storage==computer data storage==information storage system==storage architecture'
-                   '==distribute storage==storage management==distribute file storage==scalability==throughput==computer performance==performance '
-                   'evaluation==performance evaluation criterion==network performance evaluation==performance '
-                   'model==firm performance==performance analysis==network performance analysis==performance '
-                   'optimization==performance evaluation criterion',
-    'interoperability': 'interoperability==interoperability of information==interblockchain',
-}
+labels = [
+    'security', 'privacy', 'performance',
+    'interoperability', 'regulation',
+    'governance', 'usability'
+]
 
 title_list = []
 tag_list = []

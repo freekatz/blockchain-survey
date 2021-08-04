@@ -141,8 +141,8 @@ def norm(df: pd.DataFrame) -> pd.Series:
 
 
 if __name__ == '__main__':
-    df = pd.read_excel(output_root_dir + "/all.xlsx")
+    df = pd.read_excel(crawler_output_dir + "/springer.xlsx")
     
     ddf = preprocess_pipeline(df)
     
-    ddf.to_excel(preprocess_output_dir + "/all-preprocessed.xlsx", index=False)
+    ddf.to_excel(crawler_output_dir + "/springerp.xlsx", index=False)

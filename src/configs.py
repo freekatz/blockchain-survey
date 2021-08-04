@@ -29,21 +29,15 @@ arxiv_xhr_url = "https://partner.semanticscholar.org/v1/paper/arXiv:%s?include_u
 # }
 arxiv_payload_adv = {
     "advanced": "1",
-    "terms-0-operator": "AND",
-    "terms-0-term": "Bitcoin OR Ethereum OR Blockchain OR (Distributed AND Ledger)",
-    "terms-0-field": "abstract",
-    "terms-1-operator": "AND",
-    "terms-1-term": "security OR risk OR threat OR challenges OR attack OR vulnerabilities OR vulnerability",
-    "terms-1-field": "abstract",
-    "terms-2-operator": "AND",
-    "terms-2-term": "NOT Survey AND NOT Overview AND NOT Review AND NOT Tutorial",
-    "terms-2-field": "title",
+    "terms-0-operator": "OR",
+    "terms-0-term": "Merkle OR Damgard",
+    "terms-0-field": "title",
     "classification-physics_archives": "all",
     "classification-include_cross_list": "include",
     "date-filter_by": "date_range",
     "date-year": "",
-    "date-from_date": "2014",
-    "date-to_date": "2020",
+    "date-from_date": "2016",
+    "date-to_date": "2021",
     "date-date_type": "announced_date_first",
     "abstracts": "show",
     "order": "",
@@ -62,22 +56,20 @@ arxiv_target_path = crawler_output_dir + "/arxiv.xlsx"
 """ Springer config
 """
 springer_base_url = "https://link.springer.com/search/page/%s"
-springer_index_range_begin = 1  # begin is 1
-springer_index_range_end = 10  # base the search result
+springer_index_range_begin = 3  # begin is 1
+springer_index_range_end = 100  # base the search result
 springer_detail_base_url = "https://link.springer.com"
 springer_payload = {
     "date-facet-mode": "between",
     # "dc.title": "",
-    "facet-start-year": "2014",
-    "facet-end-year": "2020",
+    "facet-start-year": "2016",
+    "facet-end-year": "2021",
     "facet-language": "En",
     # "facet-content-type": "ConferencePaper",  # ConferencePaper and Article
     # OR
     "facet-content-type": "Article",
     "showAll": "true",
-    "query": "(Bitcoin OR Ethereum OR Blockchain OR (Distributed AND Ledger)) \
-            AND (security OR risk OR threat OR challenges OR attack OR vulnerabilities OR vulnerability) \
-            AND NOT (Survey OR Overview OR Review OR Tutorial)"
+    "query": "(Merkle OR Damgard)"
 }
 springer_target_path = crawler_output_dir + "/springer.xlsx"
 
@@ -88,11 +80,12 @@ acm_detail_base_url = "https://dl.acm.org"
 acm_payload = {
     "fillQuickSearch": "false",
     "expand": "all",
-    "AfterYear": "2014",
-    "BeforeYear": "2020",
+    "AfterYear": "2016",
+    "BeforeYear": "2021",
     "ContentItemType": "research-article",
-    "AllField": "Keyword:(security OR risk OR threat OR challenges OR attack OR vulnerabilities OR vulnerability) AND Title:(NOT (Survey OR Overview OR Review OR Tutorial)) AND Abstract:(Bitcoin OR Ethereum OR Blockchain OR (Distributed AND Ledger))",
-    "pageSize": "168"  # use the search result, any number
+    "AllField": "Title:(Merkle OR Damgard)",
+    "page": 1,
+    "pageSize": "100",  # use the search result, any number
 }
 
 """
@@ -107,11 +100,11 @@ science_direct_base_url = "https://www.sciencedirect.com/search"
 science_direct_detail_base_url = "https://www.sciencedirect.com/science/article/abs/pii"
 science_direct_xhr_url = "https://www.sciencedirect.com/sdfe/arp/pii/%s/citingArticles?creditCardPurchaseAllowed=true&preventTransactionalAccess=false&preventDocumentDelivery=true"
 science_direct_payload = {
-    "date": "2014-2020",
-    "qs": "security risk threat challenges attack vulnerabilities vulnerability",
-    "tak": "Bitcoin OR Ethereum OR Blockchain OR (Distributed AND Ledger)",
-    "title": "NOT (Survey OR Overview OR Review OR Tutorial)",
-    "articleTypes": "REV,FLA",
+    "date": "2016-2021",
+    # "qs": "security safety reliability attack defense countermeasures",
+    # "tak": "Merkle OR Damgard",
+    "title": "(Merkle OR Damgard)",
+    # "articleTypes": "REV,FLA",
     "show": "100",  # 25, 50 or 100 per page, others don't to take effect
     "offset": "1"
 }
@@ -139,17 +132,19 @@ ieee_detail_base_url = "https://ieeexplore.ieee.org"
 ieee_payload = {
     "action": "search",
     "matchBoolean": "true",
-    "queryText": '(NOT ("Document Title":"Survey")) AND (NOT ("Document Title":"Overview")) AND (NOT ("Document Title":"Review")) AND (NOT ("Document Title":"Tutorial")) \
-    AND (("All Metadata":"Bitcoin") OR ("All Metadata":"Bitcoin") OR ("All Metadata":"Ethereum") OR ("All Metadata":"Blockchain") OR ("All Metadata":"Distributed Ledger")) \
-    AND (("Author Keywords":"security") OR ("Author Keywords":"risk") OR ("Author Keywords":"threat") OR ("Author Keywords":"challenges") OR ("Author Keywords":"attack") OR ("Author Keywords":"vulnerabilities") OR ("Author Keywords":"vulnerability"))',
+    # "queryText": '(NOT ("Document Title":"Survey")) AND (NOT ("Document Title":"Overview")) AND (NOT ("Document Title":"Review")) AND (NOT ("Document Title":"Tutorial")) \
+    # AND (("All Metadata":"Bitcoin") OR ("All Metadata":"Bitcoin") OR ("All Metadata":"Ethereum") OR ("All Metadata":"Blockchain") OR ("All Metadata":"Distributed Ledger")) \
+    # AND (("Author Keywords":"security") OR ("Author Keywords":"risk") OR ("Author Keywords":"threat") OR ("Author Keywords":"challenges") OR ("Author Keywords":"attack") OR ("Author Keywords":"vulnerabilities") OR ("Author Keywords":"vulnerability"))',
+    "queryText": '(("All Metadata":"cyber-physical systems") OR ("All Metadata":"cyber physical systems") OR ("All Metadata":"CPS")) \
+        AND (("Author Keywords":"security") OR ("Author Keywords":"safety") OR ("Author Keywords":"reliability") OR ("Author Keywords":"attack") OR ("Author Keywords":"defense") OR ("Author Keywords":"countermeasures"))',
     "highlight": "true",
     "returnFacets": ["ALL"],
     "returnType": "SEARCH",
     "matchPubs": "true",
-    "ranges": "2014_2020_Year",
+    "ranges": "2016_2021_Year",
     "refinements": ["ContentType:Conferences", "ContentType:Journals"],
     "rowsPerPage": "100",
-    "pageNumber": ""
+    "pageNumber": "1"
 }
 
 ieee_headers = {
