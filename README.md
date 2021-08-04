@@ -7,4 +7,4 @@ This tool supports the five popular libraries of literature include: Arxiv, IEEE
 
 **The program process shows in the following figure:**
 
-![papers process chart](res/README/papers-process-chart.svg)
+![papers process chart](res/README/papers-process-chart.png)
